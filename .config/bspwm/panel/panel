@@ -1,0 +1,181 @@
+#!/bin/bash
+#ads terminal colorscheme variables COL0 - COL15
+. colors-def
+
+PANEL_FONT_FAMILY="-benis-lemon-medium-r-normal--10-110-75-75-m-50-ISO8859-1"
+
+# kills children jobs on exit, not sure if it's valid
+trap 'kill 0' HUP INT TERM EXIT
+
+panel_cmd="bar -g x20 -B#$COL0 -F#$COL15 -f $PANEL_FONT_FAMILY"
+
+get_mpd_song() {
+    # use mpc to get currently playing song, uppercase it
+    song=$(mpc current)
+    # let's skip ft. parts, etc. to get some more space
+    echo -n $song '
+$//'
+}
+
+date_widget() {
+  local date="$(date '+%A %d %B')"
+
+  echo "date:%{F#ff$COL3}${date,,}%{F-}"
+}
+
+volume_widget(){
+  local vol="$(amixer get Master | egrep -o "[0-9]+%")"
+  echo "vol:%{F1#ff$COL3}$vol"
+}
+
+time_widget() {
+  local time="$(date '+%H:%M')"
+  echo "time:%{F#ff$COL3}$time%{F-}"
+}
+
+battery_widget() {
+  local battery_dir battery_status charge_now charge_full percents
+
+  battery_dir='/sys/class/power_supply/BAT0'
+  battery_status="$(< "$battery_dir/status")"
+  battery_status="${battery_status,,}"
+
+  case $battery_status in
+    *charging)
+      charge_now="$(< "$battery_dir/charge_now")"
+      charge_full="$(< "$battery_dir/charge_full")"
+      percents="$(( charge_now * 100 / charge_full ))"
+      battery_status="⮑ $percents%%"
+      ;;&
+    full|charging)
+      battery_status="%{F#ff$COL3}⮎ $battery_status%{F-}"
+      ;;
+    *)
+      battery_status="%{F#ff$COL1} $battery_status%{F-}"
+      ;;
+  esac
+
+  echo "battery:$battery_status"
+}
+
+title_widget() {
+  local line id title
+
+  xprop -spy -root ':$0\n' _NET_ACTIVE_WINDOW | while read -r line; do
+    id="${line#*:}"
+    title="$(xprop -id $id _NET_WM_NAME 2>/dev/null)"
+
+    if [[ "$title" ]]; then
+      title="${title#*\"}"
+      title="${title%?}"
+      title="%{F#ff$COL3}$title%{F-}"
+    fi
+
+    echo "title:$title"
+  done
+}
+
+wifi_widget() {
+    local ssid="$(iwgetid -r)"
+
+    if [[ "$ssid" ]]; then
+      ssid="%{F#ff$COL3}$ssid%{F-}"
+    else
+      ssid="%{F#ff$COL1}off%{F-}"
+    fi
+
+    echo "wifi:$ssid"
+}
+
+mem_widget() {
+  local mem_used mem_array mem_total
+
+  mem_array=($(free -m))
+  mem_used="${mem_array[15]}"
+  mem_total="${mem_array[7]}"
+
+  echo "memory:%{F#ff$COL3}$mem_used%{F-} / %{F#ff$COL3}$mem_total%{F-}"
+}
+
+spoj_widget() {
+  local spoj_data rank points
+
+  spoj_data=($(curl -s http://www.spoj.com/users/damianjazwic/ | head -n 167 |\
+               tail -n 2 | tr -d -c '[:digit:].\n>' | tr '>' ' '))
+  rank="${spoj_data[1]}"
+  points="${spoj_data[2]}"
+
+  #echo "spoj:%{F#ff$COL3}$rank%{F-} / %{F#ff$COL3}${points}%{F-} pts"
+  echo "spoj:%{F#ff$COL3}$rank%{F-}"
+  echo "$(date '+%s') $rank $points"
+}
+
+desktops_widget() {
+  local line bspwm_status desktops field
+
+  bspc control --subscribe | while read -r line; do
+    bspwm_status=(${line//:/ })
+    desktops=''
+
+    for field in "${bspwm_status[@]}"; do
+      case $field in
+        O*|U*|F*)
+          desktops+="%{B#ff$COL2} ${field#?} %{B-}"
+          ;;
+        o*|u*)
+          desktops+="%{F#ff$COL15} ${field#?} %{F-}"
+          ;;
+        f*)
+          desktops+="%{F#ff$COL6} ${field#?} %{F-}"
+          ;;
+      esac
+    done
+
+    echo "desktops:$desktops"
+  done
+}
+
+widgets_format() {
+  local date time battery title wifi desktops fmt line memory vol
+
+  while read -r line; do
+    case $line in
+      date*)      date="${line#*:}" ;;
+      time*)      time="${line#*:}" ;;
+      battery*)   battery="${line#*:}" ;;
+      title*)     title="${line#*:}" ;;
+      wifi*)      wifi="${line#*:}" ;;
+      desktops*)  desktops="${line#*:}" ;;
+      memory*)    memory="${line#*:}" ;;
+      vol*)    vol="${line#*:}" ;;
+    esac
+  
+    fmt="%{l} ⮗rlefreak $desktops [ $title ]"
+    fmt+="%{r} ⮞ $vol | ⮡ $memory | ⮷ $wifi | $battery | $date, $time "
+
+    echo "$fmt"
+  done
+}
+
+# main
+{
+  desktops_widget &
+  title_widget &
+
+  while true; do
+    mem_widget
+    wifi_widget
+    battery_widget
+    date_widget
+    time_widget
+    volume_widget
+    sleep 1
+  done &
+
+  while true; do
+    sleep 1h
+  done &
+} | widgets_format | $panel_cmd &
+
+wait
+

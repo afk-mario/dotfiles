@@ -1,0 +1,55 @@
+#! /bin/sh
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+	printf "%s\n" "The panel is already running." >&2
+	exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+BLUE="%{F#FF8AB3B5}"
+RED="%{F#FFCB6077}"
+YELLOW="%{F#FFF4BC87}"
+ORANGE="%{F#FFD28B71}"
+MAGENTA="%{F#FFA89BB9}"
+TEAL="%{F#FF7BBdA4}"
+LIGHTGREY="%{F#FFCBE6CB}"
+DARKGREY="%{F#FF7E705A}"
+GREEN="%{F#FF90A950}"
+PURPLE="%{F#FF9547C9}"
+BG="%{F#FF3B3228}"
+branco="%{F#FFE6E6E6}"
+
+bspc config top_padding $PANEL_HEIGHT$
+bspc control --subscribe > "$PANEL_FIFO" &
+echo 'T' $COLOR5 'Arlefreak ' > "$PANEL_FIFO" &
+
+battery_widget() {
+	BATC=/sys/class/power_supply/BAT1/capacity
+	BATS=/sys/class/power_supply/BAT1/status
+
+	# prepend percentage with a '+' if charging, '-' otherwise
+	test "`cat $BATS`" = "Charging" && echo -n '+' || echo -n '-'
+
+	# print out the content (forced myself to use `sed` :P)
+	sed -n p $BATC
+}
+
+# Loop to check time, battery and volume statuses
+while true; do
+	AP=$(iwconfig wlp2s0 | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
+	Vol=$(amixer get Master | egrep -o "[0-9]+%")
+	Bat=$(acpi | egrep -o "[0-9]+%")
+	dat=$(date +'S%B %d %a %Y %H:%M')
+	echo 'I'$LIGHTGREY$AP$branco' Vol '$LIGHTGREY$Vol% $branco'Bat'$LIGHTGREY $Bat'%' $branco> "$PANEL_FIFO" &
+	echo $dat  > "$PANEL_FIFO" &
+sleep 0.5s
+done &
+. panel_colors
+
+cat "$PANEL_FIFO" | panel_bar | bar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+
+wait

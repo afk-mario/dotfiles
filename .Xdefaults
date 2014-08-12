@@ -1,0 +1,60 @@
+!-------------------------------------------------------------------------------
+!!! XFT SETTINGS !!!
+!-------------------------------------------------------------------------------
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+!-------------------------------------------------------------------------------
+!!! URXVT SETTINGS !!!
+!-------------------------------------------------------------------------------
+urxvt*font: xft:Terminus:pixelsize=12,xft:DejaVu Sans Mono for Powerline-7.3:pixelsize=12
+urxvt*depth: 33
+URxvt*geometry: 80x25
+URxvt*internalBorder: 8
+URxvt*borderLess: false
+URxvt*scrollBar: false
+URxvt*cursorBlink: true
+URxvt*cursorUnderline: true
+URxvt*scrollColor: #917154
+URxvt.underlineURLs: true
+ 
+ 
+!-------------------------------------------------------------------------------
+!!! THEME !!!
+!-------------------------------------------------------------------------------
+
+*cursorColor: #917154
+!*colorIT: #E3AB8D
+!*colorBD: #F0E5DF
+!*colorUL: #cd546c
+*VT100.colorBDMode: false
+*VT100.colorBD: blue
+*VT100.colorULMode: true
+*VT100.colorUL: blue
+*VT100.veryBoldColors: 6
+
+!colors:
+*foreground: #C3AE93
+*background: #2B2B29
+*color0: #363636
+*color8: #424242
+*color1: #C37561
+*color9: #D19485
+*color2: #A0A57E
+*color10: #B6B99D
+*color3: #D1A375
+*color11: #DEBC9C
+!*color4: #7985A3
+*color4: #C3AE93
+!*color12: #98A1B9
+*color12: #C37561
+*color5: #AB716D
+*color13: #BE918E
+*color6: #98B9B1
+*color14: #CBE6CB
+*color7: #D0D0D0
+*color15: #E6E6E6

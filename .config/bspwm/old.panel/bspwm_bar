@@ -1,0 +1,10 @@
+#!/bin/sh
+
+bspc control --put-status
+xtitle -sf '%s' > "$PANEL_FIFO" &
+clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
+
+PANEL_HEIGHT=24
+FONT_FAMILY='-*-terminus-*-*-*-*-*-*-*-*-*-*-*-*'
+FONT_SIZE=10
+cat "$PANEL_FIFO" | panel_dzen2 -f "-*-nu-*-*-*-*-*-*-*-*-*-*-*-*" | dzen2 -h 16 -ta l -title-name panel -fn "-*-nu-*-*-*-*-*-*-*-*-*-*-*-*" -fg "#e3e3e3" -bg "#333333"
