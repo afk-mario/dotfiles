@@ -1,0 +1,121 @@
+/* AGENT_SHEET */
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+
+/* MAIN WINDOW */
+/* Modifies navigation bar */
+#nav-bar {background: #242424 !important;
+          background-clip: padding-box !important;
+          border: none !important;
+          border-radius: 0 !important;
+          padding: 0px !important;
+          height: 17px !important;  
+          box-shadow: none !important;}
+
+/* Removes forward and back buttons */
+#forward-button, #back-button {display: none !important}
+
+/* Remove favicons */
+#TabsToolbar .tabbrowser-tab .tab-icon-image {display: none !important;}
+
+/* Removes menu separator */
+#PanelUI-button {background-image: none !important}
+
+/* Removes top gradient */
+#main-window:not([customizing]) #TabsToolbar:not(:-moz-lwtheme) {background-image: none !important}
+
+/* Removes scrollbar buttons */
+scrollbar[orient='vertical'] > scrollbarbutton {min-height: 0 !important}
+scrollbar[orient='horizontal'] > scrollbarbutton {min-width: 0 !important}
+
+/* Scrollbar Width */
+scrollbar[orient='vertical'] {width: 10px !important;}
+
+/* Removes scrollbar decorations */
+scrollbar > slider, scrollbar > slider > thumb, scrollbar > scrollbarbutton {-moz-appearance: none !important}
+scrollbar, scrollbar > scrollbarbutton {border: none !important; background: none !important}
+
+/* Modifies scrollbar colors */
+scrollbar > slider {border-width: 0px !important; background-color: #242424 !important}
+scrollbar > slider > thumb {border-width: 0px !important; background-color: #7C7C7C !important}
+
+/* TAB BAR */
+/* Removes new tab and close tab buttons */
+#TabsToolbar .tabs-newtab-button, .tab-close-button {display: none !important}
+
+
+/* Removes load progress throbbers */
+.tab-throbber {display: none !important}
+
+/* Removes decorations */
+#TabsToolbar .tabbrowser-tab[first-tab][last-tab], #TabsToolbar .tabbrowser-tab[last-visible-tab] {border-right-width: 0px !important}
+#TabsToolbar .tabbrowser-tab[afterselected] {border-left-color: rgba(0,0,0,.25) !important}
+#TabsToolbar .tabs-newtab-button:hover, #TabsToolbar .tabbrowser-tab:hover:not([selected]) {border-color: rgba(0,0,0,.2) !important; background-color: rgba(255,255,255,.55) !important}
+#TabsToolbar .tab-background {margin: 0 !important; background: transparent !important}
+#TabsToolbar .tab-background-start, #TabsToolbar .tab-background-end {display: none !important}
+#TabsToolbar .tab-background-middle {margin: -4px -2px !important; background: transparent !important}
+#TabsToolbar .tabbrowser-tab:after, #TabsToolbar .tabbrowser-tab:before {display: none !important}
+
+/* Modifies backgrounds and margins, removes borders*/
+#TabsToolbar .tabbrowser-tab {-moz-border-top-colors: none !important;
+                              -moz-border-left-colors: none !important;
+                              -moz-border-right-colors: none !important;
+                              -moz-border-bottom-colors: none !important;
+                              border-width: 0px 0px 0px 0px !important;
+                              background-clip: padding-box !important;
+                              transition: all .1s !important;
+                              margin-left: 0px !important;
+                              margin-bottom: 2px !important;}
+
+/* Modifies background of tabs */
+#TabsToolbar .tabbrowser-tab[selected] {background: #454545 !important}
+#TabsToolbar .tabbrowser-tab:hover:not([selected]) {background-color: #242424 !important}
+
+/* Modifies tab text color */
+tab[selected="true"] .tab-text, tab:not([selected="true"]) .tab-text {color: #C37561 !important}
+tab[selected="false"] .tab-text, tab:not([selected="true"]) .tab-text {color: #C3ae93 !important}
+
+/* Sets width restrictions */
+.tabbrowser-tab:not([pinned])[fadein] {max-width: 150px !important; min-width: 1px !important}
+.tabbrowser-tab[pinned] {max-width: 35px !important; min-width: 1px !important}
+
+/* Modifies tab bar height, margin, font and colors */
+#TabsToolbar .tabbrowser-tabs {min-height: 17px !important; 
+                               margin-top: 0px !important; 
+                               margin-left: -15px !important;
+                               font-family: lemon !important;
+                               font-size: 10px !important;
+                               background-color: #242424;}
+
+/* LOCATION BAR */
+/* Removes reload, stop, and go buttons */
+#urlbar-reload-button, #urlbar-stop-button, #urlbar-go-button {display: none !important} 
+
+/* Removes autocomplete history dropmarker */
+.autocomplete-history-dropmarker {display: none !important}
+
+/* Removes the background and borders */
+#urlbar {background: transparent !important; border: transparent !important}
+#urlbar:not(:-moz-lwtheme), .searchbar-textbox:not(:-moz-lwtheme) {box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.01) inset, 0px 0px 0px rgba(255, 255, 255, 0.1) !important}
+#urlbar, .searchbar-textbox {padding-left: 10px !important}
+#navigator-toolbox:after {background-color: transparent !important; margin-bottom: -1px !important}
+
+/* Modifies url bar text color */
+#urlbar .textbox-input-box, #searchbar .textbox-input-box, #FindToolbar .textbox-input-box {color: #C37561 !important}
+
+/*Url bar font size*/
+#urlbar {font-family: lemon !important;
+         font-size: 10px !important;}
+
+/* Removes decorations from identity box and notification popup box */
+#identity-box {background-color: transparent !important}
+#notification-popup-box {background-color: transparent !important; border-image: none !important; border-color: #242424 !important}
+.ac-url-text {
+  font-family: Terminus !important;
+  font-size: 100% !important;
+  color: #f0f0f0 !important;
+}
+.ac-url-text[selected="true"] {
+  font-family: Terminus !important;
+  color: #fff !important;
+}
