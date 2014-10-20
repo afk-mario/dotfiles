@@ -83,7 +83,7 @@ tab[selected="false"] .tab-text, tab:not([selected="true"]) .tab-text {color: #C
 #TabsToolbar .tabbrowser-tabs {min-height: 17px !important; 
                                margin-top: 0px !important; 
                                margin-left: -15px !important;
-                               font-family: lemon !important;
+                               font-family: Terminus !important;
                                font-size: 10px !important;
                                background-color: #242424;}
 
@@ -104,7 +104,7 @@ tab[selected="false"] .tab-text, tab:not([selected="true"]) .tab-text {color: #C
 #urlbar .textbox-input-box, #searchbar .textbox-input-box, #FindToolbar .textbox-input-box {color: #C37561 !important}
 
 /*Url bar font size*/
-#urlbar {font-family: lemon !important;
+#urlbar {font-family: Terminus !important;
          font-size: 10px !important;}
 
 /* Removes decorations from identity box and notification popup box */

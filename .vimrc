@@ -16,9 +16,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'bling/vim-bufferline'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'duythinht/vim-coffee'
 NeoBundle 'altercation/vim-colors-solarized.git'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'elzr/vim-json',
@@ -37,15 +37,14 @@ NeoBundle 'wavded/vim-stylus'
 NeoBundle 'vim-scripts/darkspectrum'
 NeoBundle 'sjl/badwolf'
 NeoBundle 'dasch/vim-mocha',
-NeoBundle 'maksimr/vim-jsbeautify',
 NeoBundle 'Shougo/vimproc', {
-        \ 'build' : {
-        \     'windows' : 'make -f make_mingw32.mak',
-        \     'cygwin' : 'make -f make_cygwin.mak',
-        \     'mac' : 'make -f make_mac.mak',
-        \     'unix' : 'make -f make_unix.mak',
-        \    },
-        \ }
+            \ 'build' : {
+            \     'windows' : 'make -f make_mingw32.mak',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'unix' : 'make -f make_unix.mak',
+            \    },
+            \ }
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
@@ -57,12 +56,36 @@ filetype plugin indent on
 NeoBundleCheck
 
 " Mine
+let mapleader=","
+set showcmd
 set number
 syntax enable
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set smarttab
+set expandtab
+set hidden
 set background=dark
+colorscheme coffee
 map <F11> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
-colorscheme badwolf  
+"Buffer
+nmap <leader>T :enew<cr>
+nmap <leader>l :bnext<CR>
+nmap <leader>h :bprevious<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
+let g:netrw_preview = 1
+
+"Tcab
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
 let g:syntastic_check_on_open=1
 let g:badwolf_darkgutter = 1
 let g:badwolf_css_props_highlight = 1
@@ -88,15 +111,7 @@ let g:Powerline_symbols = 'fancy'"
 let g:airline_powerline_fonts = 1
 set laststatus=2
 set noshowmode
+set t_Co=256
 
 let g:airline_detect_paste=1
 let g:airline_theme='badwolf'
-
-"Beutifier
-map <c-f> :call JsBeautify()<cr>
-" or
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-" for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
