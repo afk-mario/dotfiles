@@ -1,16 +1,34 @@
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
 if has('vim_starting')
-    set nocompatible               " Be iMproved
+    if &compatible
+        set nocompatible               " Be iMproved
+    endif
 
     " Required:
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 " Bundles
 
@@ -34,13 +52,13 @@ NeoBundle 'airblade/vim-gitgutter'           " Git gutter simbols
 
 " Web
 NeoBundle 'mattn/emmet-vim',                 " Emmet
-NeoBundle 'othree/html5.vim',                " Html5 support
 
 " Languages and Frameworks
 NeoBundle 'elzr/vim-json',                   " JSON plugin
 NeoBundle 'pangloss/vim-javascript'          " Sintax and ident plugins
 NeoBundle 'vim-scripts/django.vim'           " Django plugin
 NeoBundle 'wavded/vim-stylus'                " Stylus plugin
+NeoBundle 'othree/html5.vim'                 " Html5 Plugin
 
 " Visual
 NeoBundle 'godlygeek/tabular'                " Align code
@@ -129,9 +147,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    return neocomplete#close_popup() . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -149,7 +167,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
 " Syntastic

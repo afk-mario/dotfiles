@@ -11,10 +11,11 @@ Xft.rgba: rgb
 !-------------------------------------------------------------------------------
 !!! URXVT SETTINGS !!!
 !-------------------------------------------------------------------------------
-urxvt*font: xft:Terminus:pixelsize=12,xft:DejaVu Sans Mono for Powerline-7.3:pixelsize=12
-urxvt*depth: 33
+urxvt*font: xft:terminus:pixelsize=12,xft:DejaVu Sans Mono for Powerline-7.3:pixelsize=12
+Urxvt*depth: 33
+URxvt*cursorBlink: true
 URxvt*geometry: 80x25
-URxvt*internalBorder: 8
+URxvt*internalBorder: 16
 URxvt*borderLess: false
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
@@ -22,42 +23,51 @@ URxvt*cursorUnderline: true
 URxvt*scrollColor: #917154
 URxvt.underlineURLs: true
 
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.iso14755: False
-URxvt.perl-ext-common: default,clipboard
- 
+
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.colorUL: #FFFFFF
+
 !-------------------------------------------------------------------------------
 !!! THEME !!!
 !-------------------------------------------------------------------------------
 
-*cursorColor: #917154
-!*colorIT: #E3AB8D
-!*colorBD: #F0E5DF
-!*colorUL: #cd546c
-*VT100.colorBDMode: false
-*VT100.colorBD: blue
-*VT100.colorULMode: true
-*VT100.colorUL: blue
-*VT100.veryBoldColors: 6
+! special
+*.foreground:   #778899
+*.background: #2B2B29
+*.cursorColor:  #558888
 
-!colors:
-*foreground: #C3AE93
-*background: #2B2B29
-*color0: #363636
-*color8: #424242
-*color1: #C37561
-*color9: #D19485
-*color2: #A0A57E
-*color10: #B6B99D
-*color3: #D1A375
-*color11: #DEBC9C
-!*color4: #7985A3
-*color4: #C3AE93
-!*color12: #98A1B9
-*color12: #C37561
-*color5: #AB716D
-*color13: #BE918E
-*color6: #98B9B1
-*color14: #CBE6CB
-*color7: #D0D0D0
-*color15: #E6E6E6
+! black
+*.color0:       #112233
+*.color8:       #445566
+
+! red
+*.color1:       #aa4444
+*.color9:       #dd7777
+
+! green
+*.color2:       #88aa55
+*.color10:      #bbdd88
+
+! yellow
+*.color3:       #cc9933
+*.color11:      #ffdd77
+
+! blue
+*.color4:       #C3AE93
+*.color12:      #C37561
+
+! magenta
+*.color5:       #886688
+*.color13:      #bb99bb
+
+! cyan
+*.color6:       #558888
+*.color14:      #88bbbb
+
+! white
+*.color7:       #aabbcc
+*.color15:      #ddeeff
