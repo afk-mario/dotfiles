@@ -1,38 +1,27 @@
 #!/bin/sh
-setxkbmap -layout latam
 numlockx on
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/misc
 xset +fp $HOME/.fonts
 xset fp rehash
+wmname LG3D &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 'work' 'chrome' 'editor' 'firefox' 'irc' 6 7 8 9 10
 
 export PANEL_FIFO="/tmp/panel-fifo"
 export PATH=$PATH:~/.config/bspwm/panel/
 
-# Visual options
-bspc config split_ratio         0.50
-bspc config border_width        1
-bspc config window_gap          4
-bspc config borderless_monocle  true
-bspc config gapless_monocle     true
-bspc config focus_follows_pointer true
-bspc config auto_alternate true
-bspc config auto_cancel true
-
-
 ## SETTINGS {{{
 bspc config border_width                    1
-bspc config window_gap                      10
-bspc config top_padding                     14
-bspc config left_padding                    -6
-bspc config right_padding                   -6
-bspc config bottom_padding                  -6
-bspc config focused_frame_opacity           0.05
-bspc config normal_frame_opacity            0.0
+bspc config window_gap                      5
+bspc config top_padding                     20
+bspc config left_padding                    2
+bspc config right_padding                   2
+bspc config bottom_padding                  2
+bspc config focused_frame_opacity           0.5
+bspc config normal_frame_opacity            0.2
 
-bspc config growth_factor                   0.03
+bspc config growth_factor                   0.1
 bspc config split_ratio                     0.50
 bspc config borderless_monocle              false
 bspc config gapless_monocle                 false
@@ -46,33 +35,23 @@ bspc config ignore_ewmh_focus               true
 
 
 ## COLORS {{{
-bspc config focused_border_color            "#bb9584"
-bspc config normal_border_color             "#645240"
-bspc config focused_sticky_border_color     "#beb55b"
-bspc config normal_sticky_border_color      "#646240"
-bspc config focused_locked_border_color     "#cb6077"
-bspc config normal_locked_border_color      "#646240"
-bspc config focused_private_border_color    "#a89bb9"
-bspc config normal_private_border_color     "#646240"
-bspc config urgent_border_color             "#e9e1dd"
-bspc config presel_border_color             "#fdf6e3"
+bspc config focused_border_color            "#03a9f4"
+bspc config normal_border_color             "#81d4fa"
+
+bspc config focused_sticky_border_color     "#8bc34a"
+bspc config normal_sticky_border_color      "#ceecab"
+
+bspc config focused_locked_border_color     "#ffc107"
+bspc config normal_locked_border_color      "#ffa000"
+
+bspc config focused_private_border_color    "#cfd8dc"
+bspc config normal_private_border_color     "#eceff1"
+
+bspc config urgent_border_color             "#ff9800"
+bspc config presel_border_color             "#ffa74d"
 ## }}}
 
-
-bspc config normal_frame_opacity 0.0
-bspc config focused_frame_opacity 0.1
-
-
 # Rules
-bspc rule -a Skype pseudo_tiled=on
-bspc rule -a Spotify pseudo_tiled=on
-#bspc rule -a "Thunar" pseudo_tiled=on
-bspc rule -a Skype pseudo_tiled=on
-bspc rule -a File-roller pseudo_tiled=on
-bspc rule -a Transmission-gtk pseudo_tiled=on
-bspc rule -a Conky sticky=on manage=off lower=on
-bspc rule -a astime sticky=on
-bspc rule -a feh floating=on manage=off
 
-
+#Background
 exec sh ~/.fehbg & ~/.config/bspwm/panel/panel &> /tmp/panel.log
