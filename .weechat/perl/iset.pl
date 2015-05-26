@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2008-2013 Sebastien Helleu <flashcode@flashtux.org>
-# Copyright (C) 2010-2012 Nils Görs <weechatter@arcor.de>
+# Copyright (C) 2008-2014 Sebastien Helleu <flashcode@flashtux.org>
+# Copyright (C) 2010-2014 Nils Görs <weechatter@arcor.de>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,6 +19,10 @@
 #
 # History:
 #
+# 2014-09-30, arza <arza@arza.us>:
+#     version 3.6: fix current line counter when options aren't found
+# 2014-06-03, nils_2 <weechatter@arcor.de>:
+#     version 3.5: add new option "use_mute"
 # 2014-01-30, stfn <stfnmd@gmail.com>:
 #     version 3.4: add new options "color_value_diff" and "color_value_diff_selected"
 # 2014-01-16, luz <ne.tetewi@gmail.com>:
@@ -113,7 +117,7 @@
 use strict;
 
 my $PRGNAME = "iset";
-my $VERSION = "3.4";
+my $VERSION = "3.6";
 my $DESCR   = "Interactive Set for configuration options";
 my $AUTHOR  = "Sebastien Helleu <flashcode\@flashtux.org>";
 my $LICENSE = "GPL3";
@@ -153,7 +157,17 @@ sub iset_title
     if ($iset_buffer ne "")
     {
         my $current_line_counter = "";
-        $current_line_counter = ($current_line + 1) . "/" if (weechat::config_boolean($options_iset{"show_current_line"}) == 1);
+        if (weechat::config_boolean($options_iset{"show_current_line"}) == 1)
+        {
+            if (@options_names eq 0)
+            {
+                $current_line_counter = "0/";
+            }
+            else
+            {
+                $current_line_counter = ($current_line + 1) . "/";
+            }
+        }
         my $show_filter = "";
         if ($search_mode eq 0)
         {
@@ -968,10 +982,14 @@ sub iset_cmd_cb
             {
                 $quote = "\"" if ($options_types[$current_line] eq "string");
             }
-            weechat::buffer_set($iset_buffer, "input", "/set ".$options_names[$current_line]." ".$quote.$value.$quote);
+            my $set_command = "/set";
+            $set_command = "/mute " . $set_command if (weechat::config_boolean($options_iset{"use_mute"}) == 1);
+
+            weechat::buffer_set($iset_buffer, "input", $set_command." ".$options_names[$current_line]." ".$quote.$value.$quote);
             weechat::command($iset_buffer, "/input move_beginning_of_line");
             weechat::command($iset_buffer, "/input move_next_word");
             weechat::command($iset_buffer, "/input move_next_word");
+            weechat::command($iset_buffer, "/input move_next_word") if (weechat::config_boolean($options_iset{"use_mute"}) == 1);
             weechat::command($iset_buffer, "/input move_next_char");
             weechat::command($iset_buffer, "/input move_next_char") if ($quote ne "");
         }
@@ -1327,6 +1345,10 @@ sub iset_config_init
         $iset_config_file, $section_look,
         "show_current_line", "boolean", "show current line in title bar.", "", 0, 0,
         "on", "on", 0, "", "", "", "", "", "");
+    $options_iset{"use_mute"} = weechat::config_new_option(
+        $iset_config_file, $section_look,
+        "use_mute", "boolean", "/mute command will be used in input bar", "", 0, 0,
+        "off", "off", 0, "", "", "", "", "", "");
 }
 
 sub iset_config_reload_cb
