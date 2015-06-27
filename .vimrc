@@ -21,8 +21,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
-call neobundle#end()
-
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
@@ -59,6 +57,7 @@ NeoBundle 'vim-scripts/django.vim'           " Django plugin
 NeoBundle 'wavded/vim-stylus'                " Stylus plugin
 NeoBundle 'othree/html5.vim'                 " Html5 Plugin
 NeoBundle 'tpope/vim-markdown'               " Markdown
+NeoBundle 'davidhalter/jedi-vim'             " Python autocomplete
 
 " Visual
 NeoBundle 'godlygeek/tabular'                " Align code
@@ -82,6 +81,7 @@ NeoBundle 'Shougo/vimproc', {
             \ }
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+call neobundle#end()
 
 " Required:
 filetype plugin indent on
@@ -234,6 +234,28 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+
+let g:neocomplcache_force_overwrite_completefunc = 1
+if !exists('g:neocomplcache_omni_functions')
+  let g:neocomplcache_omni_functions = {}
+endif
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_overwrite_completefunc = 1
+let g:neocomplcache_force_omni_patterns['python'] =
+\ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+
+set ofu=syntaxcomplete#Complete
+au FileType python set omnifunc=pythoncomplete#Complete
+au FileType python let b:did_ftplugin = 1
+
+" Vim-jedi settings
+let g:jedi#popup_on_dot = 0
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
