@@ -42,13 +42,14 @@ NeoBundle 'vim-scripts/loremipsum'                       " Lorem ipsum text
 NeoBundle 'tpope/vim-fugitive'                           " Git wrapper
 NeoBundle 'airblade/vim-gitgutter'                       " Git gutter simbols
 
-                                                         " Web
+" Web
 NeoBundle 'mattn/emmet-vim',                             " Emmet
 
 " Languages and Frameworks
 NeoBundle 'elzr/vim-json',                               " JSON plugin
 NeoBundle 'pangloss/vim-javascript'                      " Sintax and ident plugins
 NeoBundle 'vim-scripts/django.vim'                       " Django plugin
+NeoBundle 'jmcantrell/vim-virtualenv'                    " Python virtualenv
 NeoBundle 'wavded/vim-stylus'                            " Stylus plugin
 NeoBundle 'othree/html5.vim'                             " Html5 Plugin
 NeoBundle 'tpope/vim-markdown'                           " Markdown
@@ -96,14 +97,6 @@ if exists("&undodir")
     set undoreload=500
 endif
 
-" Identation
-" ----------------------------------------------------------------------
-"set tabstop =4
-"set shiftwidth =4
-"set softtabstop =4
-"set smarttab
-"set expandtab
-
 " Colors
 " ----------------------------------------------------------------------
 set background=dark
@@ -120,6 +113,8 @@ let g:netrw_liststyle = 3
 let g:netrw_preview   = 1
 let g:netrw_winsize   = 20
 
+" Splits
+" ----------------------------------------------------------------------
 set splitbelow
 set splitright
 
@@ -148,7 +143,6 @@ nnoremap <F5> :GundoToggle<CR>
 
 " Unite
 " ----------------------------------------------------------------------
-
 let g:unite_source_history_yank_enable = 1
 if executable('ag')
     let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
@@ -194,13 +188,12 @@ iabbrev </ </<C-X><C-O>
 
 " Xclip
 " ----------------------------------------------------------------------
-map <F7> :w !xclip<CR><CR>
+map  <F7> :w !xclip<CR><CR>
 vmap <F7> "*y
-map <S-F7> :r!xclip -o<CR>"
+map  <S-F7> :r!xclip -o<CR>"
 
 " Vim-airline
 " ----------------------------------------------------------------------
-""Fixes
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 set encoding=utf-8 " Necessary to show Unicode glyphs
