@@ -278,6 +278,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
 " C#
+
+" Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
