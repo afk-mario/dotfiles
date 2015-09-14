@@ -2,12 +2,12 @@
 if !1 | finish | endif
 
 if has('vim_starting')
-    if &compatible
-        set nocompatible               " Be iMproved
-    endif
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
 
-    " Required:
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
@@ -26,17 +26,21 @@ NeoBundle 'Shougo/neosnippet-snippets'                   " Snippets
 NeoBundle 'Shougo/unite.vim'                             " Fuzzy file finder
 NeoBundle 'Shougo/neocomplete.vim'                       " AutoComplete
 NeoBundle 'Shougo/neomru.vim'                            " MRU sources
+NeoBundle 'Shougo/unite-outline'                         " Tags Unite source
 NeoBundle 'tpope/vim-sensible'                           " Default configs
 NeoBundle 'tpope/vim-sleuth'                             " Tab identation settings
 NeoBundle 'tpope/vim-vinegar'                            " Netrw helper
 NeoBundle 'tpope/vim-eunuch'                             " Unix helpers
-NeoBundle 'tpope/vim-unimpaired'                         " BubbleText
 NeoBundle 'tpope/vim-commentary'                         " Toggle comments
+NeoBundle 'tpope/vim-surround'                           " Sorroundings
+NeoBundle 'tpope/vim-obsession'                          " Session manager 
 NeoBundle 'scrooloose/syntastic',                        " Check syntax
 NeoBundle 'Raimondi/delimitMate',                        " Auto close quotes parentesis etc
+NeoBundle 'rking/ag.vim'                                 " Silver Searcher for vim
 NeoBundle 'sjl/gundo.vim',                               " Undo tree
-NeoBundle 'terryma/vim-multiple-cursors'                 " SublimeText multiple cursors
 NeoBundle 'vim-scripts/loremipsum'                       " Lorem ipsum text
+NeoBundle 'tsukkee/unite-tag'                            " Unite Taf source
+NeoBundle 'arlefreak/vim-fastunite'                      " Settings for Unite
 
 " Git
 NeoBundle 'tpope/vim-fugitive'                           " Git wrapper
@@ -55,7 +59,7 @@ NeoBundle 'othree/html5.vim'                             " Html5 Plugin
 NeoBundle 'tpope/vim-markdown'                           " Markdown
 NeoBundle 'davidhalter/jedi-vim'                         " Python autocomplete
 NeoBundle 'OmniSharp/omnisharp-vim'                      " C# AutoComplete# AutoComplete# AutoComplete
-NeoBundle 'OrangeT/vim-csharp'                           " Better C# syntax highlight
+" NeoBundle 'OrangeT/vim-csharp'                           " Better C# syntax highlight
 NeoBundle 'tpope/vim-dispatch'                           " Asynchronous build and test dispatcher
 
 " Visual
@@ -63,60 +67,64 @@ NeoBundle 'godlygeek/tabular'                            " Align code
 NeoBundle 'nathanaelkane/vim-indent-guides',             " Ident visual guide
 NeoBundle 'gregsexton/MatchTag',                         " Highlite Matching tag
 NeoBundle 'bling/vim-airline'                            " Cool airline
+NeoBundle 'edkolev/tmuxline.vim'                         " Tmux airline
+NeoBundle 'bling/vim-bufferline'                         " Buffer airline
 
 " ColorSchemes
-NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'NLKNguyen/papercolor-theme'
 
 NeoBundle 'Shougo/vimproc', {
-            \ 'build' : {
-            \     'windows' : 'make -f make_mingw32.mak',
-            \     'cygwin' : 'make -f make_cygwin.mak',
-            \     'mac' : 'make -f make_mac.mak',
-            \     'unix' : 'make -f make_unix.mak',
-            \    },
-            \ }
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 call neobundle#end()
 
 NeoBundleCheck
 
 " General
 " ---------------------------------------------------------------------
-let mapleader=","
+
+" Let
+let mapleader="\<Space>"
+let loaded_matchparen = 1
+
+" Set
 set number
 set hlsearch
 set cursorline
+set splitbelow
+set splitright
 
+" Undo
+" ----------------------------------------------------------------------
 if exists("&undodir")
-    set undofile          "Persistent undo! Pure money.
-    let &undodir=&directory
-    set undolevels=500
-    set undoreload=500
+  set undofile          "Persistent undo! Pure money.
+  let &undodir=&directory
+  set undolevels=500
+  set undoreload=500
 endif
 
 " Colors
 " ----------------------------------------------------------------------
-set background=dark
-"colorscheme Tomorrow-Night-Eighties
-"let g:solarized_termcolors = 16
-"let g:solarized_termtrans=1
-"colorscheme solarized
 let g:hybrid_use_Xresources = 1
 colorscheme hybrid
+
+function s:SetCursorLine()
+  set cursorline
+  hi cursorline cterm=none,underline ctermbg=none ctermfg=none
+endfunction
+autocmd VimEnter * call s:SetCursorLine()
 
 " Netrw
 " ----------------------------------------------------------------------
 let g:netrw_liststyle = 3
 let g:netrw_preview   = 1
 let g:netrw_winsize   = 20
-
-" Splits
-" ----------------------------------------------------------------------
-set splitbelow
-set splitright
 
 " Buffer
 " ----------------------------------------------------------------------
@@ -137,35 +145,44 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
-"Gundo
+" Gundo
 " ----------------------------------------------------------------------
 nnoremap <F5> :GundoToggle<CR>
 
+" TagBar
+" ----------------------------------------------------------------------
+nnoremap <leader>= :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
 " Unite
 " ----------------------------------------------------------------------
+call unite#custom#profile('default', 'context', extend({
+      \ 'direction' : 'topleft',
+      \ 'prompt' : '▸ '
+      \ }, {}))
+
 let g:unite_source_history_yank_enable = 1
+
+call unite#custom#source('file_rec/async', 'ignore_pattern', '\(png\|gif\|jpeg\|jpg\|meta\|csproj\|booproj\|unityproj\|anim\|controller\|prefab\|unity\|ogg\|mp3\|node_modules\git\)$')
+
 if executable('ag')
-    let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
 endif
 
-call unite#custom#source('file_rec/async', 'ignore_pattern', '\(png\|gif\|jpeg\|jpg\|meta\|csproj\|booproj\|unityproj\|anim\|controller\|prefab\|unity\|ogg\|mp3\)$')
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>p :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
-nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>s :<C-u>Unite -no-split -buffer-name=line    -start-insert line<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+nnoremap <silent> [unite]l
+      \ :<C-u>Unite 
+      \ -buffer-name=Search
+      \ -no-split
+      \ -start-insert
+      \ line<CR>
 
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-endfunction
+
+nnoremap <silent> [unite]y
+      \ :<C-u>Unite 
+      \ -buffer-name=Yank
+      \ -no-split
+      \ -start-insert
+      \ history/yank<CR>
 
 " Syntastic
 " ----------------------------------------------------------------------
@@ -217,14 +234,14 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+      \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
@@ -236,9 +253,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-    return neocomplete#close_popup() . "\<CR>"
-    " For no inserting <CR> key.
-    "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 
 " <TAB>: completion.
@@ -248,7 +265,6 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
-
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -260,7 +276,7 @@ autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
 " C#
 if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
+  let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
 let g:neocomplete#sources#omni#input_patterns.cs = '.*[^=\);]'
@@ -282,7 +298,7 @@ if !exists('g:neocomplcache_force_omni_patterns')
 endif
 let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_force_omni_patterns['python'] =
-\ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+      \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 set ofu=syntaxcomplete#Complete
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -299,15 +315,15 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-" SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
+      \ "\<Plug>(neosnippet_expand_or_jump)"
+      \: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+      \ "\<Plug>(neosnippet_expand_or_jump)"
+      \: "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
