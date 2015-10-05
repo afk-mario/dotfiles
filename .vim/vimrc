@@ -3,7 +3,7 @@ if !1 | finish | endif
 
 if has('vim_starting')
   if &compatible
-    set nocompatible               " Be iMproved
+	set nocompatible               " Be iMproved
   endif
 
   " Required:
@@ -34,6 +34,9 @@ NeoBundle 'tpope/vim-eunuch'                             " Unix helpers
 NeoBundle 'tpope/vim-commentary'                         " Toggle comments
 NeoBundle 'tpope/vim-surround'                           " Sorroundings
 NeoBundle 'tpope/vim-obsession'                          " Session manager 
+NeoBundle 'tpope/vim-repeat'                             " More . command
+NeoBundle 'kana/vim-textobj-user'			 " Custom text object
+NeoBundle 'kana/vim-textobj-line'			 " Line text object
 NeoBundle 'scrooloose/syntastic',                        " Check syntax
 NeoBundle 'Raimondi/delimitMate',                        " Auto close quotes parentesis etc
 NeoBundle 'rking/ag.vim'                                 " Silver Searcher for vim
@@ -75,13 +78,13 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'w0ng/vim-hybrid'
 
 NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+	  \ 'build' : {
+	  \     'windows' : 'make -f make_mingw32.mak',
+	  \     'cygwin' : 'make -f make_cygwin.mak',
+	  \     'mac' : 'make -f make_mac.mak',
+	  \     'unix' : 'make -f make_unix.mak',
+	  \    },
+	  \ }
 call neobundle#end()
 
 NeoBundleCheck
@@ -94,11 +97,13 @@ let mapleader="\<Space>"
 let loaded_matchparen = 1
 
 " Set
+set relativenumber
 set number
 set hlsearch
 set cursorline
 set splitbelow
 set splitright
+set ttyfast
 
 " Undo
 " ----------------------------------------------------------------------
@@ -111,14 +116,23 @@ endif
 
 " Colors
 " ----------------------------------------------------------------------
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+nmap <leader>i mzgg=G`z<CR>
+
+" Colors
+" ----------------------------------------------------------------------
 let g:hybrid_use_Xresources = 1
 colorscheme hybrid
+set background=dark
 
-function s:SetCursorLine()
-  set cursorline
-  hi cursorline cterm=none,underline ctermbg=none ctermfg=none
-endfunction
-autocmd VimEnter * call s:SetCursorLine()
+" function s:SetCursorLine()
+"   set cursorline
+"   hi cursorline cterm=none,underline ctermbg=none ctermfg=none
+" endfunction
+" autocmd VimEnter * call s:SetCursorLine()
 
 " Netrw
 " ----------------------------------------------------------------------
@@ -154,35 +168,32 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <leader>= :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
-" Unite
+" Tabular
 " ----------------------------------------------------------------------
-call unite#custom#profile('default', 'context', extend({
-      \ 'direction' : 'topleft',
-      \ 'prompt' : '▸ '
-      \ }, {}))
 
-let g:unite_source_history_yank_enable = 1
+vmap <Leader>a=  :Tabularize /=<CR>
+nmap <Leader>a1= :Tabularize 1=<CR>
+vmap <Leader>a1= :Tabularize 1=<CR>
+nmap <Leader>a:  :Tabularize /:\zs<CR>
+vmap <Leader>a:  :Tabularize /:\zs<CR>
 
-call unite#custom#source('file_rec/async', 'ignore_pattern', '\(png\|gif\|jpeg\|jpg\|meta\|csproj\|booproj\|unityproj\|anim\|controller\|prefab\|unity\|ogg\|mp3\|node_modules\git\)$')
-
-if executable('ag')
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
-endif
+" Unite
+" ---------------------------------------------------------------------
 
 nnoremap <silent> [unite]l
-      \ :<C-u>Unite 
-      \ -buffer-name=Search
-      \ -no-split
-      \ -start-insert
-      \ line<CR>
+	  \ :<C-u>Unite 
+	  \ -buffer-name=Search
+	  \ -no-split
+	  \ -start-insert
+	  \ line<CR>
 
 
 nnoremap <silent> [unite]y
-      \ :<C-u>Unite 
-      \ -buffer-name=Yank
-      \ -no-split
-      \ -start-insert
-      \ history/yank<CR>
+	  \ :<C-u>Unite 
+	  \ -buffer-name=Yank
+	  \ -no-split
+	  \ -start-insert
+	  \ history/yank<CR>
 
 " Syntastic
 " ----------------------------------------------------------------------
@@ -215,6 +226,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 set encoding=utf-8 " Necessary to show Unicode glyphs
 let g:Powerline_symbols = 'fancy'"
+set guifont=Sauce\ Code\ Powerline:h11
 let g:airline_powerline_fonts = 1
 set laststatus=2
 set noshowmode
@@ -234,10 +246,10 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-      \ 'default' : '',
-      \ 'vimshell' : $HOME.'/.vimshell_hist',
-      \ 'scheme' : $HOME.'/.gosh_completions'
-      \ }
+	  \ 'default' : '',
+	  \ 'vimshell' : $HOME.'/.vimshell_hist',
+	  \ 'scheme' : $HOME.'/.gosh_completions'
+	  \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -298,7 +310,7 @@ if !exists('g:neocomplcache_force_omni_patterns')
 endif
 let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_force_omni_patterns['python'] =
-      \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+	  \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 set ofu=syntaxcomplete#Complete
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -316,11 +328,11 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>" : "\<TAB>"
+	  \ "\<Plug>(neosnippet_expand_or_jump)"
+	  \: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
+	  \ "\<Plug>(neosnippet_expand_or_jump)"
+	  \: "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
