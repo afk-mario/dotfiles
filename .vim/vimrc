@@ -55,6 +55,8 @@ NeoBundle 'mattn/emmet-vim',                             " Emmet
 " Languages and Frameworks
 NeoBundle 'elzr/vim-json',                               " JSON plugin
 NeoBundle 'pangloss/vim-javascript'                      " Sintax and ident plugins
+NeoBundle 'maksimr/vim-jsbeautify'			 " JSBeutifier
+NeoBundle 'einars/js-beautify' 				 " JSBeutifier
 NeoBundle 'vim-scripts/django.vim'                       " Django plugin
 NeoBundle 'jmcantrell/vim-virtualenv'                    " Python virtualenv
 NeoBundle 'wavded/vim-stylus'                            " Stylus plugin
@@ -195,6 +197,19 @@ nnoremap <silent> [unite]y
 	  \ -start-insert
 	  \ history/yank<CR>
 
+set wildignore+=vendor/bundle/**
+set wildignore+=node_modules/**
+call unite#custom#source('file_rec/async,file_rec/git', 'ignore_globs', split(&wildignore, ','))
+
+" JSBeutifier
+" _____________________________________________________________________
+
+autocmd FileType javascript noremap <buffer><leader>jb :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer><leader>jb :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer><leader>jb :call CSSBeautify()<cr>
+
 " Syntastic
 " ----------------------------------------------------------------------
 set statusline+=%#warningmsg#
@@ -205,6 +220,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['jshint']
+
+let g:syntastic_mode_map = { 'mode': 'active',
+    \ 'active_filetypes': [],
+    \ 'passive_filetypes': ['html'] }
 
 " Emmet
 " ----------------------------------------------------------------------
