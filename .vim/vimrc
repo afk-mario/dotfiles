@@ -199,6 +199,7 @@ nnoremap <silent> [unite]y
 
 set wildignore+=vendor/bundle/**
 set wildignore+=node_modules/**
+set wildignore+=bower_components/**
 call unite#custom#source('file_rec/async,file_rec/git', 'ignore_globs', split(&wildignore, ','))
 
 " JSBeutifier
