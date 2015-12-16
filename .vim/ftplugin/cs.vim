@@ -65,3 +65,27 @@ nnoremap <leader>sp :OmniSharpStopServer<cr>
 nnoremap <leader>th :OmniSharpHighlightTypes<cr>
 "Don't ask to save when changing buffers (i.e. when jumping to a type definition)
 set hidden
+
+let g:OmniSharp_selector_ui = 'unite'  
+
+" Define dictionary.
+let g:deoplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+
+" Define keyword.
+if !exists('g:deoplete#keyword_patterns')
+    let g:deoplete#keyword_patterns = {}
+endif
+let g:deoplete#keyword_patterns['default'] = '\h\w*'
+
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+" Enable heavy omni completion.
+if !exists('g:deoplete#sources#omni#input_patterns')
+  let g:deoplete#sources#omni#input_patterns = {}
+endif
+
+let g:deoplete#sources#omni#input_patterns.cs = '.*[^=\);]'
