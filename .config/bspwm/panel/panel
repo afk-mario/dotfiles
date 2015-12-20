@@ -110,7 +110,7 @@ nowplaying_widget() {
 
 widgets_format() {
   local arlefreak desktops title volume mem cpu network clock date nowPlaying
-  local fmt line
+  local fmt line fmtT
   local separator="%{F#$WHITE} | %{B-}"
 
   while read -r line; do
@@ -135,9 +135,12 @@ widgets_format() {
     fmt+="⮦ $cpu%% $separator"
     fmt+="⮷ $network $separator"
     fmt+="⮖ $clock - $date $separator"
-    fmt+="⮕ $nowPlaying   "
+    fmt+="⮕ $nowPlaying"
+    fmtT=$fmt
+    fmtT+="%{S+}"
+    fmtT+=$fmt
 
-    echo "$fmt"
+    echo "$fmtT"
   done
 }
 
