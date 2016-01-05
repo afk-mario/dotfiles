@@ -47,6 +47,7 @@ NeoBundle 'vim-scripts/loremipsum'                       " Lorem ipsum text
 NeoBundle 'tsukkee/unite-tag'                            " Unite Taf source
 NeoBundle 'arlefreak/vim-fastunite'                      " Settings for Unite
 NeoBundle 'Chiel92/vim-autoformat'			 " AutoFormat code
+NeoBundle 'mhinz/vim-startify'				 " Start Screen
 
 " Git
 NeoBundle 'tpope/vim-fugitive'                           " Git wrapper
@@ -112,6 +113,7 @@ set relativenumber
 set number
 set hlsearch
 set cursorline
+set clipboard=unnamed
 set ttyfast
 
 if has("gui_running")
@@ -150,9 +152,9 @@ nmap <leader>i mzgg=G`z<CR>
 
 " Colors
 " ----------------------------------------------------------------------
-let g:hybrid_use_Xresources=1
-colorscheme gruvbox
+" let g:hybrid_use_Xresources=1
 set background=dark
+colorscheme hybrid
 
 " function s:SetCursorLine()
 "   set cursorline
@@ -225,13 +227,14 @@ source $HOME/.vim/airline.vim
 " ----------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_smart_case = 1
 
 if exists(':NeoComplete')
   source $HOME/.vim/neocomplete.vim
 endif
 
 " NeoSnippet 
-" ------------------------------------------------------------------------
+" ----------------------------------------------------------------------
 source $HOME/.vim/neosnippet.vim
 
 " Rust
