@@ -59,7 +59,7 @@ NeoBundle 'mattn/emmet-vim',                             " Emmet
 " Languages and Frameworks
 NeoBundle 'elzr/vim-json',                               " JSON plugin
 NeoBundle 'pangloss/vim-javascript'                      " Sintax and ident plugins
-NeoBundle 'mxw/vim-jsx'		 " JSX support
+NeoBundle 'mxw/vim-jsx'					 " JSX support
 NeoBundle 'maksimr/vim-jsbeautify'			 " JSBeutifier
 NeoBundle 'einars/js-beautify' 				 " JSBeutifier
 NeoBundle 'vim-scripts/django.vim'                       " Django plugin
@@ -113,8 +113,8 @@ set relativenumber
 set number
 set hlsearch
 set cursorline
-set clipboard=unnamed
 set ttyfast
+set textwidth=120
 
 if has("gui_running")
   set guifont=Sauce\ Code\ Powerline\:h11
@@ -206,6 +206,8 @@ source $HOME/.vim/jsbeautify.vim
 " Syntastic
 " ----------------------------------------------------------------------
 source $HOME/.vim/syntastic.vim
+let b:syntastic_cpp_include_dirs = ['-I/Users/arlefreak/Library/cocos2d-x/']
+let g:syntastic_javascript_checkers = ['jsxhint']
 
 " NeoMake
 " ----------------------------------------------------------------------
@@ -222,12 +224,13 @@ source $HOME/.vim/xclip.vim
 " Vim-airline
 " ----------------------------------------------------------------------
 source $HOME/.vim/airline.vim
+let g:tmuxline_theme = 'iceberg'
 
 " NeoComplete
 " ----------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
-let g:deoplete#enable_smart_case = 1
+au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
 
 if exists(':NeoComplete')
   source $HOME/.vim/neocomplete.vim
