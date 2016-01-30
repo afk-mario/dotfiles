@@ -1,248 +1,378 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
+" Notes {
+    " Personal vimrc of Mario Carballo Zama
+    " Arlefreak
+    " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    " AAAAAAAAAAA~                     AAAAAA
+    " AAAAAAAAAAAAA          .AAAAA.   AAAAAA
+    " AAAAAA AAAAAAAA       .AAAAAAA.  AAAAAA
+    " AAAAAA  DAAAAAAA      .AAAAAAA.  AAAAAA
+    " AAAAAA    AAAAAAAA     AAAAAAA   AAAAAA
+    " AAAAAA     IAAAAAAAO    AAAAA    AAAAAA
+    " AAAAAA       DAAAAAAA            AAAAAA
+    " AAAAAA         AAAAAAAD          AAAAAA
+    " AAAAAA          AAAAAAAA         AAAAAA      arlefreak.com
+    " AAAAAAAAAAAAAAAAAAAAAAAAAA       AAAAAA
+    " AAAAAAAAAAAAAAAAAAAAAAAAAAAD     AAAAAA
+    " AAAAAAAAAAAAAAAAAAAAAAAAAAAAA    AAAAAA
+    " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  AAAAAA
+    " AAAAAA                  AAAAAAAA AAAAAA
+    " AAAAAA                    AAAAAAAAAAAAA
+    " AAAAAA                      AAAAAAAAAAA
+    " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+" }
 
-if has('vim_starting')
-  if &compatible
-	set nocompatible               " Be iMproved
-  endif
+" Environment {
+    " Identify platform {
+        silent function! OSX()
+            return has('macunix')
+        endfunction
+        silent function! LINUX()
+            return has('unix') && !has('macunix') && !has('win32unix')
+        endfunction
+        silent function! WINDOWS()
+            return  (has('win32') || has('win64'))
+        endfunction
+    " }
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+    " Basics {
+        set nocompatible        " Must be first line
+        if !WINDOWS()
+            set shell=/bin/sh
+        endif
+    " }
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+    " Windows Compatible {
+        " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
+        " across (heterogeneous) systems easier.
+        if WINDOWS()
+          set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+        endif
+    " }
+    
+    " Arrow Key Fix {
+        " https://github.com/spf13/spf13-vim/issues/780
+        if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
+            inoremap <silent> <C-[>OC <RIGHT>
+        endif
+    " }
+" }
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Bundles {
+    "NeoBundle Config
+    if !1 | finish | endif
 
-" Bundles
-" --------------------------------------------------------------------------
+    if has('vim_starting')
 
-" Utilities
-NeoBundle 'Shougo/neosnippet.vim'                        " Snippets support
-NeoBundle 'Shougo/neosnippet-snippets'                   " Snippets
-NeoBundle 'Shougo/unite.vim'                             " Fuzzy file finder
-" NeoBundle 'Shougo/neocomplete.vim'                       " AutoComplete
-NeoBundle 'Shougo/deoplete.nvim'			 " Neovim Autocomplete
-NeoBundle 'Shougo/neomru.vim'                            " MRU sources
-NeoBundle 'Shougo/unite-outline'                         " Tags Unite source
-NeoBundle 'tpope/vim-sensible'                           " Default configs
-NeoBundle 'tpope/vim-sleuth'                             " Tab identation settings
-NeoBundle 'tpope/vim-vinegar'                            " Netrw helper
-NeoBundle 'tpope/vim-eunuch'                             " Unix helpers
-NeoBundle 'tpope/vim-commentary'                         " Toggle comments
-NeoBundle 'tpope/vim-surround'                           " Sorroundings
-NeoBundle 'tpope/vim-obsession'                          " Session manager 
-NeoBundle 'tpope/vim-repeat'                             " More . command
-NeoBundle 'kana/vim-textobj-user'			 " Custom text object
-NeoBundle 'kana/vim-textobj-line'			 " Line text object
-NeoBundle 'scrooloose/syntastic',                        " Check syntax
-NeoBundle 'Raimondi/delimitMate',                        " Auto close quotes parentesis etc
-" NeoBundle 'rking/ag.vim'                                 " Silver Searcher for vim
-NeoBundle 'mhinz/vim-grepper'				 " Multiple grep support
-NeoBundle 'sjl/gundo.vim',                               " Undo tree
-NeoBundle 'vim-scripts/loremipsum'                       " Lorem ipsum text
-NeoBundle 'tsukkee/unite-tag'                            " Unite Taf source
-NeoBundle 'arlefreak/vim-fastunite'                      " Settings for Unite
-NeoBundle 'Chiel92/vim-autoformat'			 " AutoFormat code
-NeoBundle 'mhinz/vim-startify'				 " Start Screen
+    " Required:
+        set runtimepath+=~/.vim/bundle/neobundle.vim/
+    endif
 
-" Git
-NeoBundle 'tpope/vim-fugitive'                           " Git wrapper
-NeoBundle 'airblade/vim-gitgutter'                       " Git gutter simbols
+    " Required:
+    call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Web
-NeoBundle 'mattn/emmet-vim',                             " Emmet
+    " Let NeoBundle manage NeoBundle
+    " Required:
+    NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Languages and Frameworks
-NeoBundle 'elzr/vim-json',                               " JSON plugin
-NeoBundle 'pangloss/vim-javascript'                      " Sintax and ident plugins
-NeoBundle 'mxw/vim-jsx'					 " JSX support
-NeoBundle 'maksimr/vim-jsbeautify'			 " JSBeutifier
-NeoBundle 'einars/js-beautify' 				 " JSBeutifier
-NeoBundle 'vim-scripts/django.vim'                       " Django plugin
-NeoBundle 'klen/python-mode/'				 " Python Mode
-NeoBundle 'jmcantrell/vim-virtualenv'                    " Python virtualenv
-NeoBundle 'wavded/vim-stylus'                            " Stylus plugin
-NeoBundle 'othree/html5.vim'                             " Html5 Plugin
-NeoBundle 'tpope/vim-markdown'                           " Markdown
-NeoBundle 'davidhalter/jedi-vim'                         " Python autocomplete
-NeoBundle 'OmniSharp/omnisharp-vim'                      " C# AutoComplete# AutoComplete# AutoComplete
-" NeoBundle 'OrangeT/vim-csharp'                           " Better C# syntax highlight
-NeoBundle 'rust-lang/rust.vim' 				 " Rust Language Support
-NeoBundle 'tpope/vim-dispatch'                           " Asynchronous build and test dispatcher
+    " Utilities {
+        NeoBundle 'Shougo/neosnippet.vim'                        " Snippets support
+        NeoBundle 'Shougo/neosnippet-snippets'                   " Snippets
+        NeoBundle 'Shougo/unite.vim'                             " Fuzzy file finder
+        " NeoBundle 'Shougo/neocomplete.vim'                       " AutoComplete
+        NeoBundle 'Shougo/deoplete.nvim'             " Neovim Autocomplete
+        NeoBundle 'Shougo/neomru.vim'                            " MRU sources
+        NeoBundle 'Shougo/unite-outline'                         " Tags Unite source
+        NeoBundle 'tpope/vim-sensible'                           " Default configs
+        NeoBundle 'tpope/vim-sleuth'                             " Tab identation settings
+        NeoBundle 'tpope/vim-vinegar'                            " Netrw helper
+        NeoBundle 'tpope/vim-eunuch'                             " Unix helpers
+        NeoBundle 'tpope/vim-commentary'                         " Toggle comments
+        NeoBundle 'tpope/vim-surround'                           " Sorroundings
+        NeoBundle 'tpope/vim-obsession'                          " Session manager 
+        NeoBundle 'tpope/vim-repeat'                             " More . command
+        NeoBundle 'kana/vim-textobj-user'            " Custom text object
+        NeoBundle 'kana/vim-textobj-line'            " Line text object
+        NeoBundle 'scrooloose/syntastic',                        " Check syntax
+        NeoBundle 'Raimondi/delimitMate',                        " Auto close quotes parentesis etc
+        " NeoBundle 'rking/ag.vim'                                 " Silver Searcher for vim
+        NeoBundle 'mhinz/vim-grepper'                " Multiple grep support
+        NeoBundle 'sjl/gundo.vim',                               " Undo tree
+        NeoBundle 'vim-scripts/loremipsum'                       " Lorem ipsum text
+        NeoBundle 'tsukkee/unite-tag'                            " Unite Taf source
+        NeoBundle 'arlefreak/vim-fastunite'                      " Settings for Unite
+        NeoBundle 'Chiel92/vim-autoformat'           " AutoFormat code
+        NeoBundle 'mhinz/vim-startify'               " Start Screen
+        NeoBundle 'godlygeek/tabular'                            " Align code
+        NeoBundle 'Shougo/vimproc', {
+              \ 'build' : {
+              \     'windows' : 'make -f make_mingw32.mak',
+              \     'cygwin' : 'make -f make_cygwin.mak',
+              \     'mac' : 'make -f make_mac.mak',
+              \     'unix' : 'make -f make_unix.mak',
+              \    },
+              \ }
+    " }
 
-" Visual
-NeoBundle 'godlygeek/tabular'                            " Align code
-NeoBundle 'nathanaelkane/vim-indent-guides',             " Ident visual guide
-NeoBundle 'gregsexton/MatchTag',                         " Highlite Matching tag
-NeoBundle 'bling/vim-airline'                            " Cool airline
-NeoBundle 'edkolev/tmuxline.vim'                         " Tmux airline
-NeoBundle 'bling/vim-bufferline'                         " Buffer airline
+    " Git {
+        NeoBundle 'tpope/vim-fugitive'                           " Git wrapper
+        NeoBundle 'airblade/vim-gitgutter'                       " Git gutter simbols
+    " }
 
-" ColorSchemes
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'morhetz/gruvbox'
-NeoBundle 'w0ng/vim-hybrid'
+    " Languages and Frameworks {
+        NeoBundle 'mattn/emmet-vim',                             " Emmet
+        NeoBundle 'elzr/vim-json',                               " JSON plugin
+        NeoBundle 'pangloss/vim-javascript'                      " Sintax and ident plugins
+        NeoBundle 'mxw/vim-jsx'                  " JSX support
+        NeoBundle 'maksimr/vim-jsbeautify'           " JSBeutifier
+        NeoBundle 'einars/js-beautify'               " JSBeutifier
+        NeoBundle 'vim-scripts/django.vim'                       " Django plugin
+        NeoBundle 'klen/python-mode/'                " Python Mode
+        NeoBundle 'jmcantrell/vim-virtualenv'                    " Python virtualenv
+        NeoBundle 'wavded/vim-stylus'                            " Stylus plugin
+        NeoBundle 'othree/html5.vim'                             " Html5 Plugin
+        NeoBundle 'tpope/vim-markdown'                           " Markdown
+        NeoBundle 'davidhalter/jedi-vim'                         " Python autocomplete
+        NeoBundle 'OmniSharp/omnisharp-vim'                      " C# AutoComplete# AutoComplete# AutoComplete
+        " NeoBundle 'OrangeT/vim-csharp'                           " Better C# syntax highlight
+        NeoBundle 'rust-lang/rust.vim'               " Rust Language Support
+        NeoBundle 'tpope/vim-dispatch'                           " Asynchronous build and test dispatcher
+    " }
 
-NeoBundle 'Shougo/vimproc', {
-	  \ 'build' : {
-	  \     'windows' : 'make -f make_mingw32.mak',
-	  \     'cygwin' : 'make -f make_cygwin.mak',
-	  \     'mac' : 'make -f make_mac.mak',
-	  \     'unix' : 'make -f make_unix.mak',
-	  \    },
-	  \ }
-call neobundle#end()
+    " Vim UI {
+        NeoBundle 'nathanaelkane/vim-indent-guides',             " Ident visual guide
+        NeoBundle 'gregsexton/MatchTag',                         " Highlite Matching tag
+        NeoBundle 'bling/vim-airline'                            " Cool airline
+        NeoBundle 'edkolev/tmuxline.vim'                         " Tmux airline
+        NeoBundle 'bling/vim-bufferline'                         " Buffer airline
+        NeoBundle 'altercation/vim-colors-solarized'
+        NeoBundle 'morhetz/gruvbox'
+        NeoBundle 'w0ng/vim-hybrid'
+    " ]
+    call neobundle#end()
+    NeoBundleCheck
+    " }
 
-NeoBundleCheck
+" General {
+    set background=dark
+    filetype plugin indent on   " Automatically detect file types.
+    syntax on                   " Syntax highlighting
+    set mouse=a                 " Automatically enable mouse usage
+    set mousehide               " Hide the mouse cursor while typing
+    scriptencoding utf-8
 
-" General
-" ---------------------------------------------------------------------
+    if has('clipboard')
+        if has('unnamedplus')  " When possible use + register for copy-paste
+            set clipboard=unnamed,unnamedplus
+        else         " On mac and Windows, use * register for copy-paste
+            set clipboard=unnamed
+        endif
+    endif
 
-" Let
-let mapleader="\<Space>"
-let loaded_matchparen = 1
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" let g:python_host_prog='/usr/local/bin/python'
+    "set autowrite                       " Automatically write a file when leaving a modified buffer
+    set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
+    set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
+    set virtualedit=onemore             " Allow for cursor beyond last character
+    set history=1000                    " Store a ton of history (default is 20)
+    " set spell                           " Spell checking on
+    set hidden                          " Allow buffer switching without saving
+    set iskeyword-=.                    " '.' is an end of word designator
+    set iskeyword-=#                    " '#' is an end of word designator
+    set iskeyword-=-                    " '-' is an end of word designator
 
-" Set
-set relativenumber
-set number
-set hlsearch
-set cursorline
-set ttyfast
-set textwidth=120
+    function! ResCur()
+    if line("'\"") <= line("$")
+      silent! normal! g`"
+      return 1
+    endif
+    endfunction
 
-if has("gui_running")
-  set guifont=Sauce\ Code\ Powerline\:h11
-endif
+    augroup resCur
+    autocmd!
+    autocmd BufWinEnter * call ResCur()
+    augroup END
 
-" Disable arrows
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+    set backup                  " Backups are nice ...
+    if has('persistent_undo')
+        set undofile                " So is persistent undo ...
+        set undolevels=1000         " Maximum number of changes that can be undone
+        set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+    endif
 
-" Splits
-set fillchars=vert:│,fold:-
-set splitbelow
-set splitright
-highlight VertSplit cterm=none ctermbg=none ctermfg=247
+    let loaded_matchparen = 1
+" }
 
-" Undo
-" ----------------------------------------------------------------------
-" ----------------------------------------------------------------------
-if exists("&undodir")
-  set undofile          "Persistent undo! Pure money.
-  let &undodir=&directory
-  set undolevels=500
-  set undoreload=500
-endif
+" Vim GUI {
+    let g:hybrid_use_Xresources=1
+    colorscheme hybrid
 
-" Identation
-" ----------------------------------------------------------------------
-filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set expandtab
-nmap <leader>i mzgg=G`z<CR>
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    set tabpagemax=15               " Only show 15 tabs
+    set showmode                    " Display the current mode
 
-" Colors
-" ----------------------------------------------------------------------
-" let g:hybrid_use_Xresources=1
-set background=dark
-colorscheme hybrid
+    set cursorline                  " Highlight current line
 
-" function s:SetCursorLine()
-"   set cursorline
-"   hi cursorline cterm=none,underline ctermbg=none ctermfg=none
-" endfunction
-" autocmd VimEnter * call s:SetCursorLine()
+    highlight clear SignColumn      " SignColumn should match background
+    highlight clear LineNr          " Current line number row will have same background color in relative mode
 
-" Netrw
-" ----------------------------------------------------------------------
-let g:netrw_liststyle = 3
-let g:netrw_preview   = 1
-let g:netrw_winsize   = 20
+    if has('cmdline_info')
+        set ruler                   " Show the ruler
+        set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
+        set showcmd                 " Show partial commands in status line and
+    endif
 
-" Buffer
-" ----------------------------------------------------------------------
-set hidden
-nmap <leader>T  : enew<cr>
-nmap <leader>l  : bnext<CR>
-nmap <leader>h  : bprevious<CR>
-nmap <leader>bq : bp <BAR> bd #<CR>
-nmap <leader>bl : ls<CR>
-let g:netrw_preview = 1
+    if has('statusline')
+        set laststatus=2
 
-" Tabs
-" ----------------------------------------------------------------------
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
+        " Broken down into easily includeable segments
+        set statusline=%<%f\                     " Filename
+        set statusline+=%w%h%m%r                 " Options
+        if !exists('g:override_spf13_bundles')
+          set statusline+=%{fugitive#statusline()} " Git Hotness
+        endif
+        set statusline+=\ [%{&ff}/%Y]            " Filetype
+        set statusline+=\ [%{getcwd()}]          " Current dir
+        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+    endif
 
-" Gundo
-" ----------------------------------------------------------------------
-nnoremap <F5> :GundoToggle<CR>
+    set backspace=indent,eol,start  " Backspace for dummies
+    set linespace=0                 " No extra spaces between rows
+    set number                      " Line numbers on
+    set relativenumber
+    set showmatch                   " Show matching brackets/parenthesis
+    set incsearch                   " Find as you type search
+    set hlsearch                    " Highlight search terms
+    set winminheight=0              " Windows can be 0 line high
+    set ignorecase                  " Case insensitive search
+    set smartcase                   " Case sensitive when uc present
+    set wildmenu                    " Show list instead of just completing
+    set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+    set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+    set scrolljump=5                " Lines to scroll when cursor leaves screen
+    set scrolloff=3                 " Minimum lines to keep above and below cursor
+    set foldenable                  " Auto fold code
+    set list
+    set fillchars=vert:│,fold:-
+    highlight VertSplit cterm=none ctermbg=none ctermfg=247
 
-" Tabular
-" ----------------------------------------------------------------------
-source $HOME/.vim/tabular.vim
+    " Netrw {
+        let g:netrw_liststyle = 3
+        let g:netrw_preview   = 1
+        let g:netrw_winsize   = 20
+    " }
+" }
 
-" Unite
-" ---------------------------------------------------------------------
-source $HOME/.vim/unite.vim
+" Formatting {
+    set nowrap                      " Do not wrap long lines
+    set autoindent                  " Indent at the same level of the previous line
+    set shiftwidth=4                " Use indents of 4 spaces
+    set expandtab                   " Tabs are spaces, not tabs
+    set tabstop=4                   " An indentation every four columns
+    set softtabstop=4               " Let backspace delete indent
+    set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
+    set splitright                  " Puts new vsplit windows to the right of the current
+    set splitbelow                  " Puts new split windows to the bottom of the current
+    "set matchpairs+=<:>             " Match, to be used with %
+    set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
+" }
 
-" JSBeutifier
-" _____________________________________________________________________
-source $HOME/.vim/jsbeautify.vim
+" Key (re)Mappings {
+    let mapleader="\<Space>"
+    " Wrapped lines goes down/up to next row, rather than next line in file.
+    noremap j gj
+    noremap k gk
 
-" Syntastic
-" ----------------------------------------------------------------------
-source $HOME/.vim/syntastic.vim
-let b:syntastic_cpp_include_dirs = ['-I/Users/arlefreak/Library/cocos2d-x/']
-let g:syntastic_javascript_checkers = ['jsxhint']
+    " Disable arrows
+    noremap <Up> <NOP>
+    noremap <Down> <NOP>
+    noremap <Left> <NOP>
+    noremap <Right> <NOP>
 
-" NeoMake
-" ----------------------------------------------------------------------
-" source $HOME/.vim/neomake.vim
+    nmap <leader>T  : enew<cr>
+    nmap <leader>l  : bnext<CR>
+    nmap <leader>h  : bprevious<CR>
+    nmap <leader>bq : bp <BAR> bd #<CR>
+    nmap <leader>bl : ls<CR>
 
-" Emmet
-" ----------------------------------------------------------------------
-source $HOME/.vim/emmet.vim
+    nnoremap <C-S-tab> :tabprevious<CR>
+    nnoremap <C-tab>   :tabnext<CR>
+    nnoremap <C-t>     :tabnew<CR>
+    inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+    inoremap <C-tab>   <Esc>:tabnext<CR>i
+    inoremap <C-t>     <Esc>:tabnew<CR>
 
-" Xclip
-" ----------------------------------------------------------------------
-source $HOME/.vim/xclip.vim
+    " Yank from the cursor to the end of the line, to be consistent with C and D.
+    nnoremap Y y$
+    " Visual shifting (does not exit Visual mode)
+    vnoremap < <gv vnoremap > >gv
+    " Allow using the repeat operator with a visual selection (!)
+    " http://stackoverflow.com/a/8064607/127816
+    vnoremap . :normal .<CR>
+    " Easier formatting
+    nnoremap <silent> <leader>q wip
+" }
 
-" Vim-airline
-" ----------------------------------------------------------------------
-source $HOME/.vim/airline.vim
-let g:tmuxline_theme = 'iceberg'
+" Plugins { 
+    " Gundo {
+        nnoremap <F5> :GundoToggle<CR>
+    " }
 
-" NeoComplete
-" ----------------------------------------------------------------------
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
+    " Tabular
+        source $HOME/.vim/tabular.vim
+    " }
 
-if exists(':NeoComplete')
-  source $HOME/.vim/neocomplete.vim
-endif
+    " Unite
+        source $HOME/.vim/unite.vim
+    " }
 
-" NeoSnippet 
-" ----------------------------------------------------------------------
-source $HOME/.vim/neosnippet.vim
+    " JSBeutifier {
+        source $HOME/.vim/jsbeautify.vim
+    " }
 
-" Rust
-" ------------------------------------------------------------------------
-" let g:rustfmt_autosave = 1
-nmap <Leader>f :Autoformat<CR>
-let g:formatdef_rustfmt = '"rustfmt"'
-let g:formatters_rust = ['rustfmt']
+    " Syntastic {
+        source $HOME/.vim/syntastic.vim
+        let b:syntastic_cpp_include_dirs = ['-I/Users/arlefreak/Library/cocos2d-x/']
+        let g:syntastic_javascript_checkers = ['jsxhint']
+    " }
+
+    " NeoMake {
+        " source $HOME/.vim/neomake.vim
+    " }
+
+    " Emmet {
+        source $HOME/.vim/emmet.vim
+    " }
+
+    " Xclip ~{
+        source $HOME/.vim/xclip.vim
+    " }
+
+    " Vim-airline {
+        source $HOME/.vim/airline.vim
+        let g:tmuxline_theme = 'iceberg'
+    " }
+
+    " NeoComplete {
+        let g:deoplete#enable_at_startup = 1
+        let g:deoplete#enable_smart_case = 1
+        au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
+
+        if exists(':NeoComplete')
+            source $HOME/.vim/neocomplete.vim
+        endif
+    " }
+
+    " NeoSnippet {
+        source $HOME/.vim/neosnippet.vim
+    " }
+
+    " Rust {
+        " let g:rustfmt_autosave = 1
+        nmap <leader>f :autoformat<cr>
+        let g:formatdef_rustfmt = '"rustfmt"'
+        let g:formatters_rust = ['rustfmt']
+    " }
+" }
