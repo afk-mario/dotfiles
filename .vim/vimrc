@@ -135,12 +135,11 @@
         NeoBundle 'othree/html5.vim'           " Html5 Plugin
         NeoBundle 'tpope/vim-markdown'         " Markdown
         NeoBundle 'davidhalter/jedi-vim'       " Python autocomplete
-        NeoBundle 'OmniSharp/omnisharp-vim', { " C# AutoComplete# AutoComplete# AutoComplete
-                    \ 'lazy': 1
-                    \'autoload' : {
-                    \   'filetypes': ['csharp']
-                    \}
-                \}
+        NeoBundleLazy 'OmniSharp/omnisharp-vim' , {
+                    \ 'autoload' : {
+                        \ 'filetypes' : ['cs', 'cs']
+                    \ }
+                \ }
         " NeoBundle 'OrangeT/vim-csharp'       " Better C# syntax highlight
         NeoBundle 'rust-lang/rust.vim'         " Rust Language Support
         NeoBundle 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
