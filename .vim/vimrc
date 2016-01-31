@@ -122,23 +122,28 @@
     " }
 
     " Languages and Frameworks {
-        NeoBundle 'mattn/emmet-vim',                             " Emmet
-        NeoBundle 'elzr/vim-json',                               " JSON plugin
-        NeoBundle 'pangloss/vim-javascript'                      " Sintax and ident plugins
-        NeoBundle 'mxw/vim-jsx'                  " JSX support
-        NeoBundle 'maksimr/vim-jsbeautify'           " JSBeutifier
-        NeoBundle 'einars/js-beautify'               " JSBeutifier
-        NeoBundle 'vim-scripts/django.vim'                       " Django plugin
-        NeoBundle 'klen/python-mode/'                " Python Mode
-        NeoBundle 'jmcantrell/vim-virtualenv'                    " Python virtualenv
-        NeoBundle 'wavded/vim-stylus'                            " Stylus plugin
-        NeoBundle 'othree/html5.vim'                             " Html5 Plugin
-        NeoBundle 'tpope/vim-markdown'                           " Markdown
-        NeoBundle 'davidhalter/jedi-vim'                         " Python autocomplete
-        NeoBundle 'OmniSharp/omnisharp-vim'                      " C# AutoComplete# AutoComplete# AutoComplete
-        " NeoBundle 'OrangeT/vim-csharp'                           " Better C# syntax highlight
-        NeoBundle 'rust-lang/rust.vim'               " Rust Language Support
-        NeoBundle 'tpope/vim-dispatch'                           " Asynchronous build and test dispatcher
+        NeoBundle 'mattn/emmet-vim',           " Emmet
+        NeoBundle 'elzr/vim-json',             " JSON plugin
+        NeoBundle 'pangloss/vim-javascript'    " Sintax and ident plugins
+        NeoBundle 'mxw/vim-jsx'                " JSX support
+        NeoBundle 'maksimr/vim-jsbeautify'     " JSBeutifier
+        NeoBundle 'einars/js-beautify'         " JSBeutifier
+        NeoBundle 'vim-scripts/django.vim'     " Django plugin
+        NeoBundle 'klen/python-mode/'          " Python Mode
+        NeoBundle 'jmcantrell/vim-virtualenv'  " Python virtualenv
+        NeoBundle 'wavded/vim-stylus'          " Stylus plugin
+        NeoBundle 'othree/html5.vim'           " Html5 Plugin
+        NeoBundle 'tpope/vim-markdown'         " Markdown
+        NeoBundle 'davidhalter/jedi-vim'       " Python autocomplete
+        NeoBundle 'OmniSharp/omnisharp-vim', { " C# AutoComplete# AutoComplete# AutoComplete
+                    \ 'lazy': 1
+                    \'autoload' : {
+                    \   'filetypes': ['csharp']
+                    \}
+                \}
+        " NeoBundle 'OrangeT/vim-csharp'       " Better C# syntax highlight
+        NeoBundle 'rust-lang/rust.vim'         " Rust Language Support
+        NeoBundle 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
     " }
 
     " Vim UI {
