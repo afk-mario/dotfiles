@@ -1,4 +1,5 @@
 " Notes {
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
     " Personal vimrc of Mario Carballo Zama
     " Arlefreak
     " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -151,10 +152,10 @@
         NeoBundle 'altercation/vim-colors-solarized'
         NeoBundle 'morhetz/gruvbox'
         NeoBundle 'w0ng/vim-hybrid'
-    " ]
+    " }
     call neobundle#end()
     NeoBundleCheck
-    " }
+" }
 
 " General {
     set background=dark
@@ -211,7 +212,7 @@
 
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
     set tabpagemax=15               " Only show 15 tabs
-    set showmode                    " Display the current mode
+    set noshowmode
 
     set cursorline                  " Highlight current line
 
@@ -230,12 +231,11 @@
         " Broken down into easily includeable segments
         set statusline=%<%f\                     " Filename
         set statusline+=%w%h%m%r                 " Options
-        if !exists('g:override_spf13_bundles')
-          set statusline+=%{fugitive#statusline()} " Git Hotness
-        endif
         set statusline+=\ [%{&ff}/%Y]            " Filetype
         set statusline+=\ [%{getcwd()}]          " Current dir
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+        set statusline+=%#warningmsg#
+        set statusline+=%*
     endif
 
     set backspace=indent,eol,start  " Backspace for dummies
@@ -307,7 +307,8 @@
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
     " Visual shifting (does not exit Visual mode)
-    vnoremap < <gv vnoremap > >gv
+    vnoremap < <gv
+    vnoremap > >gv
     " Allow using the repeat operator with a visual selection (!)
     " http://stackoverflow.com/a/8064607/127816
     vnoremap . :normal .<CR>
@@ -315,64 +316,167 @@
     nnoremap <silent> <leader>q wip
 " }
 
-" Plugins { 
+" Plugins {
     " Gundo {
-        nnoremap <F5> :GundoToggle<CR>
+        if isdirectory(expand("~/.vim/bundle/gundo.vim"))
+            nnoremap <F5> :GundoToggle<CR>
+        endif
     " }
 
-    " Tabular
-        source $HOME/.vim/tabular.vim
-    " }
+    " Tabular {
+        if isdirectory(expand("~/.vim/bundle/tabular"))
+            nmap <Leader>a& :Tabularize /&<CR>
+            vmap <Leader>a& :Tabularize /&<CR>
+            nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+            vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+            nmap <Leader>a1= :Tabularize 1=<CR>
+            nmap <Leader>a=> :Tabularize /=><CR>
+            vmap <Leader>a=> :Tabularize /=><CR>
+            nmap <Leader>a: :Tabularize /:<CR>
+            vmap <Leader>a: :Tabularize /:<CR>
+            nmap <Leader>a:: :Tabularize /:\zs<CR>
+            vmap <Leader>a:: :Tabularize /:\zs<CR>
+            nmap <Leader>a, :Tabularize /,<CR>
+            vmap <Leader>a, :Tabularize /,<CR>
+            nmap <Leader>a,, :Tabularize /,\zs<CR>
+            vmap <Leader>a,, :Tabularize /,\zs<CR>
+            nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+            vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+        endif
+    "}
 
-    " Unite
-        source $HOME/.vim/unite.vim
+    " Unite {
+        if isdirectory(expand("~/.vim/bundle/unite.vim"))
+            nnoremap <silent> [unite]l
+                  \ :<C-u>Unite 
+                  \ -buffer-name=Search
+                  \ -no-split
+                  \ -start-insert
+                  \ line<CR>
+
+            nnoremap <silent> [unite]#
+                  \ :<C-u>Unite 
+                  \ -buffer-name=OmniSharp
+                  \ -no-split
+                  \ -start-insert
+                  \ OmniSharp/findtype<CR>
+
+            nnoremap <silent> [unite]y
+                  \ :<C-u>Unite 
+                  \ -buffer-name=Yank
+                  \ -no-split
+                  \ -start-insert
+                  \ history/yank<CR>
+
+            set wildignore+=vendor/bundle/**
+            set wildignore+=node_modules/**
+            set wildignore+=bower_components/**
+            set wildignore+=.git/**
+            set wildignore+=*.meta
+            set wildignore+=*.prefab
+            set wildignore+=*.sample
+            set wildignore+=*.asset
+            set wildignore+=*.unity
+            set wildignore+=*.anim
+            set wildignore+=*.controller
+            set wildignore+=*.jpg
+            set wildignore+=*.png
+            set wildignore+=*.mp3
+            set wildignore+=*.wav
+            set wildignore+=*.ttf
+
+            call unite#custom#source('file_rec/async,file_rec/git', 'ignore_globs', split(&wildignore, ','))
+        endif
     " }
 
     " JSBeutifier {
-        source $HOME/.vim/jsbeautify.vim
+        if isdirectory(expand("~/.vim/bundle/js-beautify"))
+            autocmd FileType javascript noremap <buffer><leader>jb :call JsBeautify()<cr>
+            autocmd FileType html noremap <buffer><leader>jb :call HtmlBeautify()<cr>
+            autocmd FileType css noremap <buffer><leader>jb :call CSSBeautify()<cr>
+        endif
     " }
 
     " Syntastic {
-        source $HOME/.vim/syntastic.vim
-        let b:syntastic_cpp_include_dirs = ['-I/Users/arlefreak/Library/cocos2d-x/']
-        let g:syntastic_javascript_checkers = ['jsxhint']
+        if isdirectory(expand("~/.vim/bundle/syntastic"))
+            let g:syntastic_always_populate_loc_list = 1
+            let g:syntastic_auto_loc_list = 1
+            let g:syntastic_check_on_open = 1
+            let g:syntastic_check_on_wq = 0
+
+            set statusline+=%{SyntasticStatuslineFlag()}
+
+            let g:syntastic_mode_map = { 'mode': 'active',
+                \ 'active_filetypes': [],
+                \ 'passive_filetypes': ['html'] }
+            let g:syntastic_javascript_checkers = ['eslint', 'jsxhint']
+        endif
     " }
 
     " NeoMake {
-        " source $HOME/.vim/neomake.vim
     " }
 
     " Emmet {
-        source $HOME/.vim/emmet.vim
-    " }
-
-    " Xclip ~{
-        source $HOME/.vim/xclip.vim
+        if isdirectory(expand("~/.vim/bundle/emmet-vim"))
+            let g:user_emmet_install_global = 0
+            autocmd FileType html,css EmmetInstall
+            set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+            set shiftwidth=4
+            iabbrev </ </<C-X><C-O>
+        endif
     " }
 
     " Vim-airline {
-        source $HOME/.vim/airline.vim
-        let g:tmuxline_theme = 'iceberg'
+        if isdirectory(expand("~/.vim/bundle/vim-airline"))
+            let g:airline#extensions#tabline#enabled = 1
+            let g:airline#extensions#tabline#fnamemod = ':t'
+            let g:Powerline_symbols = 'fancy'"
+            let g:airline_powerline_fonts = 1
+            let g:airline_detect_paste=1
+            let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
+        endif
+    " }
+    " Tmux-Line {
+        if isdirectory(expand("~/.vim/bundle/tmuxline.vim"))
+            let g:tmuxline_theme = 'iceberg'
+        endif
     " }
 
-    " NeoComplete {
-        let g:deoplete#enable_at_startup = 1
-        let g:deoplete#enable_smart_case = 1
-        au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
-
-        if exists(':NeoComplete')
-            source $HOME/.vim/neocomplete.vim
+    " Deoplete {
+        if isdirectory(expand("~/.vim/bundle/deoplete.nvim"))
+            let g:deoplete#enable_at_startup = 1
+            let g:deoplete#enable_smart_case = 1
+            au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
         endif
     " }
 
     " NeoSnippet {
-        source $HOME/.vim/neosnippet.vim
+        if isdirectory(expand("~/.vim/bundle/neosnippet.vim"))
+            " Plugin key-mappings.
+            imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+            smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+            xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+            imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+                  \ "\<Plug>(neosnippet_expand_or_jump)"
+                  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+            smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+                  \ "\<Plug>(neosnippet_expand_or_jump)"
+                  \: "\<TAB>"
+
+            " For conceal markers.
+            if has('conceal')
+              set conceallevel=2 concealcursor=niv
+            endif
+        endif
     " }
 
     " Rust {
-        " let g:rustfmt_autosave = 1
-        nmap <leader>f :autoformat<cr>
-        let g:formatdef_rustfmt = '"rustfmt"'
-        let g:formatters_rust = ['rustfmt']
+        if isdirectory(expand("~/.vim/bundle/rust.vim"))
+            " let g:rustfmt_autosave = 1
+            nmap <leader>f :autoformat<cr>
+            let g:formatdef_rustfmt = '"rustfmt"'
+            let g:formatters_rust = ['rustfmt']
+        endif
     " }
 " }
