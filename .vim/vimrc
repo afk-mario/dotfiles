@@ -83,8 +83,7 @@
         NeoBundle 'Shougo/neosnippet.vim'                        " Snippets support
         NeoBundle 'Shougo/neosnippet-snippets'                   " Snippets
         NeoBundle 'Shougo/unite.vim'                             " Fuzzy file finder
-        " NeoBundle 'Shougo/neocomplete.vim'                       " AutoComplete
-        NeoBundle 'Shougo/deoplete.nvim'             " Neovim Autocomplete
+        NeoBundle 'Shougo/deoplete.nvim'                         " Neovim Autocomplete
         NeoBundle 'Shougo/neomru.vim'                            " MRU sources
         NeoBundle 'Shougo/unite-outline'                         " Tags Unite source
         NeoBundle 'tpope/vim-sensible'                           " Default configs
@@ -95,18 +94,17 @@
         NeoBundle 'tpope/vim-surround'                           " Sorroundings
         NeoBundle 'tpope/vim-obsession'                          " Session manager 
         NeoBundle 'tpope/vim-repeat'                             " More . command
-        NeoBundle 'kana/vim-textobj-user'            " Custom text object
-        NeoBundle 'kana/vim-textobj-line'            " Line text object
+        NeoBundle 'kana/vim-textobj-user'                        " Custom text object
+        NeoBundle 'kana/vim-textobj-line'                        " Line text object
         NeoBundle 'scrooloose/syntastic',                        " Check syntax
         NeoBundle 'Raimondi/delimitMate',                        " Auto close quotes parentesis etc
-        " NeoBundle 'rking/ag.vim'                                 " Silver Searcher for vim
-        NeoBundle 'mhinz/vim-grepper'                " Multiple grep support
+        NeoBundle 'mhinz/vim-grepper'                            " Multiple grep support
         NeoBundle 'sjl/gundo.vim',                               " Undo tree
         NeoBundle 'vim-scripts/loremipsum'                       " Lorem ipsum text
         NeoBundle 'tsukkee/unite-tag'                            " Unite Taf source
         NeoBundle 'arlefreak/vim-fastunite'                      " Settings for Unite
-        NeoBundle 'Chiel92/vim-autoformat'           " AutoFormat code
-        NeoBundle 'mhinz/vim-startify'               " Start Screen
+        NeoBundle 'Chiel92/vim-autoformat'                       " AutoFormat code
+        NeoBundle 'mhinz/vim-startify'                           " Start Screen
         NeoBundle 'godlygeek/tabular'                            " Align code
         NeoBundle 'Shougo/vimproc', {
               \ 'build' : {
@@ -152,7 +150,9 @@
         NeoBundle 'altercation/vim-colors-solarized'
         NeoBundle 'morhetz/gruvbox'
         NeoBundle 'w0ng/vim-hybrid'
+        NeoBundle 'luochen1990/rainbow'                          " Rainbow parentesis
     " }
+
     call neobundle#end()
     NeoBundleCheck
 " }
@@ -164,6 +164,8 @@
     set mouse=a                 " Automatically enable mouse usage
     set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
+
+    autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif " Always switch to the current file directory
 
     if has('clipboard')
         if has('unnamedplus')  " When possible use + register for copy-paste
@@ -207,8 +209,10 @@
 " }
 
 " Vim GUI {
-    let g:hybrid_use_Xresources=1
-    colorscheme hybrid
+    if filereadable(expand("~/.vim/bundle/vim-hybrid/colors/hybrid.vim"))
+        let g:hybrid_use_Xresources=1
+        colorscheme hybrid
+    endif
 
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
     set tabpagemax=15               " Only show 15 tabs
@@ -314,6 +318,18 @@
     vnoremap . :normal .<CR>
     " Easier formatting
     nnoremap <silent> <leader>q wip
+
+    " Code folding options
+    nmap <leader>f0 :set foldlevel=0<CR>
+    nmap <leader>f1 :set foldlevel=1<CR>
+    nmap <leader>f2 :set foldlevel=2<CR>
+    nmap <leader>f3 :set foldlevel=3<CR>
+    nmap <leader>f4 :set foldlevel=4<CR>
+    nmap <leader>f5 :set foldlevel=5<CR>
+    nmap <leader>f6 :set foldlevel=6<CR>
+    nmap <leader>f7 :set foldlevel=7<CR>
+    nmap <leader>f8 :set foldlevel=8<CR>
+    nmap <leader>f9 :set foldlevel=9<CR>
 " }
 
 " Plugins {
@@ -436,6 +452,7 @@
             let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
         endif
     " }
+
     " Tmux-Line {
         if isdirectory(expand("~/.vim/bundle/tmuxline.vim"))
             let g:tmuxline_theme = 'iceberg'
@@ -471,6 +488,12 @@
         endif
     " }
 
+    " AutoCloseTag {
+        " Make it so AutoCloseTag works for xml and xhtml files as well
+        au FileType xhtml,xml ru ftplugin/html/autoclosetag.vim
+        nmap <Leader>ac <Plug>ToggleAutoCloseMappings
+    " }
+
     " Rust {
         if isdirectory(expand("~/.vim/bundle/rust.vim"))
             " let g:rustfmt_autosave = 1
@@ -478,5 +501,86 @@
             let g:formatdef_rustfmt = '"rustfmt"'
             let g:formatters_rust = ['rustfmt']
         endif
+    " }
+
+    " PyMode {
+        " Disable if python support not present
+        if !has('python') && !has('python3')
+            let g:pymode = 0
+        endif
+
+        if isdirectory(expand("~/.vim/bundle/python-mode"))
+            let g:pymode_lint_checkers = ['pyflakes']
+            let g:pymode_trim_whitespaces = 0
+            let g:pymode_options = 0
+            let g:pymode_rope = 0
+        endif
+    " }
+
+    " Rainbow {
+        if isdirectory(expand("~/.vim/bundle/rainbow/"))
+            let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+        endif
+    "}
+
+    " Fugitive {
+        if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+            nnoremap <silent> <leader>gs :Gstatus<CR>
+            nnoremap <silent> <leader>gd :Gdiff<CR>
+            nnoremap <silent> <leader>gc :Gcommit<CR>
+            nnoremap <silent> <leader>gb :Gblame<CR>
+            nnoremap <silent> <leader>gl :Glog<CR>
+            nnoremap <silent> <leader>gp :Git push<CR>
+            nnoremap <silent> <leader>gr :Gread<CR>
+            nnoremap <silent> <leader>gw :Gwrite<CR>
+            nnoremap <silent> <leader>ge :Gedit<CR>
+            " Mnemonic _i_nteractive
+            nnoremap <silent> <leader>gi :Git add -p %<CR>
+            nnoremap <silent> <leader>gg :SignifyToggle<CR>
+        endif
+    "}
+
+    " indent_guides {
+        if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
+            let g:indent_guides_start_level = 2
+            let g:indent_guides_guide_size = 1
+            let g:indent_guides_enable_on_vim_startup = 1
+        endif
+    " }
+" }
+
+" Functions {
+    " Initialize directories {
+        function! InitializeDirectories()
+            let parent = $HOME
+            let prefix = 'vim'
+            let dir_list = {
+                        \ 'backup': 'backupdir',
+                        \ 'views': 'viewdir',
+                        \ 'swap': 'directory' }
+
+            if has('persistent_undo')
+                let dir_list['undo'] = 'undodir'
+            endif
+
+            let common_dir = parent . '/.' . prefix
+
+            for [dirname, settingname] in items(dir_list)
+                let directory = common_dir . dirname . '/'
+                if exists("*mkdir")
+                    if !isdirectory(directory)
+                        call mkdir(directory)
+                    endif
+                endif
+                if !isdirectory(directory)
+                    echo "Warning: Unable to create backup directory: " . directory
+                    echo "Try: mkdir -p " . directory
+                else
+                    let directory = substitute(directory, " ", "\\\\ ", "g")
+                    exec "set " . settingname . "=" . directory
+                endif
+            endfor
+        endfunction
+        call InitializeDirectories()
     " }
 " }
