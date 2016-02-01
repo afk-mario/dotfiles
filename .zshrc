@@ -1,79 +1,28 @@
-# Path to your oh-my-zsh configuration.
 ZSH=/home/marioc/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="zhann"
+ZSH_THEME="odin"
+plugins=(git django pip brew tig gulp node npm)
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+EDITOR=nvim
 
-# Set this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often to auto-update? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment following line if you want to the command execution time stamp shown 
-# in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
+export NODE_PATH="/usr/local/lib/node"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin"
+export PATH="/usr/local/share/npm/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+alias vimconfig="nvim ~/.vim/vimrc"
+alias zshconfig="nvim ~/.zshrc"
+alias zshreload="source ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias vim="nvim"
+alias updateDotFiles="cp -R ~/.vim ~/Github/dotfiles"
+alias loadDotFiles="cp -R ~/Github/dotfiles/.vim ~/"
+alias rmr="rm -r"
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
-# export MANPATH="/usr/local/man:$MANPATH"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-                                                                            
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-#History thing
-
-#HISTSIZE=""
-#HISTFILESIZE=""
-
-EDITOR=vim
-
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 function extract()      # Handy Extract Program
 {
     if [ -f $1 ] ; then
@@ -95,4 +44,3 @@ function extract()      # Handy Extract Program
         echo "'$1' is not a valid file!"
     fi
 }
-
