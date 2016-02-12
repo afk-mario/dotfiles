@@ -62,21 +62,22 @@
 " }
 
 " Bundles {
-    "NeoBundle Config
-    if !1 | finish | endif
+    " Config {
+        if !1 | finish | endif
 
-    if has('vim_starting')
+        if has('vim_starting')
 
-    " Required:
-        set runtimepath+=~/.vim/bundle/neobundle.vim/
-    endif
+        " Required:
+            set runtimepath+=~/.vim/bundle/neobundle.vim/
+        endif
 
-    " Required:
-    call neobundle#begin(expand('~/.vim/bundle/'))
+        " Required:
+        call neobundle#begin(expand('~/.vim/bundle/'))
 
-    " Let NeoBundle manage NeoBundle
-    " Required:
-    NeoBundleFetch 'Shougo/neobundle.vim'
+        " Let NeoBundle manage NeoBundle
+        " Required:
+        NeoBundleFetch 'Shougo/neobundle.vim'
+    " }
 
     " Utilities {
         NeoBundle 'Shougo/neosnippet.vim'                        " Snippets support
@@ -86,7 +87,7 @@
         NeoBundle 'Shougo/neomru.vim'                            " MRU sources
         NeoBundle 'Shougo/unite-outline'                         " Tags Unite source
         NeoBundle 'tpope/vim-sensible'                           " Default configs
-        NeoBundle 'tpope/vim-sleuth'                             " Tab identation settings
+        " NeoBundle 'tpope/vim-sleuth'                             " Tab identation settings
         NeoBundle 'tpope/vim-vinegar'                            " Netrw helper
         NeoBundle 'tpope/vim-eunuch'                             " Unix helpers
         NeoBundle 'tpope/vim-commentary'                         " Toggle comments
@@ -153,6 +154,7 @@
         NeoBundle 'altercation/vim-colors-solarized'
         NeoBundle 'morhetz/gruvbox'
         NeoBundle 'w0ng/vim-hybrid'
+        NeoBundle 'whatyouhide/vim-gotham'
         NeoBundle 'luochen1990/rainbow'                          " Rainbow parentesis
     " }
 
@@ -218,12 +220,17 @@
         set lines=40                " 40 lines of text instead of 24
     else
         if &term == 'xterm' || &term == 'screen'
-            let $NVIM_TUI_ENABLE_TRUE_COLOR=1
             set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
         endif
     endif
 
-    if filereadable(expand("~/.vim/bundle/vim-hybrid/colors/hybrid.vim"))
+    if has('nvim')
+        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    endif
+
+    if filereadable(expand("~/.vim/bundle/vim-gotham/colors/gotham.vim"))
+        colorscheme gotham
+    elseif filereadable(expand("~/.vim/bundle/vim-hybrid/colors/hybrid.vim"))
         let g:hybrid_custom_term_colors = 1
         let g:hybrid_reduced_contrast = 1
         colorscheme hybrid
@@ -264,7 +271,7 @@
     set ignorecase                  " Case insensitive search
     set smartcase                   " Case sensitive when uc present
     set wildmenu                    " Show list instead of just completing
-    set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+    set wildmode=longest:full,full  " Command <Tab> completion, list matches, then longest common part, then all.
     set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
     set scrolljump=5                " Lines to scroll when cursor leaves screen
     set scrolloff=3                 " Minimum lines to keep above and below cursor
@@ -436,7 +443,7 @@
             let g:syntastic_mode_map = { 'mode': 'active',
                 \ 'active_filetypes': [],
                 \ 'passive_filetypes': ['html'] }
-            let g:syntastic_javascript_checkers = ['eslint', 'jsxhint']
+            let g:syntastic_javascript_checkers = ['eslint']
         endif
     " }
 
@@ -466,7 +473,7 @@
 
     " Tmux-Line {
         if isdirectory(expand("~/.vim/bundle/tmuxline.vim"))
-            let g:tmuxline_theme = 'iceberg'
+            " let g:tmuxline_theme = 'iceberg'
         endif
     " }
 
