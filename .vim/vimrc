@@ -86,8 +86,8 @@
         NeoBundle 'Shougo/deoplete.nvim'                         " Neovim Autocomplete
         NeoBundle 'Shougo/neomru.vim'                            " MRU sources
         NeoBundle 'Shougo/unite-outline'                         " Tags Unite source
+        NeoBundle 'Shougo/neoyank.vim'                          " Yank history for unite
         NeoBundle 'tpope/vim-sensible'                           " Default configs
-        " NeoBundle 'tpope/vim-sleuth'                             " Tab identation settings
         NeoBundle 'tpope/vim-vinegar'                            " Netrw helper
         NeoBundle 'tpope/vim-eunuch'                             " Unix helpers
         NeoBundle 'tpope/vim-commentary'                         " Toggle comments
@@ -337,7 +337,7 @@
     nmap <leader>l  : bnext<CR>
     nmap <leader>h  : bprevious<CR>
     nmap <leader>bq : bp <BAR> bd #<CR>
-    nmap <leaderbl : ls<CR>:buffer<Space>
+    nmap <leader>bl : ls<CR>:buffer<Space>
 
     nnoremap <leader>H  :tabprevious<CR>
     nnoremap <leader>L  :tabnext<CR>
@@ -416,7 +416,6 @@
                   \ :<C-u>Unite 
                   \ -buffer-name=Yank
                   \ -no-split
-                  \ -start-insert
                   \ history/yank<CR>
 
             set wildignore+=vendor/bundle/**
