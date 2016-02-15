@@ -590,6 +590,51 @@
             let g:indent_guides_enable_on_vim_startup = 1
         endif
     " }
+
+    " Startify {
+        if isdirectory(expand("~/.vim/bundle/vim-startify/"))
+            let g:startify_list_order = [
+                \ [' Sessions '],
+                \ 'sessions',
+                \ [' Bookmarks '],
+                \ 'bookmarks',
+                \ [' MRU (dir)'],
+                \ 'dir',
+                \ [' MRU '],
+                \ 'files',
+            \ ]
+            let g:startify_bookmarks = [ {'v': '~/.vim/'}, {'z': '~/.zshrc'} ]
+            let g:startify_files_number = 5
+            let g:startify_session_autoload = 1
+            let g:startify_change_to_vcs_root = 1
+            let g:startify_custom_footer = [
+                        \' ',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+                        \'   AAAAAAAAAAA~                     AAAAAA',
+                        \'   AAAAAAAAAAAAA          .AAAAA.   AAAAAA',
+                        \'   AAAAAA AAAAAAAA       .AAAAAAA.  AAAAAA',
+                        \'   AAAAAA  DAAAAAAA      .AAAAAAA.  AAAAAA',
+                        \'   AAAAAA    AAAAAAAA     AAAAAAA   AAAAAA',
+                        \'   AAAAAA     IAAAAAAAO    AAAAA    AAAAAA',
+                        \'   AAAAAA       DAAAAAAA            AAAAAA',
+                        \'   AAAAAA         AAAAAAAD          AAAAAA',
+                        \'   AAAAAA          AAAAAAAA         AAAAAA      arlefreak.com',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAA       AAAAAA',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAD     AAAAAA',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAA    AAAAAA',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  AAAAAA',
+                        \'   AAAAAA                  AAAAAAAA AAAAAA',
+                        \'   AAAAAA                    AAAAAAAAAAAAA',
+                        \'   AAAAAA                      AAAAAAAAAAA',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+            \]
+        endif
+    " }
+
 " }
 
 " Functions {
