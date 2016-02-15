@@ -146,16 +146,13 @@
     " }
 
     " Vim UI {
+        NeoBundle 'tpope/vim-flagship' " Statusline
         NeoBundle 'nathanaelkane/vim-indent-guides',             " Ident visual guide
         NeoBundle 'gregsexton/MatchTag',                         " Highlite Matching tag
-        NeoBundle 'bling/vim-airline'                            " Cool airline
-        NeoBundle 'edkolev/tmuxline.vim'                         " Tmux airline
-        NeoBundle 'bling/vim-bufferline'                         " Buffer airline
         NeoBundle 'altercation/vim-colors-solarized'
         NeoBundle 'morhetz/gruvbox'
         NeoBundle 'w0ng/vim-hybrid'
         NeoBundle 'whatyouhide/vim-gotham'
-        NeoBundle 'luochen1990/rainbow'                          " Rainbow parentesis
     " }
 
     call neobundle#end()
@@ -253,14 +250,31 @@
 
     if has('statusline')
         set laststatus=2
-        " " Broken down into easily includeable segments
-        set statusline=%<%f\                     " Filename
-        set statusline+=%w%h%m%r                 " Options
-        set statusline+=\ [%{&ff}/%Y]            " Filetype
-        set statusline+=\ [%{getcwd()}]          " Current dir
-        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-        set statusline+=%#warningmsg#
-        set statusline+=%*
+        set showtabline=2
+        set guioptions-=e
+
+        if !isdirectory(expand("~/.vim/bundle/vim-flagship"))
+            set statusline=%t       "tail of the filename
+            set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+            set statusline+=%{&ff}] "file format
+            set statusline+=%h      "help file flag
+            set statusline+=%m      "modified flag
+            set statusline+=%r      "read only flag
+            set statusline+=%y      "filetype
+            set statusline+=%=      "left/right separator
+            set statusline+=%c,     "cursor column
+            set statusline+=%l/%L   "cursor line/total lines
+            set statusline+=\ %P    "percent through file
+
+            set statusline+=%{fugitive#statusline()} " Git integration
+            set statusline+=%{ObsessionStatus()}     " ObsessionStatus
+            set statusline+=%#warningmsg#
+            set statusline+=%*
+            if version >= 700
+              au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+              au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
+            endif
+        endif
     endif
 
     set tabpagemax=15               " Only show 15 tabs
@@ -319,18 +333,15 @@
     noremap <Left> <NOP>
     noremap <Right> <NOP>
 
-    nmap <leader>T  : enew<cr>
+    nmap <leader>t  : enew<CR>
     nmap <leader>l  : bnext<CR>
     nmap <leader>h  : bprevious<CR>
     nmap <leader>bq : bp <BAR> bd #<CR>
-    nmap <leader>bl : ls<CR>
+    nmap <leaderbl : ls<CR>:buffer<Space>
 
-    nnoremap <C-S-tab> :tabprevious<CR>
-    nnoremap <C-tab>   :tabnext<CR>
-    nnoremap <C-t>     :tabnew<CR>
-    inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-    inoremap <C-tab>   <Esc>:tabnext<CR>i
-    inoremap <C-t>     <Esc>:tabnew<CR>
+    nnoremap <leader>H  :tabprevious<CR>
+    nnoremap <leader>L  :tabnext<CR>
+    nnoremap <leader>T  :tabnew<CR>
 
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
@@ -468,12 +479,27 @@
 
     " Vim-airline {
         if isdirectory(expand("~/.vim/bundle/vim-airline"))
-            let g:airline#extensions#tabline#enabled = 1
-            let g:airline#extensions#tabline#fnamemod = ':t'
+            set laststatus=2
+            let g:airline_theme='gotham'
+            let g:airline_detect_paste=1
             let g:Powerline_symbols = 'fancy'"
             let g:airline_powerline_fonts = 1
-            let g:airline_detect_paste=1
+            let g:airline#extensions#tabline#enabled = 1
+            let g:airline#extensions#tabline#fnamemod = ':t'
+            let g:airline#extensions#tabline#left_sep = ' '
+            let g:airline#extensions#tabline#left_alt_sep = '░'
+            " Disable powerline arrows and setting blank seperators creates a rectangular box
+            let g:airline_left_sep = '█▓░'
+            let g:airline_right_sep = '░▓█'
             let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
+            let g:airline_section_c = airline#section#create([''])
+        endif
+    " }
+
+    " Flagship {
+        if isdirectory(expand("~/.vim/bundle/vim-flagship"))
+            autocmd User Flags call Hoist("window", "SyntasticStatuslineFlag")
+            autocmd User Flags call Hoist("global", "%{&ignorecase ? '[IC]' : ''}")
         endif
     " }
 
@@ -540,12 +566,6 @@
             let g:pymode_rope = 0
         endif
     " }
-
-    " Rainbow {
-        if isdirectory(expand("~/.vim/bundle/rainbow/"))
-            let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
-        endif
-    "}
 
     " Fugitive {
         if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
