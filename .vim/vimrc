@@ -113,9 +113,6 @@
 
     " Utilities {
         NeoBundleLazy 'Shougo/neosnippet.vim', {
-                    \ 'autoload': {
-                        \ 'insert': 1,
-                        \ },
                     \ } " Snippets
         NeoBundleLazy 'Shougo/neosnippet-snippets', {
                     \ 'depends' : 'Shougo/neosnippet.vim',
@@ -126,6 +123,7 @@
                         \ },
                     \ } " Neovim Autocomplete
         NeoBundle 'tpope/vim-vinegar'                            " Netrw helper
+        NeoBundle 'tpope/vim-obsession'                          " Session Managment
         NeoBundle 'tpope/vim-eunuch'                             " Unix helpers
         NeoBundle 'tpope/vim-commentary'                         " Toggle comments
         NeoBundle 'tpope/vim-surround'                           " Sorroundings
@@ -140,6 +138,7 @@
         NeoBundle 'Chiel92/vim-autoformat'                       " AutoFormat code
         NeoBundle 'mhinz/vim-startify'                           " Start Screen
         NeoBundle 'godlygeek/tabular'                            " Align code
+        NeoBundle 'reedes/vim-pencil'                            " Better Writting
         NeoBundle 'Shougo/vimproc', {
               \ 'build' : {
               \     'windows' : 'make -f make_mingw32.mak',
@@ -188,11 +187,6 @@
                     \ 'autoload': {
                         \ 'filetypes': ['python', 'python3'],
                 \ }} " Python autocomplete
-        NeoBundleLazy 'lambdalisue/vim-pyenv', {
-                    \ 'depends': ['davidhalter/jedi-vim'],
-                    \ 'autoload': {
-                        \ 'filetypes': ['python', 'python3'],
-                \ }} " Python load virtualenvs
         NeoBundle 'vim-scripts/django.vim', {
                     \ 'autoload': {
                         \ 'filetypes': ['python', 'python3', 'html'],
@@ -202,6 +196,11 @@
                         \ 'filetypes' : ['cs', 'cs']
                     \ }
                 \ }
+        NeoBundleLazy 'tweekmonster/braceless.vim', {
+                    \ 'autoload' : {
+                        \ 'filetypes' : ['stylus', 'styl']
+                    \ }
+                    \}
         NeoBundle 'rust-lang/rust.vim'         " Rust Language Support
         NeoBundle 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
     " }
@@ -408,6 +407,13 @@
     nnoremap <leader>H  :tabprevious<CR>
     nnoremap <leader>L  :tabnext<CR>
     nnoremap <leader>T  :tabnew<CR>
+
+    " Language {
+        nnoremap [spell] <nop>
+        nmap <leader>s [spell]
+        nnoremap <silent> [spell]s :setlocal spell spelllang=es_es<cr>
+        nnoremap <silent> [spell]g :setlocal spell spelllang=en_en<cr>
+    " }
 
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
@@ -671,6 +677,13 @@
         if gitroot != ''
             let &tags = &tags . ',' . gitroot . '/.git/tags'
         endif
+    " }
+    " Pencil {
+        augroup pencil
+            autocmd!
+            autocmd FileType markdown,mkd call pencil#init()
+            autocmd FileType text         call pencil#init()
+        augroup END
     " }
 " }
 
