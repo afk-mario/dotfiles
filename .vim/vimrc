@@ -112,22 +112,20 @@
     " }
 
     " Utilities {
-        NeoBundleLazy 'Shougo/neosnippet.vim', {
-                    \ } " Snippets
-        NeoBundleLazy 'Shougo/neosnippet-snippets', {
-                    \ 'depends' : 'Shougo/neosnippet.vim',
-                    \ } " Snippets
         NeoBundleLazy 'Shougo/deoplete.nvim', {
                     \ 'autoload': {
                         \ 'insert': 1,
                         \ },
                     \ } " Neovim Autocomplete
+        NeoBundle 'Shougo/neosnippet.vim'
+        NeoBundle 'Shougo/neosnippet-snippets'
         NeoBundle 'tpope/vim-vinegar'                            " Netrw helper
         NeoBundle 'tpope/vim-obsession'                          " Session Managment
         NeoBundle 'tpope/vim-eunuch'                             " Unix helpers
         NeoBundle 'tpope/vim-commentary'                         " Toggle comments
         NeoBundle 'tpope/vim-surround'                           " Sorroundings
         NeoBundle 'tpope/vim-repeat'                             " More . command
+        NeoBundle 'wellle/targets.vim'                           " Better motions
         NeoBundle 'kana/vim-textobj-user'                        " Custom text object
         NeoBundle 'kana/vim-textobj-line'                        " Line text object
         NeoBundle 'scrooloose/syntastic',                        " Syntax check
