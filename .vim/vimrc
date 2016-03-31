@@ -136,7 +136,6 @@
         NeoBundle 'Chiel92/vim-autoformat'                       " AutoFormat code
         NeoBundle 'mhinz/vim-startify'                           " Start Screen
         NeoBundle 'godlygeek/tabular'                            " Align code
-        NeoBundle 'reedes/vim-pencil'                            " Better Writting
         NeoBundle 'Shougo/vimproc', {
               \ 'build' : {
               \     'windows' : 'make -f make_mingw32.mak',
@@ -145,6 +144,13 @@
               \     'unix' : 'make -f make_unix.mak',
               \    },
               \ }
+    " }
+
+    " Prose {
+        NeoBundle 'reedes/vim-pencil'                            " Better Writting
+        NeoBundleLazy 'junegunn/goyo.vim', {
+                    \ 'commands' : ['Goyo']
+                    \ }                                          " Distraction-free writing in Vim
     " }
 
     " Git {
@@ -289,7 +295,6 @@
         colorscheme gotham
     elseif filereadable(expand("~/.vim/bundle/vim-hybrid/colors/hybrid.vim"))
         let g:hybrid_custom_term_colors = 1
-        let g:hybrid_reduced_contrast = 1
         colorscheme hybrid
     elseif  filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
         let g:solarized_termcolors=256
@@ -639,31 +644,31 @@
             let g:startify_files_number = 5
             let g:startify_session_autoload = 1
             let g:startify_change_to_vcs_root = 1
-            let g:startify_custom_footer = [
-                        \' ',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-                        \'   AAAAAAAAAAA~                     AAAAAA',
-                        \'   AAAAAAAAAAAAA          .AAAAA.   AAAAAA',
-                        \'   AAAAAA AAAAAAAA       .AAAAAAA.  AAAAAA',
-                        \'   AAAAAA  DAAAAAAA      .AAAAAAA.  AAAAAA',
-                        \'   AAAAAA    AAAAAAAA     AAAAAAA   AAAAAA',
-                        \'   AAAAAA     IAAAAAAAO    AAAAA    AAAAAA',
-                        \'   AAAAAA       DAAAAAAA            AAAAAA',
-                        \'   AAAAAA         AAAAAAAD          AAAAAA',
-                        \'   AAAAAA          AAAAAAAA         AAAAAA      arlefreak.com',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAA       AAAAAA',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAD     AAAAAA',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAA    AAAAAA',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  AAAAAA',
-                        \'   AAAAAA                  AAAAAAAA AAAAAA',
-                        \'   AAAAAA                    AAAAAAAAAAAAA',
-                        \'   AAAAAA                      AAAAAAAAAAA',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-                        \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-            \]
+            " let g:startify_custom_footer = [
+            "             \' ',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+            "             \'   AAAAAAAAAAA~                     AAAAAA',
+            "             \'   AAAAAAAAAAAAA          .AAAAA.   AAAAAA',
+            "             \'   AAAAAA AAAAAAAA       .AAAAAAA.  AAAAAA',
+            "             \'   AAAAAA  DAAAAAAA      .AAAAAAA.  AAAAAA',
+            "             \'   AAAAAA    AAAAAAAA     AAAAAAA   AAAAAA',
+            "             \'   AAAAAA     IAAAAAAAO    AAAAA    AAAAAA',
+            "             \'   AAAAAA       DAAAAAAA            AAAAAA',
+            "             \'   AAAAAA         AAAAAAAD          AAAAAA',
+            "             \'   AAAAAA          AAAAAAAA         AAAAAA      arlefreak.com',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAA       AAAAAA',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAD     AAAAAA',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAA    AAAAAA',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  AAAAAA',
+            "             \'   AAAAAA                  AAAAAAAA AAAAAA',
+            "             \'   AAAAAA                    AAAAAAAAAAAAA',
+            "             \'   AAAAAA                      AAAAAAAAAAA',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+            " \]
         endif
     " }
 
@@ -676,12 +681,22 @@
             let &tags = &tags . ',' . gitroot . '/.git/tags'
         endif
     " }
+
     " Pencil {
+        let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
         augroup pencil
             autocmd!
             autocmd FileType markdown,mkd call pencil#init()
             autocmd FileType text         call pencil#init()
         augroup END
+    " }
+
+    " Goyo and Limelight {
+        if isdirectory(expand("~/.vim/bundle/goyo.vim/"))
+            " let g:goyo_margin_top=0
+            " let g:goyo_margin_bottom=0
+            nnoremap <leader>G :Goyo<CR>
+        endif
     " }
 " }
 

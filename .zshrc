@@ -1,9 +1,11 @@
-ZSH=/home/marioc/.oh-my-zsh
+export ZSH=/Users/arlefreak/.oh-my-zsh
 
 ZSH_THEME="odin"
-plugins=(git django pip brew tig gulp node npm)
 
-EDITOR=nvim
+plugins=(git git-extras django pip brew tig gulp)
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 export NODE_PATH="/usr/local/lib/node"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin"
@@ -19,28 +21,31 @@ alias updateDotFiles="cp -R ~/.vim ~/Github/dotfiles"
 alias loadDotFiles="cp -R ~/Github/dotfiles/.vim ~/"
 alias rmr="rm -r"
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+export EDITOR=nvim
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
 
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=/Users/arlefreak/Library/cocos2d-x-3.9/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT=/Users/arlefreak/Library/cocos2d-x-3.9/templates
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+# Add environment variable NDK_ROOT for cocos2d-x
+export NDK_ROOT=/usr/local/Cellar/android-ndk/r10e
+export PATH=$NDK_ROOT:$PATH
+
+# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.4.1_1
+export PATH=$ANDROID_SDK_ROOT:$PATH
+export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+# Add environment variable ANT_ROOT for cocos2d-x
+export ANT_ROOT=/usr/local/Cellar/ant/1.9.6/bin
+export PATH=$ANT_ROOT:$PATH
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-function extract()      # Handy Extract Program
-{
-    if [ -f $1 ] ; then
-        case $1 in
-            *.tar.bz2)   tar xvjf "$1"    ;;  
-            *.tar.gz)    tar xvzf "$1"    ;;  
-            *.bz2)       bunzip2 "$1"     ;;  
-            *.rar)       unrar x "$1"     ;;  
-            *.gz)        gunzip "$1"      ;;  
-            *.tar)       tar xvf "$1"     ;;  
-            *.tbz2)      tar xvjf "$1"    ;;  
-            *.tgz)       tar xvzf "$1"    ;;
-            *.zip)       unzip "$1"       ;;
-            *.Z)         uncompress "$1"  ;;
-            *.7z)        7z x "$1"        ;;
-            *)           echo "'$1' cannot be extracted via >extract<" ;;
-        esac
-    else
-        echo "'$1' is not a valid file!"
-    fi
-}
