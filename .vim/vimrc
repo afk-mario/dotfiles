@@ -145,6 +145,7 @@
               \    },
               \ }
     " }
+    "
 
     " Prose {
         NeoBundle 'reedes/vim-pencil'                            " Better Writting
@@ -200,12 +201,18 @@
                         \ 'filetypes' : ['cs', 'cs']
                     \ }
                 \ }
+        NeoBundleLazy 'OrangeT/vim-csharp' , {
+                    \ 'autoload' : {
+                        \ 'filetypes' : ['cs', 'cs']
+                    \ }
+                \ }
         NeoBundleLazy 'tweekmonster/braceless.vim', {
                     \ 'autoload' : {
                         \ 'filetypes' : ['stylus', 'styl']
                     \ }
                     \}
         NeoBundle 'rust-lang/rust.vim'         " Rust Language Support
+        NeoBundle 'racer-rust/vim-racer'       " AutoComplete for vim
         NeoBundle 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
     " }
 
@@ -249,6 +256,7 @@
     set virtualedit=onemore             " Allow for cursor beyond last character
     set history=1000                    " Store a ton of history (default is 20)
     " set spell                           " Spell checking on
+    " set spell spelllang=es_es
     set hidden                          " Allow buffer switching without saving
     set iskeyword-=.                    " '.' is an end of word designator
     set iskeyword-=#                    " '#' is an end of word designator
@@ -331,8 +339,6 @@
             set statusline+=%l/%L   "cursor line/total lines
             set statusline+=\ %P    "percent through file
 
-            set statusline+=%{fugitive#statusline()} " Git integration
-            set statusline+=%{ObsessionStatus()}     " ObsessionStatus
             set statusline+=%#warningmsg#
             set statusline+=%*
             if version >= 700
@@ -452,6 +458,7 @@
 " Plugins {
     " Gundo {
         if isdirectory(expand("~/.vim/bundle/gundo.vim"))
+            let g:gundo_prefer_python3 = 1
             nnoremap <leader>g :GundoToggle<CR>
         endif
     " }
@@ -550,6 +557,8 @@
             let g:deoplete#enable_at_startup = 1
             let g:deoplete#enable_smart_case = 1
             au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
+            let g:deoplete#omni_patterns = {}
+            let g:deoplete#omni_patterns.rust = '[(\.)(::)]'
         endif
     " }
 
@@ -583,9 +592,11 @@
     " Rust {
         if isdirectory(expand("~/.vim/bundle/rust.vim"))
             " let g:rustfmt_autosave = 1
-            nmap <leader>f :autoformat<cr>
+            nmap <leader>f :Autoformat<cr>
             let g:formatdef_rustfmt = '"rustfmt"'
             let g:formatters_rust = ['rustfmt']
+            let g:racer_cmd = expand("~/.cargo/bin/racer")
+            let $RUST_SRC_PATH= expand("~/.rust/src/")
         endif
     " }
 
@@ -617,6 +628,13 @@
             " Mnemonic _i_nteractive
             nnoremap <silent> <leader>gi :Git add -p %<CR>
             nnoremap <silent> <leader>gg :SignifyToggle<CR>
+            set statusline+=%{fugitive#statusline()} " Git integration
+        endif
+    "}
+
+    " Obsession {
+        if isdirectory(expand("~/.vim/bundle/vim-obsession/"))
+            set statusline+=%{ObsessionStatus()}     " ObsessionStatus
         endif
     "}
 
