@@ -20,6 +20,7 @@ alias vim="nvim"
 alias updateDotFiles="cp -R ~/.vim ~/Github/dotfiles"
 alias loadDotFiles="cp -R ~/Github/dotfiles/.vim ~/"
 alias rmr="rm -r"
+alias cpr="cp -R"
 
 export EDITOR=nvim
 VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3

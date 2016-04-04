@@ -1,0 +1,74 @@
+!-------------------------------------------------------------------------------
+!!! XFT SETTINGS !!!
+!-------------------------------------------------------------------------------
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+!-------------------------------------------------------------------------------
+!!! URXVT SETTINGS !!!
+!-------------------------------------------------------------------------------
+urxvt*font: xft:terminus:pixelsize=12,xft:DejaVu Sans Mono for Powerline-7.3:pixelsize=12
+Urxvt*depth: 33
+URxvt*cursorBlink: true
+URxvt*geometry: 80x25
+URxvt*internalBorder: 16
+URxvt*borderLess: false
+URxvt*scrollBar: false
+URxvt*cursorBlink: true
+URxvt*cursorUnderline: true
+URxvt*scrollColor: #8bc34a
+URxvt.underlineURLs: true
+
+
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.colorUL: #ffc107
+
+!-------------------------------------------------------------------------------
+!!! THEME !!!
+!-------------------------------------------------------------------------------
+
+
+! Google Material Design
+
+*background 		: #263238
+*foreground 		: #eceff1
+
+! black
+*color0  			: #263238
+*color8  			: #37474f
+
+! red
+*color1  			: #ff9800
+*color9  			: #ffa74d
+
+! green
+*color2  			: #8bc34a
+*color10 			: #ceecab
+
+! yellow
+*color3  			: #ffc107
+*color11 			: #ffa000
+
+! blue
+*color4  			: #03a9f4
+*color12 			: #81d4fa
+
+! magenta
+*color5  			: #e91e63
+*color13 			: #ad1457
+
+! cyan
+*color6  			: #009688
+*color14 			: #26a69a
+
+! white
+*color7  			: #cfd8dc
+*color15 			: #eceff1
