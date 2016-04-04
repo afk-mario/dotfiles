@@ -17,8 +17,6 @@ alias zshconfig="nvim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vim="nvim"
-alias updateDotFiles="cp -R ~/.vim ~/Github/dotfiles"
-alias loadDotFiles="cp -R ~/Github/dotfiles/.vim ~/"
 alias rmr="rm -r"
 alias cpr="cp -R"
 
