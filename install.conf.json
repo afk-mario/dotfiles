@@ -13,7 +13,7 @@
     {
         "shell": [
             [
-                "mkdir -p ~/Projects/Web ~/Projects/Games ~/Github ~/Sandbox ~/InterC  ~/bin/ ~/.ssh/",
+                "mkdir -p ~/Projects/Web ~/Projects/Games ~/Github ~/Sandbox ~/InterC  ~/.ssh/",
                 "Creating directories"
             ]
         ]
