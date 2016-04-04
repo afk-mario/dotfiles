@@ -1,0 +1,50 @@
+[
+    {
+        "clean": ["~"]
+    },
+    {
+        "defaults": {
+            "link":{
+                "create": true,
+                "relink": true
+            }
+        }
+    },
+    {
+        "shell": [
+            [
+                "mkdir -p ~/Projects/Web ~/Projects/Games ~/Github ~/Sandbox ~/InterC  ~/bin/ ~/.ssh/",
+                "Creating directories"
+            ]
+        ]
+    },
+    {
+        "link": {
+            "~/.dotfiles": "",
+            "~/.tmux.conf": "tmux.conf",
+            "~/.vimrc": "vimrc",
+            "~/.vim": "vim/",
+            " ~/.ssh/config": {
+                "create": true,
+                "relink": true,
+                "path": "sh_config"
+            },
+            "~/.zshrc": "zshrc",
+            "~/.gitconfig": "gitconfig",
+            "~/.gitignore_global": "gitignore_global",
+            "~/.config": "config",
+            "~/.ncmpcpp": "ncmpcpp",
+            "~/.weechat": "weechat",
+            "~/.Xdefaults": "xdefaults",
+            "~/.userStyle.css": "userStyles"
+        }
+    },
+    {
+        "shell": [
+            [
+                "git submodule update --init --recursive",
+                "Installing/updating submodules"
+            ]
+        ]
+    }
+]
