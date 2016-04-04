@@ -32,7 +32,8 @@
             "~/.ncmpcpp": "ncmpcpp",
             "~/.weechat": "weechat",
             "~/.Xdefaults": "xdefaults",
-            "~/.userStyle.css": "userStyle.css"
+            "~/.userStyle.css": "userStyle.css",
+            "~/bin": "bin"
         }
     },
     {
