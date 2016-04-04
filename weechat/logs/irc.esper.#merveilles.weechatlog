@@ -1,0 +1,602 @@
+2015-01-22 11:31:00	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-01-22 11:31:00	--	El tema para #merveilles es "Mare Veil - COLORS BAD"
+2015-01-22 11:31:00	--	Tema establecido por Wally (~quinlan@162.243.153.20) el mar, 23 dic 2014 12:23:52
+2015-01-22 11:31:01	--	Channel #merveilles: 38 apodos (4 ops, 2 voces, 32 normales)
+2015-01-22 11:31:05	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-01-22 11:37:08	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-01-22 11:37:08	--	El tema para #merveilles es "Mare Veil - COLORS BAD"
+2015-01-22 11:37:08	--	Tema establecido por Wally (~quinlan@162.243.153.20) el mar, 23 dic 2014 12:24:14
+2015-01-22 11:37:08	--	Channel #merveilles: 38 apodos (4 ops, 2 voces, 32 normales)
+2015-01-22 11:37:12	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-01-22 11:37:36	amatecha	black flag student? never heard that before
+2015-01-22 11:37:49	amatecha	rofl Xamayon
+2015-01-22 11:37:51	amatecha	future warnings
+2015-01-22 11:38:35	-->	Karuji (~Karuji@197.78.158.68) has joined #merveilles
+2015-01-22 11:39:06	<--	Karuji (~Karuji@197.78.158.68) ha salido (Remote host closed the connection)
+2015-01-22 11:39:20	-->	Karuji (~Karuji@197.78.158.68) has joined #merveilles
+2015-01-22 11:39:44	Karuji	Also yay, finally done with the GMImporter~
+2015-01-22 11:39:45	Karuji	https://github.com/Karuji/GMProjectImporter
+2015-01-22 11:39:47	@_xaxi	Link title: Karuji/GMProjectImporter · GitHub
+2015-01-22 11:39:54	Karuji	~_~
+2015-01-22 11:40:03	Karuji	Now I think I'm going to sleep for a week!
+2015-01-22 11:40:25	Karuji	he says on the day the GGJ starts @_@
+2015-01-22 11:43:42	cblgh	Karuji: needs a readme before you sleep for a week!
+2015-01-22 11:43:48	cblgh	because i am looking at it and i dont even
+2015-01-22 11:44:27	Karuji	I'll do that when I wake up. Like I think it would be completely imcomprehensible right now
+2015-01-22 11:44:41	Karuji	But eh lets give it a shot
+2015-01-22 11:44:54	cblgh	:3
+2015-01-22 11:45:02	cblgh	also congrats on being done! ^_^
+2015-01-22 11:45:25	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-01-22 11:45:25	--	El tema para #merveilles es "Mare Veil - COLORS BAD"
+2015-01-22 11:45:25	--	Tema establecido por Wally (~quinlan@162.243.153.20) el mar, 23 dic 2014 12:24:14
+2015-01-22 11:45:25	--	Channel #merveilles: 39 apodos (4 ops, 2 voces, 33 normales)
+2015-01-22 11:45:29	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-01-22 11:45:33	Karuji	Still a lot of work to do on it though...
+2015-01-22 11:46:14	Karuji	This is just a functional prototype. Though fortunately I'll be doing a GUI so I don't have to worry about input validation
+2015-01-22 11:48:36	cblgh	haha
+2015-01-22 11:48:45	cblgh	not sure if doing a GUI is faster than input validation
+2015-01-22 11:49:20	Karuji	Oh I know it's not. But it means I don't have to type out long fucking directories when I want to use the program ;)
+2015-01-22 11:49:31	cblgh	also good!
+2015-01-22 11:49:40	cblgh	i usually just have folders open and copy/paste
+2015-01-22 11:50:05	cblgh	copy/paste the directory path that is
+2015-01-22 11:50:38	Karuji	Yeah I do that too.
+2015-01-22 11:50:53	Karuji	And I run it in sublime REPL which makes it easier
+2015-01-22 11:51:25	Karuji	But 'C:\Dev\Games\zX-Hyperblast\Studio\zX_Hyperblast.gmx\zX_Hyperblast.project.gmx' is still quite a pain in the arse
+2015-01-22 11:53:01	cblgh	dunno if it is well known
+2015-01-22 11:53:18	cblgh	but if you have a folder open, f4 will open the url/path thing
+2015-01-22 11:53:32	cblgh	so you can be like f4->ctrl+a yay
+2015-01-22 11:53:43	Karuji	Oh I have the url/path permanantly shown
+2015-01-22 11:53:59	Karuji	It's mostly that the filename is long
+2015-01-22 11:54:00	amatecha	whoa, hyperblast
+2015-01-22 11:54:02	amatecha	reminds me of Cyberblast
+2015-01-22 11:54:25	Karuji	https://www.youtube.com/watch?v=KNZ-3mPyW-I&feature=em-upload_owner
+2015-01-22 11:54:27	@_xaxi	Link title: zX gameplay - YouTube
+2015-01-22 11:54:31	amatecha	https://www.youtube.com/watch?v=Tuz90w9QnRw
+2015-01-22 11:54:33	@_xaxi	Link title: Cyberblast (Amiga) (Gameplay) - YouTube
+2015-01-22 11:54:46	Karuji	Old gameplay vid, we've changed so much of it
+2015-01-22 11:55:16	Karuji	Also Cyberblast is such a cooler name :<
+2015-01-22 12:25:35	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-01-22 12:25:35	--	El tema para #merveilles es "Mare Veil - COLORS BAD"
+2015-01-22 12:25:35	--	Tema establecido por Wally (~quinlan@162.243.153.20) el mar, 23 dic 2014 12:24:14
+2015-01-22 12:25:35	--	Channel #merveilles: 41 apodos (5 ops, 2 voces, 34 normales)
+2015-01-22 12:25:39	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-01-22 12:26:57	<--	Preston (~preston@softbank221028038126.bbtec.net) ha salido (Ping timeout: 186 seconds)
+2015-01-22 12:39:48	amatecha	fuck yeah amiga music
+2015-01-22 12:40:03	amatecha	wish I could find my mp3 render of this song (instead of ahving to listen to a crappy youtube clip)
+2015-01-22 13:00:20	-->	mguniverse (~mgunivers@wsip-70-166-107-71.ph.ph.cox.net) has joined #merveilles
+2015-01-22 17:46:24	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-01-22 17:46:24	--	El tema para #merveilles es "Mare Veil - COLORS BAD"
+2015-01-22 17:46:24	--	Tema establecido por Wally (~quinlan@162.243.153.20) el mar, 23 dic 2014 12:24:14
+2015-01-22 17:46:24	--	Channel #merveilles: 41 apodos (4 ops, 2 voces, 35 normales)
+2015-01-22 17:46:29	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-01-22 18:00:20	reblink	the_neko^^: help
+2015-01-22 18:00:39	@the_neko^^	reblink: :O?
+2015-01-22 18:00:47	reblink	I'm dying
+2015-01-22 18:00:51	reblink	 :(
+2015-01-22 18:00:56	@the_neko^^	:(
+2015-01-22 18:05:58	<--	Paul_Debrion (~chatzilla@74.83.27.247) ha salido (Quit: ChatZilla 0.9.91.1 [Firefox 35.0/20150108202552])
+2015-01-22 18:18:07	-->	sarith (~sarith@2604:2000:ee2c:b000:3444:4a8:ae8b:6f2a) has joined #merveilles
+2015-01-22 18:22:02	-->	mguniverse (~mgunivers@71-223-20-169.phnx.qwest.net) has joined #merveilles
+2015-01-22 18:22:06	mguniverse	xoka
+2015-01-22 18:22:07	mguniverse	:)
+2015-01-22 18:22:36	<--	sarith (~sarith@2604:2000:ee2c:b000:3444:4a8:ae8b:6f2a) ha salido (Remote host closed the connection)
+2015-01-22 18:34:21	-->	vade (~vade@pool-108-6-196-122.nycmny.fios.verizon.net) has joined #merveilles
+2015-01-22 18:34:50	mguniverse	hi vade
+2015-01-22 10:06:38	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-01-22 10:06:38	--	El tema para #merveilles es "Mare Veil - COLORS BAD"
+2015-01-22 10:06:38	--	Tema establecido por Wally (~quinlan@162.243.153.20) el mar, 23 dic 2014 12:24:14
+2015-01-22 10:06:38	--	Channel #merveilles: 37 apodos (3 ops, 2 voces, 32 normales)
+2015-01-22 10:06:41	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-01-22 10:07:47	maxdeviant	"Styes can be triggered by poor nutrition, sleep deprivation, lack of hygiene, lack of water, and rubbing of the eyes."
+2015-01-22 10:09:05	maxdeviant	christian: We'll put you on an IV and NG tube, in a shower, with one of those dog cones on
+2015-01-22 10:09:30	maxdeviant	That should work, right?
+2015-01-22 10:09:58	+christian	maxdeviant: the only way to get rid of styes, generally, is to have a doctor scrape them out
+2015-01-22 10:10:22	maxdeviant	That doesn't sound pleasant. But neither does having them
+2015-01-22 10:10:46	+christian	I've had these for 13 years, and generally they've been ultra-tiny and not visible to others, so I haven't cared about them. But right now they've become kind of expansionist and gross :I
+2015-01-22 10:11:04	maxdeviant	:(
+2015-01-22 10:12:20	+christian	Which is a thing that happens, with styes, in the long-term - the bacteria always have a small chance of mutating and becoming more aggressive, at which point you've got to see a doctor
+2015-01-22 10:14:01	+christian	Easy for a doctor to take care of, they just numb the eyelid, go at it with a scraper, then you've got to wear an eyepatch and rinse out your eye for a week or two
+2015-01-22 10:15:08	maxdeviant	And proceed to charge decent amounts of money for their services?
+2015-01-22 10:15:36	+christian	aye :S
+2015-01-22 10:16:13	maxdeviant	My brother had a very resilient wart on his leg. Went to a doctor TWICE to have it frozen off
+2015-01-22 10:16:21	+christian	blergh @_@
+2015-01-22 10:16:32	maxdeviant	And after the second time with no results, we went with an OTC wart remover
+2015-01-25 17:44:21	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-01-25 17:44:21	--	El tema para #merveilles es "Mare Veil - COLORS BAD"
+2015-01-25 17:44:21	--	Tema establecido por Wally (~quinlan@162.243.153.20) el mar, 23 dic 2014 12:24:14
+2015-01-25 17:44:21	--	Channel #merveilles: 42 apodos (5 ops, 1 voz, 36 normales)
+2015-01-25 17:44:26	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-01-25 17:45:25	<--	shockham (~samuelhoc@cpc28-lewi15-2-0-cust13.2-4.cable.virginm.net) ha salido (Ping timeout: 200 seconds)
+2015-01-25 18:04:01	faun	I'm actually amazed at how little the superious assholes in ##design abuse their op powers. Also, people being flaming dicks seems to induce everyone who is not also a flaming dick to chill out and not take their vitriol seriously, which is an interesting effect.
+2015-01-25 18:04:08	faun	(freenode)
+2015-01-25 18:07:09	@Wally	faun: What do they talk about
+2015-01-25 18:08:27	faun	What they're working on, generally.
+2015-01-25 18:13:18	faun	Topic is generally around graphic design, possibly just because graphic design has bigger windbags than usability and product design.
+2015-01-25 18:17:33	karlnp	neet-o
+2015-01-25 18:17:36	karlnp	i'll join it
+2015-01-25 18:17:45	karlnp	freenode seems to be the "fuck around while pretending to talk about your job" network
+2015-01-25 18:20:56	faun	Heh.
+2015-01-25 18:32:40	@Wally	freenode is best node
+2015-01-25 18:44:26	<--	christian (~christian@c-76-25-206-3.hsd1.co.comcast.net) ha salido (Read error: Connection reset by peer)
+2015-01-25 18:44:44	-->	christian (~christian@c-76-25-206-3.hsd1.co.comcast.net) has joined #merveilles
+2015-01-25 18:44:45	--	Modo #merveilles [+v christian] por ChanServ
+2015-01-25 18:48:27	+christian	when you've developed a very sophisticated simulation argument and you see some teen STEM student alienating everyone with really bad simple simulation arguments ----> there is probably a fitting meme jpg for this
+2015-01-25 18:53:16	+christian	hmmmm
+2015-01-25 18:53:46	+christian	I guess I'll grab a snack and try to fix one of my worse half-finished songs from the new album
+2015-01-25 18:54:39	+christian	(There was an old album, in 2010, but it never got recorded because it was mostly bad; will probably cannibalize some of its OK parts tho)
+2015-01-25 19:11:13	-->	blqbird (webchat@c-50-190-123-52.hsd1.dc.comcast.net) has joined #merveilles
+2015-01-25 19:16:27	pl1x	xoka blqbird 
+2015-01-25 19:16:55	blqbird	xoka pl1x
+2015-01-25 19:17:04	pl1x	how's it going?
+2015-01-25 19:17:28	blqbird	fine
+2015-01-25 19:17:31	blqbird	hbu
+2015-01-25 19:21:35	-->	Preston (~preston@softbank221028038126.bbtec.net) has joined #merveilles
+2015-01-25 19:25:09	<--	Preston (~preston@softbank221028038126.bbtec.net) ha salido (Ping timeout: 200 seconds)
+2015-01-25 19:27:59	pl1x	blqbird: doing okay
+2015-01-25 19:50:18	-->	Paul_Debrion (~chatzilla@74.83.27.247) has joined #merveilles
+2015-01-25 20:02:54	-->	Preston (~preston@softbank221028038126.bbtec.net) has joined #merveilles
+2015-01-25 20:08:16	<--	blqbird (webchat@c-50-190-123-52.hsd1.dc.comcast.net) ha salido (Ping timeout: 186 seconds)
+2015-01-25 20:40:48	<--	nea_ (~nea@71-34-82-205.ptld.qwest.net) ha salido (Ping timeout: 198 seconds)
+2015-01-25 20:40:59	<--	spell` (~spell@ip-89-161-30-114.tel.tkb.net.pl) ha salido (Ping timeout: 194 seconds)
+2015-01-25 20:59:55	<--	Preston (~preston@softbank221028038126.bbtec.net) ha salido (Remote host closed the connection)
+2015-01-25 21:01:53	-->	Preston (~preston@softbank221028038126.bbtec.net) has joined #merveilles
+2015-01-25 21:05:13	<--	Preston (~preston@softbank221028038126.bbtec.net) ha salido (Ping timeout: 189 seconds)
+2015-01-25 21:09:34	-->	Preston (~preston@softbank221028038126.bbtec.net) has joined #merveilles
+2015-01-28 11:55:17	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-01-28 11:55:17	--	El tema para #merveilles es "Mare Veil - COLORS BAD"
+2015-01-28 11:55:17	--	Tema establecido por Wally (~quinlan@162.243.153.20) el mar, 23 dic 2014 12:24:14
+2015-01-28 11:55:17	--	Channel #merveilles: 39 apodos (4 ops, 2 voces, 33 normales)
+2015-01-28 11:55:21	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-01-28 11:58:04	maxdeviant	Oh man, I remember having to "deworm" every 6 months or so
+2015-01-28 11:58:15	maxdeviant	Had to take the nastiest tasting medication
+2015-02-19 21:50:15	-->	arlefreak1 (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-02-19 21:50:15	--	El tema para #merveilles es "Mare Veil - COLOURS BAD "
+2015-02-19 21:50:15	--	Tema establecido por aliceffekt (~user@216-246-234-75.cpe.distributel.net) el dom, 08 feb 2015 15:08:03
+2015-02-19 21:50:15	--	Channel #merveilles: 44 apodos (4 ops, 2 voces, 38 normales)
+2015-02-19 21:50:19	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-02-19 21:52:00	<--	sarith_ (~sarith@2604:2000:ee2c:b000:9002:2ada:f9e4:6464) ha salido (Ping timeout: 198 seconds)
+2015-02-19 21:54:16	-->	aliceffekt (~user@216-246-234-75.cpe.distributel.net) has joined #merveilles
+2015-02-19 21:54:17	--	Modo #merveilles [+o aliceffekt] por ChanServ
+2015-02-19 21:54:43	KingdomOfZeal	salut
+2015-02-19 21:55:52	tumult	xoka
+2015-02-19 21:57:28	OGS	aliceffekt: http://drop.xxiivv.com/?C=D;O=A
+2015-02-19 21:57:50	<--	aliceffekt (~user@216-246-234-75.cpe.distributel.net) ha salido (Ping timeout: 189 seconds)
+2015-02-19 21:58:11	OGS	too much pressure I guess. Very powerful link
+2015-02-19 21:58:43	@maxdeviant	he doesn't mind if people find it haha
+2015-02-19 21:59:16	@maxdeviant	Especially since he gives out the link to share stuff with people haha
+2015-02-19 22:00:12	OGS	okay
+2015-02-19 22:00:15	OGS	haha
+2015-02-19 22:26:31	-->	sarith (~sarith@2604:2000:ee2c:b000:dcb2:f1b3:88c3:70e2) has joined #merveilles
+2015-02-19 23:00:09	<--	Preston (uid24926@id-24926.charlton.irccloud.com) ha salido (Quit: Connection closed for inactivity)
+2015-02-19 23:00:19	--	justasausage es conocido ahora como justastranger|zzz
+2015-02-19 23:00:41	<--	alessandro (~Alessandr@2-238-233-60.ip246.fastwebnet.it) ha salido (Ping timeout: 378 seconds)
+2015-02-19 23:04:08	-->	aliceffekt (~user@216-246-234-75.cpe.distributel.net) has joined #merveilles
+2015-02-19 23:04:08	--	Modo #merveilles [+o aliceffekt] por ChanServ
+2015-02-19 23:26:59	-->	the_neko^^ (webchat@170.96.124.202.static.snap.net.nz) has joined #merveilles
+2015-02-19 23:26:59	--	Modo #merveilles [+o the_neko^^] por ChanServ
+2015-02-19 23:29:51	<--	aliceffekt (~user@216-246-234-75.cpe.distributel.net) ha salido (Remote host closed the connection)
+2015-02-21 16:53:59	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-02-21 16:53:59	--	El tema para #merveilles es "Mare Veil - COLOURS BAD "
+2015-02-21 16:53:59	--	Tema establecido por aliceffekt (~user@216-246-234-75.cpe.distributel.net) el dom, 08 feb 2015 15:08:04
+2015-02-21 16:53:59	--	Channel #merveilles: 39 apodos (4 ops, 2 voces, 33 normales)
+2015-02-21 16:54:02	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-02-21 17:02:07	-->	aliceffekt (~user@216-246-234-75.cpe.distributel.net) has joined #merveilles
+2015-02-21 17:02:08	--	Modo #merveilles [+o aliceffekt] por ChanServ
+2015-02-21 17:08:18	-->	_Karuji (~Karuji@197.78.132.129) has joined #merveilles
+2015-02-21 17:09:02	<--	aliceffekt (~user@216-246-234-75.cpe.distributel.net) ha salido (Ping timeout: 378 seconds)
+2015-02-21 17:50:53	-->	GlatchOrt (~HerrSchak@128.230.140.228) has joined #merveilles
+2015-02-21 17:51:55	Somnius	Hell yeah twitter cards https://twitter.com/etohehir/status/569278544653762560
+2015-02-21 17:54:59	cblgh	Somnius: what how is this magic done
+2015-02-21 17:55:34	Somnius	Add a few meta tags to the header and then go get the card approved on the twitter card validator!
+2015-02-21 17:55:35	Somnius	https://dev.twitter.com/cards/overview
+2015-02-21 17:55:38	@xaxi	Link title: Twitter Cards | Twitter Developers
+2015-02-21 17:55:57	Somnius	Same thing for open graph, except you just have to pull in the new info on the open graph debugger :3
+2015-02-21 17:56:19	Somnius	https://developers.facebook.com/docs/opengraph
+2015-02-21 17:56:20	@xaxi	Link title: Custom Stories
+2015-02-21 17:57:04	cblgh	ohh neat
+2015-02-21 18:03:15	-->	aliceffekt (~user@216-246-234-75.cpe.distributel.net) has joined #merveilles
+2015-02-21 18:03:15	--	Modo #merveilles [+o aliceffekt] por ChanServ
+2015-02-21 18:07:28	<--	aliceffekt (~user@216-246-234-75.cpe.distributel.net) ha salido (Ping timeout: 198 seconds)
+2015-02-21 18:15:19	<--	_Karuji (~Karuji@197.78.132.129) ha salido (Ping timeout: 200 seconds)
+2015-02-21 18:16:21	-->	_Karuji (~Karuji@197.78.132.129) has joined #merveilles
+2015-02-21 18:30:25	pl1x	please i need you sony vegas gurus! 
+2015-02-21 18:36:04	ESWAT	I think the last time I used vegas was when I made this https://www.youtube.com/watch?v=6NmH6Q4Iaew
+2015-02-21 18:36:06	@xaxi	Link title: Unreal Tournament 300 - YouTube
+2015-02-21 18:42:47	pl1x	ESWAT: my problem, sony vegas renders the video too dark 
+2015-02-21 18:43:10	pl1x	the same video rendered with adobe premiere pro doesn't look dark at all
+2015-02-21 18:43:25	pl1x	i checked all settings etc, no idea why it is dark
+2015-02-21 18:43:32	pl1x	because in the preview it isn't 
+2015-02-21 18:49:59	-->	sarith (~sarith@2604:2000:ee2c:b000:ce4:4a32:b620:7c30) has joined #merveilles
+2015-02-21 18:50:46	pl1x	i want to order a moleskine professional notebook
+2015-02-21 18:51:35	pl1x	no idea if i should take the big one or the xl
+2015-02-21 18:52:41	ESWAT	Guess it depends on how you typically organize your notes if you do sketching
+2015-02-21 18:53:08	ESWAT	I have these spiral-bound notebooks from muji and use each page for the day's todo + sketches, perfect size for that
+2015-02-21 18:53:21	cblgh	i love their trio of smaller notebooks
+2015-02-21 18:53:41	cblgh	and basically have one within reach at all times
+2015-02-21 19:09:38	-->	the_neko^^ (webchat@170.96.124.202.static.snap.net.nz) has joined #merveilles
+2015-02-21 19:09:39	--	Modo #merveilles [+o the_neko^^] por ChanServ
+2015-02-21 19:12:58	pl1x	okay i've ordered the xl one
+2015-02-21 19:13:57	pl1x	ESWAT: haven't heard of muji yet, but i just saw that there's a store in frankfurt
+2015-02-21 19:14:04	pl1x	going to check it out on monday
+2015-02-21 19:15:14	ESWAT	I settled on using their pens too since I wanted to stop being a stationary snob and just use what gets the job done and cheap
+2015-02-21 19:16:57	pl1x	nice it's near Hauptwache, so i'm going to be there on monday anyway 
+2015-02-21 19:16:59	-->	Karuji_ (~Karuji@197.78.132.129) has joined #merveilles
+2015-02-21 19:17:18	pl1x	ESWAT: i only use cheap pens too
+2015-02-21 19:17:27	<--	Karuji_ (~Karuji@197.78.132.129) ha salido (Remote host closed the connection)
+2015-02-21 19:17:31	pl1x	i don't go crazy about this kind of stuff
+2015-02-21 19:17:39	pl1x	i just need something that works 
+2015-02-21 19:17:40	-->	Karuji_ (~Karuji@197.78.132.129) has joined #merveilles
+2015-02-21 19:18:08	ESWAT	Most of my friends are crazy about stationary so I naturally fell into that, then had to reel back
+2015-02-21 19:19:51	<--	Karuji (~Karuji@197.78.132.129) ha salido (Ping timeout: 200 seconds)
+2015-02-21 19:20:34	pl1x	their store looks cool from what i've seen on wikipedia pictures by now http://upload.wikimedia.org/wikipedia/commons/d/d5/Muji_Store_Duesseldorf_innen.jpg
+2015-02-21 19:21:53	ESWAT	Yeah they’re really nice, they keep them pretty consistent from what I can see with the locations I’ve been to
+2015-02-21 19:22:12	ESWAT	The ones in London were pretty tiny though
+2015-02-21 19:23:31	pl1x	google maps just told me that there's a dunkin' donuts on Zeil.. i didn't noticed it even i'm there almost every day 
+2015-02-21 19:24:03	pl1x	ESWAT: i guess, i'll get new pens at muji haha
+2015-02-21 19:25:08	ESWAT	When I stock up I usually grab just a few pens and refills for the rest
+2015-02-21 19:25:52	ESWAT	I’ve also stopped losing pens a lot more since I stopped working in an office with coworkers :P
+2015-02-21 19:26:14	amatecha	lame, no Muji in Vancouver T_T
+2015-02-21 19:26:37	pl1x	ESWAT: so they stole them? haha
+2015-02-21 19:27:07	pl1x	well stole is a bad word, let's say "borrowed" them
+2015-02-21 19:27:13	pl1x	amatecha: :(
+2015-02-21 19:27:33	ESWAT	Yeah they don’t have any locations in Canada, which I guess is pretty stupid I made them my natural default since I’m in Ontario, but I seem to go to a city with them at least once a year so ¯\_(ツ)_/¯
+2015-02-21 19:27:49	ESWAT	Rumour is they’re opening one in Toronto next year
+2015-02-21 19:27:54	ESWAT	Or Uniqlo… can’t remember
+2015-02-21 19:32:50	pl1x	the only Uniqlo store in germany is in berlin
+2015-02-21 19:39:00	pl1x	okay, tbh these types of clothes aren't my style at all haha
+2015-02-21 19:39:17	<--	_Karuji (~Karuji@197.78.132.129) ha salido (Ping timeout: 200 seconds)
+2015-02-21 19:39:43	-->	awkwardhero (~awkwardhe@99-101-250-73.lightspeed.rcsntx.sbcglobal.net) has joined #merveilles
+2015-02-21 19:39:49	awkwardhero	xoka
+2015-02-21 19:40:07	pl1x	awkwardhero: xoka :)
+2015-02-21 19:40:17	awkwardhero	how's it going?
+2015-02-21 19:40:20	-->	_Karuji (~Karuji@197.78.132.129) has joined #merveilles
+2015-02-21 19:42:23	pl1x	awkwardhero: doing okay, finally found out what happened with sony vegas 
+2015-02-21 19:42:30	pl1x	i had some problems 
+2015-02-21 19:42:32	pl1x	you?
+2015-02-21 19:43:45	awkwardhero	did some homework ahead of time thinking I had something going on tonight, but turns out it's next week... so relaxing for now. might do some studying in a few
+2015-04-05 17:57:43	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-04-05 17:57:43	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-04-05 17:57:43	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-04-05 17:57:43	--	Channel #merveilles: 38 apodos (6 ops, 2 voces, 30 normales)
+2015-04-05 17:57:48	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-04-05 20:08:04	-->	elJukes (~elJukes@host-87-242-237-106.ppp.onetel.net.uk) has joined #merveilles
+2015-04-05 20:08:13	elJukes	hai
+2015-04-05 20:17:04	<--	creitve (~creitve@109.195.195.65) ha salido (Quit: Leaving.)
+2015-04-05 20:17:12	-->	creitve (~creitve@109.195.195.65) has joined #merveilles
+2015-04-05 20:24:32	<--	spell (~spell@ip-89-161-30-114.tel.tkb.net.pl) ha salido (Ping timeout: 195 seconds)
+2015-04-07 22:34:16	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-04-07 22:34:16	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-04-07 22:34:16	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:50:55
+2015-04-07 22:34:16	--	Channel #merveilles: 35 apodos (6 ops, 2 voces, 27 normales)
+2015-04-07 22:34:20	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-04-07 22:35:47	-->	the_neko^^ (webchat@170.96.124.202.static.snap.net.nz) has joined #merveilles
+2015-04-07 22:35:48	--	Modo #merveilles [+o the_neko^^] por ChanServ
+2015-04-07 22:45:32	--	justalotofthings es conocido ahora como justastranger
+2015-04-07 22:45:37	--	justastranger es conocido ahora como justastranger|AFK
+2015-04-07 22:58:00	-->	christian_ (~christian@c-76-25-206-3.hsd1.co.comcast.net) has joined #merveilles
+2015-04-07 23:00:33	<--	christian (~christian@c-76-25-206-3.hsd1.co.comcast.net) ha salido (Ping timeout: 189 seconds)
+2015-04-07 23:06:37	<--	undream (~Pak@212.253.33.90) ha salido (Read error: Connection reset by peer)
+2015-04-07 23:16:54	--	justastranger|AFK es conocido ahora como justastranger
+2015-04-07 23:36:36	--	christian_ es conocido ahora como christian
+2015-04-07 23:36:41	--	Modo #merveilles [+v christian] por ChanServ
+2015-04-07 23:47:01	-->	creitve (~creitve@109.195.195.65) has joined #merveilles
+2015-04-07 23:51:19	--	justastranger es conocido ahora como justastranger|zzz
+2015-04-08 00:06:04	<--	vade (~vade@pool-72-89-48-12.nycmny.fios.verizon.net) ha salido (Quit: vade)
+2015-04-08 00:11:50	-->	vade (~vade@pool-72-89-48-12.nycmny.fios.verizon.net) has joined #merveilles
+2015-04-08 00:12:22	<--	vade (~vade@pool-72-89-48-12.nycmny.fios.verizon.net) ha salido (Client Quit)
+2015-04-08 01:16:46	<--	reblink (~reblink@static-50-53-93-101.bvtn.or.frontiernet.net) ha salido (Read error: Connection reset by peer)
+2015-04-08 02:33:23	<--	Karuji (~Karuji@196.216.136.4) ha salido (Remote host closed the connection)
+2015-04-08 02:33:31	-->	Karuji (~Karuji@196.216.136.4) has joined #merveilles
+2015-04-08 03:04:44	-->	spell (~spell@ip-89-161-30-114.tel.tkb.net.pl) has joined #merveilles
+2015-04-08 03:15:10	<--	lritter__ (~lritter@x5ce527e0.dyn.telefonica.de) ha salido (Quit: Leaving)
+2015-04-08 03:15:35	-->	MyMind_ (~Sembei@250.40.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 03:24:33	<--	faun (~makoLine@103-224-128-22.flip.co.nz) ha salido (Ping timeout: 189 seconds)
+2015-04-08 03:28:02	-->	MyMind__ (~Sembei@236.56.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 03:28:26	<--	MyMind_ (~Sembei@250.40.79.188.dynamic.jazztel.es) ha salido (Read error: Connection reset by peer)
+2015-04-08 04:38:30	<--	MyMind__ (~Sembei@236.56.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 186 seconds)
+2015-04-08 04:42:24	<--	Paul_Debrion (~chatzilla@74.83.27.247) ha salido (Ping timeout: 195 seconds)
+2015-04-08 04:44:55	<--	creitve (~creitve@109.195.195.65) ha salido (Quit: Leaving.)
+2015-04-08 04:55:35	-->	faun (~makoLine@103-224-128-1.flip.co.nz) has joined #merveilles
+2015-04-08 05:06:48	-->	MyMind__ (~Sembei@250.40.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 05:18:30	<--	faun (~makoLine@103-224-128-1.flip.co.nz) ha salido (Ping timeout: 186 seconds)
+2015-04-08 05:27:04	<--	MyMind__ (~Sembei@250.40.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 378 seconds)
+2015-04-08 05:36:28	-->	faun (~makoLine@103-224-128-1.flip.co.nz) has joined #merveilles
+2015-04-08 05:50:38	-->	Pak (~Pak@212.253.33.90) has joined #merveilles
+2015-04-08 05:50:39	--	Modo #merveilles [+o Pak] por ChanServ
+2015-04-08 06:08:15	-->	MyMind__ (~Sembei@250.40.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 06:16:06	<--	MyMind__ (~Sembei@250.40.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 186 seconds)
+2015-04-08 06:44:09	-->	MyMind__ (~Sembei@20.77.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 06:53:49	<--	MyMind__ (~Sembei@20.77.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 202 seconds)
+2015-04-08 07:00:01	-->	MyMind__ (~Sembei@236.56.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 07:10:24	-->	MyMind_ (~Sembei@20.77.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 07:10:38	<--	MyMind__ (~Sembei@236.56.79.188.dynamic.jazztel.es) ha salido (Read error: Connection reset by peer)
+2015-04-08 07:18:51	<--	MyMind_ (~Sembei@20.77.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 195 seconds)
+2015-04-08 07:22:30	-->	MyMind_ (~Sembei@250.40.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 07:27:53	<--	MyMind_ (~Sembei@250.40.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 202 seconds)
+2015-04-08 07:31:01	-->	MyMind_ (~Sembei@236.56.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 07:40:18	<--	MyMind_ (~Sembei@236.56.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 189 seconds)
+2015-04-08 07:42:17	-->	MyMind_ (~Sembei@236.56.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 07:48:33	<--	MyMind_ (~Sembei@236.56.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 189 seconds)
+2015-04-08 07:54:52	-->	MyMind_ (~Sembei@236.56.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 08:00:03	<--	MyMind_ (~Sembei@236.56.79.188.dynamic.jazztel.es) ha salido (Read error: Connection reset by peer)
+2015-04-08 08:00:11	-->	MyMind__ (~Sembei@71.180.216.87.static.jazztel.es) has joined #merveilles
+2015-04-08 08:02:37	<--	christian (~christian@c-76-25-206-3.hsd1.co.comcast.net) ha salido (Ping timeout: 195 seconds)
+2015-04-08 08:08:54	<--	faun (~makoLine@103-224-128-1.flip.co.nz) ha salido (Ping timeout: 189 seconds)
+2015-04-08 08:24:09	-->	MyMind_ (~Sembei@20.77.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 08:25:22	<--	MyMind__ (~Sembei@71.180.216.87.static.jazztel.es) ha salido (Ping timeout: 195 seconds)
+2015-04-08 08:33:12	<--	Karuji (~Karuji@196.216.136.4) ha salido (Remote host closed the connection)
+2015-04-08 08:33:20	-->	Karuji (~Karuji@196.216.136.4) has joined #merveilles
+2015-04-08 08:48:57	-->	MyMind__ (~Sembei@236.56.79.188.dynamic.jazztel.es) has joined #merveilles
+2015-04-08 08:49:10	<--	MyMind_ (~Sembei@20.77.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 195 seconds)
+2015-04-08 08:52:40	<--	MyMind__ (~Sembei@236.56.79.188.dynamic.jazztel.es) ha salido (Ping timeout: 195 seconds)
+2015-04-08 09:14:53	-->	MyMind__ (~Sembei@71.180.216.87.static.jazztel.es) has joined #merveilles
+2015-04-08 09:23:42	<--	MyMind__ (~Sembei@71.180.216.87.static.jazztel.es) ha salido (Ping timeout: 189 seconds)
+2015-04-08 10:13:32	-->	vade (~vade@pool-72-89-48-12.nycmny.fios.verizon.net) has joined #merveilles
+2015-04-08 10:26:18	<--	the_neko^^ (webchat@170.96.124.202.static.snap.net.nz) ha salido (Ping timeout: 186 seconds)
+2015-04-08 17:34:57	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-04-08 17:34:57	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-04-08 17:34:57	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-04-08 17:34:57	--	Channel #merveilles: 36 apodos (6 ops, 2 voces, 28 normales)
+2015-04-08 17:35:01	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-04-08 17:35:35	<--	john2496 (~john2496@static-96-246-47-142.nycmny.fios.verizon.net) ha salido (Quit: Leaving...)
+2015-04-08 17:36:36	-->	creitve (~creitve@109.195.195.65) has joined #merveilles
+2015-04-08 18:15:14	<--	vade (~vade@pool-72-89-48-12.nycmny.fios.verizon.net) ha salido (Quit: vade)
+2015-04-08 18:30:13	<--	spell (~spell@ip-89-161-30-114.tel.tkb.net.pl) ha salido (Ping timeout: 378 seconds)
+2015-04-08 19:34:04	<--	dman (uid41719@id-41719.charlton.irccloud.com) ha salido (Quit: Connection closed for inactivity)
+2015-04-08 19:46:51	-->	Paul_Debrion (~chatzilla@74.83.27.247) has joined #merveilles
+2015-04-08 19:55:32	-->	faun (~makoLine@103-224-128-1.flip.co.nz) has joined #merveilles
+2015-04-08 20:33:04	<--	Karuji (~Karuji@196.216.136.4) ha salido (Remote host closed the connection)
+2015-04-08 20:33:13	-->	Karuji (~Karuji@196.216.136.4) has joined #merveilles
+2015-04-08 21:27:29	<--	Jenoki (~cupcake@cpc4-chwo7-2-0-cust159.perr.cable.virginm.net) ha salido (Quit: i am too cute for irc)
+2015-04-08 21:48:05	--	irc: desconectado del servidor
+2015-04-08 21:48:22	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-04-08 21:48:22	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-04-08 21:48:22	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-04-08 21:48:22	--	Channel #merveilles: 34 apodos (6 ops, 2 voces, 26 normales)
+2015-04-08 21:48:26	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-04-08 21:52:24	Paul_Debrion	Tales of Maj'Eyal WHYYYYYY??!!  ):<
+2015-04-08 21:52:34	Paul_Debrion	Why do you email me my password? Why are you even able to do that in the first place? Dammit guys...
+2015-04-08 22:01:11	-->	dman (uid41719@id-41719.charlton.irccloud.com) has joined #merveilles
+2015-04-08 22:04:25	@Wally	damn it
+2015-04-08 22:04:53	+dx	dman it
+2015-04-08 22:05:30	dman	-.-
+2015-04-08 22:06:28	 *	dx hugs dman
+2015-04-27 08:55:27	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-04-27 08:55:27	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-04-27 08:55:27	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-04-27 08:55:27	--	Channel #merveilles: 33 apodos (4 ops, 2 voces, 27 normales)
+2015-04-27 08:55:31	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-04-27 10:13:21	cephalostrum	colourz seeping in
+2015-04-27 10:17:10	<--	creitve (~creitve@109.195.195.65) ha salido (Quit: Leaving.)
+2015-04-27 11:51:23	<--	tilde (~tilde@host219-81-dynamic.182-80-r.retail.telecomitalia.it) ha salido (Quit: nein)
+2015-04-27 12:05:15	<--	MyMind (~Sembei@71.180.216.87.static.jazztel.es) ha salido (Ping timeout: 198 seconds)
+2015-04-27 12:05:18	<--	lritter_ (~lritter@f053086246.adsl.alicedsl.de) ha salido (Quit: Leaving)
+2015-04-27 12:23:29	-->	Jenoki (~cupcake@cpc4-chwo7-2-0-cust159.perr.cable.virginm.net) has joined #merveilles
+2015-04-27 12:28:58	@Somnius	Xoka :3
+2015-04-27 13:19:37	@Wally	maxdeviant: WALLY IS ALWAYS COOKING CHICKEN
+2015-04-27 13:29:56	-->	reblink (~reblink@static-50-53-93-101.bvtn.or.frontiernet.net) has joined #merveilles
+2015-04-27 15:48:27	--	justastranger|zzz es conocido ahora como justastranger
+2015-04-27 15:55:01	<--	alessandro (~Alessandr@2-238-233-60.ip246.fastwebnet.it) ha salido (Ping timeout: 378 seconds)
+2015-04-27 15:59:05	-->	alessandro (~Alessandr@2-238-233-60.ip246.fastwebnet.it) has joined #merveilles
+2015-04-27 16:16:14	-->	magicspell (~spell@ip-89-161-30-114.tel.tkb.net.pl) has joined #merveilles
+2015-04-27 16:21:58	<--	spell` (~spell@ip-89-161-30-114.tel.tkb.net.pl) ha salido (Ping timeout: 378 seconds)
+2015-04-27 17:38:14	-->	Paul_Debrion (~chatzilla@74.83.27.247) has joined #merveilles
+2015-04-27 18:01:15	<--	Jenoki (~cupcake@cpc4-chwo7-2-0-cust159.perr.cable.virginm.net) ha salido (Read error: Connection reset by peer)
+2015-04-27 18:02:10	-->	Jenoki (~cupcake@cpc4-chwo7-2-0-cust159.perr.cable.virginm.net) has joined #merveilles
+2015-04-27 18:04:03	-->	faun (~makoLine@103-224-128-1.flip.co.nz) has joined #merveilles
+2015-04-27 18:10:53	<--	magicspell (~spell@ip-89-161-30-114.tel.tkb.net.pl) ha salido (Ping timeout: 378 seconds)
+2015-04-27 19:18:18	<--	Pak (~Pak@212.253.57.200) ha salido (Read error: Connection reset by peer)
+2015-04-27 20:34:01	-->	lritter (~lritter@x5ce75ab5.dyn.telefonica.de) has joined #merveilles
+2015-04-27 20:40:43	-->	creitve (~creitve@109.195.195.65) has joined #merveilles
+2015-04-27 20:55:01	-->	gpsychosis (~G@dhcp-108-168-103-67.cable.user.start.ca) has joined #merveilles
+2015-04-27 21:47:46	--	irc: desconectado del servidor
+2015-04-27 21:48:00	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-04-27 21:48:00	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-04-27 21:48:00	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-04-27 21:48:00	--	Channel #merveilles: 34 apodos (3 ops, 2 voces, 29 normales)
+2015-04-27 21:48:04	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-04-27 21:50:22	<--	creitve (~creitve@109.195.195.65) ha salido (Quit: Leaving.)
+2015-04-27 22:20:55	<--	Jenoki (~cupcake@cpc4-chwo7-2-0-cust159.perr.cable.virginm.net) ha salido (Quit: aeoiuaeoiuaeoiuaoieu)
+2015-04-27 22:36:23	--	justastranger es conocido ahora como justastranger|zzz
+2015-04-27 22:42:58	-->	Pak (~Pak@212.253.57.200) has joined #merveilles
+2015-04-27 22:42:58	--	Modo #merveilles [+o Pak] por ChanServ
+2015-04-27 23:27:03	<--	Pak (~Pak@212.253.57.200) ha salido (Read error: Connection reset by peer)
+2015-04-28 00:02:24	-->	reblink_ (~reblink@static-50-53-93-101.bvtn.or.frontiernet.net) has joined #merveilles
+2015-04-28 00:04:22	<--	reblink (~reblink@static-50-53-93-101.bvtn.or.frontiernet.net) ha salido (Ping timeout: 198 seconds)
+2015-04-28 00:08:37	-->	creitve (~creitve@109.195.195.65) has joined #merveilles
+2015-04-28 00:43:08	<--	Paul_Debrion (~chatzilla@74.83.27.247) ha salido (Quit: ChatZilla 0.9.91.1 [Firefox 37.0.2/20150415140819])
+2015-04-28 01:06:57	<--	reblink_ (~reblink@static-50-53-93-101.bvtn.or.frontiernet.net) ha salido (Read error: Connection reset by peer)
+2015-04-28 01:49:34	--	ghopstychosis es conocido ahora como gpsychosis
+2015-04-28 03:31:32	-->	MyMind (~Sembei@71.180.216.87.static.jazztel.es) has joined #merveilles
+2015-04-28 03:37:27	-->	spell (~spell@ip-89-161-30-114.tel.tkb.net.pl) has joined #merveilles
+2015-04-28 03:40:28	<--	MyMind (~Sembei@71.180.216.87.static.jazztel.es) ha salido (Quit: WeeChat 1.1.1)
+2015-04-28 03:43:51	-->	spell` (~spell@ip-89-161-30-114.tel.tkb.net.pl) has joined #merveilles
+2015-04-28 03:48:57	<--	spell (~spell@ip-89-161-30-114.tel.tkb.net.pl) ha salido (Ping timeout: 378 seconds)
+2015-04-28 04:21:41	<--	christian (~christian@c-76-25-206-3.hsd1.co.comcast.net) ha salido (Ping timeout: 186 seconds)
+2015-04-28 04:51:29	-->	christian (~christian@c-76-25-206-3.hsd1.co.comcast.net) has joined #merveilles
+2015-04-28 04:51:30	--	Modo #merveilles [+v christian] por ChanServ
+2015-04-28 05:42:19	<--	gpsychosis (~G@dhcp-108-168-103-67.cable.user.start.ca) ha salido (Quit: Leaving)
+2015-04-28 07:48:29	<--	faun (~makoLine@103-224-128-1.flip.co.nz) ha salido (Ping timeout: 186 seconds)
+2015-04-28 09:59:06	<--	lritter (~lritter@x5ce75ab5.dyn.telefonica.de) ha salido (Ping timeout: 378 seconds)
+2015-04-28 11:06:46	--	Aviso(ChanServ): Foundership changed to dx because aliceffekt was dropped.
+2015-04-28 11:25:09	maxdeviant	dx has all of the power!
+2015-04-28 11:44:41	-->	Jenoki (~cupcake@cpc4-chwo7-2-0-cust159.perr.cable.virginm.net) has joined #merveilles
+2015-04-28 11:48:51	+dx	whoa
+2015-04-28 11:49:45	cblgh	with great power and stuff
+2015-04-28 11:49:50	cblgh	ban everyone
+2015-04-28 12:06:01	@Wally	LONG LIVE THE KING
+2015-04-28 12:18:44	maxdeviant	Bitches ain't shit and they ain't sayin' nothing / A hundred motherfuckers can't tell me nothing
+2015-04-28 12:21:06	@Wally	You can't rhyme the same word twice
+2015-04-28 12:22:07	maxdeviant	TELL THAT TO NICKI MINA
+2015-04-28 12:22:11	maxdeviant	*MINAJ
+2015-04-28 12:30:34	@Wally	no she has a scary face
+2015-04-28 12:48:16	-->	christian_ (~christian@c-76-25-206-3.hsd1.co.comcast.net) has joined #merveilles
+2015-04-28 12:48:17	<--	christian (~christian@c-76-25-206-3.hsd1.co.comcast.net) ha salido (Ping timeout: 202 seconds)
+2015-04-28 12:57:17	Xamayon	dx: set a new channel successor so the chan doesn't die if your nick expires
+2015-04-28 12:58:29	Xamayon	and anyone can now reg aliceffekt, don't fall for any imposters
+2015-04-28 12:59:46	<--	creitve (~creitve@109.195.195.65) ha salido (Quit: Leaving.)
+2015-04-28 13:00:05	ammar2	I for one welcome our new dx overlord
+2015-04-28 13:09:58	-->	GlatchOrt (~HerrSchak@128.230.141.206) has joined #merveilles
+2015-04-28 13:26:37	Xyz39808	hypnotoad regime when?
+2015-04-28 13:32:46	-->	nea_ (~nea@67.51.72.6) has joined #merveilles
+2015-04-28 13:33:33	nea_	o/
+2015-04-28 13:37:35	-->	reblink (~reblink@static-50-53-93-101.bvtn.or.frontiernet.net) has joined #merveilles
+2015-04-28 14:24:38	@Wally	nea_: you're in the wrong place, boy
+2015-04-28 14:24:45	@Wally	Everybody migrated to Slack
+2015-04-28 14:27:35	cblgh	wait how do nicks expire?
+2015-04-28 14:27:41	cblgh	you just don't login for a while or what
+2015-04-28 14:28:04	@Wally	no idea
+2015-04-28 14:36:07	Xyz39808	correct. Don't login for 30 days
+2015-04-28 14:39:08	+dx	Xamayon: i will never die
+2015-04-28 14:39:18	+dx	Xamayon: also i think those are set automatically anyway
+2015-04-28 14:40:43	Xamayon	dx: on rizon I had to set the successor for a channel manually, but yeah could be different here. every network has their own weird way of doing things
+2015-04-28 14:45:57	@Wally	Upon reconnecting to EFNet today:
+2015-04-28 14:45:59	@Wally	>efnet  -- | - THE INTERNET IS FULL. FUCK OFF.
+2015-04-28 14:46:01	@Wally	I like it
+2015-04-28 14:46:46	nea_	yea i was about to ask about that
+2015-04-28 14:46:58	nea_	it seemed like everyone went over to slack
+2015-04-28 14:47:09	nea_	can you invite me or whatever?
+2015-04-28 14:47:18	nea_	or do i need to ask aliceffekt
+2015-04-28 14:48:05	@Wally	nea_: I might be able to, whats your email? PM it to me
+2015-04-28 14:48:34	--	christian_ es conocido ahora como christian
+2015-04-28 14:48:36	--	Modo #merveilles [+v christian] por ChanServ
+2015-04-28 14:49:32	@Wally	Oh, nope I can't
+2015-04-28 14:50:29	@Wally	I dropped a message in one of the channels, hopefully someone will get around to it
+2015-04-28 15:25:54	@Wally	nea_: We need an email to inv you
+2015-04-28 15:27:37	dman	dx: is head qt now
+2015-04-28 15:28:19	dman	doushio
+2015-04-28 15:30:02	<--	nea_ (~nea@67.51.72.6) ha salido (Ping timeout: 198 seconds)
+2015-04-28 15:40:25	dman	They're on to me http://puu.sh/hujom/a4611e46f1.jpg
+2015-04-28 15:41:41	@Wally	hujom
+2015-04-28 15:53:32	--	justastranger|zzz es conocido ahora como justastranger
+2015-04-28 16:03:33	-->	jrc03c (~jrc03c@99-113-178-0.lightspeed.rcsntx.sbcglobal.net) has joined #merveilles
+2015-04-28 16:17:29	-->	magicspell (~spell@ip-89-161-30-114.tel.tkb.net.pl) has joined #merveilles
+2015-04-28 16:20:06	<--	spell` (~spell@ip-89-161-30-114.tel.tkb.net.pl) ha salido (Ping timeout: 186 seconds)
+2015-04-28 16:20:10	<--	jrc03c (~jrc03c@99-113-178-0.lightspeed.rcsntx.sbcglobal.net) ha salido (Ping timeout: 202 seconds)
+2015-04-28 16:37:22	-->	jrc03c (~jrc03c@99-113-178-0.lightspeed.rcsntx.sbcglobal.net) has joined #merveilles
+2015-04-28 16:41:09	<--	jrc03c (~jrc03c@99-113-178-0.lightspeed.rcsntx.sbcglobal.net) ha salido (Client Quit)
+2015-04-28 17:35:36	-->	aks (~Adium@178.165.130.59.wireless.dyn.drei.com) has joined #merveilles
+2015-05-10 18:54:33	-->	arlefreak (~arlefreak@189-213-6-155.static.axtel.net) has joined #merveilles
+2015-05-10 18:54:33	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-05-10 18:54:33	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-05-10 18:54:33	--	Channel #merveilles: 34 apodos (3 ops, 2 voces, 29 normales)
+2015-05-10 18:54:37	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-05-10 19:41:04	-->	Hboy_sci (uid18705@id-18705.ealing.irccloud.com) has joined #merveilles
+2015-05-10 19:46:35	Hboy_sci	Howdy 
+2015-05-10 19:48:17	Hboy_sci	cyan 
+2015-05-10 19:48:20	<--	Hboy_sci (uid18705@id-18705.ealing.irccloud.com) ha abandonado #merveilles
+2015-05-10 19:48:54	+dx	ok
+2015-05-10 19:53:04	--	irc: desconectado del servidor
+2015-05-10 19:58:26	>	arlefreak has joined #merveilles
+2015-05-10 19:58:26	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-05-10 19:58:26	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-05-10 19:58:26	--	Channel #merveilles: 34 apodos (3 ops, 2 voces, 29 normales)
+2015-05-10 19:58:30	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-05-10 20:21:10	>	Composition4__ has joined #merveilles
+2015-05-10 20:24:09	<	Composition4_ ha salido (Ping timeout: 192 seconds)
+2015-05-10 20:35:52	<	Composition4__ ha salido (Read error: Connection reset by peer)
+2015-05-10 20:41:10	dman	Just another day in the void.
+2015-05-10 20:41:26	dman	http://deaddrop.shithouse.tv/
+2015-05-10 20:44:43	<	lritter ha salido (Ping timeout: 202 seconds)
+2015-05-10 21:34:23	>	zen_albatross has joined #merveilles
+2015-05-10 22:03:54	<	vade ha salido (Quit: vade)
+2015-05-10 22:10:15	<	zen_albatross ha salido (Quit: leaving)
+2015-05-10 22:55:26	<	Jenoki ha salido (Quit: my bed time!)
+2015-05-10 23:01:51	>	zen_albatross has joined #merveilles
+2015-05-10 23:04:54	@Wally	The void is full of silence
+2015-05-10 23:04:57	@Wally	and therefore, silent screaming
+2015-05-10 23:12:45	<	zen_albatross ha salido (Quit: leaving)
+2015-05-10 23:31:41	>	reblink has joined #merveilles
+2015-05-10 23:57:50	<	Paul_Debrion ha salido (Quit: ChatZilla 0.9.91.1 [Firefox 37.0.2/20150415140819])
+2015-05-11 02:07:29	--	justastranger es conocido ahora como justastranger|zzz
+2015-05-11 02:34:44	<	_Boris_ ha salido
+2015-05-13 23:13:25	>	arlefreak has joined #merveilles
+2015-05-13 23:13:25	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-05-13 23:13:25	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-05-13 23:13:25	--	Channel #merveilles: 30 apodos (4 ops, 1 voz, 25 normales)
+2015-05-13 23:13:29	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-05-13 23:17:15	@Wally	Day 28 of living in the void
+2015-05-13 23:17:21	@Wally	Food supplies continue to hold out
+2015-05-13 23:17:25	@Wally	Morale is alright
+2015-05-13 23:17:35	@Wally	If it weren't for the vibrant sea we've been flying over, we'd have all gone insane by now
+2015-05-13 23:17:58	@Wally	Some of the passengers have opted for stay in the cryo-pods for the next 2 or 3 watch cycles
+2015-05-13 23:18:00	@Wally	no one minds
+2015-05-13 23:18:13	@Wally	Without a clear goal theres not much reason for anyone to be anywhere
+2015-05-13 23:29:58	Paul_Debrion	Where we're going, we won't need eyes to see.  o_o
+2015-05-13 23:34:32	@Wally	I will be your eyes
+2015-05-13 23:34:34	@Wally	I speak for the void
+2015-05-13 23:56:47	<	Paul_Debrion ha salido (Quit: ChatZilla 0.9.91.1 [Firefox 37.0.2/20150415140819])
+2015-05-14 00:03:58	<	Jenoki ha salido (Quit: i am too cute for irc)
+2015-05-14 00:38:07	>	gpsychosis has joined #merveilles
+2015-05-14 00:41:53	--	justasausage es conocido ahora como justastranger|zzz
+2015-05-14 09:30:04	>	arlefreak has joined #merveilles
+2015-05-14 09:30:04	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-05-14 09:30:05	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-05-14 09:30:05	--	Channel #merveilles: 29 apodos (4 ops, 1 voz, 24 normales)
+2015-05-14 09:30:09	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-05-19 11:56:48	>	arlefreak has joined #merveilles
+2015-05-19 11:56:48	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-05-19 11:56:48	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:50:55
+2015-05-19 11:56:48	--	Channel #merveilles: 32 apodos (4 ops, 1 voz, 27 normales)
+2015-05-19 11:56:52	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-05-19 12:04:34	<	christian ha salido (Ping timeout: 202 seconds)
+2015-05-19 12:13:20	>	aks has joined #merveilles
+2015-05-19 12:15:47	<	aks1 ha salido (Ping timeout: 202 seconds)
+2015-05-19 12:26:36	<	aks ha salido (Read error: Connection reset by peer)
+2015-05-19 12:32:21	>	aks has joined #merveilles
+2015-05-19 14:30:20	>	aks1 has joined #merveilles
+2015-05-19 14:31:38	>	lritter has joined #merveilles
+2015-05-19 14:31:46	<	aks ha salido (Ping timeout: 180 seconds)
+2015-05-19 14:54:28	<	john2496 ha salido (Quit: Leaving...)
+2015-05-19 15:17:34	>	lritter_ has joined #merveilles
+2015-05-19 15:17:34	<	lritter ha salido (Read error: Connection reset by peer)
+2015-05-19 15:35:31	<	reblink ha salido (Quit: Leaving)
+2015-05-19 15:41:56	>	njuqiu has joined #merveilles
+2015-05-19 16:02:18	--	justastranger|zzz es conocido ahora como justastranger
+2015-05-19 16:10:08	>	arlefreak1 has joined #merveilles
+2015-05-19 16:31:34	<	aks1 ha salido (Read error: Connection reset by peer)
+2015-05-19 16:32:29	>	aks has joined #merveilles
+2015-05-19 16:33:28	>	makoLime has joined #merveilles
+2015-05-19 16:46:05	>	christian has joined #merveilles
+2015-05-19 16:46:05	--	Modo #merveilles [+v christian] por ChanServ
+2015-05-19 16:48:43	<	aks ha salido (Read error: Connection reset by peer)
+2015-05-19 16:51:23	>	aks has joined #merveilles
+2015-05-19 16:54:06	<	spell ha salido (Read error: Connection reset by peer)
+2015-05-19 17:00:10	<	aks ha salido (Read error: Connection reset by peer)
+2015-05-19 17:01:53	>	aks has joined #merveilles
+2015-05-19 17:02:15	<	Pak ha salido (Read error: Connection reset by peer)
+2015-05-19 17:36:35	>	Paul_Debrion has joined #merveilles
+2015-05-19 17:42:16	>	reblink has joined #merveilles
+2015-05-19 17:49:40	--	Composition4_ es conocido ahora como Composition4
+2015-05-19 17:58:46	Composition4	makoLime, yeah, unfortunately the company focused on visual studio add-ins etc.
+2015-05-19 17:59:23	Composition4	but, hey, F# is gaining traction in linux/unix lands!
+2015-05-19 18:22:20	>	Paul_Debrion_ has joined #merveilles
+2015-05-19 18:24:48	<	Paul_Debrion ha salido (Ping timeout: 189 seconds)
+2015-05-19 18:25:03	--	Paul_Debrion_ es conocido ahora como Paul_Debrion
+2015-05-19 19:04:57	<	arlefreak1 ha salido (Ping timeout: 189 seconds)
+2015-05-19 19:11:25	<	reblink ha salido (Read error: Connection reset by peer)
+2015-05-19 19:19:00	>	reblink has joined #merveilles
+2015-05-25 09:49:19	>	arlefreak has joined #merveilles
+2015-05-25 09:49:19	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-05-25 09:49:19	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-05-25 09:49:19	--	Channel #merveilles: 29 apodos (4 ops, 1 voz, 24 normales)
+2015-05-25 09:49:23	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-05-25 09:50:32	--	justastranger|zzz es conocido ahora como justastranger
+2015-05-25 10:52:03	>	creitve has joined #merveilles
+2015-05-25 10:53:24	>	vade has joined #merveilles
+2015-05-25 11:29:28	>	Hboy_sci has joined #merveilles
+2015-05-25 11:32:11	Hboy_sci	wally: recommend  any programming contractors this time of year
+2015-05-25 11:34:27	Hboy_sci	hmmm hamcha 
+2015-05-26 09:07:14	>	arlefreak has joined #merveilles
+2015-05-26 09:07:14	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-05-26 09:07:14	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-05-26 09:07:14	--	Channel #merveilles: 30 apodos (4 ops, 1 voz, 25 normales)
+2015-05-26 09:07:18	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-05-26 09:14:21	--	irc: desconectado del servidor
+2015-05-26 09:15:22	>	arlefreak has joined #merveilles
+2015-05-26 09:15:22	--	El tema para #merveilles es "Mare Veil - COLOURS BAD | http://die-here.shithouse.tv"
+2015-05-26 09:15:22	--	Tema establecido por Wally (~quinlan@162.243.153.20) el vie, 03 abr 2015 21:51:40
+2015-05-26 09:15:22	--	Channel #merveilles: 30 apodos (4 ops, 1 voz, 25 normales)
+2015-05-26 09:15:27	--	Canal creado el lun, 13 feb 2012 12:18:02
+2015-05-26 09:16:07	>	vade has joined #merveilles
+2015-05-26 09:27:51	>	spell has joined #merveilles

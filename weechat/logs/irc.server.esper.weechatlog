@@ -1,0 +1,1899 @@
+2015-01-22 11:30:58	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-22 11:30:59	--	irc: conectado a irc.esper.net/6667 (37.187.54.85)
+2015-01-22 11:30:59	--	anarchy.esper.net: *** Looking up your hostname...
+2015-01-22 11:30:59	--	anarchy.esper.net: *** Checking Ident
+2015-01-22 11:30:59	--	anarchy.esper.net: *** No Ident response
+2015-01-22 11:31:00	--	anarchy.esper.net: *** Found your hostname
+2015-01-22 11:31:00	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-22 11:31:00	--	Your host is anarchy.esper.net[37.187.54.85/6667], running version charybdis-3.5.0-dev
+2015-01-22 11:31:00	--	This server was created Wed Aug 6 2014 at 20:15:30 CEST
+2015-01-22 11:31:00	--	anarchy.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-22 11:31:00	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-22 11:31:00	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-22 11:31:00	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-22 11:31:00	--	There are 15 users and 8435 invisible on 16 servers
+2015-01-22 11:31:00	--	35 :IRC Operators online
+2015-01-22 11:31:00	--	1 :unknown connection(s)
+2015-01-22 11:31:00	--	5765 :channels formed
+2015-01-22 11:31:00	--	I have 1234 clients and 1 servers
+2015-01-22 11:31:00	--	1234 1580 :Current local users 1234, max 1580
+2015-01-22 11:31:00	--	8450 9251 :Current global users 8450, max 9251
+2015-01-22 11:31:00	--	Highest connection count: 1581 (1580 clients) (106950 connections received)
+2015-01-22 11:31:00	--	- anarchy.esper.net Message of the Day -
+2015-01-22 11:31:00	--	-  (  ___  )( (    /|(  ___  )(  ____ )(  ____ \|\     /||\     /|
+2015-01-22 11:31:00	--	-  | (   ) ||  \  ( || (   ) || (    )|| (    \/| )   ( |( \   / )
+2015-01-22 11:31:00	--	-  | (___) ||   \ | || (___) || (____)|| |      | (___) | \ (_) /
+2015-01-22 11:31:00	--	-  |  ___  || (\ \) ||  ___  ||     __)| |      |  ___  |  \   /
+2015-01-22 11:31:00	--	-  | (   ) || | \   || (   ) || (\ (   | |      | (   ) |   ) (
+2015-01-22 11:31:00	--	-  | )   ( || )  \  || )   ( || ) \ \__| (____/\| )   ( |   | |
+2015-01-22 11:31:00	--	-  |/     \||/    )_)|/     \||/   \__/(_______/|/     \|   \_/
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-                     anarchy.esper.net
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-       Location: Strasbourg, France
+2015-01-22 11:31:00	--	-       Ports (IPv4/IPv6): 5555, 6666 .. 6669, 6697 (SSL), 7000
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-       Ringleader (Administrators): Steve_Restless (Steve_Restless@esper.net)
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-       Revolutionaries (Operators): RyanKnack (ryanknack@esper.net)
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-                 __.--.____________.--.__
+2015-01-22 11:31:00	--	-                (       _.------._       ).
+2015-01-22 11:31:00	--	-                 '._.--'    ||    '--._.'  )
+2015-01-22 11:31:00	--	-                  | |================| || (
+2015-01-22 11:31:00	--	-                  | ||               | ||  )
+2015-01-22 11:31:00	--	-                  | ||              _| || (
+2015-01-22 11:31:00	--	-                  | ||          _.-' | ||  )
+2015-01-22 11:31:00	--	-                  | ||      _.-'     | || (
+2015-01-22 11:31:00	--	-                  | ||  _.-'         | ||  )
+2015-01-22 11:31:00	--	-                  | |.-'             | || (
+2015-01-22 11:31:00	--	-                  | ||               | ||  )
+2015-01-22 11:31:00	--	-                  | ||               | || (
+2015-01-22 11:31:00	--	-                  | ||               | ||  )
+2015-01-22 11:31:00	--	-                  | ||               | || (
+2015-01-22 11:31:00	--	-                  | ||               | ||  )
+2015-01-22 11:31:00	--	-                  | ||               | || (
+2015-01-22 11:31:00	--	-                  | .---.            | ||  )
+2015-01-22 11:31:00	--	-                  | |   |            | || (
+2015-01-22 11:31:00	--	-                  | |   |            | ||  )
+2015-01-22 11:31:00	--	-                  | |  .'            | || (
+2015-01-22 11:31:00	--	-                  | | '              | ||  )
+2015-01-22 11:31:00	--	-                  | |  '.            | || (
+2015-01-22 11:31:00	--	-                  | |   |            | ||  )
+2015-01-22 11:31:00	--	-                  | |O__|  .))).     | || (
+2015-01-22 11:31:00	--	-                  | ||    ( O O )    | ||
+2015-01-22 11:31:00	--	-                  | ||===._ (_) _.===| ||
+2015-01-22 11:31:00	--	-                  | ||     '-.-'     | ||
+2015-01-22 11:31:00	--	-                  | ||      The      | ||
+2015-01-22 11:31:00	--	-                  | ||   Revolution  | ||
+2015-01-22 11:31:00	--	-                  | ||   has begun!  | ||
+2015-01-22 11:31:00	--	-                  | ||    ______     | ||
+2015-01-22 11:31:00	--	-              LGB | ||   /      \    | ||
+2015-01-22 11:31:00	--	-                __| ||  (\______/)   | ||_____
+2015-01-22 11:31:00	--	-               /__| ||___) |''| (____| ||____/
+2015-01-22 11:31:00	--	-              /___|_|/  (________)   |_|/___/
+2015-01-22 11:31:00	--	-             /_____________________________/
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-       Policies, rules, etc:
+2015-01-22 11:31:00	--	-         All users must follow the guidelines set forth in the Esper
+2015-01-22 11:31:00	--	-         network charter: http://esper.net/charter.php
+2015-01-22 11:31:00	--	-         Bots are permitted, but must follow the same rules as users.
+2015-01-22 11:31:00	--	-         Additional Bot Policy at: http://esper.net/bots.php 
+2015-01-22 11:31:00	--	-         Fserves are strictly forbidden (XDCC, etc.)
+2015-01-22 11:31:00	--	-         All users must follow French and applicable international law.
+2015-01-22 11:31:00	--	-         Your use of this network implies consent to perform a proxy scan.
+2015-01-22 11:31:00	--	-         We reserve the right to remove anyone at any time for any reason.
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-       Channels:
+2015-01-22 11:31:00	--	-         #dragonweyr     - Issues requiring network staff intervention.
+2015-01-22 11:31:00	--	-         #help           - General IRC help.
+2015-01-22 11:31:00	--	-         #lobby          - General chat.
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-       (Note: these names have been bolded to prevent them from being clickable
+2015-01-22 11:31:00	--	-              by certain browser-based clients. To join a channel, type /join name.)
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-        Notes:
+2015-01-22 11:31:00	--	-         Esper serves many communities, please be aware that not every channel
+2015-01-22 11:31:00	--	-           is dedicated to the particular community you've come to visit.
+2015-01-22 11:31:00	--	-
+2015-01-22 11:31:00	--	-         New to IRC? Helpful information:
+2015-01-22 11:31:00	--	-           http://www.esper.net/getting_started.php
+2015-01-22 11:31:00	--	End of /MOTD command.
+2015-01-22 11:31:00	--	Modo de usuario [+i] por arlefreak
+2015-01-22 11:35:25	=!=	irc: ¡este buffer no es un canal!
+2015-01-22 11:35:25	=!=	irc: ¡este buffer no es un canal!
+2015-01-22 11:37:06	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-22 11:37:06	--	irc: conectado a irc.esper.net/6667 (80.65.57.2)
+2015-01-22 11:37:07	--	availo.esper.net: *** Looking up your hostname...
+2015-01-22 11:37:07	--	availo.esper.net: *** Checking Ident
+2015-01-22 11:37:07	--	availo.esper.net: *** No Ident response
+2015-01-22 11:37:07	--	availo.esper.net: *** Found your hostname
+2015-01-22 11:37:08	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-22 11:37:08	--	Your host is availo.esper.net[80.65.57.2/6667], running version charybdis-3.5.0-dev
+2015-01-22 11:37:08	--	This server was created Sun Jul 27 2014 at 08:15:44 CEST
+2015-01-22 11:37:08	--	availo.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-22 11:37:08	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-22 11:37:08	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-22 11:37:08	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-22 11:37:08	--	There are 16 users and 8430 invisible on 16 servers
+2015-01-22 11:37:08	--	35 :IRC Operators online
+2015-01-22 11:37:08	--	5761 :channels formed
+2015-01-22 11:37:08	--	I have 2825 clients and 1 servers
+2015-01-22 11:37:08	--	2825 3578 :Current local users 2825, max 3578
+2015-01-22 11:37:08	--	8446 10986 :Current global users 8446, max 10986
+2015-01-22 11:37:08	--	Highest connection count: 3579 (3578 clients) (169296 connections received)
+2015-01-22 11:37:08	--	- availo.esper.net Message of the Day -
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-        ;.    cd:         dd.    o         .dl   dd          .oOXX0x;
+2015-01-22 11:37:08	--	-       .NX.   'WM,       kM0    oMo        cMX  .MM.      .oXMKkddxONWk,
+2015-01-22 11:37:08	--	-      .WNWX.   ,MW.     oMK    dMNMo       cMX  .MM.     lMWc        '0MO
+2015-01-22 11:37:08	--	-     .WN.'WN.   ;MN.   cMX    xMk kMd      cMX  .MM.    :MW.           0MO
+2015-01-22 11:37:08	--	-    'WN.  'WN.   :MX  ,MN.   xMk   kMx     cMX  .MM.    xMK            cMM
+2015-01-22 11:37:08	--	-   ,WN.    'WN.   cMK'WW.   kMx     kMk    cMX  .MM.    ,MM'           0Mk
+2015-01-22 11:37:08	--	-  ,WW.      ,WW.   oMMW.   kMk       kMO   cMX  .MM.     :WWo.       ;KMk
+2015-01-22 11:37:08	--	- ;MW.        ,MW'   dM,   OMO         kMO  cMX  .MMK0000.  c0WN0kkOXMXd.
+2015-01-22 11:37:08	--	- ,,.          .,'    c   .,,           ,,. .,'   ,,,,,,,      ,oxkd:.
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-                             availo.esper.net
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-                                               Not an admin:       brynjar
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-                                           0 helper donkeys at the moment
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-         This server is listening on ports 5555, 6667-9 and 7000
+2015-01-22 11:37:08	--	-        SSL-connections are recommended, and welcome on port 6697
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-                                                      * TERMS OF SERVICE *
+2015-01-22 11:37:08	--	-   Your use of this network constitutes an agreement to abide by the
+2015-01-22 11:37:08	--	-   rules presented in the EsperNet AUP - http://esper.net/charter.php
+2015-01-22 11:37:08	--	-   as well as any applicable Norwegian and International laws.
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-   Further, your use of this network implies consent to a port scan
+2015-01-22 11:37:08	--	-   to detect open proxies and otherwise compromised systems.
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-   Properly configured bots are permitted, but are required to follow
+2015-01-22 11:37:08	--	-   the same rules as users. Please refer to http://esper.net/bots.php
+2015-01-22 11:37:08	--	-   for more information about configuration requirements and suggestions.
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-                                                       * USEFUL CHANNELS *
+2015-01-22 11:37:08	--	-   #dragonweyr - Network staff assistance
+2015-01-22 11:37:08	--	-   #coders     - Help with programming|tr gm cs|sed 's/s\(in\)c/t\1ation/'
+2015-01-22 11:37:08	--	-   #lobby      - Chat
+2015-01-22 11:37:08	--	-   #help       - General IRC help
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-                                                    * SPONSORING COMPANY *
+2015-01-22 11:37:08	--	-   This server is sponsored by donkeys and Availo:
+2015-01-22 11:37:08	--	-   http://www.availo.no/
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-                                                   * CURRENT THEME SONGS *
+2015-01-22 11:37:08	--	-   Theme song #1:       http://kaffekoker.net/mp3/availo_01.mp3
+2015-01-22 11:37:08	--	-   Theme song #2:       http://kaffekoker.net/mp3/availo_02.mp3
+2015-01-22 11:37:08	--	-   Not a theme song #1: http://kaffekoker.net/mp3/blip-hop.mp3
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	-   Feel free to poke 'brynjar' if you are awesome and would like to
+2015-01-22 11:37:08	--	-   donate a chiptune you have composed. EsperNet will love you for it!
+2015-01-22 11:37:08	--	-
+2015-01-22 11:37:08	--	End of /MOTD command.
+2015-01-22 11:37:08	--	Modo de usuario [+i] por arlefreak
+2015-01-22 11:41:49	=!=	irc: ¡este buffer no es un canal!
+2015-01-22 11:45:20	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-22 11:45:20	--	irc: conectado a irc.esper.net/6667 (107.191.99.192)
+2015-01-22 11:45:20	--	calamity.esper.net: *** Looking up your hostname...
+2015-01-22 11:45:20	--	calamity.esper.net: *** Checking Ident
+2015-01-22 11:45:20	--	calamity.esper.net: *** Found your hostname
+2015-01-22 11:45:25	--	calamity.esper.net: *** No Ident response
+2015-01-22 11:45:25	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-22 11:45:25	--	Your host is calamity.esper.net[calamity.esper.net/6667], running version charybdis-3.5.0-dev
+2015-01-22 11:45:25	--	This server was created Mon Oct 13 2014 at 00:53:29 UTC
+2015-01-22 11:45:25	--	calamity.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-22 11:45:25	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-22 11:45:25	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-22 11:45:25	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-22 11:45:25	--	There are 16 users and 8467 invisible on 16 servers
+2015-01-22 11:45:25	--	35 :IRC Operators online
+2015-01-22 11:45:25	--	1 :unknown connection(s)
+2015-01-22 11:45:25	--	5763 :channels formed
+2015-01-22 11:45:25	--	I have 1460 clients and 1 servers
+2015-01-22 11:45:25	--	1460 2540 :Current local users 1460, max 2540
+2015-01-22 11:45:25	--	8483 9342 :Current global users 8483, max 9342
+2015-01-22 11:45:25	--	Highest connection count: 2541 (2540 clients) (257147 connections received)
+2015-01-22 11:45:25	--	- calamity.esper.net Message of the Day -
+2015-01-22 11:45:25	--	-              _____     __           _ __
+2015-01-22 11:45:25	--	-             / ___/__ _/ /__ ___ _  (_) /___ __
+2015-01-22 11:45:25	--	-            / /__/ _ `/ / _ `/  ' \/ / __/ // /
+2015-01-22 11:45:25	--	-            \___/\_,_/_/\_,_/_/_/_/_/\__/\_, /
+2015-01-22 11:45:25	--	-                                        /___/
+2015-01-22 11:45:25	--	-
+2015-01-22 11:45:25	--	-          Host: calamity [ irc.esper.net ]
+2015-01-22 11:45:25	--	-         Admin: Deltafire
+2015-01-22 11:45:25	--	-      Location: New York City, New York, US
+2015-01-22 11:45:25	--	-
+2015-01-22 11:45:25	--	-                       ________________
+2015-01-22 11:45:25	--	-                  ____/ (  (    )   )  \___
+2015-01-22 11:45:25	--	-                 /( (  (  )   _    ))  )   )\
+2015-01-22 11:45:25	--	-               ((     (   )(    )  )   (   )  )
+2015-01-22 11:45:25	--	-             ((/  ( _(   )   (   _) ) (  () )  )
+2015-01-22 11:45:25	--	-            ( (  ( (_)   ((    (   )  .((_ ) .  )_
+2015-01-22 11:45:25	--	-           ( (  )    (      (  )    )   ) . ) (   )
+2015-01-22 11:45:25	--	-          (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )
+2015-01-22 11:45:25	--	-          ( (  (   ) (  )   (  ))     ) _)(   )  )  )
+2015-01-22 11:45:25	--	-         ( (  ( \ ) (    (_  ( ) ( )  )   ) )  )) ( )
+2015-01-22 11:45:25	--	-          (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )
+2015-01-22 11:45:25	--	-         ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )
+2015-01-22 11:45:25	--	-          ((  (   )(    (     _    )   _) _(_ (  (_ )
+2015-01-22 11:45:25	--	-           (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)
+2015-01-22 11:45:25	--	-           ((__)        \\||lll|l||///          \_))
+2015-01-22 11:45:25	--	-                    (   /(/ (  )  ) )\   )
+2015-01-22 11:45:25	--	-                  (    ( ( ( | | ) ) )\   )
+2015-01-22 11:45:25	--	-                   (   /(| / ( )) ) ) )) )
+2015-01-22 11:45:25	--	-                 (     ( ((((_(|)_)))))     )
+2015-01-22 11:45:25	--	-                  (      ||\(|(|)|/||     )
+2015-01-22 11:45:25	--	-                (        |(||(||)||||        )
+2015-01-22 11:45:25	--	-                  (     //|/l|||)|\\ \     )
+2015-01-22 11:45:25	--	-                (/ / //  /|//||||\\  \ \  \ _)
+2015-01-22 11:45:25	--	-
+2015-01-22 11:45:25	--	-                     * TERMS OF SERVICE *
+2015-01-22 11:45:25	--	-
+2015-01-22 11:45:25	--	- Your use of this network constitutes an agreement to abide
+2015-01-22 11:45:25	--	- by the rules presented in the EsperNet charter and consent
+2015-01-22 11:45:25	--	- to a port scan, to detect open proxies and otherwise
+2015-01-22 11:45:25	--	- compromised systems.           http://esper.net/charter.php
+2015-01-22 11:45:25	--	-
+2015-01-22 11:45:25	--	- Properly configured bots are permitted, but are required to
+2015-01-22 11:45:25	--	- follow the same rules as users. Please refer to our bot
+2015-01-22 11:45:25	--	- policy document for more information about configuration
+2015-01-22 11:45:25	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-01-22 11:45:25	--	-
+2015-01-22 11:45:25	--	-                      * HELP CHANNELS *
+2015-01-22 11:45:25	--	-
+2015-01-22 11:45:25	--	-         #help: General IRC help
+2015-01-22 11:45:25	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-01-22 11:45:25	--	-
+2015-01-22 11:45:25	--	- Welcome to EsperNet.
+2015-01-22 11:45:25	--	-
+2015-01-22 11:45:25	--	End of /MOTD command.
+2015-01-22 11:45:25	--	Modo de usuario [+i] por arlefreak
+2015-01-22 11:47:19	=!=	irc: ¡este buffer no es un canal!
+2015-01-22 11:56:39	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-22 11:56:39	--	irc: conectado a irc.esper.net/6667 (154.35.175.15)
+2015-01-22 11:56:39	--	brutus.esper.net: *** Looking up your hostname...
+2015-01-22 11:56:40	--	brutus.esper.net: *** Found your hostname
+2015-01-22 11:56:40	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-22 11:56:40	--	Your host is brutus.esper.net[brutus.esper.net/6667], running version charybdis-3.5.0-dev
+2015-01-22 11:56:40	--	This server was created Fri Jan 16 2015 at 09:23:55 EST
+2015-01-22 11:56:40	--	brutus.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-22 11:56:40	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-22 11:56:40	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-22 11:56:40	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-22 11:56:40	--	There are 16 users and 8431 invisible on 16 servers
+2015-01-22 11:56:40	--	35 :IRC Operators online
+2015-01-22 11:56:40	--	1 :unknown connection(s)
+2015-01-22 11:56:40	--	5766 :channels formed
+2015-01-22 11:56:40	--	I have 636 clients and 1 servers
+2015-01-22 11:56:40	--	636 679 :Current local users 636, max 679
+2015-01-22 11:56:40	--	8447 9111 :Current global users 8447, max 9111
+2015-01-22 11:56:40	--	Highest connection count: 680 (679 clients) (5271 connections received)
+2015-01-22 11:56:40	--	- brutus.esper.net Message of the Day -
+2015-01-22 11:56:40	--	-  dP                           dP
+2015-01-22 11:56:40	--	-  88                           88
+2015-01-22 11:56:40	--	-  88d888b. 88d888b. dP    dP d8888P dP    dP .d8888b.
+2015-01-22 11:56:40	--	-  88'  `88 88'  `88 88    88   88   88    88 Y8ooooo.
+2015-01-22 11:56:40	--	-  88.  .88 88       88.  .88   88   88.  .88       88
+2015-01-22 11:56:40	--	-  88Y8888' dP       `88888P'   dP   `88888P' `88888P'
+2015-01-22 11:56:40	--	-          Welcome to brutus.esper.net!
+2015-01-22 11:56:40	--	-
+2015-01-22 11:56:40	--	-  Info:
+2015-01-22 11:56:40	--	-   Server hosted by Rethem Hosting (www.rethemhosting.net) and
+2015-01-22 11:56:40	--	-   located in Chicago, US.
+2015-01-22 11:56:40	--	-
+2015-01-22 11:56:40	--	-  Timeline:
+2015-01-22 11:56:40	--	-   25/10/2014: We've now linked to EsperNet.
+2015-01-22 11:56:40	--	-
+2015-01-22 11:56:40	--	-  Staff:
+2015-01-22 11:56:40	--	-     suom1: Administrator
+2015-01-22 11:56:40	--	-   brynjar: Administrator
+2015-01-22 11:56:40	--	-
+2015-01-22 11:56:40	--	-  Channels:
+2015-01-22 11:56:40	--	-   #dragonweyr - Network staff assistance
+2015-01-22 11:56:40	--	-   #coders     - Help with programming
+2015-01-22 11:56:40	--	-   #lobby      - Chat
+2015-01-22 11:56:40	--	-   #help       - General IRC help
+2015-01-22 11:56:40	--	-
+2015-01-22 11:56:40	--	-  Terms of Service:
+2015-01-22 11:56:40	--	-   Your use of this network constitutes an agreement to abide by the
+2015-01-22 11:56:40	--	-   rules presented in the EsperNet AUP - http://esper.net/charter.php
+2015-01-22 11:56:40	--	-   as well as any applicable Swedish and International laws.
+2015-01-22 11:56:40	--	-
+2015-01-22 11:56:40	--	-   Further, your use of this network implies consent to a port scan
+2015-01-22 11:56:40	--	-   to detect open proxies and otherwise compromised systems.
+2015-01-22 11:56:40	--	-
+2015-01-22 11:56:40	--	-   Properly configured bots are permitted, but are required to follow
+2015-01-22 11:56:40	--	-   the same rules as users. FServes are strictly prohibited.
+2015-01-22 11:56:40	--	-
+2015-01-22 11:56:40	--	-   We reserve the right to remove anyone at any time for any reason.
+2015-01-22 11:56:40	--	-
+2015-01-22 11:56:40	--	End of /MOTD command.
+2015-01-22 11:56:40	--	Modo de usuario [+i] por arlefreak
+2015-01-22 11:57:02	--2015-01-22 11:59:13	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-22 11:59:13	--	irc: conectado a irc.esper.net/6667 (80.65.57.2)
+2015-01-22 11:59:13	--	availo.esper.net: *** Looking up your hostname...
+2015-01-22 11:59:14	--	availo.esper.net: *** Checking Ident
+2015-01-22 11:59:14	--	availo.esper.net: *** Found your hostname
+2015-01-22 11:59:14	--	availo.esper.net: *** No Ident response
+2015-01-22 11:59:14	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-22 11:59:14	--	Your host is availo.esper.net[80.65.57.2/6667], running version charybdis-3.5.0-dev
+2015-01-22 11:59:14	--	This server was created Sun Jul 27 2014 at 08:15:44 CEST
+2015-01-22 11:59:14	--	availo.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-22 11:59:14	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-22 11:59:14	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-22 11:59:14	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-22 11:59:14	--	There are 16 users and 8435 invisible on 16 servers
+2015-01-22 11:59:14	--	35 :IRC Operators online
+2015-01-22 11:59:14	--	5763 :channels formed
+2015-01-22 11:59:14	--	I have 2818 clients and 1 servers
+2015-01-22 11:59:14	--	2818 3578 :Current local users 2818, max 3578
+2015-01-22 11:59:14	--	8451 10986 :Current global users 8451, max 10986
+2015-01-22 11:59:14	--	Highest connection count: 3579 (3578 clients) (169347 connections received)
+2015-01-22 11:59:14	--	- availo.esper.net Message of the Day -
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-        ;.    cd:         dd.    o         .dl   dd          .oOXX0x;
+2015-01-22 11:59:14	--	-       .NX.   'WM,       kM0    oMo        cMX  .MM.      .oXMKkddxONWk,
+2015-01-22 11:59:14	--	-      .WNWX.   ,MW.     oMK    dMNMo       cMX  .MM.     lMWc        '0MO
+2015-01-22 11:59:14	--	-     .WN.'WN.   ;MN.   cMX    xMk kMd      cMX  .MM.    :MW.           0MO
+2015-01-22 11:59:14	--	-    'WN.  'WN.   :MX  ,MN.   xMk   kMx     cMX  .MM.    xMK            cMM
+2015-01-22 11:59:14	--	-   ,WN.    'WN.   cMK'WW.   kMx     kMk    cMX  .MM.    ,MM'           0Mk
+2015-01-22 11:59:14	--	-  ,WW.      ,WW.   oMMW.   kMk       kMO   cMX  .MM.     :WWo.       ;KMk
+2015-01-22 11:59:14	--	- ;MW.        ,MW'   dM,   OMO         kMO  cMX  .MMK0000.  c0WN0kkOXMXd.
+2015-01-22 11:59:14	--	- ,,.          .,'    c   .,,           ,,. .,'   ,,,,,,,      ,oxkd:.
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-                             availo.esper.net
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-                                               Not an admin:       brynjar
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-                                           0 helper donkeys at the moment
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-         This server is listening on ports 5555, 6667-9 and 7000
+2015-01-22 11:59:14	--	-        SSL-connections are recommended, and welcome on port 6697
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-                                                      * TERMS OF SERVICE *
+2015-01-22 11:59:14	--	-   Your use of this network constitutes an agreement to abide by the
+2015-01-22 11:59:14	--	-   rules presented in the EsperNet AUP - http://esper.net/charter.php
+2015-01-22 11:59:14	--	-   as well as any applicable Norwegian and International laws.
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-   Further, your use of this network implies consent to a port scan
+2015-01-22 11:59:14	--	-   to detect open proxies and otherwise compromised systems.
+2015-01-22 11:59:14	--	-
+2015-01-22 11:59:14	--	-   Properly configured bots are permitted, but are required 2015-01-22 12:25:34	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-22 12:25:34	--	irc: conectado a irc.esper.net/6667 (154.35.175.15)
+2015-01-22 12:25:34	--	brutus.esper.net: *** Looking up your hostname...
+2015-01-22 12:25:34	--	brutus.esper.net: *** Found your hostname
+2015-01-22 12:25:35	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-22 12:25:35	--	Your host is brutus.esper.net[brutus.esper.net/6667], running version charybdis-3.5.0-dev
+2015-01-22 12:25:35	--	This server was created Fri Jan 16 2015 at 09:23:55 EST
+2015-01-22 12:25:35	--	brutus.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-22 12:25:35	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-22 12:25:35	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-22 12:25:35	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-22 12:25:35	--	There are 16 users and 8416 invisible on 16 servers
+2015-01-22 12:25:35	--	35 :IRC Operators online
+2015-01-22 12:25:35	--	5734 :channels formed
+2015-01-22 12:25:35	--	I have 641 clients and 1 servers
+2015-01-22 12:25:35	--	641 679 :Current local users 641, max 679
+2015-01-22 12:25:35	--	8432 9111 :Current global users 8432, max 9111
+2015-01-22 12:25:35	--	Highest connection count: 680 (679 clients) (5339 connections received)
+2015-01-22 12:25:35	--	- brutus.esper.net Message of the Day -
+2015-01-22 12:25:35	--	-  dP                           dP
+2015-01-22 12:25:35	--	-  88                           88
+2015-01-22 12:25:35	--	-  88d888b. 88d888b. dP    dP d8888P dP    dP .d8888b.
+2015-01-22 12:25:35	--	-  88'  `88 88'  `88 88    88   88   88    88 Y8ooooo.
+2015-01-22 12:25:35	--	-  88.  .88 88       88.  .88   88   88.  .88       88
+2015-01-22 12:25:35	--	-  88Y8888' dP       `88888P'   dP   `88888P' `88888P'
+2015-01-22 12:25:35	--	-          Welcome to brutus.esper.net!
+2015-01-22 12:25:35	--	-
+2015-01-22 12:25:35	--	-  Info:
+2015-01-22 12:25:35	--	-   Server hosted by Rethem Hosting (www.rethemhosting.net) and
+2015-01-22 12:25:35	--	-   located in Chicago, US.
+2015-01-22 12:25:35	--	-
+2015-01-22 12:25:35	--	-  Timeline:
+2015-01-22 12:25:35	--	-   25/10/2014: We've now linked to EsperNet.
+2015-01-22 12:25:35	--	-
+2015-01-22 12:25:35	--	-  Staff:
+2015-01-22 12:25:35	--	-     suom1: Administrator
+2015-01-22 12:25:35	--	-   brynjar: Administrator
+2015-01-22 12:25:35	--	-
+2015-01-22 12:25:35	--	-  Channels:
+2015-01-22 12:25:35	--	-   #dragonweyr - Network staff assistance
+2015-01-22 12:25:35	--	-   #coders     - Help with programming
+2015-01-22 12:25:35	--	-   #lobby      - Chat
+2015-01-22 12:25:35	--	-   #help       - General IRC help
+2015-01-22 12:25:35	--	-
+2015-01-22 12:25:35	--	-  Terms of Service:
+2015-01-22 12:25:35	--	-   Your use of this network constitutes an agreement to abide by the
+2015-01-22 12:25:35	--	-   rules presented in the EsperNet AUP - http://esper.net/charter.php
+2015-01-22 12:25:35	--	-   as well as any applicable Swedish and International laws.
+2015-01-22 12:25:35	--	-
+2015-01-22 12:25:35	--	-   Further, your use of this network implies consent to a port scan
+2015-01-22 12:25:35	--	-   to detect open proxies and otherwise compromised systems.
+2015-01-22 12:25:35	--	-
+2015-01-22 12:25:35	--	-   Properly configured bots are permitted, but are required to follow
+2015-01-22 12:25:35	--	-   the same rules as users. FServes are strictly prohibited.
+2015-01-22 12:25:35	--	-
+2015-01-22 12:25:35	--	-   We reserve the right to remove anyone at any time for any reason.
+2015-01-22 12:25:35	--	-
+2015-01-22 12:25:35	--	End of /MOTD command.
+2015-01-22 12:25:35	--	Modo de usuario [+i] por arlefreak
+2015-01-22 17:46:23	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-22 17:46:24	--	irc: conectado a irc.esper.net/6667 (107.191.99.192)
+2015-01-22 17:46:24	--	calamity.esper.net: *** Looking up your hostname...
+2015-01-22 17:46:24	--	calamity.esper.net: *** Checking Ident
+2015-01-22 17:46:24	--	calamity.esper.net: *** No Ident response
+2015-01-22 17:46:24	--	calamity.esper.net: *** Found your hostname
+2015-01-22 17:46:24	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-22 17:46:24	--	Your host is calamity.esper.net[calamity.esper.net/6667], running version charybdis-3.5.0-dev
+2015-01-22 17:46:24	--	This server was created Mon Oct 13 2014 at 00:53:29 UTC
+2015-01-22 17:46:24	--	calamity.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-22 17:46:24	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-22 17:46:24	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-22 17:46:24	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-22 17:46:24	--	There are 16 users and 7862 invisible on 16 servers
+2015-01-22 17:46:24	--	35 :IRC Operators online
+2015-01-22 17:46:24	--	1 :unknown connection(s)
+2015-01-22 17:46:24	--	5665 :channels formed
+2015-01-22 17:46:24	--	I have 1361 clients and 1 servers
+2015-01-22 17:46:24	--	1361 2540 :Current local users 1361, max 2540
+2015-01-22 17:46:24	--	7878 9342 :Current global users 7878, max 9342
+2015-01-22 17:46:24	--	Highest connection count: 2541 (2540 clients) (258349 connections received)
+2015-01-22 17:46:24	--	- calamity.esper.net Message of the Day -
+2015-01-22 17:46:24	--	-              _____     __           _ __
+2015-01-22 17:46:24	--	-             / ___/__ _/ /__ ___ _  (_) /___ __
+2015-01-22 17:46:24	--	-            / /__/ _ `/ / _ `/  ' \/ / __/ // /
+2015-01-22 17:46:24	--	-            \___/\_,_/_/\_,_/_/_/_/_/\__/\_, /
+2015-01-22 17:46:24	--	-                                        /___/
+2015-01-22 17:46:24	--	-
+2015-01-22 17:46:24	--	-          Host: calamity [ irc.esper.net ]
+2015-01-22 17:46:24	--	-         Admin: Deltafire
+2015-01-22 17:46:24	--	-      Location: New York City, New York, US
+2015-01-22 17:46:24	--	-
+2015-01-22 17:46:24	--	-                       ________________
+2015-01-22 17:46:24	--	-                  ____/ (  (    )   )  \___
+2015-01-22 17:46:24	--	-                 /( (  (  )   _    ))  )   )\
+2015-01-22 17:46:24	--	-               ((     (   )(    )  )   (   )  )
+2015-01-22 17:46:24	--	-             ((/  ( _(   )   (   _) ) (  () )  )
+2015-01-22 17:46:24	--	-            ( (  ( (_)   ((    (   )  .((_ ) .  )_
+2015-01-22 17:46:24	--	-           ( (  )    (      (  )    )   ) . ) (   )
+2015-01-22 17:46:24	--	-          (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )
+2015-01-22 17:46:24	--	-          ( (  (   ) (  )   (  ))     ) _)(   )  )  )
+2015-01-22 17:46:24	--	-         ( (  ( \ ) (    (_  ( ) ( )  )   ) )  )) ( )
+2015-01-22 17:46:24	--	-          (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )
+2015-01-22 17:46:24	--	-         ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )
+2015-01-22 17:46:24	--	-          ((  (   )(    (     _    )   _) _(_ (  (_ )
+2015-01-22 17:46:24	--	-           (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)
+2015-01-22 17:46:24	--	-           ((__)        \\||lll|l||///          \_))
+2015-01-22 17:46:24	--	-                    (   /(/ (  )  ) )\   )
+2015-01-22 17:46:24	--	-                  (    ( ( ( | | ) ) )\   )
+2015-01-22 17:46:24	--	-                   (   /(| / ( )) ) ) )) )
+2015-01-22 17:46:24	--	-                 (     ( ((((_(|)_)))))     )
+2015-01-22 17:46:24	--	-                  (      ||\(|(|)|/||     )
+2015-01-22 17:46:24	--	-                (        |(||(||)||||        )
+2015-01-22 17:46:24	--	-                  (     //|/l|||)|\\ \     )
+2015-01-22 17:46:24	--	-                (/ / //  /|//||||\\  \ \  \ _)
+2015-01-22 17:46:24	--	-
+2015-01-22 17:46:24	--	-                     * TERMS OF SERVICE *
+2015-01-22 17:46:24	--	-
+2015-01-22 17:46:24	--	- Your use of this network constitutes an agreement to abide
+2015-01-22 17:46:24	--	- by the rules presented in the EsperNet charter and consent
+2015-01-22 17:46:24	--	- to a port scan, to detect open proxies and otherwise
+2015-01-22 17:46:24	--	- compromised systems.           http://esper.net/charter.php
+2015-01-22 17:46:24	--	-
+2015-01-22 17:46:24	--	- Properly configured bots are permitted, but are required to
+2015-01-22 17:46:24	--	- follow the same rules as users. Please refer to our bot
+2015-01-22 17:46:24	--	- policy document for more information about configuration
+2015-01-22 17:46:24	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-01-22 17:46:24	--	-
+2015-01-22 17:46:24	--	-                      * HELP CHANNELS *
+2015-01-22 17:46:24	--	-
+2015-01-22 17:46:24	--	-         #help: General IRC help
+2015-01-22 17:46:24	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-01-22 17:46:24	--	-
+2015-01-22 17:46:24	--	- Welcome to EsperNet.
+2015-01-22 17:46:24	--	-
+2015-01-22 17:46:24	--	End of /MOTD command.
+2015-01-22 17:46:24	--	Modo de usuario [+i] por arlefreak
+2015-01-22 10:06:36	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-22 10:06:36	--	irc: conectado a irc.esper.net/6667 (94.23.7.50)
+2015-01-22 10:06:37	--	insanity.esper.net: *** Looking up your hostname...
+2015-01-22 10:06:37	--	insanity.esper.net: *** Checking Ident
+2015-01-22 10:06:37	--	insanity.esper.net: *** No Ident response
+2015-01-22 10:06:37	--	insanity.esper.net: *** Found your hostname
+2015-01-22 10:06:37	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-22 10:06:37	--	Your host is insanity.esper.net[insanity.esper.net/6667], running version charybdis-3.5.0-dev
+2015-01-22 10:06:37	--	This server was created Sun Oct 26 2014 at 00:18:17 UTC
+2015-01-22 10:06:37	--	insanity.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-22 10:06:37	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-22 10:06:37	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-22 10:06:37	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-22 10:06:37	--	There are 17 users and 7911 invisible on 16 servers
+2015-01-22 10:06:37	--	35 :IRC Operators online
+2015-01-22 10:06:37	--	5614 :channels formed
+2015-01-22 10:06:37	--	I have 699 clients and 1 servers
+2015-01-22 10:06:37	--	699 2454 :Current local users 699, max 2454
+2015-01-22 10:06:37	--	7928 9251 :Current global users 7928, max 9251
+2015-01-22 10:06:37	--	Highest connection count: 2455 (2454 clients) (199930 connections received)
+2015-01-22 10:06:37	--	- insanity.esper.net Message of the Day -
+2015-01-22 10:06:37	--	-
+2015-01-22 10:06:37	--	-     * * *          * *         *   *         * * *
+2015-01-22 10:06:37	--	-       *    *   *  *      * *   **  *  * * *    *    *   *
+2015-01-22 10:06:37	--	-       *    **  *    *   *   *  * * *    *      *     * *
+2015-01-22 10:06:37	--	-       *    * * *     *  * * *  *  **    *      *      *
+2015-01-22 10:06:37	--	-     * * *  *  **  * *   *   *  *   *    *      *     *
+2015-01-22 10:06:37	--	-            *   *        *   *         * * *         *
+2015-01-22 10:06:37	--	-
+2015-01-22 10:06:37	--	-          Host: insanity [ irc.esper.net ]
+2015-01-22 10:06:37	--	-         Admin: Deltafire
+2015-01-22 10:06:37	--	-      Location: Roubaix, France
+2015-01-22 10:06:37	--	-
+2015-01-22 10:06:37	--	-                     * TERMS OF SERVICE *
+2015-01-22 10:06:37	--	-
+2015-01-22 10:06:37	--	- Your use of this network constitutes an agreement to abide
+2015-01-22 10:06:37	--	- by the rules presented in the EsperNet charter and consent
+2015-01-22 10:06:37	--	- to a port scan, to detect open proxies and otherwise
+2015-01-22 10:06:38	--	- compromised systems.           http://esper.net/charter.php
+2015-01-22 10:06:38	--	-
+2015-01-22 10:06:38	--	- Properly configured bots are permitted, but are required to
+2015-01-22 10:06:38	--	- follow the same rules as users. Please refer to our bot
+2015-01-22 10:06:38	--	- policy document for more information about configuration
+2015-01-22 10:06:38	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-01-22 10:06:38	--	-
+2015-01-22 10:06:38	--	-                      * HELP CHANNELS *
+2015-01-22 10:06:38	--	-
+2015-01-22 10:06:38	--	-         #help: General IRC help
+2015-01-22 10:06:38	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-01-22 10:06:38	--	-
+2015-01-22 10:06:38	--	- Welcome to EsperNet.
+2015-01-22 10:06:38	--	-
+2015-01-22 10:06:38	--	End of /MOTD command.
+2015-01-22 10:06:38	--	Modo de usuario [+i] por arlefreak
+2015-01-22 16:10:22	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-22 16:10:22	--	irc: conectado a irc.esper.net/6667 (80.65.57.2)
+2015-01-22 16:10:23	--	availo.esper.net: *** Looking up your hostname...
+2015-01-22 16:10:23	--	availo.esper.net: *** Checking Ident
+2015-01-22 16:10:23	--	availo.esper.net: *** No Ident response
+2015-01-22 16:10:23	--	availo.esper.net: *** Found your hostname
+2015-01-22 16:10:23	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-22 16:10:23	--	Your host is availo.esper.net[80.65.57.2/6667], running version charybdis-3.5.0-dev
+2015-01-22 16:10:23	--	This server was created Sun Jul 27 2014 at 08:15:44 CEST
+2015-01-22 16:10:23	--	availo.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-22 16:10:23	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-22 16:10:23	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-22 16:10:23	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-22 16:10:23	--	There are 17 users and 8658 invisible on 16 servers
+2015-01-22 16:10:23	--	35 :IRC Operators online
+2015-01-22 16:10:23	--	5775 :channels formed
+2015-01-22 16:10:23	--	I have 2741 clients and 1 servers
+2015-01-22 16:10:23	--	2741 3578 :Current local users 2741, max 3578
+2015-01-22 16:10:23	--	8675 10986 :Current global users 8675, max 10986
+2015-01-22 16:10:23	--	Highest connection count: 3579 (3578 clients) (171649 connections received)
+2015-01-22 16:10:23	--	- availo.esper.net Message of the Day -
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-        ;.    cd:         dd.    o         .dl   dd          .oOXX0x;
+2015-01-22 16:10:23	--	-       .NX.   'WM,       kM0    oMo        cMX  .MM.      .oXMKkddxONWk,
+2015-01-22 16:10:23	--	-      .WNWX.   ,MW.     oMK    dMNMo       cMX  .MM.     lMWc        '0MO
+2015-01-22 16:10:23	--	-     .WN.'WN.   ;MN.   cMX    xMk kMd      cMX  .MM.    :MW.           0MO
+2015-01-22 16:10:23	--	-    'WN.  'WN.   :MX  ,MN.   xMk   kMx     cMX  .MM.    xMK            cMM
+2015-01-22 16:10:23	--	-   ,WN.    'WN.   cMK'WW.   kMx     kMk    cMX  .MM.    ,MM'           0Mk
+2015-01-22 16:10:23	--	-  ,WW.      ,WW.   oMMW.   kMk       kMO   cMX  .MM.     :WWo.       ;KMk
+2015-01-22 16:10:23	--	- ;MW.        ,MW'   dM,   OMO         kMO  cMX  .MMK0000.  c0WN0kkOXMXd.
+2015-01-22 16:10:23	--	- ,,.          .,'    c   .,,           ,,. .,'   ,,,,,,,      ,oxkd:.
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-                             availo.esper.net
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-                                               Not an admin:       brynjar
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-                                           0 helper donkeys at the moment
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-         This server is listening on ports 5555, 6667-9 and 7000
+2015-01-22 16:10:23	--	-        SSL-connections are recommended, and welcome on port 6697
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-                                                      * TERMS OF SERVICE *
+2015-01-22 16:10:23	--	-   Your use of this network constitutes an agreement to abide by the
+2015-01-22 16:10:23	--	-   rules presented in the EsperNet AUP - http://esper.net/charter.php
+2015-01-22 16:10:23	--	-   as well as any applicable Norwegian and International laws.
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-   Further, your use of this network implies consent to a port scan
+2015-01-22 16:10:23	--	-   to detect open proxies and otherwise compromised systems.
+2015-01-22 16:10:23	--	-
+2015-01-22 16:10:23	--	-   Properly configured bots are permitted, but are required 2015-01-25 17:44:14	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-25 17:44:15	--	irc: conectado a irc.esper.net/6667 (94.23.7.50)
+2015-01-25 17:44:15	--	insanity.esper.net: *** Looking up your hostname...
+2015-01-25 17:44:15	--	insanity.esper.net: *** Checking Ident
+2015-01-25 17:44:15	--	insanity.esper.net: *** No Ident response
+2015-01-25 17:44:20	--	insanity.esper.net: *** Found your hostname
+2015-01-25 17:44:21	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-25 17:44:21	--	Your host is insanity.esper.net[insanity.esper.net/6667], running version charybdis-3.5.0-dev
+2015-01-25 17:44:21	--	This server was created Sun Oct 26 2014 at 00:18:17 UTC
+2015-01-25 17:44:21	--	insanity.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-25 17:44:21	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-25 17:44:21	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-25 17:44:21	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-25 17:44:21	--	There are 15 users and 8685 invisible on 17 servers
+2015-01-25 17:44:21	--	34 :IRC Operators online
+2015-01-25 17:44:21	--	5807 :channels formed
+2015-01-25 17:44:21	--	I have 1154 clients and 1 servers
+2015-01-25 17:44:21	--	1154 2454 :Current local users 1154, max 2454
+2015-01-25 17:44:21	--	8700 9378 :Current global users 8700, max 9378
+2015-01-25 17:44:21	--	Highest connection count: 2455 (2454 clients) (207303 connections received)
+2015-01-25 17:44:21	--	- insanity.esper.net Message of the Day -
+2015-01-25 17:44:21	--	-
+2015-01-25 17:44:21	--	-     * * *          * *         *   *         * * *
+2015-01-25 17:44:21	--	-       *    *   *  *      * *   **  *  * * *    *    *   *
+2015-01-25 17:44:21	--	-       *    **  *    *   *   *  * * *    *      *     * *
+2015-01-25 17:44:21	--	-       *    * * *     *  * * *  *  **    *      *      *
+2015-01-25 17:44:21	--	-     * * *  *  **  * *   *   *  *   *    *      *     *
+2015-01-25 17:44:21	--	-            *   *        *   *         * * *         *
+2015-01-25 17:44:21	--	-
+2015-01-25 17:44:21	--	-          Host: insanity [ irc.esper.net ]
+2015-01-25 17:44:21	--	-         Admin: Deltafire
+2015-01-25 17:44:21	--	-      Location: Roubaix, France
+2015-01-25 17:44:21	--	-
+2015-01-25 17:44:21	--	-                     * TERMS OF SERVICE *
+2015-01-25 17:44:21	--	-
+2015-01-25 17:44:21	--	- Your use of this network constitutes an agreement to abide
+2015-01-25 17:44:21	--	- by the rules presented in the EsperNet charter and consent
+2015-01-25 17:44:21	--	- to a port scan, to detect open proxies and otherwise
+2015-01-25 17:44:21	--	- compromised systems.           http://esper.net/charter.php
+2015-01-25 17:44:21	--	-
+2015-01-25 17:44:21	--	- Properly configured bots are permitted, but are required to
+2015-01-25 17:44:21	--	- follow the same rules as users. Please refer to our bot
+2015-01-25 17:44:21	--	- policy document for more information about configuration
+2015-01-25 17:44:21	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-01-25 17:44:21	--	-
+2015-01-25 17:44:21	--	-                      * HELP CHANNELS *
+2015-01-25 17:44:21	--	-
+2015-01-25 17:44:21	--	-         #help: General IRC help
+2015-01-25 17:44:21	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-01-25 17:44:21	--	-
+2015-01-25 17:44:21	--	- Welcome to EsperNet.
+2015-01-25 17:44:21	--	-
+2015-01-25 17:44:21	--	End of /MOTD command.
+2015-01-25 17:44:21	--	Modo de usuario [+i] por arlefreak
+2015-01-28 11:55:09	--	irc: conectando al servidor irc.esper.net/6667...
+2015-01-28 11:55:09	--	irc: conectado a irc.esper.net/6667 (107.191.99.192)
+2015-01-28 11:55:09	--	calamity.esper.net: *** Looking up your hostname...
+2015-01-28 11:55:10	--	calamity.esper.net: *** Checking Ident
+2015-01-28 11:55:10	--	calamity.esper.net: *** Found your hostname
+2015-01-28 11:55:17	--	calamity.esper.net: *** No Ident response
+2015-01-28 11:55:17	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-01-28 11:55:17	--	Your host is calamity.esper.net[calamity.esper.net/6667], running version charybdis-3.5.0-dev
+2015-01-28 11:55:17	--	This server was created Mon Oct 13 2014 at 00:53:29 UTC
+2015-01-28 11:55:17	--	calamity.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-01-28 11:55:17	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-01-28 11:55:17	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-01-28 11:55:17	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-01-28 11:55:17	--	There are 13 users and 8383 invisible on 17 servers
+2015-01-28 11:55:17	--	32 :IRC Operators online
+2015-01-28 11:55:17	--	2 :unknown connection(s)
+2015-01-28 11:55:17	--	5709 :channels formed
+2015-01-28 11:55:17	--	I have 1612 clients and 1 servers
+2015-01-28 11:55:17	--	1612 2540 :Current local users 1612, max 2540
+2015-01-28 11:55:17	--	8396 9378 :Current global users 8396, max 9378
+2015-01-28 11:55:17	--	Highest connection count: 2541 (2540 clients) (288926 connections received)
+2015-01-28 11:55:17	--	- calamity.esper.net Message of the Day -
+2015-01-28 11:55:17	--	-              _____     __           _ __
+2015-01-28 11:55:17	--	-             / ___/__ _/ /__ ___ _  (_) /___ __
+2015-01-28 11:55:17	--	-            / /__/ _ `/ / _ `/  ' \/ / __/ // /
+2015-01-28 11:55:17	--	-            \___/\_,_/_/\_,_/_/_/_/_/\__/\_, /
+2015-01-28 11:55:17	--	-                                        /___/
+2015-01-28 11:55:17	--	-
+2015-01-28 11:55:17	--	-          Host: calamity [ irc.esper.net ]
+2015-01-28 11:55:17	--	-         Admin: Deltafire
+2015-01-28 11:55:17	--	-      Location: New York City, New York, US
+2015-01-28 11:55:17	--	-
+2015-01-28 11:55:17	--	-                       ________________
+2015-01-28 11:55:17	--	-                  ____/ (  (    )   )  \___
+2015-01-28 11:55:17	--	-                 /( (  (  )   _    ))  )   )\
+2015-01-28 11:55:17	--	-               ((     (   )(    )  )   (   )  )
+2015-01-28 11:55:17	--	-             ((/  ( _(   )   (   _) ) (  () )  )
+2015-01-28 11:55:17	--	-            ( (  ( (_)   ((    (   )  .((_ ) .  )_
+2015-01-28 11:55:17	--	-           ( (  )    (      (  )    )   ) . ) (   )
+2015-01-28 11:55:17	--	-          (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )
+2015-01-28 11:55:17	--	-          ( (  (   ) (  )   (  ))     ) _)(   )  )  )
+2015-01-28 11:55:17	--	-         ( (  ( \ ) (    (_  ( ) ( )  )   ) )  )) ( )
+2015-01-28 11:55:17	--	-          (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )
+2015-01-28 11:55:17	--	-         ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )
+2015-01-28 11:55:17	--	-          ((  (   )(    (     _    )   _) _(_ (  (_ )
+2015-01-28 11:55:17	--	-           (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)
+2015-01-28 11:55:17	--	-           ((__)        \\||lll|l||///          \_))
+2015-01-28 11:55:17	--	-                    (   /(/ (  )  ) )\   )
+2015-01-28 11:55:17	--	-                  (    ( ( ( | | ) ) )\   )
+2015-01-28 11:55:17	--	-                   (   /(| / ( )) ) ) )) )
+2015-01-28 11:55:17	--	-                 (     ( ((((_(|)_)))))     )
+2015-01-28 11:55:17	--	-                  (      ||\(|(|)|/||     )
+2015-01-28 11:55:17	--	-                (        |(||(||)||||        )
+2015-01-28 11:55:17	--	-                  (     //|/l|||)|\\ \     )
+2015-01-28 11:55:17	--	-                (/ / //  /|//||||\\  \ \  \ _)
+2015-01-28 11:55:17	--	-
+2015-01-28 11:55:17	--	-                     * TERMS OF SERVICE *
+2015-01-28 11:55:17	--	-
+2015-01-28 11:55:17	--	- Your use of this network constitutes an agreement to abide
+2015-01-28 11:55:17	--	- by the rules presented in the EsperNet charter and consent
+2015-01-28 11:55:17	--	- to a port scan, to detect open proxies and otherwise
+2015-01-28 11:55:17	--	- compromised systems.           http://esper.net/charter.php
+2015-01-28 11:55:17	--	-
+2015-01-28 11:55:17	--	- Properly configured bots are permitted, but are required to
+2015-01-28 11:55:17	--	- follow the same rules as users. Please refer to our bot
+2015-01-28 11:55:17	--	- policy document for more information about configuration
+2015-01-28 11:55:17	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-01-28 11:55:17	--	-
+2015-01-28 11:55:17	--	-                      * HELP CHANNELS *
+2015-01-28 11:55:17	--	-
+2015-01-28 11:55:17	--	-         #help: General IRC help
+2015-01-28 11:55:17	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-01-28 11:55:17	--	-
+2015-01-28 11:55:17	--	- Welcome to EsperNet.
+2015-01-28 11:55:17	--	-
+2015-01-28 11:55:17	--	End of /MOTD command.
+2015-01-28 11:55:17	--	Modo de usuario [+i] por arlefreak
+2015-02-19 21:50:13	--	irc: conectando al servidor irc.esper.net/6667...
+2015-02-19 21:50:13	--	irc: conectado a irc.esper.net/6667 (212.47.227.96)
+2015-02-19 21:50:13	--	moo.esper.net: *** Looking up your hostname...
+2015-02-19 21:50:13	--	moo.esper.net: *** Checking Ident
+2015-02-19 21:50:13	--	moo.esper.net: *** No Ident response
+2015-02-19 21:50:14	--	moo.esper.net: *** Found your hostname
+2015-02-19 21:50:14	--	irc: el apodo "arlefreak" ya está en uso, probando con el apodo "arlefreak1"
+2015-02-19 21:50:15	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak1
+2015-02-19 21:50:15	--	Your host is moo.esper.net[moo.esper.net/6667], running version charybdis-3.5.0-dev
+2015-02-19 21:50:15	--	This server was created Sun Oct 26 2014 at 09:40:06 UTC
+2015-02-19 21:50:15	--	moo.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-02-19 21:50:15	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-02-19 21:50:15	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-02-19 21:50:15	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-02-19 21:50:15	--	There are 21 users and 8438 invisible on 18 servers
+2015-02-19 21:50:15	--	37 :IRC Operators online
+2015-02-19 21:50:15	--	5798 :channels formed
+2015-02-19 21:50:15	--	I have 693 clients and 1 servers
+2015-02-19 21:50:15	--	693 1393 :Current local users 693, max 1393
+2015-02-19 21:50:15	--	8459 9378 :Current global users 8459, max 9378
+2015-02-19 21:50:15	--	Highest connection count: 1394 (1393 clients) (178400 connections received)
+2015-02-19 21:50:15	--	- moo.esper.net Message of the Day -
+2015-02-19 21:50:15	--	-             _____
+2015-02-19 21:50:15	--	-            < moo >
+2015-02-19 21:50:15	--	-             -----
+2015-02-19 21:50:15	--	-                    \   ^__^
+2015-02-19 21:50:15	--	-                     \  (oo)\_______
+2015-02-19 21:50:15	--	-                        (__)\       )\/\
+2015-02-19 21:50:15	--	-                            ||----w |
+2015-02-19 21:50:15	--	-                            ||     ||
+2015-02-19 21:50:15	--	-
+2015-02-19 21:50:15	--	-          Host: moo [ irc.esper.net ]
+2015-02-19 21:50:15	--	-         Admin: Deltafire
+2015-02-19 21:50:15	--	-      Location: Paris, France
+2015-02-19 21:50:15	--	-
+2015-02-19 21:50:15	--	-                     * TERMS OF SERVICE *
+2015-02-19 21:50:15	--	-
+2015-02-19 21:50:15	--	- Your use of this network constitutes an agreement to abide
+2015-02-19 21:50:15	--	- by the rules presented in the EsperNet charter and consent
+2015-02-19 21:50:15	--	- to a port scan, to detect open proxies and otherwise
+2015-02-19 21:50:15	--	- compromised systems.           http://esper.net/charter.php
+2015-02-19 21:50:15	--	-
+2015-02-19 21:50:15	--	- Properly configured bots are permitted, but are required to
+2015-02-19 21:50:15	--	- follow the same rules as users. Please refer to our bot
+2015-02-19 21:50:15	--	- policy document for more information about configuration
+2015-02-19 21:50:15	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-02-19 21:50:15	--	-
+2015-02-19 21:50:15	--	-                      * HELP CHANNELS *
+2015-02-19 21:50:15	--	-
+2015-02-19 21:50:15	--	-         #help: General IRC help
+2015-02-19 21:50:15	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-02-19 21:50:15	--	-
+2015-02-19 21:50:15	--	- Welcome to EsperNet.
+2015-02-19 21:50:15	--	-
+2015-02-19 21:50:15	--	End of /MOTD command.
+2015-02-19 21:50:15	--	Modo de usuario [+i] por arlefreak1
+2015-02-21 16:53:57	--	irc: conectando al servidor irc.esper.net/6667...
+2015-02-21 16:53:57	--	irc: conectado a irc.esper.net/6667 (94.23.7.50)
+2015-02-21 16:53:57	--	insanity.esper.net: *** Looking up your hostname...
+2015-02-21 16:53:57	--	insanity.esper.net: *** Checking Ident
+2015-02-21 16:53:58	--	insanity.esper.net: *** No Ident response
+2015-02-21 16:53:58	--	insanity.esper.net: *** Found your hostname
+2015-02-21 16:53:58	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-02-21 16:53:59	--	Your host is insanity.esper.net[insanity.esper.net/6667], running version charybdis-3.5.0-dev
+2015-02-21 16:53:59	--	This server was created Sun Oct 26 2014 at 00:18:17 UTC
+2015-02-21 16:53:59	--	insanity.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-02-21 16:53:59	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-02-21 16:53:59	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-02-21 16:53:59	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-02-21 16:53:59	--	There are 22 users and 8992 invisible on 18 servers
+2015-02-21 16:53:59	--	38 :IRC Operators online
+2015-02-21 16:53:59	--	1 :unknown connection(s)
+2015-02-21 16:53:59	--	5895 :channels formed
+2015-02-21 16:53:59	--	I have 1269 clients and 1 servers
+2015-02-21 16:53:59	--	1269 2454 :Current local users 1269, max 2454
+2015-02-21 16:53:59	--	9014 9378 :Current global users 9014, max 9378
+2015-02-21 16:53:59	--	Highest connection count: 2455 (2454 clients) (262074 connections received)
+2015-02-21 16:53:59	--	- insanity.esper.net Message of the Day -
+2015-02-21 16:53:59	--	-
+2015-02-21 16:53:59	--	-     * * *          * *         *   *         * * *
+2015-02-21 16:53:59	--	-       *    *   *  *      * *   **  *  * * *    *    *   *
+2015-02-21 16:53:59	--	-       *    **  *    *   *   *  * * *    *      *     * *
+2015-02-21 16:53:59	--	-       *    * * *     *  * * *  *  **    *      *      *
+2015-02-21 16:53:59	--	-     * * *  *  **  * *   *   *  *   *    *      *     *
+2015-02-21 16:53:59	--	-            *   *        *   *         * * *         *
+2015-02-21 16:53:59	--	-
+2015-02-21 16:53:59	--	-          Host: insanity [ irc.esper.net ]
+2015-02-21 16:53:59	--	-         Admin: Deltafire
+2015-02-21 16:53:59	--	-      Location: Roubaix, France
+2015-02-21 16:53:59	--	-
+2015-02-21 16:53:59	--	-                     * TERMS OF SERVICE *
+2015-02-21 16:53:59	--	-
+2015-02-21 16:53:59	--	- Your use of this network constitutes an agreement to abide
+2015-02-21 16:53:59	--	- by the rules presented in the EsperNet charter and consent
+2015-02-21 16:53:59	--	- to a port scan, to detect open proxies and otherwise
+2015-02-21 16:53:59	--	- compromised systems.           http://esper.net/charter.php
+2015-02-21 16:53:59	--	-
+2015-02-21 16:53:59	--	- Properly configured bots are permitted, but are required to
+2015-02-21 16:53:59	--	- follow the same rules as users. Please refer to our bot
+2015-02-21 16:53:59	--	- policy document for more information about configuration
+2015-02-21 16:53:59	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-02-21 16:53:59	--	-
+2015-02-21 16:53:59	--	-                      * HELP CHANNELS *
+2015-02-21 16:53:59	--	-
+2015-02-21 16:53:59	--	-         #help: General IRC help
+2015-02-21 16:53:59	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-02-21 16:53:59	--	-
+2015-02-21 16:53:59	--	- Welcome to EsperNet.
+2015-02-21 16:53:59	--	-
+2015-02-21 16:53:59	--	End of /MOTD command.
+2015-02-21 16:53:59	--	Modo de usuario [+i] por arlefreak
+2015-04-05 17:57:37	--	irc: conectando al servidor irc.esper.net/6667...
+2015-04-05 17:57:38	--	irc: conectado a irc.esper.net/6667 (212.47.227.96)
+2015-04-05 17:57:38	--	moo.esper.net: *** Looking up your hostname...
+2015-04-05 17:57:38	--	moo.esper.net: *** Checking Ident
+2015-04-05 17:57:38	--	moo.esper.net: *** Found your hostname
+2015-04-05 17:57:43	--	moo.esper.net: *** No Ident response
+2015-04-05 17:57:43	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-04-05 17:57:43	--	Your host is moo.esper.net[moo.esper.net/6667], running version charybdis-3.5.0-dev
+2015-04-05 17:57:43	--	This server was created Sun Oct 26 2014 at 09:40:06 UTC
+2015-04-05 17:57:43	--	moo.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-04-05 17:57:43	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-04-05 17:57:43	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-04-05 17:57:43	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-04-05 17:57:43	--	There are 22 users and 8717 invisible on 18 servers
+2015-04-05 17:57:43	--	34 :IRC Operators online
+2015-04-05 17:57:43	--	5933 :channels formed
+2015-04-05 17:57:43	--	I have 907 clients and 1 servers
+2015-04-05 17:57:43	--	907 948 :Current local users 907, max 948
+2015-04-05 17:57:43	--	8739 9368 :Current global users 8739, max 9368
+2015-04-05 17:57:43	--	Highest connection count: 949 (948 clients) (43302 connections received)
+2015-04-05 17:57:43	--	- moo.esper.net Message of the Day -
+2015-04-05 17:57:43	--	-             _____
+2015-04-05 17:57:43	--	-            < moo >
+2015-04-05 17:57:43	--	-             -----
+2015-04-05 17:57:43	--	-                    \   ^__^
+2015-04-05 17:57:43	--	-                     \  (oo)\_______
+2015-04-05 17:57:43	--	-                        (__)\       )\/\
+2015-04-05 17:57:43	--	-                            ||----w |
+2015-04-05 17:57:43	--	-                            ||     ||
+2015-04-05 17:57:43	--	-
+2015-04-05 17:57:43	--	-          Host: moo [ irc.esper.net ]
+2015-04-05 17:57:43	--	-         Admin: Deltafire
+2015-04-05 17:57:43	--	-      Location: Paris, France
+2015-04-05 17:57:43	--	-
+2015-04-05 17:57:43	--	-                     * TERMS OF SERVICE *
+2015-04-05 17:57:43	--	-
+2015-04-05 17:57:43	--	- Your use of this network constitutes an agreement to abide
+2015-04-05 17:57:43	--	- by the rules presented in the EsperNet charter and consent
+2015-04-05 17:57:43	--	- to a port scan, to detect open proxies and otherwise
+2015-04-05 17:57:43	--	- compromised systems.           http://esper.net/charter.php
+2015-04-05 17:57:43	--	-
+2015-04-05 17:57:43	--	- Properly configured bots are permitted, but are required to
+2015-04-05 17:57:43	--	- follow the same rules as users. Please refer to our bot
+2015-04-05 17:57:43	--	- policy document for more information about configuration
+2015-04-05 17:57:43	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-04-05 17:57:43	--	-
+2015-04-05 17:57:43	--	-                      * HELP CHANNELS *
+2015-04-05 17:57:43	--	-
+2015-04-05 17:57:43	--	-         #help: General IRC help
+2015-04-05 17:57:43	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-04-05 17:57:43	--	-
+2015-04-05 17:57:43	--	- Welcome to EsperNet.
+2015-04-05 17:57:43	--	-
+2015-04-05 17:57:43	--	End of /MOTD command.
+2015-04-05 17:57:43	--	Modo de usuario [+i] por arlefreak
+2015-04-07 22:34:10	--	irc: conectando al servidor irc.esper.net/6667...
+2015-04-07 22:34:10	--	irc: conectado a irc.esper.net/6667 (198.245.62.174)
+2015-04-07 22:34:11	--	warden.esper.net: *** Looking up your hostname...
+2015-04-07 22:34:11	--	warden.esper.net: *** Checking Ident
+2015-04-07 22:34:12	--	warden.esper.net: *** Found your hostname
+2015-04-07 22:34:16	--	warden.esper.net: *** No Ident response
+2015-04-07 22:34:16	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-04-07 22:34:16	--	Your host is warden.esper.net[198.245.62.174/6667], running version charybdis-3.5.0-dev
+2015-04-07 22:34:16	--	This server was created Sun Aug 10 2014 at 09:39:10 UTC
+2015-04-07 22:34:16	--	warden.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-04-07 22:34:16	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-04-07 22:34:16	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-04-07 22:34:16	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-04-07 22:34:16	--	There are 20 users and 8370 invisible on 18 servers
+2015-04-07 22:34:16	--	35 :IRC Operators online
+2015-04-07 22:34:16	--	5881 :channels formed
+2015-04-07 22:34:16	--	I have 281 clients and 1 servers
+2015-04-07 22:34:16	--	281 619 :Current local users 281, max 619
+2015-04-07 22:34:16	--	8390 9378 :Current global users 8390, max 9378
+2015-04-07 22:34:16	--	Highest connection count: 620 (619 clients) (5988 connections received)
+2015-04-07 22:34:16	--	- warden.esper.net Message of the Day -
+2015-04-07 22:34:16	--	-                           _
+2015-04-07 22:34:16	--	-                          | |
+2015-04-07 22:34:16	--	- __      __ __ _  _ __  __| |  ___  _ __
+2015-04-07 22:34:16	--	- \ \ /\ / // _` || '__|/ _` | / _ \| '_ \
+2015-04-07 22:34:16	--	-  \ V  V /| (_| || |  | (_| ||  __/| | | |
+2015-04-07 22:34:16	--	-   \_/\_/  \__,_||_|   \__,_| \___||_| |_|
+2015-04-07 22:34:16	--	-                            .esper.net
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	- Location:       Beauharnois, QC, CA
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	- Ports:          5555, 6666 .. 6669, 6697 (SSL), 7000
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	- Admins:         TheBadShepperd <thebadshepperd at esper.net>
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	- Opers:          dahui
+2015-04-07 22:34:16	--	-                 malianx
+2015-04-07 22:34:16	--	-                 phroa
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	- Policies, rules, etc:
+2015-04-07 22:34:16	--	-            All users must follow the guidelines set forth in the EsperNet
+2015-04-07 22:34:16	--	-            network charter: http://esper.net/charter.php
+2015-04-07 22:34:16	--	-            Bots are permitted, but most follow an additional bot policy
+2015-04-07 22:34:16	--	-            found at http://esper.net/bots.php in addition to the EsperNet
+2015-04-07 22:34:16	--	-            charter.
+2015-04-07 22:34:16	--	-            Fserves are strictly forbidden (XDCC, etc.)
+2015-04-07 22:34:16	--	-            All users must follow Canadian and applicable international law.
+2015-04-07 22:34:16	--	-            Your use of this network implies consent to perform a proxy scan.
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	- Channels of note:
+2015-04-07 22:34:16	--	-            #help             - General IRC help.
+2015-04-07 22:34:16	--	-            #lobby            - General chat.
+2015-04-07 22:34:16	--	-            #vox              - General chat.
+2015-04-07 22:34:16	--	-            #dragonweyr       - Issues requiring network staff intervention.
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	- Final notes:
+2015-04-07 22:34:16	--	-            EsperNet is home to many communites, please be aware that not every
+2015-04-07 22:34:16	--	-            channel is dedicated to the particular community you've come to visit.
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	-            EsperNet is a privately-owned and operated network, and as such,
+2015-04-07 22:34:16	--	-            network staff reserve the right to suspend, limit, or deny access
+2015-04-07 22:34:16	--	-            to the network at any time for any reason.
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	-         mitch_ is the most glorious non-ircop honorary Canadian of the month.
+2015-04-07 22:34:16	--	-
+2015-04-07 22:34:16	--	- dftba
+2015-04-07 22:34:16	--	End of /MOTD command.
+2015-04-07 22:34:16	--	Modo de usuario [+i] por arlefreak
+2015-04-08 17:34:52	--	irc: conectando al servidor irc.esper.net/6667...
+2015-04-08 17:34:52	--	irc: conectado a irc.esper.net/6667 (37.187.54.85)
+2015-04-08 17:34:52	--	anarchy.esper.net: *** Looking up your hostname...
+2015-04-08 17:34:52	--	anarchy.esper.net: *** Checking Ident
+2015-04-08 17:34:53	--	anarchy.esper.net: *** Found your hostname
+2015-04-08 17:34:57	--	anarchy.esper.net: *** No Ident response
+2015-04-08 17:34:57	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-04-08 17:34:57	--	Your host is anarchy.esper.net[37.187.54.85/6667], running version charybdis-3.5.0-dev
+2015-04-08 17:34:57	--	This server was created Sun Dec 21 2014 at 20:05:19 CET
+2015-04-08 17:34:57	--	anarchy.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-04-08 17:34:57	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-04-08 17:34:57	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-04-08 17:34:57	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-04-08 17:34:57	--	There are 21 users and 8654 invisible on 18 servers
+2015-04-08 17:34:57	--	33 :IRC Operators online
+2015-04-08 17:34:57	--	1 :unknown connection(s)
+2015-04-08 17:34:57	--	5863 :channels formed
+2015-04-08 17:34:57	--	I have 2042 clients and 1 servers
+2015-04-08 17:34:57	--	2042 2234 :Current local users 2042, max 2234
+2015-04-08 17:34:57	--	8675 9368 :Current global users 8675, max 9368
+2015-04-08 17:34:57	--	Highest connection count: 2235 (2234 clients) (160449 connections received)
+2015-04-08 17:34:57	--	- anarchy.esper.net Message of the Day -
+2015-04-08 17:34:57	--	-  (  ___  )( (    /|(  ___  )(  ____ )(  ____ \|\     /||\     /|
+2015-04-08 17:34:57	--	-  | (   ) ||  \  ( || (   ) || (    )|| (    \/| )   ( |( \   / )
+2015-04-08 17:34:57	--	-  | (___) ||   \ | || (___) || (____)|| |      | (___) | \ (_) /
+2015-04-08 17:34:57	--	-  |  ___  || (\ \) ||  ___  ||     __)| |      |  ___  |  \   /
+2015-04-08 17:34:57	--	-  | (   ) || | \   || (   ) || (\ (   | |      | (   ) |   ) (
+2015-04-08 17:34:57	--	-  | )   ( || )  \  || )   ( || ) \ \__| (____/\| )   ( |   | |
+2015-04-08 17:34:57	--	-  |/     \||/    )_)|/     \||/   \__/(_______/|/     \|   \_/
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-                     anarchy.esper.net
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-       Location: Strasbourg, France
+2015-04-08 17:34:57	--	-       Ports (IPv4/IPv6): 5555, 6666 .. 6669, 6697 (SSL), 7000
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-       Ringleader (Administrators): Steve_Restless (Steve_Restless@esper.net)
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-       Revolutionaries (Operators): RyanKnack (ryanknack@esper.net)
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-                 __.--.____________.--.__
+2015-04-08 17:34:57	--	-                (       _.------._       ).
+2015-04-08 17:34:57	--	-                 '._.--'    ||    '--._.'  )
+2015-04-08 17:34:57	--	-                  | |================| || (
+2015-04-08 17:34:57	--	-                  | ||               | ||  )
+2015-04-08 17:34:57	--	-                  | ||              _| || (
+2015-04-08 17:34:57	--	-                  | ||          _.-' | ||  )
+2015-04-08 17:34:57	--	-                  | ||      _.-'     | || (
+2015-04-08 17:34:57	--	-                  | ||  _.-'         | ||  )
+2015-04-08 17:34:57	--	-                  | |.-'             | || (
+2015-04-08 17:34:57	--	-                  | ||               | ||  )
+2015-04-08 17:34:57	--	-                  | ||               | || (
+2015-04-08 17:34:57	--	-                  | ||               | ||  )
+2015-04-08 17:34:57	--	-                  | ||               | || (
+2015-04-08 17:34:57	--	-                  | ||               | ||  )
+2015-04-08 17:34:57	--	-                  | ||               | || (
+2015-04-08 17:34:57	--	-                  | .---.            | ||  )
+2015-04-08 17:34:57	--	-                  | |   |            | || (
+2015-04-08 17:34:57	--	-                  | |   |            | ||  )
+2015-04-08 17:34:57	--	-                  | |  .'            | || (
+2015-04-08 17:34:57	--	-                  | | '              | ||  )
+2015-04-08 17:34:57	--	-                  | |  '.            | || (
+2015-04-08 17:34:57	--	-                  | |   |            | ||  )
+2015-04-08 17:34:57	--	-                  | |O__|  .))).     | || (
+2015-04-08 17:34:57	--	-                  | ||    ( O O )    | ||
+2015-04-08 17:34:57	--	-                  | ||===._ (_) _.===| ||
+2015-04-08 17:34:57	--	-                  | ||     '-.-'     | ||
+2015-04-08 17:34:57	--	-                  | ||      The      | ||
+2015-04-08 17:34:57	--	-                  | ||   Revolution  | ||
+2015-04-08 17:34:57	--	-                  | ||   has begun!  | ||
+2015-04-08 17:34:57	--	-                  | ||    ______     | ||
+2015-04-08 17:34:57	--	-              LGB | ||   /      \    | ||
+2015-04-08 17:34:57	--	-                __| ||  (\______/)   | ||_____
+2015-04-08 17:34:57	--	-               /__| ||___) |''| (____| ||____/
+2015-04-08 17:34:57	--	-              /___|_|/  (________)   |_|/___/
+2015-04-08 17:34:57	--	-             /_____________________________/
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-       Policies, rules, etc:
+2015-04-08 17:34:57	--	-         All users must follow the guidelines set forth in the Esper
+2015-04-08 17:34:57	--	-         network charter: http://esper.net/charter.php
+2015-04-08 17:34:57	--	-         Bots are permitted, but must follow the same rules as users.
+2015-04-08 17:34:57	--	-         Additional Bot Policy at: http://esper.net/bots.php 
+2015-04-08 17:34:57	--	-         Fserves are strictly forbidden (XDCC, etc.)
+2015-04-08 17:34:57	--	-         All users must follow French and applicable international law.
+2015-04-08 17:34:57	--	-         Your use of this network implies consent to perform a proxy scan.
+2015-04-08 17:34:57	--	-         We reserve the right to remove anyone at any time for any reason.
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-       Channels:
+2015-04-08 17:34:57	--	-         #dragonweyr     - Issues requiring network staff intervention.
+2015-04-08 17:34:57	--	-         #help           - General IRC help.
+2015-04-08 17:34:57	--	-         #lobby          - General chat.
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-       (Note: these names have been bolded to prevent them from being clickable
+2015-04-08 17:34:57	--	-              by certain browser-based clients. To join a channel, type /join name.)
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-        Notes:
+2015-04-08 17:34:57	--	-         Esper serves many communities, please be aware that not every channel
+2015-04-08 17:34:57	--	-           is dedicated to the particular community you've come to visit.
+2015-04-08 17:34:57	--	-
+2015-04-08 17:34:57	--	-         New to IRC? Helpful information:
+2015-04-08 17:34:57	--	-           http://www.esper.net/getting_started.php
+2015-04-08 17:34:57	--	End of /MOTD command.
+2015-04-08 17:34:57	--	Modo de usuario [+i] por arlefreak
+2015-04-08 21:48:05	=!=	irc: leyendo datos del socket: error 110 Expiró el tiempo de conexión
+2015-04-08 21:48:05	--	irc: desconectado del servidor...
+2015-04-08 21:48:05	--	irc: desconectado del servidor
+2015-04-08 21:48:05	--	irc: reconectando al servidor en 10 segundos
+2015-04-08 21:48:15	--	irc: reconectando al servidor...
+2015-04-08 21:48:15	--	irc: conectando al servidor irc.esper.net/6667...
+2015-04-08 21:48:15	--	irc: conectado a irc.esper.net/6667 (37.187.54.85)
+2015-04-08 21:48:15	--	anarchy.esper.net: *** Looking up your hostname...
+2015-04-08 21:48:15	--	anarchy.esper.net: *** Checking Ident
+2015-04-08 21:48:15	--	anarchy.esper.net: *** Found your hostname
+2015-04-08 21:48:20	--	anarchy.esper.net: *** No Ident response
+2015-04-08 21:48:20	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-04-08 21:48:20	--	Your host is anarchy.esper.net[37.187.54.85/6667], running version charybdis-3.5.0-dev
+2015-04-08 21:48:20	--	This server was created Sun Dec 21 2014 at 20:05:19 CET
+2015-04-08 21:48:20	--	anarchy.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-04-08 21:48:20	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-04-08 21:48:20	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-04-08 21:48:20	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-04-08 21:48:20	--	There are 20 users and 8415 invisible on 18 servers
+2015-04-08 21:48:20	--	35 :IRC Operators online
+2015-04-08 21:48:20	--	1 :unknown connection(s)
+2015-04-08 21:48:20	--	5861 :channels formed
+2015-04-08 21:48:20	--	I have 1938 clients and 1 servers
+2015-04-08 21:48:20	--	1938 2234 :Current local users 1938, max 2234
+2015-04-08 21:48:20	--	8435 9368 :Current global users 8435, max 9368
+2015-04-08 21:48:20	--	Highest connection count: 2235 (2234 clients) (161687 connections received)
+2015-04-08 21:48:20	--	- anarchy.esper.net Message of the Day -
+2015-04-08 21:48:20	--	-  (  ___  )( (    /|(  ___  )(  ____ )(  ____ \|\     /||\     /|
+2015-04-08 21:48:20	--	-  | (   ) ||  \  ( || (   ) || (    )|| (    \/| )   ( |( \   / )
+2015-04-08 21:48:20	--	-  | (___) ||   \ | || (___) || (____)|| |      | (___) | \ (_) /
+2015-04-08 21:48:20	--	-  |  ___  || (\ \) ||  ___  ||     __)| |      |  ___  |  \   /
+2015-04-08 21:48:20	--	-  | (   ) || | \   || (   ) || (\ (   | |      | (   ) |   ) (
+2015-04-08 21:48:20	--	-  | )   ( || )  \  || )   ( || ) \ \__| (____/\| )   ( |   | |
+2015-04-08 21:48:20	--	-  |/     \||/    )_)|/     \||/   \__/(_______/|/     \|   \_/
+2015-04-08 21:48:20	--	-
+2015-04-08 21:48:20	--	-                     anarchy.esper.net
+2015-04-08 21:48:20	--	-
+2015-04-08 21:48:20	--	-       Location: Strasbourg, France
+2015-04-08 21:48:20	--	-       Ports (IPv4/IPv6): 5555, 6666 .. 6669, 6697 (SSL), 7000
+2015-04-08 21:48:20	--	-
+2015-04-08 21:48:20	--	-       Ringleader (Administrators): Steve_Restless (Steve_Restless@esper.net)
+2015-04-08 21:48:20	--	-
+2015-04-08 21:48:20	--	-       Revolutionaries (Operators): RyanKnack (ryanknack@esper.net)
+2015-04-08 21:48:20	--	-
+2015-04-08 21:48:20	--	-                 __.--.____________.--.__
+2015-04-08 21:48:20	--	-                (       _.------._       ).
+2015-04-08 21:48:20	--	-                 '._.--'    ||    '--._.'  )
+2015-04-08 21:48:20	--	-                  | |================| || (
+2015-04-08 21:48:20	--	-                  | ||               | ||  )
+2015-04-08 21:48:20	--	-                  | ||              _| || (
+2015-04-08 21:48:20	--	-                  | ||          _.-' | ||  )
+2015-04-08 21:48:20	--	-                  | ||      _.-'     | || (
+2015-04-08 21:48:20	--	-                  | ||  _.-'         | ||  )
+2015-04-08 21:48:20	--	-                  | |.-'             | || (
+2015-04-08 21:48:20	--	-                  | ||               | ||  )
+2015-04-08 21:48:20	--	-                  | ||               | || (
+2015-04-08 21:48:20	--	-                  | ||               | ||  )
+2015-04-08 21:48:20	--	-                  | ||               | || (
+2015-04-08 21:48:20	--	-                  | ||               | ||  )
+2015-04-08 21:48:20	--	-                  | ||               | || (
+2015-04-08 21:48:20	--	-                  | .---.            | ||  )
+2015-04-08 21:48:20	--	-                  | |   |            | || (
+2015-04-08 21:48:20	--	-                  | |   |            | ||  )
+2015-04-08 21:48:20	--	-                  | |  .'            | || (
+2015-04-08 21:48:20	--	-                  | | '              | ||  )
+2015-04-08 21:48:20	--	-                  | |  '.            | || (
+2015-04-08 21:48:20	--	-                  | |   |            | ||  )
+2015-04-08 21:48:20	--	-                  | |O__|  .))).     | || (
+2015-04-08 21:48:20	--	-                  | ||    ( O O )    | ||
+2015-04-08 21:48:20	--	-                  | ||===._ (_) _.===| ||
+2015-04-08 21:48:20	--	-                  | ||     '-.-'     | ||
+2015-04-08 21:48:20	--	-                  | ||      The      | ||
+2015-04-08 21:48:20	--	-                  | ||   Revolution  | ||
+2015-04-08 21:48:20	--	-                  | ||   has begun!  | ||
+2015-04-08 21:48:20	--	-                  | ||    ______     | ||
+2015-04-08 21:48:20	--	-              LGB | ||   /      \    | ||
+2015-04-08 21:48:20	--	-                __| ||  (\______/)   | ||_____
+2015-04-08 21:48:20	--	-               /__| ||___) |''| (____| ||____/
+2015-04-08 21:48:20	--	-              /___|_|/  (________)   |_|/___/
+2015-04-08 21:48:20	--	-             /_____________________________/
+2015-04-08 21:48:20	--	-
+2015-04-08 21:48:20	--	-       Policies, rules, etc:
+2015-04-08 21:48:20	--	-         All users must follow the guidelines set forth in the Esper
+2015-04-08 21:48:20	--	-         network charter: http://esper.net/charter.php
+2015-04-08 21:48:20	--	-         Bots are permitted, but must follow the same rules as users.
+2015-04-08 21:48:20	--	-         Additional Bot Policy at: http://esper.net/bots.php 
+2015-04-08 21:48:20	--	-         Fserves are strictly forbidden (XDCC, etc.)
+2015-04-08 21:48:20	--	-         All users must follow French and applicable international law.
+2015-04-08 21:48:20	--	-         Your use of this network implies consent to perform a proxy scan.
+2015-04-08 21:48:20	--	-         We reserve the right to remove anyone at any time for any reason.
+2015-04-08 21:48:20	--	-
+2015-04-08 21:48:20	--	-       Channels:
+2015-04-08 21:48:20	--	-         #dragonweyr     - Issues requiring network staff intervention.
+2015-04-08 21:48:20	--	-         #help           - General IRC help.
+2015-04-08 21:48:20	--	-         #lobby          - General chat.
+2015-04-08 21:48:20	--	-
+2015-04-08 21:48:21	--	-       (Note: these names have been bolded to prevent them from being clickable
+2015-04-08 21:48:21	--	-              by certain browser-based clients. To join a channel, type /join name.)
+2015-04-08 21:48:21	--	-
+2015-04-08 21:48:21	--	-        Notes:
+2015-04-08 21:48:21	--	-         Esper serves many communities, please be aware that not every channel
+2015-04-08 21:48:21	--	-           is dedicated to the particular community you've come to visit.
+2015-04-08 21:48:21	--	-
+2015-04-08 21:48:21	--	-         New to IRC? Helpful information:
+2015-04-08 21:48:21	--	-           http://www.esper.net/getting_started.php
+2015-04-08 21:48:21	--	End of /MOTD command.
+2015-04-08 21:48:21	--	Modo de usuario [+i] por arlefreak
+2015-04-27 08:55:23	--	irc: conectando al servidor irc.esper.net/6667...
+2015-04-27 08:55:23	--	irc: conectado a irc.esper.net/6667 (72.14.191.81)
+2015-04-27 08:55:23	--	chaos.esper.net: *** Looking up your hostname...
+2015-04-27 08:55:23	--	chaos.esper.net: *** Checking Ident
+2015-04-27 08:55:24	--	chaos.esper.net: *** Found your hostname
+2015-04-27 08:55:26	--	chaos.esper.net: *** No Ident response
+2015-04-27 08:55:27	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-04-27 08:55:27	--	Your host is chaos.esper.net[72.14.191.81/6667], running version charybdis-3.5.0-dev
+2015-04-27 08:55:27	--	This server was created Sun Dec 21 2014 at 13:46:02 EST
+2015-04-27 08:55:27	--	chaos.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-04-27 08:55:27	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-04-27 08:55:27	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-04-27 08:55:27	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-04-27 08:55:27	--	There are 17 users and 7834 invisible on 17 servers
+2015-04-27 08:55:27	--	34 :IRC Operators online
+2015-04-27 08:55:27	--	1 :unknown connection(s)
+2015-04-27 08:55:27	--	5661 :channels formed
+2015-04-27 08:55:27	--	I have 2199 clients and 1 servers
+2015-04-27 08:55:27	--	2199 2725 :Current local users 2199, max 2725
+2015-04-27 08:55:27	--	7851 9368 :Current global users 7851, max 9368
+2015-04-27 08:55:27	--	Highest connection count: 2726 (2725 clients) (113963 connections received)
+2015-04-27 08:55:27	--	- chaos.esper.net Message of the Day -
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-      _|_|_|      _|    _|        _|_|          _|_|          _|_|_|
+2015-04-27 08:55:27	--	-    _|            _|    _|      _|    _|      _|    _|      _|
+2015-04-27 08:55:27	--	-    _|            _|_|_|_|      _|_|_|_|      _|    _|        _|_|
+2015-04-27 08:55:27	--	-    _|            _|    _|      _|    _|      _|    _|            _|
+2015-04-27 08:55:27	--	-      _|_|_|      _|    _|      _|    _|        _|_|        _|_|_|
+2015-04-27 08:55:27	--	-                             chaos.esper.net
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-       Location: Dallas TX, United States.
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-       Ports: 5555, 6666 .. 6669, 6697 (SSL), 7000.
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-       Bringer of Chaos (Administrator): Steve_Restless (Steve_Restless@esper.net)
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-       Minions of Chaos (Operators): Hikaru (Hikaru@esper.net)
+2015-04-27 08:55:27	--	-                                     nasonfish (nasonfish@esper.net)
+2015-04-27 08:55:27	--	-                                     Zarthus (Zarthus@esper.net)
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-        Policies, rules, etc:
+2015-04-27 08:55:27	--	-          All users must follow the guidelines set forth in the Esper
+2015-04-27 08:55:27	--	-          network charter: http://esper.net/charter.php
+2015-04-27 08:55:27	--	-          Bots are permitted, but must follow the same rules as users.
+2015-04-27 08:55:27	--	-          Additional Bot Policy at: http://esper.net/bots.php
+2015-04-27 08:55:27	--	-          Fserves are strictly forbidden (XDCC, etc.)
+2015-04-27 08:55:27	--	-          All users must follow U.S. and applicable international law.
+2015-04-27 08:55:27	--	-          Your use of this network implies consent to perform a proxy scan.
+2015-04-27 08:55:27	--	-          We reserve the right to remove anyone at any time for any reason.
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-        Channels of note:
+2015-04-27 08:55:27	--	-         #dragonweyr      - Issues requiring network staff intervention.
+2015-04-27 08:55:27	--	-         #help            - General IRC help.
+2015-04-27 08:55:27	--	-         #coders          - The Esper coders.
+2015-04-27 08:55:27	--	-         #esper           - General chat.
+2015-04-27 08:55:27	--	-         #tavern          - General chat.
+2015-04-27 08:55:27	--	-         #lobby           - General chat.
+2015-04-27 08:55:27	--	-        (Note: these names have been bolded to prevent them from being clickable
+2015-04-27 08:55:27	--	-          by certain browser-based clients. To join a channel, type /join name.)
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-         Notes:
+2015-04-27 08:55:27	--	-          Esper serves many communities, please be aware that not every channel
+2015-04-27 08:55:27	--	-             is dedicated to the particular community you've come to visit.
+2015-04-27 08:55:27	--	-          New to IRC? Helpful information:
+2015-04-27 08:55:27	--	-             http://www.esper.net/getting_started.php
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-          This server is sponsored by myDigitechnician in-home computer service
+2015-04-27 08:55:27	--	-             http://www.mydigitechnician.com/
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	-         Chaos.esper.net now has a theme song! Composed just for us by our
+2015-04-27 08:55:27	--	-         friend Vulture, of http://soundcloud.com/vultureofficial the theme of
+2015-04-27 08:55:27	--	-         Chaos.esper.net is "King of Zombies"
+2015-04-27 08:55:27	--	-         Take a listen to his dark dubstep, and other sick sounds, starting
+2015-04-27 08:55:27	--	-         with our theme here:
+2015-04-27 08:55:27	--	-         http://soundcloud.com/vultureofficial/vulture-king-of-zombies
+2015-04-27 08:55:27	--	-
+2015-04-27 08:55:27	--	- So it goes...
+2015-04-27 08:55:27	--	End of /MOTD command.
+2015-04-27 08:55:27	--	Modo de usuario [+i] por arlefreak
+2015-04-27 21:47:46	=!=	irc: leyendo datos del socket: error 110 Expiró el tiempo de conexión
+2015-04-27 21:47:46	--	irc: desconectado del servidor...
+2015-04-27 21:47:46	--	irc: desconectado del servidor
+2015-04-27 21:47:46	--	irc: reconectando al servidor en 10 segundos
+2015-04-27 21:47:56	--	irc: reconectando al servidor...
+2015-04-27 21:47:56	--	irc: conectando al servidor irc.esper.net/6667...
+2015-04-27 21:47:56	--	irc: conectado a irc.esper.net/6667 (107.191.99.192)
+2015-04-27 21:47:56	--	calamity.esper.net: *** Looking up your hostname...
+2015-04-27 21:47:56	--	calamity.esper.net: *** Checking Ident
+2015-04-27 21:47:57	--	calamity.esper.net: *** Found your hostname
+2015-04-27 21:47:58	--	calamity.esper.net: *** No Ident response
+2015-04-27 21:47:58	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-04-27 21:47:58	--	Your host is calamity.esper.net[calamity.esper.net/6667], running version charybdis-3.5.0-dev
+2015-04-27 21:47:58	--	This server was created Mon Oct 13 2014 at 00:53:29 UTC
+2015-04-27 21:47:58	--	calamity.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-04-27 21:47:58	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-04-27 21:47:58	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-04-27 21:47:58	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-04-27 21:47:58	--	There are 18 users and 8325 invisible on 17 servers
+2015-04-27 21:47:58	--	34 :IRC Operators online
+2015-04-27 21:47:58	--	5847 :channels formed
+2015-04-27 21:47:58	--	I have 1763 clients and 1 servers
+2015-04-27 21:47:58	--	1763 3560 :Current local users 1763, max 3560
+2015-04-27 21:47:58	--	8343 9378 :Current global users 8343, max 9378
+2015-04-27 21:47:58	--	Highest connection count: 3561 (3560 clients) (743491 connections received)
+2015-04-27 21:47:58	--	- calamity.esper.net Message of the Day -
+2015-04-27 21:47:58	--	-              _____     __           _ __
+2015-04-27 21:47:58	--	-             / ___/__ _/ /__ ___ _  (_) /___ __
+2015-04-27 21:47:58	--	-            / /__/ _ `/ / _ `/  ' \/ / __/ // /
+2015-04-27 21:47:58	--	-            \___/\_,_/_/\_,_/_/_/_/_/\__/\_, /
+2015-04-27 21:47:58	--	-                                        /___/
+2015-04-27 21:47:58	--	-
+2015-04-27 21:47:58	--	-          Host: calamity [ irc.esper.net ]
+2015-04-27 21:47:58	--	-         Admin: Deltafire
+2015-04-27 21:47:58	--	-      Location: New York City, New York, US
+2015-04-27 21:47:58	--	-
+2015-04-27 21:47:58	--	-                       ________________
+2015-04-27 21:47:58	--	-                  ____/ (  (    )   )  \___
+2015-04-27 21:47:58	--	-                 /( (  (  )   _    ))  )   )\
+2015-04-27 21:47:58	--	-               ((     (   )(    )  )   (   )  )
+2015-04-27 21:47:58	--	-             ((/  ( _(   )   (   _) ) (  () )  )
+2015-04-27 21:47:58	--	-            ( (  ( (_)   ((    (   )  .((_ ) .  )_
+2015-04-27 21:47:58	--	-           ( (  )    (      (  )    )   ) . ) (   )
+2015-04-27 21:47:58	--	-          (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )
+2015-04-27 21:47:58	--	-          ( (  (   ) (  )   (  ))     ) _)(   )  )  )
+2015-04-27 21:47:58	--	-         ( (  ( \ ) (    (_  ( ) ( )  )   ) )  )) ( )
+2015-04-27 21:47:58	--	-          (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )
+2015-04-27 21:47:58	--	-         ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )
+2015-04-27 21:47:58	--	-          ((  (   )(    (     _    )   _) _(_ (  (_ )
+2015-04-27 21:47:58	--	-           (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)
+2015-04-27 21:47:58	--	-           ((__)        \\||lll|l||///          \_))
+2015-04-27 21:47:58	--	-                    (   /(/ (  )  ) )\   )
+2015-04-27 21:47:58	--	-                  (    ( ( ( | | ) ) )\   )
+2015-04-27 21:47:58	--	-                   (   /(| / ( )) ) ) )) )
+2015-04-27 21:47:58	--	-                 (     ( ((((_(|)_)))))     )
+2015-04-27 21:47:58	--	-                  (      ||\(|(|)|/||     )
+2015-04-27 21:47:58	--	-                (        |(||(||)||||        )
+2015-04-27 21:47:58	--	-                  (     //|/l|||)|\\ \     )
+2015-04-27 21:47:58	--	-                (/ / //  /|//||||\\  \ \  \ _)
+2015-04-27 21:47:58	--	-
+2015-04-27 21:47:58	--	-                     * TERMS OF SERVICE *
+2015-04-27 21:47:58	--	-
+2015-04-27 21:47:58	--	- Your use of this network constitutes an agreement to abide
+2015-04-27 21:47:58	--	- by the rules presented in the EsperNet charter and consent
+2015-04-27 21:47:58	--	- to a port scan, to detect open proxies and otherwise
+2015-04-27 21:47:58	--	- compromised systems.           http://esper.net/charter.php
+2015-04-27 21:47:58	--	-
+2015-04-27 21:47:58	--	- Properly configured bots are permitted, but are required to
+2015-04-27 21:47:58	--	- follow the same rules as users. Please refer to our bot
+2015-04-27 21:47:58	--	- policy document for more information about configuration
+2015-04-27 21:47:58	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-04-27 21:47:58	--	-
+2015-04-27 21:47:58	--	-                      * HELP CHANNELS *
+2015-04-27 21:47:58	--	-
+2015-04-27 21:47:58	--	-         #help: General IRC help
+2015-04-27 21:47:58	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-04-27 21:47:58	--	-
+2015-04-27 21:47:58	--	- Welcome to EsperNet.
+2015-04-27 21:47:58	--	-
+2015-04-27 21:47:58	--	End of /MOTD command.
+2015-04-27 21:47:58	--	Modo de usuario [+i] por arlefreak
+2015-05-10 18:54:30	--	irc: conectando al servidor irc.esper.net/6667...
+2015-05-10 18:54:30	--	irc: conectado a irc.esper.net/6667 (72.14.191.81)
+2015-05-10 18:54:30	--	chaos.esper.net: *** Looking up your hostname...
+2015-05-10 18:54:30	--	chaos.esper.net: *** Checking Ident
+2015-05-10 18:54:30	--	chaos.esper.net: *** Found your hostname
+2015-05-10 18:54:33	--	chaos.esper.net: *** No Ident response
+2015-05-10 18:54:33	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-05-10 18:54:33	--	Your host is chaos.esper.net[72.14.191.81/6667], running version charybdis-3.5.0-dev
+2015-05-10 18:54:33	--	This server was created Sun Dec 21 2014 at 13:46:02 EST
+2015-05-10 18:54:33	--	chaos.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-05-10 18:54:33	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-05-10 18:54:33	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-05-10 18:54:33	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-05-10 18:54:33	--	There are 17 users and 8582 invisible on 17 servers
+2015-05-10 18:54:33	--	34 :IRC Operators online
+2015-05-10 18:54:33	--	1 :unknown connection(s)
+2015-05-10 18:54:33	--	5843 :channels formed
+2015-05-10 18:54:33	--	I have 2365 clients and 1 servers
+2015-05-10 18:54:33	--	2365 2760 :Current local users 2365, max 2760
+2015-05-10 18:54:33	--	8599 9368 :Current global users 8599, max 9368
+2015-05-10 18:54:33	--	Highest connection count: 2761 (2760 clients) (215792 connections received)
+2015-05-10 18:54:33	--	- chaos.esper.net Message of the Day -
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-      _|_|_|      _|    _|        _|_|          _|_|          _|_|_|
+2015-05-10 18:54:33	--	-    _|            _|    _|      _|    _|      _|    _|      _|
+2015-05-10 18:54:33	--	-    _|            _|_|_|_|      _|_|_|_|      _|    _|        _|_|
+2015-05-10 18:54:33	--	-    _|            _|    _|      _|    _|      _|    _|            _|
+2015-05-10 18:54:33	--	-      _|_|_|      _|    _|      _|    _|        _|_|        _|_|_|
+2015-05-10 18:54:33	--	-                             chaos.esper.net
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-       Location: Dallas TX, United States.
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-       Ports: 5555, 6666 .. 6669, 6697 (SSL), 7000.
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-       Bringer of Chaos (Administrator): Steve_Restless (Steve_Restless@esper.net)
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-       Minions of Chaos (Operators): Hikaru (Hikaru@esper.net)
+2015-05-10 18:54:33	--	-                                     nasonfish (nasonfish@esper.net)
+2015-05-10 18:54:33	--	-                                     Zarthus (Zarthus@esper.net)
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-        Policies, rules, etc:
+2015-05-10 18:54:33	--	-          All users must follow the guidelines set forth in the Esper
+2015-05-10 18:54:33	--	-          network charter: http://esper.net/charter.php
+2015-05-10 18:54:33	--	-          Bots are permitted, but must follow the same rules as users.
+2015-05-10 18:54:33	--	-          Additional Bot Policy at: http://esper.net/bots.php
+2015-05-10 18:54:33	--	-          Fserves are strictly forbidden (XDCC, etc.)
+2015-05-10 18:54:33	--	-          All users must follow U.S. and applicable international law.
+2015-05-10 18:54:33	--	-          Your use of this network implies consent to perform a proxy scan.
+2015-05-10 18:54:33	--	-          We reserve the right to remove anyone at any time for any reason.
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-        Channels of note:
+2015-05-10 18:54:33	--	-         #dragonweyr      - Issues requiring network staff intervention.
+2015-05-10 18:54:33	--	-         #help            - General IRC help.
+2015-05-10 18:54:33	--	-         #coders          - The Esper coders.
+2015-05-10 18:54:33	--	-         #esper           - General chat.
+2015-05-10 18:54:33	--	-         #tavern          - General chat.
+2015-05-10 18:54:33	--	-         #lobby           - General chat.
+2015-05-10 18:54:33	--	-        (Note: these names have been bolded to prevent them from being clickable
+2015-05-10 18:54:33	--	-          by certain browser-based clients. To join a channel, type /join name.)
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-         Notes:
+2015-05-10 18:54:33	--	-          Esper serves many communities, please be aware that not every channel
+2015-05-10 18:54:33	--	-             is dedicated to the particular community you've come to visit.
+2015-05-10 18:54:33	--	-          New to IRC? Helpful information:
+2015-05-10 18:54:33	--	-             http://www.esper.net/getting_started.php
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-          This server is sponsored by myDigitechnician in-home computer service
+2015-05-10 18:54:33	--	-             http://www.mydigitechnician.com/
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	-         Chaos.esper.net now has a theme song! Composed just for us by our
+2015-05-10 18:54:33	--	-         friend Vulture, of http://soundcloud.com/vultureofficial the theme of
+2015-05-10 18:54:33	--	-         Chaos.esper.net is "King of Zombies"
+2015-05-10 18:54:33	--	-         Take a listen to his dark dubstep, and other sick sounds, starting
+2015-05-10 18:54:33	--	-         with our theme here:
+2015-05-10 18:54:33	--	-         http://soundcloud.com/vultureofficial/vulture-king-of-zombies
+2015-05-10 18:54:33	--	-
+2015-05-10 18:54:33	--	- So it goes...
+2015-05-10 18:54:33	--	End of /MOTD command.
+2015-05-10 18:54:33	--	Modo de usuario [+i] por arlefreak
+2015-05-10 19:53:04	--	irc: desconectado del servidor
+2015-05-10 19:58:22	--	irc: conectando al servidor irc.esper.net/6667...
+2015-05-10 19:58:23	--	irc: conectado a irc.esper.net/6667 (168.235.75.5)
+2015-05-10 19:58:23	--	ranger.esper.net: *** Looking up your hostname...
+2015-05-10 19:58:23	--	ranger.esper.net: *** Checking Ident
+2015-05-10 19:58:23	--	ranger.esper.net: *** Found your hostname
+2015-05-10 19:58:26	--	ranger.esper.net: *** No Ident response
+2015-05-10 19:58:26	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-05-10 19:58:26	--	Your host is ranger.esper.net[168.235.75.5/6667], running version charybdis-3.5.0-dev
+2015-05-10 19:58:26	--	This server was created Mon Feb 9 2015 at 07:38:16 UTC
+2015-05-10 19:58:26	--	ranger.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-05-10 19:58:26	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-05-10 19:58:26	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-05-10 19:58:26	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-05-10 19:58:26	--	There are 17 users and 8579 invisible on 17 servers
+2015-05-10 19:58:26	--	34 :IRC Operators online
+2015-05-10 19:58:26	--	5837 :channels formed
+2015-05-10 19:58:26	--	I have 870 clients and 1 servers
+2015-05-10 19:58:26	--	870 1488 :Current local users 870, max 1488
+2015-05-10 19:58:26	--	8596 9368 :Current global users 8596, max 9368
+2015-05-10 19:58:26	--	Highest connection count: 1489 (1488 clients) (126292 connections received)
+2015-05-10 19:58:26	--	- ranger.esper.net Message of the Day -
+2015-05-10 19:58:26	--	- ____________    ____    ____   ___________
+2015-05-10 19:58:26	--	- \_  __ \__  \  /    \  / ___\_/ __ \_  __ \
+2015-05-10 19:58:26	--	-  |  | \// __ \|   |  \/ /_/  >  ___/|  | \/
+2015-05-10 19:58:26	--	-  |__|  (____  /___|  /\___  / \___  >__|
+2015-05-10 19:58:26	--	-             \/     \//_____/      \/
+2015-05-10 19:58:26	--	-                             .esper.net
+2015-05-10 19:58:26	--	-
+2015-05-10 19:58:26	--	- location:       Los Angeles, CA
+2015-05-10 19:58:26	--	-
+2015-05-10 19:58:26	--	- Ports:          5555, 6666 .. 6669, 6697 (SSL), 7000
+2015-05-10 19:58:26	--	-
+2015-05-10 19:58:26	--	- Admins:         TheBadShepperd <thebadshepperd at esper.net>
+2015-05-10 19:58:26	--	-
+2015-05-10 19:58:26	--	- Opers:          dahui
+2015-05-10 19:58:26	--	-                 malianx
+2015-05-10 19:58:26	--	-                 phroa
+2015-05-10 19:58:26	--	-
+2015-05-10 19:58:26	--	- Policies, rules, etc:
+2015-05-10 19:58:26	--	-                 All users must follow the guidelines set forth in the EsperNet
+2015-05-10 19:58:26	--	-                 network charter: http://esper.net/charter.php
+2015-05-10 19:58:26	--	-                 Bots are permitted, but must follow an additional bot policy
+2015-05-10 19:58:26	--	-                 found at http://esper.net/bots.php in addition to the EsperNet
+2015-05-10 19:58:26	--	-                 charter. Fserves (XDCC, etc) are strictly forbidden. All users
+2015-05-10 19:58:26	--	-                 must follow applicable U.S and California law.
+2015-05-10 19:58:26	--	-
+2015-05-10 19:58:26	--	-                 A proxy scan is performed upon connection. Please do not be
+2015-05-10 19:58:26	--	-                 alarmed, it doesn't bite.
+2015-05-10 19:58:26	--	-
+2015-05-10 19:58:26	--	- Channels of note:
+2015-05-10 19:58:26	--	-                 #lobby          - General chat.
+2015-05-10 19:58:26	--	-                 #help           - General IRC help.
+2015-05-10 19:58:26	--	-                 #dragonweyr     - Network issues requiring staff intervention.
+2015-05-10 19:58:26	--	-
+2015-05-10 19:58:26	--	- Final notes:
+2015-05-10 19:58:26	--	-                 EsperNet is home to many communites, please be aware that not every
+2015-05-10 19:58:26	--	-                 channel is dedicated to the particular community you've come to visit.
+2015-05-10 19:58:26	--	-
+2015-05-10 19:58:26	--	-                 EsperNet is a privately-owned and operated network, and as such,
+2015-05-10 19:58:26	--	-                 network staff reserve the right to suspend, limit, or deny access
+2015-05-10 19:58:26	--	-                 to the network at any time for any reason.
+2015-05-10 19:58:26	--	End of /MOTD command.
+2015-05-10 19:58:26	--	Modo de usuario [+i] por arlefreak
+2015-05-13 23:13:19	--	irc: conectando al servidor irc.esper.net/6667...
+2015-05-13 23:13:19	--	irc: conectado a irc.esper.net/6667 (80.65.57.2)
+2015-05-13 23:13:20	--	availo.esper.net: *** Looking up your hostname...
+2015-05-13 23:13:20	--	availo.esper.net: *** Checking Ident
+2015-05-13 23:13:20	--	availo.esper.net: *** Found your hostname
+2015-05-13 23:13:25	--	availo.esper.net: *** No Ident response
+2015-05-13 23:13:25	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-05-13 23:13:25	--	Your host is availo.esper.net[80.65.57.2/6667], running version charybdis-3.5.0-dev
+2015-05-13 23:13:25	--	This server was created Sun Jul 27 2014 at 08:15:44 CEST
+2015-05-13 23:13:25	--	availo.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-05-13 23:13:25	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-05-13 23:13:25	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-05-13 23:13:25	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-05-13 23:13:25	--	There are 18 users and 7756 invisible on 17 servers
+2015-05-13 23:13:25	--	33 :IRC Operators online
+2015-05-13 23:13:25	--	5790 :channels formed
+2015-05-13 23:13:25	--	I have 2231 clients and 1 servers
+2015-05-13 23:13:25	--	2231 5181 :Current local users 2231, max 5181
+2015-05-13 23:13:25	--	7774 10986 :Current global users 7774, max 10986
+2015-05-13 23:13:25	--	Highest connection count: 5182 (5181 clients) (687840 connections received)
+2015-05-13 23:13:25	--	- availo.esper.net Message of the Day -
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-        ;.    cd:         dd.    o         .dl   dd          .oOXX0x;
+2015-05-13 23:13:25	--	-       .NX.   'WM,       kM0    oMo        cMX  .MM.      .oXMKkddxONWk,
+2015-05-13 23:13:25	--	-      .WNWX.   ,MW.     oMK    dMNMo       cMX  .MM.     lMWc        '0MO
+2015-05-13 23:13:25	--	-     .WN.'WN.   ;MN.   cMX    xMk kMd      cMX  .MM.    :MW.           0MO
+2015-05-13 23:13:25	--	-    'WN.  'WN.   :MX  ,MN.   xMk   kMx     cMX  .MM.    xMK            cMM
+2015-05-13 23:13:25	--	-   ,WN.    'WN.   cMK'WW.   kMx     kMk    cMX  .MM.    ,MM'           0Mk
+2015-05-13 23:13:25	--	-  ,WW.      ,WW.   oMMW.   kMk       kMO   cMX  .MM.     :WWo.       ;KMk
+2015-05-13 23:13:25	--	- ;MW.        ,MW'   dM,   OMO         kMO  cMX  .MMK0000.  c0WN0kkOXMXd.
+2015-05-13 23:13:25	--	- ,,.          .,'    c   .,,           ,,. .,'   ,,,,,,,      ,oxkd:.
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-                             availo.esper.net
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-                                               Not an admin:       brynjar
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-                                           0 helper donkeys at the moment
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-         This server is listening on ports 5555, 6667-9 and 7000
+2015-05-13 23:13:25	--	-        SSL-connections are recommended, and welcome on port 6697
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-                                                      * TERMS OF SERVICE *
+2015-05-13 23:13:25	--	-   Your use of this network constitutes an agreement to abide by the
+2015-05-13 23:13:25	--	-   rules presented in the EsperNet AUP - http://esper.net/charter.php
+2015-05-13 23:13:25	--	-   as well as any applicable Norwegian and International laws.
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-   Further, your use of this network implies consent to a port scan
+2015-05-13 23:13:25	--	-   to detect open proxies and otherwise compromised systems.
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-   Properly configured bots are permitted, but are required to follow
+2015-05-13 23:13:25	--	-   the same rules as users. Please refer to http://esper.net/bots.php
+2015-05-13 23:13:25	--	-   for more information about configuration requirements and suggestions.
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-                                                       * USEFUL CHANNELS *
+2015-05-13 23:13:25	--	-   #dragonweyr - Network staff assistance
+2015-05-13 23:13:25	--	-   #coders     - Help with programming|tr gm cs|sed 's/s\(in\)c/t\1ation/'
+2015-05-13 23:13:25	--	-   #lobby      - Chat
+2015-05-13 23:13:25	--	-   #help       - General IRC help
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-                                                         * USEFUL PEOPLE *
+2015-05-13 23:13:25	--	-   keybounce_  - Doesn't afraid of regex
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-                                                    * SPONSORING COMPANY *
+2015-05-13 23:13:25	--	-   This server is sponsored by donkeys and Availo:
+2015-05-13 23:13:25	--	-   http://www.availo.no/
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-                                                   * CURRENT THEME SONGS *
+2015-05-13 23:13:25	--	-   Theme song #1:       http://kaffekoker.net/mp3/availo_01.mp3
+2015-05-13 23:13:25	--	-   Theme song #2:       http://kaffekoker.net/mp3/availo_02.mp3
+2015-05-13 23:13:25	--	-   Not a theme song #1: http://kaffekoker.net/mp3/blip-hop.mp3
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	-   Feel free to poke 'brynjar' if you are awesome and would like to
+2015-05-13 23:13:25	--	-   donate a chiptune you have composed. EsperNet will love you for it!
+2015-05-13 23:13:25	--	-
+2015-05-13 23:13:25	--	End of /MOTD command.
+2015-05-13 23:13:25	--	Modo de usuario [+i] por arlefreak
+2015-05-14 09:29:58	--	irc: conectando al servidor irc.esper.net/6667...
+2015-05-14 09:29:59	--	irc: conectado a irc.esper.net/6667 (94.23.7.50)
+2015-05-14 09:29:59	--	insanity.esper.net: *** Looking up your hostname...
+2015-05-14 09:29:59	--	insanity.esper.net: *** Checking Ident
+2015-05-14 09:29:59	--	insanity.esper.net: *** Found your hostname
+2015-05-14 09:30:04	--	insanity.esper.net: *** No Ident response
+2015-05-14 09:30:04	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-05-14 09:30:04	--	Your host is insanity.esper.net[insanity.esper.net/6667], running version charybdis-3.5.0-dev
+2015-05-14 09:30:04	--	This server was created Sun Oct 26 2014 at 00:18:17 UTC
+2015-05-14 09:30:04	--	insanity.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-05-14 09:30:04	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-05-14 09:30:04	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-05-14 09:30:04	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-05-14 09:30:04	--	There are 17 users and 7734 invisible on 17 servers
+2015-05-14 09:30:04	--	34 :IRC Operators online
+2015-05-14 09:30:04	--	5724 :channels formed
+2015-05-14 09:30:04	--	I have 976 clients and 1 servers
+2015-05-14 09:30:04	--	976 2454 :Current local users 976, max 2454
+2015-05-14 09:30:04	--	7751 9378 :Current global users 7751, max 9378
+2015-05-14 09:30:04	--	Highest connection count: 2455 (2454 clients) (418570 connections received)
+2015-05-14 09:30:04	--	- insanity.esper.net Message of the Day -
+2015-05-14 09:30:04	--	-
+2015-05-14 09:30:04	--	-     * * *          * *         *   *         * * *
+2015-05-14 09:30:04	--	-       *    *   *  *      * *   **  *  * * *    *    *   *
+2015-05-14 09:30:04	--	-       *    **  *    *   *   *  * * *    *      *     * *
+2015-05-14 09:30:04	--	-       *    * * *     *  * * *  *  **    *      *      *
+2015-05-14 09:30:04	--	-     * * *  *  **  * *   *   *  *   *    *      *     *
+2015-05-14 09:30:04	--	-            *   *        *   *         * * *         *
+2015-05-14 09:30:04	--	-
+2015-05-14 09:30:04	--	-          Host: insanity [ irc.esper.net ]
+2015-05-14 09:30:04	--	-         Admin: Deltafire
+2015-05-14 09:30:04	--	-      Location: Roubaix, France
+2015-05-14 09:30:04	--	-
+2015-05-14 09:30:04	--	-                     * TERMS OF SERVICE *
+2015-05-14 09:30:04	--	-
+2015-05-14 09:30:04	--	- Your use of this network constitutes an agreement to abide
+2015-05-14 09:30:04	--	- by the rules presented in the EsperNet charter and consent
+2015-05-14 09:30:04	--	- to a port scan, to detect open proxies and otherwise
+2015-05-14 09:30:04	--	- compromised systems.           http://esper.net/charter.php
+2015-05-14 09:30:04	--	-
+2015-05-14 09:30:04	--	- Properly configured bots are permitted, but are required to
+2015-05-14 09:30:04	--	- follow the same rules as users. Please refer to our bot
+2015-05-14 09:30:04	--	- policy document for more information about configuration
+2015-05-14 09:30:04	--	- requirements and suggestions.     http://esper.net/bots.php
+2015-05-14 09:30:04	--	-
+2015-05-14 09:30:04	--	-                      * HELP CHANNELS *
+2015-05-14 09:30:04	--	-
+2015-05-14 09:30:04	--	-         #help: General IRC help
+2015-05-14 09:30:04	--	-   #dragonweyr: For issues requiring EsperNet staff
+2015-05-14 09:30:04	--	-
+2015-05-14 09:30:04	--	- Welcome to EsperNet.
+2015-05-14 09:30:04	--	-
+2015-05-14 09:30:04	--	End of /MOTD command.
+2015-05-14 09:30:04	--	Modo de usuario [+i] por arlefreak
+2015-05-19 11:56:47	--	irc: conectando al servidor irc.esper.net/6667...
+2015-05-19 11:56:47	--	irc: conectado a irc.esper.net/6667 (198.245.62.174)
+2015-05-19 11:56:47	--	warden.esper.net: *** Looking up your hostname...
+2015-05-19 11:56:47	--	warden.esper.net: *** Checking Ident
+2015-05-19 11:56:48	--	warden.esper.net: *** No Ident response
+2015-05-19 11:56:48	--	warden.esper.net: *** Found your hostname
+2015-05-19 11:56:48	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-05-19 11:56:48	--	Your host is warden.esper.net[198.245.62.174/6667], running version charybdis-3.5.0-dev
+2015-05-19 11:56:48	--	This server was created Sun Aug 10 2014 at 09:39:10 UTC
+2015-05-19 11:56:48	--	warden.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-05-19 11:56:48	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-05-19 11:56:48	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-05-19 11:56:48	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-05-19 11:56:48	--	There are 19 users and 8291 invisible on 17 servers
+2015-05-19 11:56:48	--	34 :IRC Operators online
+2015-05-19 11:56:48	--	1 :unknown connection(s)
+2015-05-19 11:56:48	--	5866 :channels formed
+2015-05-19 11:56:48	--	I have 781 clients and 1 servers
+2015-05-19 11:56:48	--	781 1436 :Current local users 781, max 1436
+2015-05-19 11:56:48	--	8310 9378 :Current global users 8310, max 9378
+2015-05-19 11:56:48	--	Highest connection count: 1437 (1436 clients) (57809 connections received)
+2015-05-19 11:56:48	--	- warden.esper.net Message of the Day -
+2015-05-19 11:56:48	--	-                           _
+2015-05-19 11:56:48	--	-                          | |
+2015-05-19 11:56:48	--	- __      __ __ _  _ __  __| |  ___  _ __
+2015-05-19 11:56:48	--	- \ \ /\ / // _` || '__|/ _` | / _ \| '_ \
+2015-05-19 11:56:48	--	-  \ V  V /| (_| || |  | (_| ||  __/| | | |
+2015-05-19 11:56:48	--	-   \_/\_/  \__,_||_|   \__,_| \___||_| |_|
+2015-05-19 11:56:48	--	-                            .esper.net
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	- Location:       Beauharnois, QC, CA
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	- Ports:          5555, 6666 .. 6669, 6697 (SSL), 7000
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	- Admins:         TheBadShepperd <thebadshepperd at esper.net>
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	- Opers:          dahui
+2015-05-19 11:56:48	--	-                 malianx
+2015-05-19 11:56:48	--	-                 phroa
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	- Policies, rules, etc:
+2015-05-19 11:56:48	--	-            All users must follow the guidelines set forth in the EsperNet
+2015-05-19 11:56:48	--	-            network charter: http://esper.net/charter.php
+2015-05-19 11:56:48	--	-            Bots are permitted, but most follow an additional bot policy
+2015-05-19 11:56:48	--	-            found at http://esper.net/bots.php in addition to the EsperNet
+2015-05-19 11:56:48	--	-            charter.
+2015-05-19 11:56:48	--	-            Fserves are strictly forbidden (XDCC, etc.)
+2015-05-19 11:56:48	--	-            All users must follow Canadian and applicable international law.
+2015-05-19 11:56:48	--	-            Your use of this network implies consent to perform a proxy scan.
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	- Channels of note:
+2015-05-19 11:56:48	--	-            #help             - General IRC help.
+2015-05-19 11:56:48	--	-            #lobby            - General chat.
+2015-05-19 11:56:48	--	-            #vox              - General chat.
+2015-05-19 11:56:48	--	-            #dragonweyr       - Issues requiring network staff intervention.
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	- Final notes:
+2015-05-19 11:56:48	--	-            EsperNet is home to many communites, please be aware that not every
+2015-05-19 11:56:48	--	-            channel is dedicated to the particular community you've come to visit.
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	-            EsperNet is a privately-owned and operated network, and as such,
+2015-05-19 11:56:48	--	-            network staff reserve the right to suspend, limit, or deny access
+2015-05-19 11:56:48	--	-            to the network at any time for any reason.
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	-         mitch_ is the most glorious non-ircop honorary Canadian of the month.
+2015-05-19 11:56:48	--	-
+2015-05-19 11:56:48	--	- dftba
+2015-05-19 11:56:48	--	End of /MOTD command.
+2015-05-19 11:56:48	--	Modo de usuario [+i] por arlefreak
+2015-05-25 09:49:18	--	irc: conectando al servidor irc.esper.net/6667...
+2015-05-25 09:49:19	--	irc: conectado a irc.esper.net/6667 (168.235.75.5)
+2015-05-25 09:49:19	--	ranger.esper.net: *** Looking up your hostname...
+2015-05-25 09:49:19	--	ranger.esper.net: *** Checking Ident
+2015-05-25 09:49:19	--	ranger.esper.net: *** No Ident response
+2015-05-25 09:49:19	--	ranger.esper.net: *** Found your hostname
+2015-05-25 09:49:19	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-05-25 09:49:19	--	Your host is ranger.esper.net[168.235.75.5/6667], running version charybdis-3.5.0-dev
+2015-05-25 09:49:19	--	This server was created Mon Feb 9 2015 at 07:38:16 UTC
+2015-05-25 09:49:19	--	ranger.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-05-25 09:49:19	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-05-25 09:49:19	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-05-25 09:49:19	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-05-25 09:49:19	--	There are 19 users and 8379 invisible on 17 servers
+2015-05-25 09:49:19	--	34 :IRC Operators online
+2015-05-25 09:49:19	--	5840 :channels formed
+2015-05-25 09:49:19	--	I have 794 clients and 1 servers
+2015-05-25 09:49:19	--	794 1488 :Current local users 794, max 1488
+2015-05-25 09:49:19	--	8398 9368 :Current global users 8398, max 9368
+2015-05-25 09:49:19	--	Highest connection count: 1489 (1488 clients) (162635 connections received)
+2015-05-25 09:49:19	--	- ranger.esper.net Message of the Day -
+2015-05-25 09:49:19	--	- ____________    ____    ____   ___________
+2015-05-25 09:49:19	--	- \_  __ \__  \  /    \  / ___\_/ __ \_  __ \
+2015-05-25 09:49:19	--	-  |  | \// __ \|   |  \/ /_/  >  ___/|  | \/
+2015-05-25 09:49:19	--	-  |__|  (____  /___|  /\___  / \___  >__|
+2015-05-25 09:49:19	--	-             \/     \//_____/      \/
+2015-05-25 09:49:19	--	-                             .esper.net
+2015-05-25 09:49:19	--	-
+2015-05-25 09:49:19	--	- location:       Los Angeles, CA
+2015-05-25 09:49:19	--	-
+2015-05-25 09:49:19	--	- Ports:          5555, 6666 .. 6669, 6697 (SSL), 7000
+2015-05-25 09:49:19	--	-
+2015-05-25 09:49:19	--	- Admins:         TheBadShepperd <thebadshepperd at esper.net>
+2015-05-25 09:49:19	--	-
+2015-05-25 09:49:19	--	- Opers:          dahui
+2015-05-25 09:49:19	--	-                 malianx
+2015-05-25 09:49:19	--	-                 phroa
+2015-05-25 09:49:19	--	-
+2015-05-25 09:49:19	--	- Policies, rules, etc:
+2015-05-25 09:49:19	--	-                 All users must follow the guidelines set forth in the EsperNet
+2015-05-25 09:49:19	--	-                 network charter: http://esper.net/charter.php
+2015-05-25 09:49:19	--	-                 Bots are permitted, but must follow an additional bot policy
+2015-05-25 09:49:19	--	-                 found at http://esper.net/bots.php in addition to the EsperNet
+2015-05-25 09:49:19	--	-                 charter. Fserves (XDCC, etc) are strictly forbidden. All users
+2015-05-25 09:49:19	--	-                 must follow applicable U.S and California law.
+2015-05-25 09:49:19	--	-
+2015-05-25 09:49:19	--	-                 A proxy scan is performed upon connection. Please do not be
+2015-05-25 09:49:19	--	-                 alarmed, it doesn't bite.
+2015-05-25 09:49:19	--	-
+2015-05-25 09:49:19	--	- Channels of note:
+2015-05-25 09:49:19	--	-                 #lobby          - General chat.
+2015-05-25 09:49:19	--	-                 #help           - General IRC help.
+2015-05-25 09:49:19	--	-                 #dragonweyr     - Network issues requiring staff intervention.
+2015-05-25 09:49:19	--	-
+2015-05-25 09:49:19	--	- Final notes:
+2015-05-25 09:49:19	--	-                 EsperNet is home to many communites, please be aware that not every
+2015-05-25 09:49:19	--	-                 channel is dedicated to the particular community you've come to visit.
+2015-05-25 09:49:19	--	-
+2015-05-25 09:49:19	--	-                 EsperNet is a privately-owned and operated network, and as such,
+2015-05-25 09:49:19	--	-                 network staff reserve the right to suspend, limit, or deny access
+2015-05-25 09:49:19	--	-                 to the network at any time for any reason.
+2015-05-25 09:49:19	--	End of /MOTD command.
+2015-05-25 09:49:19	--	Modo de usuario [+i] por arlefreak
+2015-05-26 09:07:14	--	irc: conectando al servidor irc.esper.net/6667...
+2015-05-26 09:07:14	--	irc: conectado a irc.esper.net/6667 (168.235.75.5)
+2015-05-26 09:07:14	--	ranger.esper.net: *** Looking up your hostname...
+2015-05-26 09:07:14	--	ranger.esper.net: *** Checking Ident
+2015-05-26 09:07:14	--	ranger.esper.net: *** No Ident response
+2015-05-26 09:07:14	--	ranger.esper.net: *** Found your hostname
+2015-05-26 09:07:14	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-05-26 09:07:14	--	Your host is ranger.esper.net[168.235.75.5/6667], running version charybdis-3.5.0-dev
+2015-05-26 09:07:14	--	This server was created Mon Feb 9 2015 at 07:38:16 UTC
+2015-05-26 09:07:14	--	ranger.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-05-26 09:07:14	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-05-26 09:07:14	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-05-26 09:07:14	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-05-26 09:07:14	--	There are 19 users and 8179 invisible on 17 servers
+2015-05-26 09:07:14	--	34 :IRC Operators online
+2015-05-26 09:07:14	--	5806 :channels formed
+2015-05-26 09:07:14	--	I have 756 clients and 1 servers
+2015-05-26 09:07:14	--	756 1488 :Current local users 756, max 1488
+2015-05-26 09:07:14	--	8198 9368 :Current global users 8198, max 9368
+2015-05-26 09:07:14	--	Highest connection count: 1489 (1488 clients) (165747 connections received)
+2015-05-26 09:07:14	--	- ranger.esper.net Message of the Day -
+2015-05-26 09:07:14	--	- ____________    ____    ____   ___________
+2015-05-26 09:07:14	--	- \_  __ \__  \  /    \  / ___\_/ __ \_  __ \
+2015-05-26 09:07:14	--	-  |  | \// __ \|   |  \/ /_/  >  ___/|  | \/
+2015-05-26 09:07:14	--	-  |__|  (____  /___|  /\___  / \___  >__|
+2015-05-26 09:07:14	--	-             \/     \//_____/      \/
+2015-05-26 09:07:14	--	-                             .esper.net
+2015-05-26 09:07:14	--	-
+2015-05-26 09:07:14	--	- location:       Los Angeles, CA
+2015-05-26 09:07:14	--	-
+2015-05-26 09:07:14	--	- Ports:          5555, 6666 .. 6669, 6697 (SSL), 7000
+2015-05-26 09:07:14	--	-
+2015-05-26 09:07:14	--	- Admins:         TheBadShepperd <thebadshepperd at esper.net>
+2015-05-26 09:07:14	--	-
+2015-05-26 09:07:14	--	- Opers:          dahui
+2015-05-26 09:07:14	--	-                 malianx
+2015-05-26 09:07:14	--	-                 phroa
+2015-05-26 09:07:14	--	-
+2015-05-26 09:07:14	--	- Policies, rules, etc:
+2015-05-26 09:07:14	--	-                 All users must follow the guidelines set forth in the EsperNet
+2015-05-26 09:07:14	--	-                 network charter: http://esper.net/charter.php
+2015-05-26 09:07:14	--	-                 Bots are permitted, but must follow an additional bot policy
+2015-05-26 09:07:14	--	-                 found at http://esper.net/bots.php in addition to the EsperNet
+2015-05-26 09:07:14	--	-                 charter. Fserves (XDCC, etc) are strictly forbidden. All users
+2015-05-26 09:07:14	--	-                 must follow applicable U.S and California law.
+2015-05-26 09:07:14	--	-
+2015-05-26 09:07:14	--	-                 A proxy scan is performed upon connection. Please do not be
+2015-05-26 09:07:14	--	-                 alarmed, it doesn't bite.
+2015-05-26 09:07:14	--	-
+2015-05-26 09:07:14	--	- Channels of note:
+2015-05-26 09:07:14	--	-                 #lobby          - General chat.
+2015-05-26 09:07:14	--	-                 #help           - General IRC help.
+2015-05-26 09:07:14	--	-                 #dragonweyr     - Network issues requiring staff intervention.
+2015-05-26 09:07:14	--	-
+2015-05-26 09:07:14	--	- Final notes:
+2015-05-26 09:07:14	--	-                 EsperNet is home to many communites, please be aware that not every
+2015-05-26 09:07:14	--	-                 channel is dedicated to the particular community you've come to visit.
+2015-05-26 09:07:14	--	-
+2015-05-26 09:07:14	--	-                 EsperNet is a privately-owned and operated network, and as such,
+2015-05-26 09:07:14	--	-                 network staff reserve the right to suspend, limit, or deny access
+2015-05-26 09:07:14	--	-                 to the network at any time for any reason.
+2015-05-26 09:07:14	--	End of /MOTD command.
+2015-05-26 09:07:14	--	Modo de usuario [+i] por arlefreak
+2015-05-26 09:14:21	--	irc: desconectado del servidor
+2015-05-26 09:15:21	--	irc: conectando al servidor irc.esper.net/6667...
+2015-05-26 09:15:21	--	irc: conectado a irc.esper.net/6667 (80.65.57.2)
+2015-05-26 09:15:21	--	availo.esper.net: *** Looking up your hostname...
+2015-05-26 09:15:21	--	availo.esper.net: *** Checking Ident
+2015-05-26 09:15:22	--	availo.esper.net: *** No Ident response
+2015-05-26 09:15:22	--	availo.esper.net: *** Found your hostname
+2015-05-26 09:15:22	--	Welcome to the EsperNet Internet Relay Chat Network arlefreak
+2015-05-26 09:15:22	--	Your host is availo.esper.net[80.65.57.2/6667], running version charybdis-3.5.0-dev
+2015-05-26 09:15:22	--	This server was created Sun Jul 27 2014 at 08:15:44 CEST
+2015-05-26 09:15:22	--	availo.esper.net charybdis-3.5.0-dev DQRSZagiloswz CFILPQTbcefgijklmnopqrstvz bkloveqjfI
+2015-05-26 09:15:22	--	SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLPQTcgimnprstz CHANLIMIT=#:50 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=EsperNet KNOCK :are supported by this server
+2015-05-26 09:15:22	--	STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 NICKLEN=30 MAXNICKLEN=30 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 :are supported by this server
+2015-05-26 09:15:22	--	FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,acjorsxz WHOX CLIENTVER=3.0 :are supported by this server
+2015-05-26 09:15:22	--	There are 19 users and 8203 invisible on 17 servers
+2015-05-26 09:15:22	--	34 :IRC Operators online
+2015-05-26 09:15:22	--	5804 :channels formed
+2015-05-26 09:15:22	--	I have 2081 clients and 1 servers
+2015-05-26 09:15:22	--	2081 5181 :Current local users 2081, max 5181
+2015-05-26 09:15:22	--	8222 10986 :Current global users 8222, max 10986
+2015-05-26 09:15:22	--	Highest connection count: 5182 (5181 clients) (724574 connections received)
+2015-05-26 09:15:22	--	- availo.esper.net Message of the Day -
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-        ;.    cd:         dd.    o         .dl   dd          .oOXX0x;
+2015-05-26 09:15:22	--	-       .NX.   'WM,       kM0    oMo        cMX  .MM.      .oXMKkddxONWk,
+2015-05-26 09:15:22	--	-      .WNWX.   ,MW.     oMK    dMNMo       cMX  .MM.     lMWc        '0MO
+2015-05-26 09:15:22	--	-     .WN.'WN.   ;MN.   cMX    xMk kMd      cMX  .MM.    :MW.           0MO
+2015-05-26 09:15:22	--	-    'WN.  'WN.   :MX  ,MN.   xMk   kMx     cMX  .MM.    xMK            cMM
+2015-05-26 09:15:22	--	-   ,WN.    'WN.   cMK'WW.   kMx     kMk    cMX  .MM.    ,MM'           0Mk
+2015-05-26 09:15:22	--	-  ,WW.      ,WW.   oMMW.   kMk       kMO   cMX  .MM.     :WWo.       ;KMk
+2015-05-26 09:15:22	--	- ;MW.        ,MW'   dM,   OMO         kMO  cMX  .MMK0000.  c0WN0kkOXMXd.
+2015-05-26 09:15:22	--	- ,,.          .,'    c   .,,           ,,. .,'   ,,,,,,,      ,oxkd:.
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-                             availo.esper.net
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-                                               Not an admin:       brynjar
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-                                           0 helper donkeys at the moment
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-         This server is listening on ports 5555, 6667-9 and 7000
+2015-05-26 09:15:22	--	-        SSL-connections are recommended, and welcome on port 6697
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-                                                      * TERMS OF SERVICE *
+2015-05-26 09:15:22	--	-   Your use of this network constitutes an agreement to abide by the
+2015-05-26 09:15:22	--	-   rules presented in the EsperNet AUP - http://esper.net/charter.php
+2015-05-26 09:15:22	--	-   as well as any applicable Norwegian and International laws.
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-   Further, your use of this network implies consent to a port scan
+2015-05-26 09:15:22	--	-   to detect open proxies and otherwise compromised systems.
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-   Properly configured bots are permitted, but are required to follow
+2015-05-26 09:15:22	--	-   the same rules as users. Please refer to http://esper.net/bots.php
+2015-05-26 09:15:22	--	-   for more information about configuration requirements and suggestions.
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-                                                       * USEFUL CHANNELS *
+2015-05-26 09:15:22	--	-   #dragonweyr - Network staff assistance
+2015-05-26 09:15:22	--	-   #coders     - Help with programming|tr gm cs|sed 's/s\(in\)c/t\1ation/'
+2015-05-26 09:15:22	--	-   #lobby      - Chat
+2015-05-26 09:15:22	--	-   #help       - General IRC help
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-                                                         * USEFUL PEOPLE *
+2015-05-26 09:15:22	--	-   keybounce_  - Doesn't afraid of regex
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-                                                    * SPONSORING COMPANY *
+2015-05-26 09:15:22	--	-   This server is sponsored by donkeys and Availo:
+2015-05-26 09:15:22	--	-   http://www.availo.no/
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-                                                   * CURRENT THEME SONGS *
+2015-05-26 09:15:22	--	-   Theme song #1:       http://kaffekoker.net/mp3/availo_01.mp3
+2015-05-26 09:15:22	--	-   Theme song #2:       http://kaffekoker.net/mp3/availo_02.mp3
+2015-05-26 09:15:22	--	-   Not a theme song #1: http://kaffekoker.net/mp3/blip-hop.mp3
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	-   Feel free to poke 'brynjar' if you are awesome and would like to
+2015-05-26 09:15:22	--	-   donate a chiptune you have composed. EsperNet will love you for it!
+2015-05-26 09:15:22	--	-
+2015-05-26 09:15:22	--	End of /MOTD command.
+2015-05-26 09:15:22	--	Modo de usuario [+i] por arlefreak
