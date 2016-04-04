@@ -1,1 +1,0 @@
-/Users/arlefreak/.vim/vimrc
