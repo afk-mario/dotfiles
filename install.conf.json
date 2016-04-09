@@ -24,7 +24,7 @@
             "~/.tmux.conf": "tmux.conf",
             "~/.vimrc": "vimrc",
             "~/.vim": "vim/",
-            " ~/.ssh/config": "ssh_config",
+            "~/.ssh/config": "ssh_config",
             "~/.zshrc": "zshrc",
             "~/.gitconfig": "gitconfig",
             "~/.gitignore_global": "gitignore_global",
