@@ -6,8 +6,8 @@ Host *
      Protocol 2
      ServerAliveInterval 60
      ServerAliveCountMax 30
-    IdentityFile ~/.ssh/id_rsa.pub
 
 Host hyperCraftRoot
     HostName 104.236.78.44
     User root
+    IdentityFile ~/.ssh/id_rsa.pub
