@@ -1,0 +1,18 @@
+Host *
+     ForwardAgent no
+     ForwardX11 no
+     ForwardX11Trusted yes
+     Port 22
+     Protocol 2
+     ServerAliveInterval 60
+     ServerAliveCountMax 30
+
+Host hyperCraftRoot
+    HostName 104.236.78.44
+    User root
+    IdentityFile ~/.ssh/id_rsa.pub
+
+Host hyperCraft
+    HostName 104.236.78.44
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
