@@ -11,3 +11,18 @@ Host hyperCraftRoot
     HostName 104.236.78.44
     User root
     IdentityFile ~/.ssh/id_rsa.pub
+
+Host hyperCraft
+    HostName 104.236.78.44
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
+
+Host linodeDev
+    HostName 104.237.141.167
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
+
+Host linodeClient
+    HostName 45.33.81.42
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
