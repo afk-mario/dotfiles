@@ -3,3 +3,7 @@
 	email = hi@arlefreak.com
 [push]
 	default = simple
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive

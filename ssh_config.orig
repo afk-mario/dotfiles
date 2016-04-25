@@ -1,0 +1,32 @@
+Host *
+     ForwardAgent no
+     ForwardX11 no
+     ForwardX11Trusted yes
+     Port 22
+     Protocol 2
+     ServerAliveInterval 60
+     ServerAliveCountMax 30
+
+Host hyperCraftRoot
+    HostName 104.131.47.48
+    User root
+    IdentityFile ~/.ssh/id_rsa.pub
+
+Host hyperCraft
+<<<<<<< HEAD
+    HostName 104.131.47.48
+=======
+    HostName 104.236.78.44
+>>>>>>> cbdc6bca33e42a42dc47406582fad587a6670291
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
+
+Host linodeDev
+    HostName 104.237.141.167
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
+
+Host linodeClient
+    HostName 45.33.81.42
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
