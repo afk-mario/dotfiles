@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="odin"
 
-plugins=(git ssh-agent git-extras django pip brew tig gulp)
+plugins=(git ssh-agent git-extras git-flow django pip brew tig gulp)
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
