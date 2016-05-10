@@ -22,7 +22,7 @@
         "link": {
             "~/.dotfiles": "",
             "~/.tmux.conf": "tmux.conf",
-            "~/.vimrc": "vimrc",
+            "~/.vim/vimrc": "vimrc",
             "~/.vim": "vim/",
             "~/.ssh/config": "ssh_config",
             "~/.zshrc": "zshrc",
