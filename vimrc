@@ -206,11 +206,11 @@
                         \ 'filetypes' : ['cs', 'cs']
                     \ }
                 \ }
-        NeoBundleLazy 'tweekmonster/braceless.vim', {
+        NeoBundleLazy 'https://gitlab.com/mixedCase/deoplete-omnisharp.git', {
                     \ 'autoload' : {
-                        \ 'filetypes' : ['stylus', 'styl']
+                        \ 'filetypes' : ['cs', 'cs']
                     \ }
-                    \}
+                \ }
         NeoBundle 'rust-lang/rust.vim'         " Rust Language Support
         NeoBundle 'racer-rust/vim-racer'       " AutoComplete for vim
         NeoBundle 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
