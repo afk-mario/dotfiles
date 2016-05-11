@@ -559,6 +559,7 @@
             au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
             let g:deoplete#omni_patterns = {}
             let g:deoplete#omni_patterns.rust = '[(\.)(::)]'
+            autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
         endif
     " }
 
