@@ -63,170 +63,100 @@
 
 " Bundles {
     " Config {
-        if !1 | finish | endif
-
-        if has('vim_starting')
-
-        " Required:
-            set runtimepath+=~/.vim/bundle/neobundle.vim/
-        endif
-
-        " Required:
-        call neobundle#begin(expand('~/.vim/bundle/'))
-
-        " Let NeoBundle manage NeoBundle
-        " Required:
-        NeoBundleFetch 'Shougo/neobundle.vim'
+        set runtimepath^=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+        call dein#begin(expand('~/.cache/dein'))
     " }
-
     " Unite {
-        NeoBundleLazy 'Shougo/unite.vim' , {
-            \ 'autoload': {
-            \   'commands': [
-            \       'Unite',
-            \       'UniteWithBufferDir',
-            \       'UniteWithCurrentDir',
-            \       'UniteWithProjectDir',
-            \   ],
-            \ },
-        \ }
-
-        NeoBundle 'arlefreak/vim-unite-config', {
-                    \ 'depends' : 'Shougo/unite.vim'
-                    \ } " Settings for Unite
-        NeoBundle 'Shougo/neomru.vim', { 
-                    \ 'depends' : 'Shougo/unite.vim'
-                    \ } " Better mru
-        NeoBundle 'Shougo/unite-outline', {
-                    \ 'depends' : 'Shougo/unite.vim'
-                    \ } " Tags Unite source
-        NeoBundle 'Shougo/neoyank.vim', {
-                    \ 'depends' : 'Shougo/unite.vim'
-                    \ } " Yank history for unite
-        NeoBundle 'tacroe/unite-mark', {
-                    \ 'depends' : 'Shougo/unite.vim'
-                    \ } " Marks soruce for unite
-        NeoBundle 'tsukkee/unite-tag', {
-                    \ 'depends' : 'Shougo/unite.vim'
-                    \ } " Unite Tag source
+        call dein#add('Shougo/unite.vim', {'lazy': 1})
+        call dein#add('arlefreak/vim-unite-config', { 
+                    \'depends': 'unite.vim'
+                    \})
+        call dein#add('Shougo/neomru.vim', {
+                    \'depends': 'unite.vim'
+                    \})
+        call dein#add('Shougo/unite-outline', {
+                    \'depends': 'unite.vim'
+                    \})
+        call dein#add('Shougo/neoyank.vim', {
+                    \'depends': 'unite.vim'
+                    \})
+        call dein#add('tacroe/unite-mark', {
+                    \'depends': 'unite.vim'
+                    \})
+        call dein#add('tsukkee/unite-tag', {
+                    \'depends': 'unite.vim'
+                    \})
     " }
-
-    " Utilities {
-        NeoBundleLazy 'Shougo/deoplete.nvim', {
-                    \ 'autoload': {
-                        \ 'insert': 1,
-                        \ },
-                    \ } " Neovim Autocomplete
-        NeoBundle 'Shougo/neosnippet.vim'
-        NeoBundle 'Shougo/neosnippet-snippets'
-        NeoBundle 'tpope/vim-vinegar'                            " Netrw helper
-        NeoBundle 'tpope/vim-obsession'                          " Session Managment
-        NeoBundle 'tpope/vim-eunuch'                             " Unix helpers
-        NeoBundle 'tpope/vim-commentary'                         " Toggle comments
-        NeoBundle 'tpope/vim-surround'                           " Sorroundings
-        NeoBundle 'tpope/vim-repeat'                             " More . command
-        NeoBundle 'wellle/targets.vim'                           " Better motions
-        NeoBundle 'kana/vim-textobj-user'                        " Custom text object
-        NeoBundle 'kana/vim-textobj-line'                        " Line text object
-        NeoBundle 'scrooloose/syntastic',                        " Syntax check
-        NeoBundle 'Raimondi/delimitMate',                        " Auto close quotes parentesis etc
-        NeoBundle 'mhinz/vim-grepper'                            " Multiple grep support
-        NeoBundle 'sjl/gundo.vim',                               " Undo tree
-        NeoBundle 'vim-scripts/loremipsum'                       " Lorem ipsum text
-        NeoBundle 'Chiel92/vim-autoformat'                       " AutoFormat code
-        NeoBundle 'mhinz/vim-startify'                           " Start Screen
-        NeoBundle 'godlygeek/tabular'                            " Align code
-        NeoBundle 'Shougo/vimproc', {
-              \ 'build' : {
-              \     'windows' : 'make -f make_mingw32.mak',
-              \     'cygwin' : 'make -f make_cygwin.mak',
-              \     'mac' : 'make -f make_mac.mak',
-              \     'unix' : 'make -f make_unix.mak',
-              \    },
-              \ }
+    " Utilities{
+        call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+        call dein#add(expand('~/.vim/bundle/repos/github.com/Shougo/dein.vim'))
+        call dein#add('Shougo/deoplete.nvim')
+        call dein#add('Shougo/neosnippet.vim', {'lazy': 1})
+        call dein#add('Shougo/neosnippet-snippets', {
+                    \'depends': 'neosnippet/vim'
+                    \})
+        call dein#add('tpope/vim-vinegar')                            " Netrw helper
+        call dein#add('tpope/vim-obsession')                          " Session Managment
+        call dein#add('tpope/vim-eunuch')                             " Unix helpers
+        call dein#add('tpope/vim-commentary')                         " Toggle comments
+        call dein#add('tpope/vim-surround')                        " Sorroundings
+        call dein#add('tpope/vim-repeat')                             " More . command
+        call dein#add('wellle/targets.vim')                           " Better motions
+        call dein#add('kana/vim-textobj-user')                        " Custom text object
+        call dein#add('kana/vim-textobj-line')                        " Line text object
+        call dein#add('scrooloose/syntastic')                        " Syntax check
+        call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
+        call dein#add('mhinz/vim-grepper')                            " Multiple grep support
+        call dein#add('sjl/gundo.vim')                               " Undo tree
+        call dein#add('vim-scripts/loremipsum')                       " Lorem ipsum text
+        call dein#add('Chiel92/vim-autoformat')                       " AutoFormat code
+        call dein#add('mhinz/vim-startify')                           " Start Screen
+        call dein#add('godlygeek/tabular')                            " Align code
     " }
-    "
-
     " Prose {
-        NeoBundle 'reedes/vim-pencil'                            " Better Writting
-        NeoBundleLazy 'junegunn/goyo.vim', {
-                    \ 'commands' : ['Goyo']
-                    \ }                                          " Distraction-free writing in Vim
+        call dein#add('reedes/vim-pencil', {'lazy': 1})                            " Better Writting
+        call dein#add('junegunn/goyo.vim', {'lazy': 1})
     " }
-
-    " Git {
-        NeoBundle 'tpope/vim-fugitive'                           " Git wrapper
-        NeoBundle 'airblade/vim-gitgutter'                       " Git gutter simbols
+    " VCS {
+        call dein#add('tpope/vim-fugitive')                           " Git wrapper
+        call dein#add('airblade/vim-gitgutter')                       " Git gutter simbols
     " }
-
-    " Languages and Frameworks {
-        NeoBundleLazy 'mattn/emmet-vim', {
-                    \ 'autoload': {
-                        \ 'filetypes': 'html',
-                \ }} " Html5 Plugin
-        NeoBundleLazy 'othree/html5.vim', {
-                    \ 'autoload': {
-                        \ 'filetypes': 'html',
-                \ }} " Html5 Plugin
-        NeoBundle 'elzr/vim-json', {
-                    \ 'autoload': {
-                        \ 'filetypes': 'json',
-                \ }} " Json
-        NeoBundleLazy 'pangloss/vim-javascript', {
-                    \ 'autoload': {
-                        \ 'filetypes': 'javascript',
-                \ }} " Sintax and ident plugins
-        NeoBundleLazy 'mxw/vim-jsx', {
-                    \ 'autoload': {
-                        \ 'filetypes': 'javascript',
-                \ }} " Stylus plugin
-        NeoBundleLazy 'wavded/vim-stylus', {
-                    \ 'autoload': {
-                        \ 'filetypes': 'styl',
-                \ }} " Stylus plugin
-        NeoBundle 'klen/python-mode/', {
-                    \ 'autoload': {
-                        \ 'filetypes': ['python', 'python3'],
-                \ }} " Python mode
-        NeoBundleLazy 'davidhalter/jedi-vim', {
-                    \ 'autoload': {
-                        \ 'filetypes': ['python', 'python3'],
-                \ }} " Python autocomplete
-        NeoBundle 'vim-scripts/django.vim', {
-                    \ 'autoload': {
-                        \ 'filetypes': ['python', 'python3', 'html'],
-                    \ }}
-        NeoBundleLazy 'OmniSharp/omnisharp-vim' , {
-                    \ 'autoload' : {
-                        \ 'filetypes' : ['cs', 'cs']
-                    \ }
-                \ }
-        NeoBundleLazy 'OrangeT/vim-csharp' , {
-                    \ 'autoload' : {
-                        \ 'filetypes' : ['cs', 'cs']
-                    \ }
-                \ }
-        NeoBundleLazy 'https://gitlab.com/mixedCase/deoplete-omnisharp.git', {
-                    \ 'autoload' : {
-                        \ 'filetypes' : ['cs', 'cs']
-                    \ }
-                \ }
-        NeoBundle 'rust-lang/rust.vim'         " Rust Language Support
-        NeoBundle 'racer-rust/vim-racer'       " AutoComplete for vim
-        NeoBundle 'tpope/vim-dispatch'         " Asynchronous build and test dispatcher
+    " Languages {
+        call dein#add('rust-lang/rust.vim')
+                    " \{'on_event': 'FileType', 'on_if': 'rust'})
+        call dein#add('racer-rust/vim-racer')       " AutoComplete for vim
+        call dein#add('mattn/emmet-vim')
+        call dein#add('othree/html5.vim')
+        call dein#add('elzr/vim-json')
+        call dein#add('pangloss/vim-javascript')
+        call dein#add('mxw/vim-jsx')
+        call dein#add('wavded/vim-stylus')
+        call dein#add('klen/python-mode/')
+        call dein#add('davidhalter/jedi-vim')
+        call dein#add('vim-scripts/django.vim')
+        call dein#add('OmniSharp/omnisharp-vim', {
+                    \ 'build':
+                    \   'sh -c "cd server/ && xbuild"'
+                    \ })
+        call dein#add('OrangeT/vim-csharp' )
+        call dein#add('https://gitlab.com/mixedCase/deoplete-omnisharp.git')
+        call dein#add('tpope/vim-dispatch') " Asynchronous build and test dispatcher
     " }
-
     " Vim UI {
-        NeoBundle 'tpope/vim-flagship'                           " Statusline
-        NeoBundle 'nathanaelkane/vim-indent-guides',             " Ident visual guide
-        NeoBundle 'gregsexton/MatchTag',                         " Highlite Matching tag
-        NeoBundle 'altercation/vim-colors-solarized'
-        NeoBundle 'w0ng/vim-hybrid'
-        NeoBundle 'whatyouhide/vim-gotham'
+        call dein#add('tpope/vim-flagship')                           " Statusline
+        call dein#add('nathanaelkane/vim-indent-guides')             " Ident visual guide
+        call dein#add('gregsexton/MatchTag')                         " Highlite Matching tag
+        call dein#add('altercation/vim-colors-solarized')
+        call dein#add('w0ng/vim-hybrid')
+        call dein#add('whatyouhide/vim-gotham')
     " }
 
-    call neobundle#end()
-    NeoBundleCheck
+    call dein#end()
+
+    if dein#check_install()
+      call dein#install()
+    endif
+    call dein#check_lazy_plugins()
 " }
 
 " General {
@@ -299,8 +229,9 @@
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
     endif
 
-    if OSX() && filereadable(expand("~/.vim/bundle/vim-gotham/colors/gotham.vim"))
-        colorscheme gotham
+    colorscheme gotham
+    if OSX() && dein#tap("gotham.vim")
+        echom"gotham"
     elseif filereadable(expand("~/.vim/bundle/vim-hybrid/colors/hybrid.vim"))
         let g:hybrid_custom_term_colors = 1
         colorscheme hybrid
@@ -325,9 +256,9 @@
         set laststatus=2
         set showtabline=2
         set guioptions-=e
+        set statusline=%t       "tail of the filename
 
-        if !isdirectory(expand("~/.vim/bundle/vim-flagship"))
-            set statusline=%t       "tail of the filename
+        if !dein#tap("vim-flagship")
             set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
             set statusline+=%{&ff}] "file format
             set statusline+=%h      "help file flag
@@ -457,14 +388,14 @@
 
 " Plugins {
     " Gundo {
-        if isdirectory(expand("~/.vim/bundle/gundo.vim"))
+        if dein#tap("gundo.vim")
             let g:gundo_prefer_python3 = 1
             nnoremap <leader>g :GundoToggle<CR>
         endif
     " }
 
     " Tabular {
-        if isdirectory(expand("~/.vim/bundle/tabular"))
+        if dein#tap("tabular")
             nmap <Leader>a& :Tabularize /&<CR>
             vmap <Leader>a& :Tabularize /&<CR>
             nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
@@ -486,7 +417,8 @@
     "}
 
     " JSBeutifier {
-        if isdirectory(expand("~/.vim/bundle/js-beautify"))
+        
+        if dein#tap("js-beautify")
             autocmd FileType javascript noremap <buffer><leader>jb :call JsBeautify()<cr>
             autocmd FileType html noremap <buffer><leader>jb :call HtmlBeautify()<cr>
             autocmd FileType css noremap <buffer><leader>jb :call CSSBeautify()<cr>
@@ -494,7 +426,7 @@
     " }
 
     " Syntastic {
-        if isdirectory(expand("~/.vim/bundle/syntastic"))
+        if dein#tap("syntastic")
             let g:syntastic_always_populate_loc_list = 1
             let g:syntastic_auto_loc_list = 1
             let g:syntastic_check_on_open = 1
@@ -513,7 +445,7 @@
     " }
 
     " Emmet {
-        if isdirectory(expand("~/.vim/bundle/emmet-vim"))
+        if dein#tap("emmet-vim")
             let g:user_emmet_install_global = 0
             autocmd FileType html,css EmmetInstall
             iabbrev </ </<C-X><C-O>
@@ -521,7 +453,7 @@
     " }
 
     " Vim-airline {
-        if isdirectory(expand("~/.vim/bundle/vim-airline"))
+        if dein#tap("vim-airline")
             set laststatus=2
             let g:airline_theme='gotham'
             let g:airline_detect_paste=1
@@ -540,20 +472,21 @@
     " }
 
     " Flagship {
-        if isdirectory(expand("~/.vim/bundle/vim-flagship"))
+        if dein#tap("vim-flagship")
             autocmd User Flags call Hoist("window", "SyntasticStatuslineFlag")
             autocmd User Flags call Hoist("global", "%{&ignorecase ? '[IC]' : ''}")
         endif
     " }
 
     " Tmux-Line {
-        if isdirectory(expand("~/.vim/bundle/tmuxline.vim"))
+        
+        if dein#tap("tmuxline.vim")
             " let g:tmuxline_theme = 'iceberg'
         endif
     " }
 
     " Deoplete {
-        if isdirectory(expand("~/.vim/bundle/deoplete.nvim"))
+        if dein#tap("deoplete.nvim")
             let g:deoplete#enable_at_startup = 1
             let g:deoplete#enable_smart_case = 1
             au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
@@ -564,7 +497,7 @@
     " }
 
     " NeoSnippet {
-        if isdirectory(expand("~/.vim/bundle/neosnippet.vim"))
+        if dein#tap("neosnippet.vim")
             " Plugin key-mappings.
             imap <C-k>     <Plug>(neosnippet_expand_or_jump)
             smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -591,7 +524,7 @@
     " }
 
     " Rust {
-        if isdirectory(expand("~/.vim/bundle/rust.vim"))
+        if dein#tap("rust.vim")
             " let g:rustfmt_autosave = 1
             nmap <leader>f :Autoformat<cr>
             let g:formatdef_rustfmt = '"rustfmt"'
@@ -607,7 +540,7 @@
             let g:pymode = 0
         endif
 
-        if isdirectory(expand("~/.vim/bundle/python-mode"))
+        if dein#tap("python-mode")
             let g:pymode_lint_checkers = ['pyflakes']
             let g:pymode_trim_whitespaces = 0
             let g:pymode_options = 0
@@ -616,7 +549,7 @@
     " }
 
     " Fugitive {
-        if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+        if dein#tap("vim-fugitive")
             nnoremap <silent> <leader>gs :Gstatus<CR>
             nnoremap <silent> <leader>gd :Gdiff<CR>
             nnoremap <silent> <leader>gc :Gcommit<CR>
@@ -629,18 +562,20 @@
             " Mnemonic _i_nteractive
             nnoremap <silent> <leader>gi :Git add -p %<CR>
             nnoremap <silent> <leader>gg :SignifyToggle<CR>
-            set statusline+=%{fugitive#statusline()} " Git integration
+            if !dein#tap("vim-flagship")
+                set statusline+=%{fugitive#statusline()} " Git integration
+            endif
         endif
     "}
 
     " Obsession {
-        if isdirectory(expand("~/.vim/bundle/vim-obsession/"))
+        if dein#tap("vim-obsession")
             set statusline+=%{ObsessionStatus()}     " ObsessionStatus
         endif
     "}
 
     " indent_guides {
-        if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
+        if dein#tap("vim-ident-guides")
             let g:indent_guides_start_level = 2
             let g:indent_guides_guide_size = 1
             let g:indent_guides_enable_on_vim_startup = 1
@@ -648,7 +583,7 @@
     " }
 
     " Startify {
-        if isdirectory(expand("~/.vim/bundle/vim-startify/"))
+        if dein#tap("vim-startify")
             let g:startify_list_order = [
                 \ [' Sessions '],
                 \ 'sessions',
@@ -711,10 +646,16 @@
     " }
 
     " Goyo and Limelight {
-        if isdirectory(expand("~/.vim/bundle/goyo.vim/"))
+        if dein#tap("goyo.vim")
             " let g:goyo_margin_top=0
             " let g:goyo_margin_bottom=0
             nnoremap <leader>G :Goyo<CR>
+        endif
+    " }
+
+    " OmniSharp {
+        if dein#tap("OmniSharp.vim")
+            let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
         endif
     " }
 " }

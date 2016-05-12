@@ -15,6 +15,10 @@
             [
                 "mkdir -p ~/Projects/Web ~/Projects/Games ~/Github ~/Sandbox ~/InterC  ~/.ssh/",
                 "Creating directories"
+            ],
+            [
+                "mkdir -p ~/.vim/bundle/repos/github.com/Shougo/dein.vim",
+                "Creating dein.vim folders"
             ]
         ]
     },
@@ -23,7 +27,11 @@
             "~/.dotfiles": "",
             "~/.tmux.conf": "tmux.conf",
             "~/.vim/vimrc": "vimrc",
-            "~/.vim": "vim/",
+            "~/.vim/after": "vim/after",
+            "~/.vim/autoload": "vim/autoload",
+            "~/.vim/ftplugin": "vim/ftplugin",
+            "~/.vim/syntax": "vim/syntax",
+            "~/.vim/vimrcmin": "vimrcmin",
             "~/.ssh/config": "ssh_config",
             "~/.zshrc": "zshrc",
             "~/.gitconfig": "gitconfig",
@@ -41,6 +49,22 @@
             [
                 "git submodule update --init --recursive",
                 "Installing/updating submodules"
+            ],
+            [
+                "git clone https://github.com/Shougo/dein.vim ~/.vim/bundle/repos/github.com/Shougo/dein.vim",
+                "Installing dein.vim"
+            ],
+            [
+                "mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}",
+                "Creating nvim config folder"
+            ],
+            [
+                "ln -sf ~/.vim $HOME/.config/nvim",
+                "Creating symLink for nvim"
+            ],
+            [
+                "ln -sf ~/.vim/vimrc $HOME/.config/nvim/init.vim",
+                "Creating symLink for nvimrc"
             ]
         ]
     }
