@@ -1,4 +1,31 @@
-set nocompatible
-set backspace=indent,eol,start
 syntax on
 filetype plugin indent on
+
+set nocompatible
+set backspace=indent,eol,start
+set hidden
+set cursorline
+set backspace=indent,eol,start
+set number
+set relativenumber
+set splitright
+set splitbelow
+
+let mapleader="\<Space>"
+
+noremap j gj
+noremap k gk
+
+nnoremap Y y$
+vnoremap < <gv
+vnoremap > >gv
+
+nmap <leader>t  : enew<CR>
+nmap <leader>l  : bnext<CR>
+nmap <leader>h  : bprevious<CR>
+nmap <leader>bq : bp <BAR> bd #<CR>
+nmap <leader>bl : ls<CR>:buffer<Space>
+
+nnoremap <leader>H  :tabprevious<CR>
+nnoremap <leader>L  :tabnext<CR>
+nnoremap <leader>T  :tabnew<CR>

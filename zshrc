@@ -17,6 +17,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vim="nvim"
+alias vi="vi -u $HOME/.vim/vimrcmin"
 alias rmr="rm -r"
 alias cpr="cp -R"
 

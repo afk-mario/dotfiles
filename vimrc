@@ -284,7 +284,7 @@
     set cursorline                  " Highlight current line
     set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra spaces between rows
-    set number                      " Line numbers on
+    set number                      " line numbers on
     set relativenumber
     set showmatch                   " Show matching brackets/parenthesis
     set incsearch                   " Find as you type search
