@@ -4,6 +4,6 @@
 [push]
 	default = simple
 [mergetool "fugitive"]
-	cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
+	cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 [merge]
 	tool = fugitive
