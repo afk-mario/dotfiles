@@ -21,11 +21,21 @@ alias rmr="rm -r"
 alias cpr="cp -R"
 
 export EDITOR=nvim
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+if [ -f /usr/local/bin/python3 ]; then
+    VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+elif [ -f /usr/bin/python3]; then
+    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+fi
+
 export VIRTUALENVWRAPPER_PYTHON
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+export EDITOR=nvim
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+elif [ -f /usr/bin/python3]; then
+    source /usr/bin/virtualenvwrapper.sh
+fi
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Users/arlefreak/Library/cocos2d-x-3.9/tools/cocos2d-console/bin
