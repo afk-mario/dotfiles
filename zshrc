@@ -23,7 +23,7 @@ alias cpr="cp -R"
 export EDITOR=nvim
 if [ -f /usr/local/bin/python3 ]; then
     VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-elif [ -f /usr/bin/python3]; then
+elif [ -f /usr/bin/python3 ]; then
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 fi
 
@@ -33,7 +33,7 @@ export PROJECT_HOME=$HOME/Devel
 export EDITOR=nvim
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
-elif [ -f /usr/bin/python3]; then
+elif [ -f /usr/bin/python3 ]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
 
