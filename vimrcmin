@@ -20,12 +20,22 @@ nnoremap Y y$
 vnoremap < <gv
 vnoremap > >gv
 
-nmap <leader>t  : enew<CR>
-nmap <leader>l  : bnext<CR>
-nmap <leader>h  : bprevious<CR>
-nmap <leader>bq : bp <BAR> bd #<CR>
-nmap <leader>bl : ls<CR>:buffer<Space>
+nnoremap [buffer] <nop>
+nmap <leader>b [buffer]
+nnoremap <silent> [buffer]t :enew<cr>
+nnoremap <silent> [buffer]l :bnext<cr>
+nnoremap <silent> [buffer]h :bprevious<cr>
+nnoremap <silent> [buffer]q :bp <BAR> bd #<cr>
+nnoremap <silent> [buffer]w :bw<cr>
+nnoremap <silent> [buffer]s :ls<cr>
+nnoremap <silent> [buffer]1 :bfirst<cr>
+nnoremap <silent> [buffer]0 :blast<cr>
 
-nnoremap <leader>H  :tabprevious<CR>
-nnoremap <leader>L  :tabnext<CR>
-nnoremap <leader>T  :tabnew<CR>
+nnoremap [tab] <nop>
+nmap <leader>t [tab]
+nnoremap <silent> [tab]t :tabnew<cr>
+nnoremap <silent> [tab]l :tabnext<cr>
+nnoremap <silent> [tab]h :tabprevious<cr>
+nnoremap <silent> [tab]q :tabclose<cr>
+nnoremap <silent> [tab]1 :tabfirst<cr>
+nnoremap <silent> [tab]0 :tablast<cr>

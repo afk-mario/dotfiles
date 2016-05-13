@@ -338,15 +338,29 @@
     noremap <Left> <NOP>
     noremap <Right> <NOP>
 
-    nmap <leader>t  : enew<CR>
-    nmap <leader>l  : bnext<CR>
-    nmap <leader>h  : bprevious<CR>
-    nmap <leader>bq : bp <BAR> bd #<CR>
-    nmap <leader>bl : ls<CR>:buffer<Space>
+    " Buffers {
+        nnoremap [buffer] <nop>
+        nmap <leader>b [buffer]
+        nnoremap <silent> [buffer]t :enew<cr>
+        nnoremap <silent> [buffer]l :bnext<cr>
+        nnoremap <silent> [buffer]h :bprevious<cr>
+        nnoremap <silent> [buffer]q :bp <BAR> bd #<cr>
+        nnoremap <silent> [buffer]w :bw<cr>
+        nnoremap <silent> [buffer]s :ls<cr>
+        nnoremap <silent> [buffer]1 :bfirst<cr>
+        nnoremap <silent> [buffer]0 :blast<cr>
+    " }
 
-    nnoremap <leader>H  :tabprevious<CR>
-    nnoremap <leader>L  :tabnext<CR>
-    nnoremap <leader>T  :tabnew<CR>
+    " Tabs {
+        nnoremap [tab] <nop>
+        nmap <leader>t [tab]
+        nnoremap <silent> [tab]t :tabnew<cr>
+        nnoremap <silent> [tab]l :tabnext<cr>
+        nnoremap <silent> [tab]h :tabprevious<cr>
+        nnoremap <silent> [tab]q :tabclose<cr>
+        nnoremap <silent> [tab]1 :tabfirst<cr>
+        nnoremap <silent> [tab]0 :tablast<cr>
+    " }
 
     " Language {
         nnoremap [spell] <nop>
@@ -357,12 +371,15 @@
 
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
+
     " Visual shifting (does not exit Visual mode)
     vnoremap < <gv
     vnoremap > >gv
+
     " Allow using the repeat operator with a visual selection (!)
     " http://stackoverflow.com/a/8064607/127816
     vnoremap . :normal .<CR>
+
     " Easier formatting
     nnoremap <silent> <leader>q wip
 
@@ -379,6 +396,8 @@
     nmap <leader>f7 :set foldlevel=7<CR>
     nmap <leader>f8 :set foldlevel=8<CR>
     nmap <leader>f9 :set foldlevel=9<CR>
+
+    nmap <leader>l :set list!<CR>
 
     " Use <C-L> to clear the highlighting of :set hlsearch.
     if maparg('<C-L>', 'n') ==# ''
