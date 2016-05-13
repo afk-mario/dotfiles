@@ -65,6 +65,7 @@
     " Config {
         set runtimepath^=~/.vim/bundle/repos/github.com/Shougo/dein.vim
         call dein#begin(expand('~/.cache/dein'))
+        call dein#add(expand('~/.vim/bundle/repos/github.com/Shougo/dein.vim'))
     " }
     " Unite {
         call dein#add('Shougo/unite.vim', {'lazy': 1})
@@ -89,7 +90,6 @@
     " }
     " Utilities{
         call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-        call dein#add(expand('~/.vim/bundle/repos/github.com/Shougo/dein.vim'))
         call dein#add('Shougo/deoplete.nvim')
         call dein#add('Shougo/neosnippet.vim', {'lazy': 1})
         call dein#add('Shougo/neosnippet-snippets', {

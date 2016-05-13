@@ -1,6 +1,10 @@
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="odin"
+if [ -f $HOME/.oh-my-zsh-themes/odin.zsh-theme ]; then
+    ZSH_THEME="odin"
+else
+    ZSH_THEME="gallois"
+fi
 
 plugins=(git ssh-agent git-extras git-flow django pip brew tig gulp)
 
