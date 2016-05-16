@@ -229,6 +229,10 @@
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
     endif
 
+    if has('termguicolors')
+        set termguicolors
+    endif
+
     colorscheme gotham
     if OSX() && dein#tap("gotham.vim")
         echom"gotham"
