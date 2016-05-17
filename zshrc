@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
-if [ -f $HOME/.oh-my-zsh-themes/odin.zsh-theme ]; then
+if [ -f $HOME/.oh-my-zsh/custom/themes/odin.zsh-theme ]; then
     ZSH_THEME="odin"
 else
     ZSH_THEME="gallois"
