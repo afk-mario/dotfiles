@@ -7,3 +7,8 @@
 	cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 [merge]
 	tool = fugitive
+[alias]
+    lol = log --graph --decorate --oneline
+    lola = log --graph --decorate --oneline --all
+[color]
+	ui = auto
