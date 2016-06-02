@@ -126,6 +126,7 @@
         call dein#add('rust-lang/rust.vim')
                     " \{'on_event': 'FileType', 'on_if': 'rust'})
         call dein#add('racer-rust/vim-racer')       " AutoComplete for vim
+        call dein#add('cespare/vim-toml')
         call dein#add('mattn/emmet-vim')
         call dein#add('othree/html5.vim')
         call dein#add('elzr/vim-json')
