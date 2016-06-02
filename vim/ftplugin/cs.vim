@@ -16,18 +16,20 @@ augroup omnisharp_commands
 
     "The following commands are contextual, based on the current cursor position.
 
-    autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
-    autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
-    autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
-    autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
-    autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
+    nnoremap [omnisharp] <nop>
+    nmap <leader>o [omnisharp]
+    nnoremap <silent> [omnisharp]d :OmniSharpGotoDefinition<cr>
+    nnoremap <silent> [omnisharp]i :OmniSharpFindImplementations<cr>
+    nnoremap <silent> [omnisharp]t :OmniSharpFindType<cr>
+    nnoremap <silent> [omnisharp]s :OmniSharpFindSymbol<cr>
+    nnoremap <silent> [omnisharp]u :OmniSharpFindUsages<cr>
     "finds members in the current buffer
-    autocmd FileType cs nnoremap <leader>fm :OmniSharpFindMembers<cr>
+    nnoremap <silent> [omnisharp]fm :OmniSharpFindMembers<cr>
     " cursor can be anywhere on the line containing an issue
-    autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
-    autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
-    autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
-    autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
+    nnoremap <silent> [omnisharp]x  :OmniSharpFixIssue<cr>
+    nnoremap <silent> [omnisharp]fx :OmniSharpFixUsings<cr>
+    nnoremap <silent> [omnisharp]tt :OmniSharpTypeLookup<cr>
+    nnoremap <silent> [omnisharp]dc :OmniSharpDocumentation<cr>
     "navigate up by method/property/field
     autocmd FileType cs nnoremap <C-K> :OmniSharpNavigateUp<cr>
     "navigate down by method/property/field

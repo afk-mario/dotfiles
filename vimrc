@@ -92,6 +92,7 @@
         call dein#add('Shougo/vimproc.vim', {'build': 'make'})
         call dein#add('Shougo/deoplete.nvim')
         call dein#add('Shougo/neosnippet.vim', {'lazy': 1})
+        call dein#add('editorconfig/editorconfig-vim')
         call dein#add('Shougo/neosnippet-snippets', {
                     \'depends': 'neosnippet/vim'
                     \})
@@ -131,7 +132,7 @@
         call dein#add('pangloss/vim-javascript')
         call dein#add('mxw/vim-jsx')
         call dein#add('wavded/vim-stylus')
-        call dein#add('klen/python-mode/')
+        call dein#add('klen/python-mode')
         call dein#add('davidhalter/jedi-vim')
         call dein#add('vim-scripts/django.vim')
         call dein#add('OmniSharp/omnisharp-vim', {
@@ -573,18 +574,20 @@
 
     " Fugitive {
         if dein#tap("vim-fugitive")
-            nnoremap <silent> <leader>gs :Gstatus<CR>
-            nnoremap <silent> <leader>gd :Gdiff<CR>
-            nnoremap <silent> <leader>gc :Gcommit<CR>
-            nnoremap <silent> <leader>gb :Gblame<CR>
-            nnoremap <silent> <leader>gl :Glog<CR>
-            nnoremap <silent> <leader>gp :Git push<CR>
-            nnoremap <silent> <leader>gr :Gread<CR>
-            nnoremap <silent> <leader>gw :Gwrite<CR>
-            nnoremap <silent> <leader>ge :Gedit<CR>
+            nnoremap [fugitive] <nop>
+            nmap <leader>g [fugitive]
+            nnoremap <silent> [fugitive]s :Gstatus<CR>
+            nnoremap <silent> [fugitive]d :Gdiff<CR>
+            nnoremap <silent> [fugitive]c :Gcommit<CR>
+            nnoremap <silent> [fugitive]b :Gblame<CR>
+            nnoremap <silent> [fugitive]l :Glog<CR>
+            nnoremap <silent> [fugitive]p :Git push<CR>
+            nnoremap <silent> [fugitive]r :Gread<CR>
+            nnoremap <silent> [fugitive]w :Gwrite<CR>
+            nnoremap <silent> [fugitive]e :Gedit<CR>
             " Mnemonic _i_nteractive
-            nnoremap <silent> <leader>gi :Git add -p %<CR>
-            nnoremap <silent> <leader>gg :SignifyToggle<CR>
+            nnoremap <silent> [fugitive]i :Git add -p %<CR>
+            nnoremap <silent> [fugitive]g :SignifyToggle<CR>
             if !dein#tap("vim-flagship")
                 set statusline+=%{fugitive#statusline()} " Git integration
             endif
