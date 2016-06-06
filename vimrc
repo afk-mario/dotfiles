@@ -123,9 +123,8 @@
         call dein#add('airblade/vim-gitgutter')                       " Git gutter simbols
     " }
     " Languages {
-        call dein#add('rust-lang/rust.vim')
-                    " \{'on_event': 'FileType', 'on_if': 'rust'})
-        call dein#add('racer-rust/vim-racer')       " AutoComplete for vim
+        call dein#add('rust-lang/rust.vim', {'on_ft' : 'rust'})
+        call dein#add('racer-rust/vim-racer', {'on_ft' : 'rust'})       " AutoComplete for vim
         call dein#add('cespare/vim-toml')
         call dein#add('mattn/emmet-vim')
         call dein#add('othree/html5.vim')
