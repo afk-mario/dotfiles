@@ -90,6 +90,7 @@
     " }
     " Utilities{
         call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+        call dein#add('tpope/vim-dispatch') " Asynchronous build and test dispatcher
         call dein#add('Shougo/deoplete.nvim')
         call dein#add('Shougo/neosnippet.vim', {'lazy': 1})
         call dein#add('editorconfig/editorconfig-vim')
@@ -123,25 +124,52 @@
         call dein#add('airblade/vim-gitgutter')                       " Git gutter simbols
     " }
     " Languages {
-        call dein#add('rust-lang/rust.vim', {'on_ft' : 'rust'})
-        call dein#add('racer-rust/vim-racer', {'on_ft' : 'rust'})       " AutoComplete for vim
-        call dein#add('cespare/vim-toml')
-        call dein#add('mattn/emmet-vim')
-        call dein#add('othree/html5.vim')
-        call dein#add('elzr/vim-json')
-        call dein#add('pangloss/vim-javascript')
-        call dein#add('mxw/vim-jsx')
-        call dein#add('wavded/vim-stylus')
-        call dein#add('klen/python-mode')
-        call dein#add('davidhalter/jedi-vim')
-        call dein#add('vim-scripts/django.vim')
-        call dein#add('OmniSharp/omnisharp-vim', {
-                    \ 'build':
-                    \   'sh -c "cd server/ && xbuild"'
+        call dein#add('rust-lang/rust.vim', {
+                    \ 'on_ft' : 'rust'
                     \ })
-        call dein#add('OrangeT/vim-csharp' )
-        call dein#add('https://gitlab.com/mixedCase/deoplete-omnisharp.git')
-        call dein#add('tpope/vim-dispatch') " Asynchronous build and test dispatcher
+        call dein#add('racer-rust/vim-racer', {
+                    \ 'on_ft' : 'rust'
+                    \ })
+        call dein#add('cespare/vim-toml', {
+                    \ 'on_ft': 'toml'
+                    \ })
+        call dein#add('mattn/emmet-vim', {
+                    \ 'on_ft': 'html'
+                    \ })
+        call dein#add('othree/html5.vim', {
+                    \ 'on_ft': 'toml'
+                    \ })
+        call dein#add('elzr/vim-json', {
+                    \ 'on_ft': 'json'
+                    \ })
+        call dein#add('pangloss/vim-javascript', {
+                    \ 'on_ft': ['javascript', 'javascript.jsx']
+                    \ })
+        call dein#add('mxw/vim-jsx', {
+                    \ 'on_ft': ['javascript', 'javascript.jsx']
+                    \ })
+        call dein#add('wavded/vim-stylus', {
+                    \ 'on_ft': 'stylus.css'
+                    \ })
+        call dein#add('klen/python-mode', {
+                    \ 'on_ft': 'python'
+                    \ })
+        call dein#add('davidhalter/jedi-vim', {
+                    \ 'on_ft': 'python'
+                    \ })
+        call dein#add('vim-scripts/django.vim', {
+                    \ 'on_ft': 'python'
+                    \ })
+        call dein#add('OmniSharp/omnisharp-vim', {
+                    \ 'build': 'sh -c "cd server/ && xbuild"',
+                    \ 'on_ft': 'cs'
+                    \ })
+        call dein#add('OrangeT/vim-csharp', {
+                    \ 'on_ft': 'cs'
+                    \ })
+        call dein#add('https://gitlab.com/mixedCase/deoplete-omnisharp.git', {
+                    \ 'on_ft': 'cs'
+                    \ })
     " }
     " Vim UI {
         call dein#add('tpope/vim-flagship')                           " Statusline
