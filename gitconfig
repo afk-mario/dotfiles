@@ -10,5 +10,12 @@
 [alias]
     lol = log --graph --decorate --oneline
     lola = log --graph --decorate --oneline --all
+	d = difftool
 [color]
 	ui = auto
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = false
+[difftool "nvimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
