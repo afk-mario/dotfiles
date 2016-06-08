@@ -48,7 +48,13 @@ fi
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 # ZPLUG config and load
-export ZPLUG_HOME=/usr/local/opt/zplug
+if [ -d /usr/local/opt/zplug ]; then
+    ZPLUG_HOME=/usr/local/opt/zplug
+elif [ -d $HOME/.zplug ]; then
+    ZPLUG_HOME=$HOME/.zplug
+fi
+
+export ZPLUG_HOME
 source $ZPLUG_HOME/init.zsh
 
 # Plugins
