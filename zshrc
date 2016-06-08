@@ -59,7 +59,10 @@ source $ZPLUG_HOME/init.zsh
 
 # Plugins
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+
+zplug "djui/alias-tips"
+zplug "MikeDacre/cdbk"
 
 zplug "plugins/git", from:oh-my-zsh, nice:10, if:"(( $+commands[git] ))"
 zplug "plugins/tig", from:oh-my-zsh, nice:10, if:"(( $+commands[tig] ))"
