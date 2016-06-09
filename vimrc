@@ -691,15 +691,6 @@
         endif
     " }
 
-    " Pencil {
-        let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
-        augroup pencil
-            autocmd!
-            autocmd FileType markdown,mkd call pencil#init()
-            autocmd FileType text         call pencil#init()
-        augroup END
-    " }
-
     " Goyo and Limelight {
         if dein#tap("goyo.vim")
             " let g:goyo_margin_top=0
