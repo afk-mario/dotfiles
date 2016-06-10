@@ -31,6 +31,7 @@
             "~/.vim/autoload": "vim/autoload",
             "~/.vim/ftplugin": "vim/ftplugin",
             "~/.vim/syntax": "vim/syntax",
+            "~/.vim/UltiSnipps": "vim/UltiSnips",
             "~/.vim/vimrcmin": "vimrcmin",
             "~/.ssh/config": "ssh_config",
             "~/.zshrc": "zshrc",

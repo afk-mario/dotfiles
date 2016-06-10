@@ -92,17 +92,15 @@
         call dein#add('Shougo/vimproc.vim', {'build': 'make'})
         call dein#add('tpope/vim-dispatch') " Asynchronous build and test dispatcher
         call dein#add('Shougo/deoplete.nvim')
-        call dein#add('Shougo/neosnippet.vim', {'lazy': 1})
         call dein#add('editorconfig/editorconfig-vim')
-        call dein#add('Shougo/neosnippet-snippets', {
-                    \'depends': 'neosnippet/vim'
-                    \})
         call dein#add('tpope/vim-vinegar')                            " Netrw helper
         call dein#add('tpope/vim-obsession')                          " Session Managment
         call dein#add('tpope/vim-eunuch')                             " Unix helpers
         call dein#add('tpope/vim-commentary')                         " Toggle comments
         call dein#add('tpope/vim-surround')                        " Sorroundings
         call dein#add('tpope/vim-repeat')                             " More . command
+        call dein#add('SirVer/ultisnips')                             " Snippets
+        call dein#add('honza/vim-snippets')
         call dein#add('wellle/targets.vim')                           " Better motions
         call dein#add('kana/vim-textobj-user')                        " Custom text object
         call dein#add('kana/vim-textobj-line')                        " Line text object
@@ -542,10 +540,19 @@
         if dein#tap("deoplete.nvim")
             let g:deoplete#enable_at_startup = 1
             let g:deoplete#enable_smart_case = 1
+
+            " deoplete tab-complete
+            inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+            " ,<Tab> for regular tab
+            inoremap <Leader><Tab> <Space><Space>
+            " Close window on finish
+            autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+
             au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
             let g:deoplete#omni_patterns = {}
+
             let g:deoplete#omni_patterns.rust = '[(\.)(::)]'
-            autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
         endif
     " }
 
@@ -567,6 +574,17 @@
             if has('conceal')
               set conceallevel=2 concealcursor=niv
             endif
+        endif
+    " }
+
+    " UltiSnips {
+        if dein#tap("ultisnips")
+            let g:UltiSnipsExpandTrigger="<c-k>"
+            let g:UltiSnipsJumpForwardTrigger="<c-b>"
+            let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+            " If you want :UltiSnipsEdit to split your window.
+            let g:UltiSnipsEditSplit="vertical"
+            let g:UltiSnipsSnippetsDir="~/.vim/UltiSnipps/"
         endif
     " }
 
