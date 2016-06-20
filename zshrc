@@ -19,6 +19,7 @@ setopt hist_ignore_space # ignore when commands starts with space
 setopt share_history     # share command history data
 
 export PATH="$HOME/bin/:$PATH"
+export PATH=/usr/local/bin:$PATH
 
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"
