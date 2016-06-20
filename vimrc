@@ -337,9 +337,14 @@
     highlight VertSplit cterm=none ctermbg=none ctermfg=247
 
     " Netrw {
+        let g:netrw_altv = 1
+        let g:netrw_banner = 0
+        let g:netrw_winsize = -28
         let g:netrw_liststyle = 3
         let g:netrw_preview   = 1
         let g:netrw_winsize   = 20
+        let g:netrw_browse_split = 4
+        let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro rnu'  " --> I want line numbers on the netrw buffer
     " }
 " }
 
@@ -369,6 +374,8 @@
     noremap <Down> <NOP>
     noremap <Left> <NOP>
     noremap <Right> <NOP>
+
+    nnoremap <silent> <leader>k :Lexplore<cr>
 
     " Buffers {
         nnoremap [buffer] <nop>
