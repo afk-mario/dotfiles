@@ -75,8 +75,7 @@ zplug "lib/directories", from:oh-my-zsh
 
 # Theme
 zplug "arlefreak/odin"
-# zplug "S1cK94/minimal"
-# zplug "denysdovhan/spaceship-zsh-theme"
+# zplug "~/.zsh/Odin/", from:local, nice:10
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
