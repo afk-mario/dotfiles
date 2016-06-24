@@ -74,8 +74,9 @@ zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/directories", from:oh-my-zsh
 
 # Theme
-zplug "arlefreak/odin", nice:10
-# zplug "~/.zsh/Odin/", from:local, nice:10
+zplug "arlefreak/odin", nice:11
+# zplug "~/.zsh/Odin/", from:local, nice:19
+# zplug "S1cK94/minimal"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
