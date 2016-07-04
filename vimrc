@@ -627,6 +627,8 @@
         endif
 
         if dein#tap("python-mode")
+            let g:pymode_rope_completion_bind = ''
+            let g:pymode_breakpoint_bind = ''
             let g:pymode_lint_checkers = ['pyflakes']
             let g:pymode_trim_whitespaces = 0
             let g:pymode_options = 0
