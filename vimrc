@@ -159,16 +159,18 @@
         call dein#add('vim-scripts/django.vim', {
                     \ 'on_ft': 'python'
                     \ })
-        call dein#add('OmniSharp/omnisharp-vim', {
-                    \ 'build': 'sh -c "cd server/ && xbuild"',
-                    \ 'on_ft': 'cs'
-                    \ })
-        call dein#add('OrangeT/vim-csharp', {
-                    \ 'on_ft': 'cs'
-                    \ })
-        call dein#add('https://gitlab.com/mixedCase/deoplete-omnisharp.git', {
-                    \ 'on_ft': 'cs'
-                    \ })
+        if OSX()
+            call dein#add('OmniSharp/omnisharp-vim', {
+                        \ 'build': 'sh -c "cd server/ && xbuild"',
+                        \ 'on_ft': 'cs'
+                        \ })
+            call dein#add('OrangeT/vim-csharp', {
+                        \ 'on_ft': 'cs'
+                        \ })
+            call dein#add('https://gitlab.com/mixedCase/deoplete-omnisharp.git', {
+                        \ 'on_ft': 'cs'
+                        \ })
+        endif
     " }
     " Vim UI {
         call dein#add('tpope/vim-flagship')                           " Statusline

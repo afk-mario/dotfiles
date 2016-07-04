@@ -30,6 +30,10 @@ alias vi="vim -u $HOME/.vim/vimrcmin"
 
 export EDITOR=nvim
 
+autoload -z edit-command-line 
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 #VirtualEnvWrapper
 
 if [ -f /usr/local/bin/python3 ]; then
