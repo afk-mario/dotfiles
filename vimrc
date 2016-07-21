@@ -97,18 +97,16 @@
         call dein#add('tpope/vim-obsession')                          " Session Managment
         call dein#add('tpope/vim-eunuch')                             " Unix helpers
         call dein#add('tpope/vim-commentary')                         " Toggle comments
-        call dein#add('tpope/vim-surround')                        " Sorroundings
+        call dein#add('tpope/vim-surround')                           " Sorroundings
         call dein#add('tpope/vim-repeat')                             " More . command
+        call dein#add('tommcdo/vim-exchange')                         " Exchange motion
         call dein#add('SirVer/ultisnips')                             " Snippets
         call dein#add('honza/vim-snippets')
         call dein#add('wellle/targets.vim')                           " Better motions
-        call dein#add('kana/vim-textobj-user')                        " Custom text object
-        call dein#add('kana/vim-textobj-line')                        " Line text object
         call dein#add('scrooloose/syntastic')                        " Syntax check
         call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
         call dein#add('mhinz/vim-grepper')                            " Multiple grep support
         call dein#add('sjl/gundo.vim')                               " Undo tree
-        call dein#add('vim-scripts/loremipsum')                       " Lorem ipsum text
         call dein#add('Chiel92/vim-autoformat')                       " AutoFormat code
         call dein#add('mhinz/vim-startify')                           " Start Screen
         call dein#add('godlygeek/tabular')                            " Align code
@@ -555,7 +553,7 @@
                 \ <SID>check_back_space() ? "\<TAB>" :
                 \ deoplete#mappings#manual_complete()
 
-            function! s:check_back_space() abort "{{{
+            function! s:check_back_space() abort
                 let col = col('.') - 1
                 return !col || getline('.')[col - 1]  =~ '\s'
             endfunction
@@ -600,6 +598,10 @@
             " If you want :UltiSnipsEdit to split your window.
             let g:UltiSnipsEditSplit="vertical"
             let g:UltiSnipsSnippetsDir="~/.vim/UltiSnipps/"
+            let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
+            " Use Python Version
+            let g:UltiSnipsUsePythonVersion = 3
+            let g:ultisnips_python_style="google"
         endif
     " }
 
@@ -739,7 +741,7 @@
             let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
         endif
     " }
-" }
+    " }
 
 " Functions {
     " Initialize directories {
@@ -774,5 +776,23 @@
             endfor
         endfunction
         call InitializeDirectories()
+    " }
+    " Create dir new buffers {
+        function! <SID>AutoMkdir() abort
+        let l:dir = expand('<afile>:p:h')
+        if !isdirectory(l:dir)
+            echohl WarningMsg
+            let l:ans = input(l:dir . ' does not exist, create it [Y/n]? ')
+            echohl None
+            if empty(l:ans) || l:ans ==# 'y'
+                call mkdir(l:dir, 'p')
+            endif
+        endif
+        endfunction
+        augroup AutoMkdir
+        autocmd!
+        autocmd BufWritePre,FileWritePre,BufNewFile *
+                    \ call <SID>AutoMkdir()
+       augroup END
     " }
 " }

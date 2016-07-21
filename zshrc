@@ -20,6 +20,8 @@ setopt share_history     # share command history data
 
 export PATH="$HOME/bin/:$PATH"
 export PATH=/usr/local/bin:$PATH
+export PATH="$HOME/.cargo/bin/:$PATH"
+export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"
