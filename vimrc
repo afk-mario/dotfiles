@@ -110,6 +110,7 @@
         call dein#add('Chiel92/vim-autoformat')                       " AutoFormat code
         call dein#add('mhinz/vim-startify')                           " Start Screen
         call dein#add('godlygeek/tabular')                            " Align code
+        call dein#add('wakatime/vim-wakatime')                        " register time 
     " }
     " Prose {
         call dein#add('reedes/vim-pencil', {'lazy': 1})                            " Better Writting
@@ -169,6 +170,9 @@
                         \ 'on_ft': 'cs'
                         \ })
         endif
+        call dein#add('jdonaldson/vaxe', {
+                    \ 'on_ft': 'haxe'
+                    \ })
     " }
     " Vim UI {
         call dein#add('tpope/vim-flagship')                           " Statusline
