@@ -22,6 +22,7 @@ export PATH="$HOME/bin/:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin/:$PATH"
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
+export ADBI_INSTALL_PATH="$HOME/Builds/Android/"
 
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"

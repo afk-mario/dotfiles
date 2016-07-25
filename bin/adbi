@@ -1,0 +1,91 @@
+#!/bin/bash
+
+# adbi a script to install the last apk created on a foolder specified
+
+###############
+#  variables  #
+###############
+
+interactive=
+game=
+apk_path=
+
+###############
+#  Functions  #
+###############
+function start_checking
+{
+    check_path_variable
+    check_game_folder
+    get_last_apk
+    install_apk
+}
+
+function check_path_variable
+{
+    if [ -z ${ADBI_INSTALL_PATH+x} ]; then
+        echo "ADBI_INSTALL_PATH is unset"; 
+        usage
+        exit
+    else
+        echo "ADBI_INSTALL_PATH is set to '$ADBI_INSTALL_PATH'";
+    fi
+}
+
+function check_game_folder
+{
+    full_path="$ADBI_INSTALL_PATH$game"
+    if [ -d "$full_path" ]; then
+        echo "Installing $game"
+    else
+        echo "Game doesn't exist"
+        usage
+        exit
+    fi
+}
+
+function get_last_apk
+{
+    apk_tmp=
+    apk_tmp=$(ls -t $full_path | head -n 1)
+    apk_path="$full_path/$apk_tmp"
+    echo "Found $apk_path"
+}
+
+function install_apk
+{
+    adb install -r $apk_path
+}
+
+function usage
+{
+    echo "usage: adbi [[-g game ] | [-h]]"
+}
+
+##########
+#  Main  #
+##########
+
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -g | --game )           shift
+                                game=$1
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+        * )                     usage
+                                exit 1
+    esac
+    shift
+done
+
+# Test code to verify command line processing
+
+if [ -z "${game}" ]; then
+    echo "Game is unset"
+    usage
+else
+    start_checking
+fi
