@@ -91,6 +91,7 @@ zplug "MikeDacre/cdbk"
 
 zplug "plugins/git", from:oh-my-zsh, nice:10, if:"(( $+commands[git] ))"
 zplug "plugins/tig", from:oh-my-zsh, nice:10, if:"(( $+commands[tig] ))"
+zplug "plugins/adb", from:oh-my-zsh, nice:10, if:"(( $+commands[tig] ))"
 zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"

@@ -103,7 +103,8 @@
         call dein#add('SirVer/ultisnips')                             " Snippets
         call dein#add('honza/vim-snippets')
         call dein#add('wellle/targets.vim')                           " Better motions
-        call dein#add('scrooloose/syntastic')                        " Syntax check
+        " call dein#add('scrooloose/syntastic')                        " Syntax check
+        call dein#add('neomake/neomake')                              " Async Syntax check
         call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
         call dein#add('mhinz/vim-grepper')                            " Multiple grep support
         call dein#add('sjl/gundo.vim')                               " Undo tree
@@ -132,7 +133,6 @@
                     \ 'on_ft': 'toml'
                     \ })
         call dein#add('mattn/emmet-vim', {
-                    \ 'on_ft': 'html'
                     \ })
         call dein#add('othree/html5.vim', {
                     \ 'on_ft': 'toml'
@@ -491,7 +491,7 @@
         if dein#tap("syntastic")
             let g:syntastic_always_populate_loc_list = 1
             let g:syntastic_auto_loc_list = 1
-            let g:syntastic_check_on_open = 1
+            let g:syntastic_check_on_open = 0
             let g:syntastic_check_on_wq = 0
 
             set statusline+=%{SyntasticStatuslineFlag()}
@@ -500,6 +500,24 @@
                 \ 'active_filetypes': [],
                 \ 'passive_filetypes': ['html'] }
             let g:syntastic_javascript_checkers = ['eslint']
+        endif
+    " }
+
+    " NeoMake {
+        if dein#tap("neomake")
+            autocmd! BufWritePost,BufEnter * Neomake
+            let g:neomake_javascript_enabled_makers = ['eslint']
+            if findfile('.eslintrc', '.;') ==# ''
+                let g:neomake_javascript_enabled_makers = ['standard']
+            endif
+
+            nnoremap [neomake] <nop>
+            nmap <leader>s [neomake]
+            nnoremap <silent> [neomake]o :lopen<cr>
+            nnoremap <silent> [neomake]c :lclose<cr>
+            nnoremap <silent> [neomake], :ll<cr>
+            nnoremap <silent> [neomake]l :lnext<cr>
+            nnoremap <silent> [neomake]h :lprev<cr>
         endif
     " }
 
