@@ -104,6 +104,7 @@
         call dein#add('honza/vim-snippets')
         call dein#add('wellle/targets.vim')                           " Better motions
         " call dein#add('scrooloose/syntastic')                        " Syntax check
+        call dein#add('Konfekt/FastFold')                             " Fast Fold for deoplete
         call dein#add('neomake/neomake')                              " Async Syntax check
         call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
         call dein#add('mhinz/vim-grepper')                            " Multiple grep support
@@ -147,7 +148,6 @@
                     \ 'on_ft': ['javascript', 'javascript.jsx']
                     \ })
         call dein#add('wavded/vim-stylus', {
-                    \ 'on_ft': 'stylus.css'
                     \ })
         call dein#add('klen/python-mode', {
                     \ 'on_ft': 'python'
@@ -526,9 +526,14 @@
 
     " Emmet {
         if dein#tap("emmet-vim")
-            let g:user_emmet_install_global = 0
-            autocmd FileType html,css EmmetInstall
+            " let g:user_emmet_install_global = 0
+            " autocmd FileType html,css,jsx,js EmmetInstall
             iabbrev </ </<C-X><C-O>
+            let g:user_emmet_settings = {
+                \  'javascript' : {
+                \      'extends' : 'jsx',
+                \  },
+            \}
         endif
     " }
 
@@ -588,6 +593,14 @@
             let g:deoplete#omni_patterns = {}
 
             let g:deoplete#omni_patterns.rust = '[(\.)(::)]'
+
+            aug omnicomplete
+                au!
+                au FileType css,sass,scss,stylus,less setl omnifunc=csscomplete#CompleteCSS
+                au FileType html,htmldjango,jinja,markdown setl omnifunc=emmet#completeTag
+                au FileType python setl omnifunc=pythoncomplete#Complete
+                au FileType xml setl omnifunc=xmlcomplete#CompleteTags
+            aug END
         endif
     " }
 
@@ -625,12 +638,6 @@
             let g:UltiSnipsUsePythonVersion = 3
             let g:ultisnips_python_style="google"
         endif
-    " }
-
-    " AutoCloseTag {
-        " Make it so AutoCloseTag works for xml and xhtml files as well
-        au FileType xhtml,xml ru ftplugin/html/autoclosetag.vim
-        nmap <Leader>ac <Plug>ToggleAutoCloseMappings
     " }
 
     " Rust {
