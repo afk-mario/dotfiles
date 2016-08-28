@@ -17,6 +17,7 @@ Session.vim
 # Icon must end with two \r
 Icon
 logs
+logs/
 
 
 # Thumbnails
