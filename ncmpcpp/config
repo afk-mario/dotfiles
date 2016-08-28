@@ -496,13 +496,13 @@ visualizer_sync_interval = "30"
 visualizer_in_stereo = "yes"
 visualizer_type = "wave" (spectrum/wave)
 #visualizer_type = "spectrum" (spectrum/wave)
-lizer_look = "+|"
+visualizer_look = "+|"
 
 # ~/.ncmpcpp/config - my ncmpcpp preferences
 # 
 
 mpd_crossfade_time         = "1"
-song_list_format           = "$3{%A }|{%a }$7{%b }$0{%t}| $4$R{%7l}$9"
+# song_list_format           = "$3{%A }|{%a }$7{%b }$0{%t}| $4$R{%7l}$9"
 now_playing_prefix         = "$4"
 now_playing_suffix         = "$9"
 song_columns_list_format   = "(34)[green]{a} (34)[]{t|f} (32)[cyan]{b}"
@@ -513,13 +513,13 @@ autocenter_mode            = "yes"
 centered_cursor            = "yes"
 progressbar_look           = "   "
 user_interface             = "alternative"
-default_space_mode         = "select"
+# default_space_mode         = "select"
 header_visibility          = "no"
 statusbar_visibility       = "no"
 titles_visibility           = "no"
 follow_now_playing_lyrics    = "yes"
 store_lyrics_in_song_dir      = "yes"
-screen_switcher_mode           = "sequence: 2 -> 3  -> 9 -> 10"
+# screen_switcher_mode           = "sequence: 2 -> 3  -> 9 -> 10"
 ignore_leading_the              = "yes"
 empty_tag_marker                  = "[empty]"
 main_window_color                   = "default"

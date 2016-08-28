@@ -38,6 +38,8 @@
             "~/.gitconfig": "gitconfig",
             "~/.gitignore_global": "gitignore_global",
             "~/.config": "config",
+            "~/.config/bspwm": "bspwm",
+            "~/.config/sxhkd": "sxhkd",
             "~/.ncmpcpp": "ncmpcpp",
             "~/.weechat": "weechat",
             "~/.Xdefaults": "xdefaults",
