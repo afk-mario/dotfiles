@@ -18,6 +18,7 @@ Session.vim
 Icon
 logs
 logs/
+*.log
 
 
 # Thumbnails
