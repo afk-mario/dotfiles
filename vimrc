@@ -181,6 +181,7 @@
         call dein#add('altercation/vim-colors-solarized')
         call dein#add('w0ng/vim-hybrid')
         call dein#add('whatyouhide/vim-gotham')
+        call dein#add('morhetz/gruvbox')
     " }
 
     call dein#end()
@@ -189,6 +190,7 @@
       call dein#install()
     endif
     call dein#check_lazy_plugins()
+    call dein#save_state()
 " }
 
 " General {
@@ -265,9 +267,11 @@
         set termguicolors
     endif
 
-    colorscheme gotham
-    if OSX() && dein#tap("gotham.vim")
-        echom"gotham"
+
+    if OSX() && filereadable(expand("~/.cache/dein/repos/github.com/morhetz/gruvbox/colors/gruvbox.vim"))
+        colorscheme gruvbox
+    elseif OSX() && filereadable(expand("~/.cache/dein/repos/github.com/whatyouhide/vim-gotham/colors/gotham.vim"))
+        colorscheme gotham
     elseif filereadable(expand("~/.vim/bundle/vim-hybrid/colors/hybrid.vim"))
         let g:hybrid_custom_term_colors = 1
         colorscheme hybrid
