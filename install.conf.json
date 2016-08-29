@@ -37,10 +37,13 @@
             "~/.zshrc": "zshrc",
             "~/.gitconfig": "gitconfig",
             "~/.gitignore_global": "gitignore_global",
-            "~/.config": "config",
+            "~/.config/bspwm": "bspwm",
+            "~/.config/sxhkd": "sxhkd",
+            "~/.config/termite": "termite",
             "~/.ncmpcpp": "ncmpcpp",
             "~/.weechat": "weechat",
             "~/.Xdefaults": "xdefaults",
+            "~/.Xmodmap": "Xmodmap",
             "~/.userStyle.css": "userStyle.css",
             "~/bin": "bin"
         }
