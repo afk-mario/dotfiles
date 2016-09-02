@@ -97,6 +97,7 @@ zplug "lib/completion", from:oh-my-zsh
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/directories", from:oh-my-zsh
 
+zplug "baskerville/bspwm", use: "contrib/zsh_completion"
 # Theme
 zplug "arlefreak/odin", nice:11
 # zplug "~/.zsh/Odin/", from:local, nice:19
