@@ -516,7 +516,7 @@
             endif
 
             nnoremap [neomake] <nop>
-            nmap <leader>s [neomake]
+            nmap <leader>c [neomake]
             nnoremap <silent> [neomake]o :lopen<cr>
             nnoremap <silent> [neomake]c :lclose<cr>
             nnoremap <silent> [neomake], :ll<cr>
@@ -774,7 +774,16 @@
             let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
         endif
     " }
+
+    " Grepper {
+        if dein#tap("vim-grepper")
+            " Mimic :grep and make ag the default tool.
+            let g:grepper = {
+                \ 'tools': ['rg', 'ag', 'git','grep'],
+                \ }
+        endif
     " }
+" }
 
 " Functions {
     " Initialize directories {
