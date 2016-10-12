@@ -121,7 +121,7 @@
     " VCS {
         call dein#add('tpope/vim-fugitive')                           " Git wrapper
         " call dein#add('airblade/vim-gitgutter')                       " Git gutter simbols
-        call dein#add('mhinz/vim-signify')
+        " call dein#add('mhinz/vim-signify')
     " }
     " Languages {
         call dein#add('rust-lang/rust.vim', {
