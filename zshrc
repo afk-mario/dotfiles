@@ -99,7 +99,7 @@ zplug "lib/directories", from:oh-my-zsh
 
 zplug "baskerville/bspwm", use: "contrib/zsh_completion"
 # Theme
-# zplug "arlefreak/odin", nice:15
+# zplug "arlefreak/odin", nice:19
 # zplug "~/.zsh/Odin/", from:local, nice:19
 zplug "S1cK94/minimal"
 
