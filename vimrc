@@ -268,7 +268,7 @@
     endif
 
 
-    if OSX() && filereadable(expand("~/.cache/dein/repos/github.com/morhetz/gruvbox/colors/gruvbox.vim"))
+    if OSX() && filereadable(expand("~/.vim/bundle/repos/github.com/morhetz/gruvbox/colors/gruvbox.vim"))
         colorscheme gruvbox
     elseif OSX() && filereadable(expand("~/.cache/dein/repos/github.com/whatyouhide/vim-gotham/colors/gotham.vim"))
         colorscheme gotham

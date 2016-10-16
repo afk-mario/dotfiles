@@ -100,8 +100,8 @@ zplug "lib/directories", from:oh-my-zsh
 zplug "baskerville/bspwm", use: "contrib/zsh_completion"
 # Theme
 # zplug "arlefreak/odin", nice:19
-# zplug "~/.zsh/Odin/", from:local, nice:19
-zplug "S1cK94/minimal"
+# zplug "~/.zsh/Odin", from:local, nice:19
+zplug "subnixr/minimal"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
