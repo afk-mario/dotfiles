@@ -89,18 +89,19 @@ zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "djui/alias-tips"
 zplug "MikeDacre/cdbk"
 
-zplug "plugins/git", from:oh-my-zsh, nice:10, if:"(( $+commands[git] ))"
-zplug "plugins/tig", from:oh-my-zsh, nice:10, if:"(( $+commands[tig] ))"
-zplug "plugins/adb", from:oh-my-zsh, nice:10, if:"(( $+commands[tig] ))"
+zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
+zplug "plugins/tig", from:oh-my-zsh, if:"(( $+commands[tig] ))"
+zplug "plugins/adb", from:oh-my-zsh, if:"(( $+commands[adb] ))"
 zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/directories", from:oh-my-zsh
 
+zplug "baskerville/bspwm", use: "contrib/zsh_completion"
 # Theme
-zplug "arlefreak/odin", nice:11
+# zplug "arlefreak/odin", nice:19
 # zplug "~/.zsh/Odin/", from:local, nice:19
-# zplug "S1cK94/minimal"
+zplug "S1cK94/minimal"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
