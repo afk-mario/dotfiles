@@ -18,9 +18,9 @@ setopt hist_ignore_dups  # ignore duplication command history list
 setopt hist_ignore_space # ignore when commands starts with space
 setopt share_history     # share command history data
 
-export PATH="$HOME/bin/:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
-export PATH="$HOME/.cargo/bin/:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 export ADBI_INSTALL_PATH="$HOME/Builds/Android/"
 
