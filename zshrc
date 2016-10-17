@@ -18,9 +18,10 @@ setopt hist_ignore_dups  # ignore duplication command history list
 setopt hist_ignore_space # ignore when commands starts with space
 setopt share_history     # share command history data
 
-export PATH="$HOME/bin/:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
-export PATH="$HOME/.cargo/bin/:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 export ADBI_INSTALL_PATH="$HOME/Builds/Android/"
 
@@ -35,6 +36,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     alias ls='ls -G'
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 elif [[ "$OSTYPE" == "msys" ]]; then
@@ -98,10 +100,11 @@ zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/directories", from:oh-my-zsh
 
 zplug "baskerville/bspwm", use: "contrib/zsh_completion"
+
 # Theme
 # zplug "arlefreak/odin", nice:19
-# zplug "~/.zsh/Odin/", from:local, nice:19
-zplug "S1cK94/minimal"
+# zplug "~/.zsh/Odin", from:local, nice:19
+zplug "subnixr/minimal"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
