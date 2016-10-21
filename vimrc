@@ -112,7 +112,9 @@
         call dein#add('Chiel92/vim-autoformat')                       " AutoFormat code
         call dein#add('mhinz/vim-startify')                           " Start Screen
         call dein#add('godlygeek/tabular')                            " Align code
-        call dein#add('wakatime/vim-wakatime')                        " register time 
+        if OSX()
+            call dein#add('wakatime/vim-wakatime')                        " register time 
+        endif
     " }
     " Prose {
         call dein#add('reedes/vim-pencil', {'lazy': 1})                            " Better Writting
@@ -268,7 +270,7 @@
     endif
 
 
-    if OSX() && filereadable(expand("~/.vim/bundle/repos/github.com/morhetz/gruvbox/colors/gruvbox.vim"))
+    if filereadable(expand("~/.vim/bundle/repos/github.com/morhetz/gruvbox/colors/gruvbox.vim"))
         colorscheme gruvbox
     elseif OSX() && filereadable(expand("~/.cache/dein/repos/github.com/whatyouhide/vim-gotham/colors/gotham.vim"))
         colorscheme gotham
