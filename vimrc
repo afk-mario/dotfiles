@@ -136,7 +136,7 @@
         call dein#add('mattn/emmet-vim', {
                     \ })
         call dein#add('othree/html5.vim', {
-                    \ 'on_ft': 'toml'
+                    \ 'on_ft': 'html'
                     \ })
         call dein#add('elzr/vim-json', {
                     \ 'on_ft': 'json'
