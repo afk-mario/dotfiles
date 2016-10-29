@@ -86,9 +86,33 @@ source $ZPLUG_HOME/init.zsh
 
 # Plugins
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
-zplug "djui/alias-tips"
+# zsh-syntax-highlighting
+# Syntax highlighing for the command line.
+# https://github.com/zsh-users/zsh-syntax-highlighting
+zplug "zsh-users/zsh-syntax-highlighting", nice:19
+
+# alias-tips
+# Reminds you of aliases you have already.
+# https://github.com/djui/alias-tips
+zplug "djui/alias-tips", nice:18
+
+# extract
+# Extracts a wide variety of archive formats.
+# https://github.com/xvoland/Extract
+zplug "xvoland/Extract", use:"*.sh"
+# k
+# Directory listings for zsh with git features.
+# https://github.com/supercrabtree/k
+zplug "supercrabtree/k"
+
+# z
+# Navigate your most used directories based on 'frecency'.
+# https://github.com/rupa/z
+zplug "rupa/z", use:"*.sh"
+
+# A simple zsh function to make management of zsh named directories easier. 
+# https://github.com/MikeDacre/cdbk
 zplug "MikeDacre/cdbk"
 
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
