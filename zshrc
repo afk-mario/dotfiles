@@ -31,11 +31,11 @@ alias zshreload="source ~/.zshrc"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias vi="vim -u $HOME/.vim/vimrcmin"
+alias ls="ls --color=auto"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
-    alias ls='ls -G'
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
