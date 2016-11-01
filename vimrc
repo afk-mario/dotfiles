@@ -68,25 +68,25 @@
         call dein#add('Shougo/dein.vim')
         " }
     " Unite {
-        call dein#add('Shougo/unite.vim', {'lazy': 1})
-        call dein#add('arlefreak/vim-unite-config', { 
-                    \'depends': 'unite.vim'
-                    \})
+        call dein#add('Shougo/denite.nvim')
+        " call dein#add('arlefreak/vim-unite-config', { 
+        "             \'depends': 'unite.vim'
+        "             \})
         call dein#add('Shougo/neomru.vim', {
-                    \'depends': 'unite.vim'
+                    \'depends': 'denite.nvim'
                     \})
-        call dein#add('Shougo/unite-outline', {
-                    \'depends': 'unite.vim'
-                    \})
+        " call dein#add('Shougo/unite-outline', {
+        "             \'depends': 'unite.vim'
+        "             \})
         call dein#add('Shougo/neoyank.vim', {
-                    \'depends': 'unite.vim'
+                    \'depends': 'denite.nvim'
                     \})
-        call dein#add('tacroe/unite-mark', {
-                    \'depends': 'unite.vim'
-                    \})
-        call dein#add('tsukkee/unite-tag', {
-                    \'depends': 'unite.vim'
-                    \})
+        " call dein#add('tacroe/unite-mark', {
+        "             \'depends': 'unite.vim'
+        "             \})
+        " call dein#add('tsukkee/unite-tag', {
+        "             \'depends': 'unite.vim'
+        "             \})
     " }
     " Utilities{
         call dein#add('Shougo/vimproc.vim', {'build': 'make'})
@@ -865,6 +865,61 @@
             nnoremap [grepper] <nop>
             nmap <leader>/ [grepper]
             nnoremap <silent> [grepper] :Grepper -cword -noprompt<cr>
+        endif
+    " }
+
+    " Denite {
+        if dein#tap("denite.nvim")
+            echom "Denite Loaded"
+            nnoremap [denite] <nop>
+            nmap <leader>u [denite]
+            call denite#custom#var(
+                        \'file_rec',
+                        \'command',
+                        \['ag', '--follow', '--nocolor', '--nogroup', '-g', ''],
+                        \)
+            call denite#custom#source(
+                        \ 'file_rec', 'matchers', ['matcher_fuzzy, matcher_ignore_globs'])
+            call denite#custom#var('file_rec', 'resume', 'true')
+
+            " Ripgrep command on grep source
+            call denite#custom#var('grep', 'command', ['rg'])
+            call denite#custom#var('grep', 'recursive_opts', [])
+            call denite#custom#var('grep', 'final_opts', [])
+            call denite#custom#var('grep', 'separator', ['--'])
+            call denite#custom#var('grep', 'default_opts',
+                \ ['--vimgrep', '--no-heading'])
+
+            " Add custom menus
+            let s:menus = {}
+
+            let s:menus.dots = {
+                \ 'description': 'Edit Config files'
+                \ }
+            let s:menus.dots.file_candidates = [
+                \ ['zshrc', '~/.dotfiles/zshrc'],
+                \ ['vimrc', '~/.dotfiles/vimrc'],
+                \ ['vimrcmin', '~/.dotfiles/vimrcmin'],
+                \ ]
+
+            let s:menus.my_commands = {
+                \ 'description': 'Commands'
+                \ }
+            let s:menus.my_commands.command_candidates = [
+                \ ['Split the window', 'vnew'],
+                \ ['Open dots menu', 'Denite menu:dots'],
+                \ ]
+
+            call denite#custom#var('menu', 'menus', s:menus)
+
+            nnoremap <silent> [denite]b :Denite buffer<cr>
+            nnoremap <silent> [denite]p :Denite file_rec directory_rec<cr>
+            nnoremap <silent> [denite]m :Denite menu<cr>
+            nnoremap <silent> [denite]g :Denite grep<cr>
+            nnoremap <silent> [denite]l :Denite line<cr>
+            nnoremap <silent> [denite]y :Denite neoyank<cr>
+            nnoremap <silent> [denite]d :Denite dein<cr>
+            " nnoremap <silent> [denite]u :Denite unity<cr>
         endif
     " }
 " }

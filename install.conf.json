@@ -45,7 +45,8 @@
             "~/.Xdefaults": "xdefaults",
             "~/.Xmodmap": "Xmodmap",
             "~/.userStyle.css": "userStyle.css",
-            "~/bin": "bin"
+            "~/bin": "bin",
+            "~/.agignore": "agignore"
         }
     },
     {

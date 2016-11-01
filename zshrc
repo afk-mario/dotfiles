@@ -32,6 +32,7 @@ alias vim="nvim"
 alias vimdiff="nvim -d"
 alias vi="vim -u $HOME/.vim/vimrcmin"
 alias ls="ls --color=auto"
+alias ag='ag --path-to-ignore ~/.agignore'
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
