@@ -104,7 +104,7 @@
         call dein#add('honza/vim-snippets')
         call dein#add('wellle/targets.vim')                           " Better motions
         " call dein#add('scrooloose/syntastic')                        " Syntax check
-        call dein#add('Konfekt/FastFold')                             " Fast Fold for deoplete
+        " call dein#add('Konfekt/FastFold')                             " Fast Fold for deoplete
         call dein#add('neomake/neomake')                              " Async Syntax check
         call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
         call dein#add('mhinz/vim-grepper')                            " Multiple grep support
@@ -862,6 +862,9 @@
             let g:grepper = {
                 \ 'tools': ['rg', 'ag', 'git','grep'],
                 \ }
+            nnoremap [grepper] <nop>
+            nmap <leader>/ [grepper]
+            nnoremap <silent> [grepper] :Grepper -cword -noprompt<cr>
         endif
     " }
 " }
