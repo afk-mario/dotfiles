@@ -68,25 +68,25 @@
         call dein#add('Shougo/dein.vim')
         " }
     " Unite {
-        call dein#add('Shougo/denite.nvim')
-        " call dein#add('arlefreak/vim-unite-config', { 
-        "             \'depends': 'unite.vim'
-        "             \})
+        call dein#add('Shougo/unite.vim')
+        call dein#add('arlefreak/vim-unite-config', { 
+                    \'depends': 'unite.vim'
+                    \})
         call dein#add('Shougo/neomru.vim', {
                     \'depends': 'denite.nvim'
                     \})
-        " call dein#add('Shougo/unite-outline', {
-        "             \'depends': 'unite.vim'
-        "             \})
+        call dein#add('Shougo/unite-outline', {
+                    \'depends': 'unite.vim'
+                    \})
         call dein#add('Shougo/neoyank.vim', {
                     \'depends': 'denite.nvim'
                     \})
-        " call dein#add('tacroe/unite-mark', {
-        "             \'depends': 'unite.vim'
-        "             \})
-        " call dein#add('tsukkee/unite-tag', {
-        "             \'depends': 'unite.vim'
-        "             \})
+        call dein#add('tacroe/unite-mark', {
+                    \'depends': 'unite.vim'
+                    \})
+        call dein#add('tsukkee/unite-tag', {
+                    \'depends': 'unite.vim'
+                    \})
     " }
     " Utilities{
         call dein#add('Shougo/vimproc.vim', {'build': 'make'})
@@ -870,7 +870,6 @@
 
     " Denite {
         if dein#tap("denite.nvim")
-            echom "Denite Loaded"
             nnoremap [denite] <nop>
             nmap <leader>u [denite]
             call denite#custom#var(
@@ -919,6 +918,7 @@
             nnoremap <silent> [denite]l :Denite line<cr>
             nnoremap <silent> [denite]y :Denite neoyank<cr>
             nnoremap <silent> [denite]d :Denite dein<cr>
+            nnoremap <silent> [denite]h :Denite help<cr>
             " nnoremap <silent> [denite]u :Denite unity<cr>
         endif
     " }
