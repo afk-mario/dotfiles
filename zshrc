@@ -36,6 +36,7 @@ alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

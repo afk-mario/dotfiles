@@ -127,10 +127,8 @@
     " }
     " Languages {
         call dein#add('rust-lang/rust.vim', {
-                    \ 'on_ft' : 'rust'
                     \ })
         call dein#add('racer-rust/vim-racer', {
-                    \ 'on_ft' : 'rust'
                     \ })
         call dein#add('cespare/vim-toml', {
                     \ 'on_ft': 'toml'
@@ -673,10 +671,13 @@
         if dein#tap("rust.vim")
             " let g:rustfmt_autosave = 1
             nmap <leader>f :Autoformat<cr>
-            let g:formatdef_rustfmt = '"rustfmt"'
-            let g:formatters_rust = ['rustfmt']
-            let g:racer_cmd = expand("~/.cargo/bin/racer")
-            let $RUST_SRC_PATH= expand("~/.rust/src/")
+            let g:formatdef_rustfmt='"rustfmt"'
+            let g:formatters_rust=['rustfmt']
+            let g:racer_cmd=expand("~/.cargo/bin/racer")
+            let $RUST_SRC_PATH=expand("~/.rust/src/")
+            if LINUX()
+                let $RUST_SRC_PATH=expand("~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src")
+            endif
         endif
     " }
 

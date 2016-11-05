@@ -133,9 +133,9 @@ alt + {minus,equal}
 
 # Language Change
 super + shift + n
-	setxkbmap es
+	setxkbmap es && xmodmap $HOME/.Xmodmap
 super + n
-	setxkbmap us
+	setxkbmap us && xmodmap $HOME/.Xmodmap
 
 # Increase volume
 XF86AudioRaiseVolume
