@@ -46,6 +46,7 @@
             "~/.Xmodmap": "Xmodmap",
             "~/.userStyle.css": "userStyle.css",
             "~/bin": "bin",
+            "~/.git_template": "git_template",
             "~/.agignore": "agignore"
         }
     },

@@ -47,14 +47,14 @@ function check_game_folder
 function get_last_apk
 {
     apk_tmp=
-    apk_tmp=$(ls -t $full_path | head -n 1)
+    apk_tmp=$(ls -t "$full_path" | head -n 1)
     apk_path="$full_path/$apk_tmp"
     echo "Found $apk_path"
 }
 
 function install_apk
 {
-    adb install -r $apk_path
+    adb install -r "$apk_path"
 }
 
 function usage

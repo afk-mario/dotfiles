@@ -23,7 +23,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
-export ADBI_INSTALL_PATH="$HOME/Builds/Android/"
+export ADBI_INSTALL_PATH="$HOME/Google\ Drive/HyperBeard Games/Builds/Android/"
 
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"
@@ -40,6 +40,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    alias ctags="`brew --prefix`/bin/ctags"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 elif [[ "$OSTYPE" == "msys" ]]; then
@@ -57,6 +58,9 @@ export EDITOR=nvim
 autoload -z edit-command-line 
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+bindkey -M vicmd v edit-command-line
+bindkey -v
+export KEYTIMEOUT=1
 
 #VirtualEnvWrapper
 
