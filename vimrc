@@ -319,6 +319,10 @@
         endif
     endif
 
+    if has('nvim')
+        set inccommand=nosplit
+    endif
+
     set tabpagemax=15               " Only show 15 tabs
     set noshowmode
     set cursorline                  " Highlight current line
