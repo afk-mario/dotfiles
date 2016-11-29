@@ -99,6 +99,8 @@
         call dein#add('tpope/vim-commentary')                         " Toggle comments
         call dein#add('tpope/vim-surround')                           " Sorroundings
         call dein#add('tpope/vim-repeat')                             " More . command
+        call dein#add('tpope/vim-abolish')                            " Better replace
+        call dein#add('tpope/vim-unimpaired')                         " Key mappings for [
         call dein#add('tommcdo/vim-exchange')                         " Exchange motion
         call dein#add('SirVer/ultisnips')                             " Snippets
         call dein#add('honza/vim-snippets')
