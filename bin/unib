@@ -1,0 +1,245 @@
+#!/bin/bash
+# A unity build command to manage Hyperbeard's builds
+
+###############
+#  variables  #
+###############
+
+source $HOME/.dotfiles/.env
+interactive=""
+project_path=""
+install_path=""
+full_path_install=""
+full_path_project=""
+game=""
+apk_path=""
+not=false
+version="TEST-99"
+platform="android"
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
+###############
+#  Functions  #
+###############
+function start_checking
+{
+    check_path_install_variable
+    check_path_projects_variable
+    check_project_folder
+    check_install_folder
+    check_platform
+}
+
+function check_path_install_variable
+{
+    echo "_______________________________"
+    echo "Checking install path ..."
+
+    if [ -z ${UNITY_INSTALL_PATH+x} ]; then
+        echo "${red}UNITY_INSTALL_PATH${reset} is unset"
+        usage
+        exit
+    else
+        echo "${green}UNITY_INSTALL_PATH${reset} is set to '$UNITY_INSTALL_PATH'";
+    fi
+}
+
+function check_path_projects_variable
+{
+    echo "_______________________________"
+    echo "Checking projects path ..."
+
+    if [ -z ${UNITY_PROJECTS_PATH+x} ]; then
+        echo "${red}UNITY_PROJECTS_PATH${reset} is unset"; 
+        usage
+        exit
+    else
+        echo "${green}UNITY_PROJECTS_PATH${reset} is set to '$UNITY_PROJECTS_PATH'";
+    fi
+}
+
+function check_project_folder
+{
+    lower="$(echo $game | tr '[A-Z]' '[a-z]')"
+    full_path_upper="$UNITY_PROJECTS_PATH$game"
+    full_path_lower="$UNITY_PROJECTS_PATH$lower"
+
+    echo "_______________________________"
+    echo "Checking $game project path ..."
+
+    if [ -d "$full_path_upper" ]; then
+        full_path_project="$UNITY_PROJECTS_PATH$game"
+        echo "${green}Project:${reset}  $game exists"
+    elif [ -d "$full_path_lower" ]; then
+        full_path_project="$UNITY_PROJECTS_PATH$lower"
+        echo "${green}Project:${reset}  $lower exists"
+    else
+        echo "${red}$game${reset} project doesn't exist"
+        usage
+        exit
+    fi
+}
+
+function check_install_folder
+{
+    if [ "$platform" == "android" ]; then
+        p="Android"
+        full_path_install="$UNITY_INSTALL_PATH$p/$game"
+    elif [ "$platform" == "ios" ]; then
+        p="iOS"
+        full_path_install="$UNITY_INSTALL_PATH$p/$game"
+    fi
+
+    echo "_______________________________"
+    echo "Checking $game install path ..."
+    echo "$full_path_install"
+
+    if [ -d "$full_path_install" ]; then
+        echo "${green}Installation:${reset} $game exists"
+    else
+        echo "${red}$game${reset} doesn't exist"
+        echo "Do you wish to create the folder"
+        select yn in "Yes" "No"; do
+            case $yn in
+                Yes ) mkdir -p $full_path_install; break;;
+                No ) exit;;
+            esac
+        done
+    fi
+}
+
+function get_last_apk
+{
+    apk_tmp=
+    apk_tmp=$(ls -t "$full_path" | head -n 1)
+    apk_path="$full_path/$apk_tmp"
+    echo "Found $apk_path"
+}
+
+function check_version
+{
+    apk_tmp=
+    apk_tmp=$(ls -t "$full_path" | head -n 1)
+    apk_path="$full_path/$apk_tmp"
+    echo "Found $apk_path"
+}
+
+function check_platform
+{
+    echo "_______________________________"
+    echo "Checking if $platform is suported ..."
+    if [ "$platform" == "android" ]; then
+        echo "${green}$platform${reset} is supported"
+        build_android
+    elif [ "$platform" == "ios" ]; then
+        echo "${green}$platform${reset} is supported"
+        build_ios
+    else
+        echo "${red}$platform${reset} is not supported"
+    fi
+}
+
+function build_android
+{
+    build_path="$full_path_install/$game"
+    build_path="$build_path$version.apk"
+
+    echo "_______________________________"
+    echo "Starting $game Android build ..."
+
+    if [ "$not" == false ] ; then
+        echo "${green}Building on:${reset} $build_path"
+        /Applications/Unity/Unity.app/Contents/MacOS/Unity \
+            -batchmode \
+            -projectPath "$full_path_project" \
+            -buildTarget android \
+            -executeMethod AutoBuilder.BuildAndroid \
+            -quit \
+            -serial  R3-3V4N-2NAK-K53W-WK6Q-BJSX \
+            -username $UNITY_USER \
+            -password $UNITY_PASSWORD \
+            "$build_path"
+    else
+        echo "${red}Not Building on:${reset} $build_path"
+    fi
+}
+
+function build_ios
+{
+    build_path="$full_path_install/$game"
+    build_path="$build_path$version"
+
+    echo "_______________________________"
+    echo "Starting $game iOS build ..."
+
+    echo "${green}Building on:${reset} $build_path"
+    if [ "$not" == false ] ; then
+        /Applications/Unity/Unity.app/Contents/MacOS/Unity \
+            -batchmode \
+            -projectPath "$full_path_project" \
+            -buildTarget ios \
+            -executeMethod AutoBuilder.BuildIOS \
+            -quit \
+            -serial  R3-3V4N-2NAK-K53W-WK6Q-BJSX \
+            -username $UNITY_USER \
+            -password $UNITY_PASSWORD \
+            "$build_path"
+    else
+        echo "${red}Not Building on:${reset} $build_path"
+    fi
+}
+
+function usage
+{
+    echo ""
+    echo "A script to manage Hyperbeard's builds"
+    echo ""
+    echo "Usage: unib [OPTIONS]"
+
+    echo "Example:"
+    echo "    unib -g Kleptocats -v 9.9.9-9 -p android"
+    echo ""
+    echo "-g --game         Game name"
+    echo "-v --version      Game version"
+    echo "-p --platform     Platform to build (ios, android)"
+    echo "-n --not          Don't build, preview paths"
+    echo "-h --help         Usage help"
+    echo ""
+}
+
+##########
+#  Main  #
+##########
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -g | --game )           shift
+            game=$1
+            ;;
+        -v | --version )        shift
+            version=$1
+            ;;
+        -p | --platform )       shift
+            platform=$1
+            ;;
+        -n | --not )            shift
+            not=true
+            ;;
+        -h | --help )           usage
+            exit
+            ;;
+        * )                     usage
+            exit 1
+    esac
+    shift
+done
+
+# Test code to verify command line processing
+
+if [ -z "${game}" ]; then
+    usage
+else
+    start_checking
+fi

@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/vim,osx,linux
 
+.env
+
 ### Vim ###
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
@@ -7,7 +9,6 @@
 Session.vim
 .netrwhist
 *~
-
 
 ### OSX ###
 .DS_Store
