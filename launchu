@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source $HOME/.dotfiles/.env
+
+/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+    -force-gfx-direct \
+    -serial  $UNITY_SERIAL \
+    -username $UNITY_USER \
+    -password $UNITY_PASSWORD
