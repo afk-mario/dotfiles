@@ -102,6 +102,7 @@
         call dein#add('tpope/vim-abolish')                            " Better replace
         call dein#add('tpope/vim-unimpaired')                         " Key mappings for [
         call dein#add('tommcdo/vim-exchange')                         " Exchange motion
+        call dein#add('AndrewRadev/splitjoin.vim')                    " Split onelinners with gS
         call dein#add('SirVer/ultisnips')                             " Snippets
         call dein#add('honza/vim-snippets')
         call dein#add('wellle/targets.vim')                           " Better motions
@@ -269,15 +270,14 @@
         set termguicolors
     endif
 
-
-    if filereadable(expand("~/.vim/bundle/repos/github.com/morhetz/gruvbox/colors/gruvbox.vim"))
+    if dein#tap('gruvbox')
         colorscheme gruvbox
-    elseif OSX() && filereadable(expand("~/.vim/bundle/repos/github.com/whatyouhide/vim-gotham/colors/gotham.vim"))
+    elseif OSX() && dein#tap('vim-gotham')
         colorscheme gotham
-    elseif filereadable(expand("~/.vim/bundle/vim-hybrid/colors/hybrid.vim"))
+    elseif dein#tap('vim-hybrid')
         let g:hybrid_custom_term_colors = 1
         colorscheme hybrid
-    elseif  filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+    elseif den#tap('vim-colors-solarized')
         let g:solarized_termcolors=256
         let g:solarized_termtrans=1
         let g:solarized_contrast="normal"
