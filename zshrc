@@ -41,8 +41,13 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
+    export LIBRARY_PATH="/usr/local/lib"
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     alias ctags="`brew --prefix`/bin/ctags"
+    # https://github.com/sfackler/rust-openssl/issues/255
+    export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
+    export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
+    export DEP_OPENSSL_INCLUDE=`brew --prefix openssl`/include
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 elif [[ "$OSTYPE" == "msys" ]]; then
@@ -96,8 +101,8 @@ source $ZPLUG_HOME/init.zsh
 # Plugins
 
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
-zplug "plugins/ssh-agent", from:oh-my-zsh
-zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+zplug "plugins/ssh-agent", from:oh-my-zsh, use:"plugins/ssh-agent/ssh-agent.plugin.zsh"
+zplug "lib/clipboard", from:oh-my-zsh, use:"lib/clipboard.zsh",if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/directories", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
 zplug "unixorn/git-extra-commands"
@@ -118,12 +123,12 @@ bindkey -M vicmd 'j' history-substring-search-down
 # zsh-syntax-highlighting
 # Syntax highlighing for the command line.
 # https://github.com/zsh-users/zsh-syntax-highlighting
-zplug "zsh-users/zsh-syntax-highlighting", nice:19
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
 
 # alias-tips
 # Reminds you of aliases you have already.
 # https://github.com/djui/alias-tips
-zplug "djui/alias-tips", nice:9
+zplug "djui/alias-tips", defer:2
 
 # extract
 # Extracts a wide variety of archive formats.
@@ -147,8 +152,8 @@ zplug "baskerville/bspwm", use: "contrib/zsh_completion"
 zplug "jonas/tig", use: "contrib/tig-completion.zsh"
 
 # Theme
-# zplug "arlefreak/odin", nice:19
-# zplug "~/.zsh/Odin", from:local, nice:19
+# zplug "arlefreak/odin", defer:19
+# zplug "~/.zsh/Odin", from:local, defer:19
 zplug "subnixr/minimal"
 
 # Install plugins if there are plugins that have not been installed

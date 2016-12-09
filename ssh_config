@@ -26,3 +26,8 @@ Host linodeClient
     HostName 45.33.81.42
     User arlefreak
     IdentityFile ~/.ssh/id_rsa.pub
+
+Host OsecanDev
+    HostName 138.197.17.118
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
