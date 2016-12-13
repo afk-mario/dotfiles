@@ -62,12 +62,13 @@ fi
 
 export EDITOR=nvim
 
-autoload -z edit-command-line 
-zle -N edit-command-line
-bindkey "^X^E" edit-command-line
-bindkey -M vicmd v edit-command-line
-bindkey -v
-export KEYTIMEOUT=1
+# -- Vim Mode --
+# autoload -z edit-command-line 
+# zle -N edit-command-line
+# bindkey "^X^E" edit-command-line
+# bindkey -M vicmd v edit-command-line
+# bindkey -v
+# export KEYTIMEOUT=1
 
 #VirtualEnvWrapper
 
