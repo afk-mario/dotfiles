@@ -129,6 +129,8 @@
         " call dein#add('mhinz/vim-signify')
     " }
     " Languages {
+        call dein#add('sheerun/vim-polyglot',{
+                    \})
         call dein#add('rust-lang/rust.vim', {
                     \ })
         call dein#add('racer-rust/vim-racer', {
@@ -149,11 +151,6 @@
                     \ })
         call dein#add('mxw/vim-jsx', {
                     \ 'on_ft': ['javascript', 'javascript.jsx']
-                    \ })
-        call dein#add('wavded/vim-stylus', {
-                    \ })
-        call dein#add('klen/python-mode', {
-                    \ 'on_ft': 'python'
                     \ })
         call dein#add('davidhalter/jedi-vim', {
                     \ 'on_ft': 'python'
@@ -351,14 +348,10 @@
     highlight VertSplit cterm=none ctermbg=none ctermfg=247
 
     " Netrw {
-        let g:netrw_altv = 1
-        let g:netrw_banner = 0
-        let g:netrw_winsize = -28
-        let g:netrw_liststyle = 3
-        let g:netrw_preview   = 1
-        let g:netrw_winsize   = 20
-        let g:netrw_browse_split = 4
         let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro rnu'  " --> I want line numbers on the netrw buffer
+        let g:netrw_browse_split = 4
+        let g:netrw_banner = 0
+        let g:netrw_winsize = 25
     " }
 " }
 
