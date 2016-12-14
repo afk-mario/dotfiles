@@ -29,6 +29,8 @@ export UNITY_PROJECTS_PATH="$HOME/Projects/Games/Unity/"
 
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"
+alias tmuxconfig="nvim ~/.tmux.conf"
+alias tmuxreload="tmux source-file ~/.tmux.conf"
 alias zshreload="source ~/.zshrc"
 alias vim="nvim"
 alias vimdiff="nvim -d"
