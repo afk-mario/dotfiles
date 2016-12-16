@@ -68,24 +68,21 @@
         call dein#add('Shougo/dein.vim')
         " }
     " Unite {
-        call dein#add('Shougo/unite.vim')
-        call dein#add('arlefreak/vim-unite-config', { 
-                    \'depends': 'unite.vim'
-                    \})
+        call dein#add('Shougo/denite.nvim')
         call dein#add('Shougo/neomru.vim', {
                     \'depends': 'denite.nvim'
                     \})
         call dein#add('Shougo/unite-outline', {
-                    \'depends': 'unite.vim'
+                    \'depends': 'denite.nvim'
                     \})
         call dein#add('Shougo/neoyank.vim', {
                     \'depends': 'denite.nvim'
                     \})
         call dein#add('tacroe/unite-mark', {
-                    \'depends': 'unite.vim'
+                    \'depends': 'denite.nvim'
                     \})
         call dein#add('tsukkee/unite-tag', {
-                    \'depends': 'unite.vim'
+                    \'depends': 'denite.nvim'
                     \})
     " }
     " Utilities{
@@ -246,6 +243,35 @@
     endif
 
     let loaded_matchparen = 1
+
+    set wildignore+=vendor/bundle/**,
+    set wildignore+=node_modules/**,
+    set wildignore+=bower_components/**,
+    set wildignore+=.git/**,
+    set wildignore+=*.meta,
+    set wildignore+=*.prefab,
+    set wildignore+=*.sample,
+    set wildignore+=*.asset,
+    set wildignore+=*.unity,
+    set wildignore+=*.anim,
+    set wildignore+=*.controller,
+    set wildignore+=*.jpg,
+    set wildignore+=*.png,
+    set wildignore+=*.mp3,
+    set wildignore+=*.wav,
+    set wildignore+=*.ttf,
+    set wildignore+=*.pdf,
+    set wildignore+=*.psd,
+    set wildignore+=*.shader,
+    set wildignore+=*.dll,
+    set wildignore+=*.mat,
+    set wildignore+=*.file,
+    set wildignore+=*.unitypackage,
+    set wildignore+=debug/,
+    set wildignore+=Debug/,
+    set wildignore+=temp/,
+    set wildignore+=Temp/,
+    set wildignore+=temp/,
 " }
 
 " Vim GUI {
@@ -870,56 +896,53 @@
 
     " Denite {
         if dein#tap("denite.nvim")
-            nnoremap [denite] <nop>
-            nmap <leader>u [denite]
+            " custom var
             call denite#custom#var(
-                        \'file_rec',
-                        \'command',
-                        \['ag', '--follow', '--nocolor', '--nogroup', '-g', ''],
-                        \)
+                        \ 'file_rec', 
+                        \ 'command',
+                        \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+
+            " change matchers.
             call denite#custom#source(
-                        \ 'file_rec', 'matchers', ['matcher_fuzzy, matcher_ignore_globs'])
-            call denite#custom#var('file_rec', 'resume', 'true')
+                        \ 'file_rec', 
+                        \ 'matchers', 
+                        \ ['matcher_fuzzy','matcher_ignore_globs'])
 
-            " Ripgrep command on grep source
-            call denite#custom#var('grep', 'command', ['rg'])
-            call denite#custom#var('grep', 'recursive_opts', [])
-            call denite#custom#var('grep', 'final_opts', [])
-            call denite#custom#var('grep', 'separator', ['--'])
-            call denite#custom#var('grep', 'default_opts',
-                \ ['--vimgrep', '--no-heading'])
+            " change sorters.
+            call denite#custom#source(
+                        \ 'file_rec',
+                        \ 'sorters',
+                        \ ['sorter_sublime'])
 
-            " Add custom menus
-            let s:menus = {}
+            " change ignore_globs
+            call denite#custom#filter('matcher_ignore_globs',
+                        \ 'ignore_globs', 
+                        \ split(&wildignore, ','))
 
-            let s:menus.dots = {
-                \ 'description': 'Edit Config files'
-                \ }
-            let s:menus.dots.file_candidates = [
-                \ ['zshrc', '~/.dotfiles/zshrc'],
-                \ ['vimrc', '~/.dotfiles/vimrc'],
-                \ ['vimrcmin', '~/.dotfiles/vimrcmin'],
-                \ ]
+            " grep {
+                call denite#custom#var('grep', 'command', ['ag'])
+                call denite#custom#var('grep', 'recursive_opts', [])
+                call denite#custom#var('grep', 'final_opts', [])
+                call denite#custom#var('grep', 'separator', ['--'])
+                call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
+            " }
 
-            let s:menus.my_commands = {
-                \ 'description': 'Commands'
-                \ }
-            let s:menus.my_commands.command_candidates = [
-                \ ['Split the window', 'vnew'],
-                \ ['Open dots menu', 'Denite menu:dots'],
-                \ ]
+            " custom mappings {
+                nnoremap [denite] <nop>
+                nmap <leader>u [denite]
+                nnoremap <silent> [denite]b :Denite buffer<cr>
+                nnoremap <silent> [denite]p :Denite file_rec<cr>
+                nnoremap <silent> [denite]m :Denite menu<cr>
+                nnoremap <silent> [denite]g :Denite grep<cr>
+                nnoremap <silent> [denite]l :Denite line<cr>
+                nnoremap <silent> [denite]y :Denite neoyank<cr>
+                nnoremap <silent> [denite]d :Denite dein<cr>
+                nnoremap <silent> [denite]h :Denite help<cr>
 
-            call denite#custom#var('menu', 'menus', s:menus)
-
-            nnoremap <silent> [denite]b :Denite buffer<cr>
-            nnoremap <silent> [denite]p :Denite file_rec directory_rec<cr>
-            nnoremap <silent> [denite]m :Denite menu<cr>
-            nnoremap <silent> [denite]g :Denite grep<cr>
-            nnoremap <silent> [denite]l :Denite line<cr>
-            nnoremap <silent> [denite]y :Denite neoyank<cr>
-            nnoremap <silent> [denite]d :Denite dein<cr>
-            nnoremap <silent> [denite]h :Denite help<cr>
-            " nnoremap <silent> [denite]u :Denite unity<cr>
+                call denite#custom#map('insert', '<c-k>', '<denite:move_to_previous_line>', 'noremap')
+                call denite#custom#map('insert', '<c-j>', '<denite:move_to_next_line>', 'noremap')
+                call denite#custom#map('insert', '<c-r>', '<denite:redraw>', 'noremap')
+            " }
         endif
     " }
 " }
