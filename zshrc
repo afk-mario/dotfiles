@@ -35,6 +35,7 @@ alias zshreload="source ~/.zshrc"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias vi="vim -u $HOME/.vim/vimrcmin"
+alias tim="nvim -u $HOME/.vim/test.vim"
 alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'

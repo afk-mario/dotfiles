@@ -27,6 +27,7 @@
             "~/.dotfiles": "",
             "~/.tmux.conf": "tmux.conf",
             "~/.vim/vimrc": "vimrc",
+            "~/.vim/test.vim": "test.vim",
             "~/.vim/after": "vim/after",
             "~/.vim/autoload": "vim/autoload",
             "~/.vim/ftplugin": "vim/ftplugin",

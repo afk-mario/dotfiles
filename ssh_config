@@ -21,3 +21,13 @@ Host OsecanDev
     HostName 138.197.17.118
     User arlefreak
     IdentityFile ~/.ssh/id_rsa.pub
+
+Host HyperServerRoot
+    HostName 104.131.113.41
+    User root
+    IdentityFile ~/.ssh/id_rsa.pub
+
+Host HyperServer
+    HostName 104.131.113.41
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
