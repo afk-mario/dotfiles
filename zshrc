@@ -43,6 +43,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     alias ctags="`brew --prefix`/bin/ctags"
+    export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
+    export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 elif [[ "$OSTYPE" == "msys" ]]; then
