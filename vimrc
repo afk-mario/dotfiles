@@ -926,14 +926,16 @@
             " custom mappings {
                 nnoremap [denite] <nop>
                 nmap <leader>u [denite]
-                nnoremap <silent> [denite]b :Denite buffer<cr>
                 nnoremap <silent> [denite]p :Denite file_rec<cr>
+                nnoremap <silent> [denite]r :Denite file_mru<cr>
+                nnoremap <silent> [denite]b :Denite buffer<cr>
                 nnoremap <silent> [denite]m :Denite menu<cr>
                 nnoremap <silent> [denite]g :Denite grep<cr>
                 nnoremap <silent> [denite]l :Denite line<cr>
                 nnoremap <silent> [denite]y :Denite neoyank<cr>
                 nnoremap <silent> [denite]d :Denite dein<cr>
                 nnoremap <silent> [denite]h :Denite help<cr>
+                nnoremap <silent> [denite]c :Denite colorscheme<cr>
 
                 call denite#custom#map('insert', '<c-k>', '<denite:move_to_previous_line>', 'noremap')
                 call denite#custom#map('insert', '<c-j>', '<denite:move_to_next_line>', 'noremap')
