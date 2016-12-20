@@ -21,6 +21,7 @@ setopt share_history     # share command history data
 export PATH="$HOME/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 export ADBI_INSTALL_PATH="$HOME/Google Drive/HyperBeard Games/Builds/Android/"
@@ -40,8 +41,10 @@ alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'
 
+# Cumpletitions https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md
+fpath+=~/.zfunc
+
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     export LIBRARY_PATH="/usr/local/lib"
@@ -107,6 +110,7 @@ source $ZPLUG_HOME/init.zsh
 # Plugins
 
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
+zplug "plugins/cargo", from:oh-my-zsh, if:"(( $+commands[cargo] ))"
 zplug "plugins/ssh-agent", from:oh-my-zsh, use:"plugins/ssh-agent/ssh-agent.plugin.zsh"
 zplug "lib/clipboard", from:oh-my-zsh, use:"lib/clipboard.zsh",if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/directories", from:oh-my-zsh

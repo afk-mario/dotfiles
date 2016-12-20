@@ -66,6 +66,10 @@
                 "Creating nvim config folder"
             ],
             [
+                "mkdir -p $HOME/.zfunc",
+                "Creating zfunc config folder"
+            ],
+            [
                 "ln -sf ~/.vim $HOME/.config/nvim",
                 "Creating symLink for nvim"
             ],

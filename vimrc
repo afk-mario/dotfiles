@@ -699,10 +699,6 @@
             let g:formatdef_rustfmt='"rustfmt"'
             let g:formatters_rust=['rustfmt']
             let g:racer_cmd=expand("~/.cargo/bin/racer")
-            let $RUST_SRC_PATH=expand("~/.rust/src/")
-            if LINUX()
-                let $RUST_SRC_PATH=expand("~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src")
-            endif
         endif
     " }
 
