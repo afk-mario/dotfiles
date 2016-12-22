@@ -535,10 +535,15 @@
     " NeoMake {
         if dein#tap("neomake")
             autocmd! BufWritePost,BufEnter * Neomake
-            let g:neomake_javascript_enabled_makers = ['eslint']
-            if findfile('.eslintrc', '.;') ==# ''
-                let g:neomake_javascript_enabled_makers = ['standard']
-            endif
+            let g:neomake_echo_current_error=1
+            let g:neomake_verbose=0
+
+            " JS {
+                let g:neomake_javascript_enabled_makers = ['eslint']
+                if findfile('.eslintrc', '.;') ==# ''
+                    let g:neomake_javascript_enabled_makers = ['standard']
+                endif
+            " }
 
             nnoremap [neomake] <nop>
             nmap <leader>c [neomake]
@@ -548,9 +553,6 @@
             nnoremap <silent> [neomake]l :lnext<cr>
             nnoremap <silent> [neomake]h :lprev<cr>
         endif
-    " }
-
-    " NeoMake {
     " }
 
     " Emmet {
