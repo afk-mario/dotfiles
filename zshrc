@@ -101,6 +101,7 @@ source $ZPLUG_HOME/init.zsh
 # Plugins
 
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
+zplug "plugins/cargo", from:oh-my-zsh, use:"plugins/cargo/_cargo"
 zplug "plugins/ssh-agent", from:oh-my-zsh, use:"plugins/ssh-agent/ssh-agent.plugin.zsh"
 zplug "lib/clipboard", from:oh-my-zsh, use:"lib/clipboard.zsh",if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/directories", from:oh-my-zsh
