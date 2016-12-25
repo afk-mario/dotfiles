@@ -21,6 +21,9 @@ setopt share_history     # share command history data
 export PATH="$HOME/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+if type "$rustc" > /dev/null; then
+    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
+fi
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 export ADBI_INSTALL_PATH="$HOME/Google Drive/HyperBeard Games/Builds/Android/"
@@ -29,21 +32,28 @@ export UNITY_PROJECTS_PATH="$HOME/Projects/Games/Unity/"
 
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"
+alias tmuxconfig="nvim ~/.tmux.conf"
+alias tmuxreload="tmux source-file ~/.tmux.conf"
 alias zshreload="source ~/.zshrc"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias vi="vim -u $HOME/.vim/vimrcmin"
+alias tim="nvim -u $HOME/.vim/test.vim"
 alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'
 
+# Cumpletitions https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md
+fpath+=~/.zfunc
+
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     export LIBRARY_PATH="/usr/local/lib"
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     alias ctags="`brew --prefix`/bin/ctags"
+    export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
+    export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
     # https://github.com/sfackler/rust-openssl/issues/255
     export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
     export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
@@ -62,12 +72,13 @@ fi
 
 export EDITOR=nvim
 
-autoload -z edit-command-line 
-zle -N edit-command-line
-bindkey "^X^E" edit-command-line
-bindkey -M vicmd v edit-command-line
-bindkey -v
-export KEYTIMEOUT=1
+# -- Vim Mode --
+# autoload -z edit-command-line 
+# zle -N edit-command-line
+# bindkey "^X^E" edit-command-line
+# bindkey -M vicmd v edit-command-line
+# bindkey -v
+# export KEYTIMEOUT=1
 
 #VirtualEnvWrapper
 

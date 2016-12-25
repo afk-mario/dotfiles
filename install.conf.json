@@ -27,6 +27,7 @@
             "~/.dotfiles": "",
             "~/.tmux.conf": "tmux.conf",
             "~/.vim/vimrc": "vimrc",
+            "~/.vim/test.vim": "test.vim",
             "~/.vim/after": "vim/after",
             "~/.vim/autoload": "vim/autoload",
             "~/.vim/ftplugin": "vim/ftplugin",
@@ -63,6 +64,10 @@
             [
                 "mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}",
                 "Creating nvim config folder"
+            ],
+            [
+                "mkdir -p $HOME/.zfunc",
+                "Creating zfunc config folder"
             ],
             [
                 "ln -sf ~/.vim $HOME/.config/nvim",

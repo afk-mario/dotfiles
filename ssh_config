@@ -7,16 +7,6 @@ Host *
      ServerAliveInterval 60
      ServerAliveCountMax 30
 
-Host hyperCraftRoot
-    HostName 104.131.47.48
-    User root
-    IdentityFile ~/.ssh/id_rsa.pub
-
-Host hyperCraft
-    HostName 104.131.47.48
-    User arlefreak
-    IdentityFile ~/.ssh/id_rsa.pub
-
 Host linodeDev
     HostName 104.237.141.167
     User arlefreak
@@ -29,5 +19,15 @@ Host linodeClient
 
 Host OsecanDev
     HostName 138.197.17.118
+    User arlefreak
+    IdentityFile ~/.ssh/id_rsa.pub
+
+Host HyperServerRoot
+    HostName 104.131.113.41
+    User root
+    IdentityFile ~/.ssh/id_rsa.pub
+
+Host HyperServer
+    HostName 104.131.113.41
     User arlefreak
     IdentityFile ~/.ssh/id_rsa.pub
