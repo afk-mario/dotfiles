@@ -73,10 +73,10 @@ bspc config presel_border_color             "#ffa74d"
 ## }}}
 
 # Rules
-bspc rule -a Firefox desktop=^8
+bspc rule -a Firefox desktop=^6
 bspc rule -a Subl3 desktop=^5
 bspc rule -a Thunar  desktop=^9
-bspc rule -a google-chrome desktop=^6
+bspc rule -a google-chrome-stable desktop=^6
 bspc rule -a "crx_nckgahadagoaajjgafhacjanaoiihapd" floating=true
 #Background
 exec sh ~/.fehbg & ~/.config/bspwm/panel/panel &> /tmp/panel.log

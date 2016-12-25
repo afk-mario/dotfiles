@@ -21,6 +21,7 @@ setopt share_history     # share command history data
 export PATH="$HOME/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+export ASEPRITE_ACCEPT_EULA=yes
 if type "$rustc" > /dev/null; then
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
 fi
