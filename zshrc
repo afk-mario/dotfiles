@@ -72,6 +72,7 @@ else
 fi
 
 export EDITOR=nvim
+export MANPAGER="nvim -c 'set ft=man' -"
 
 # -- Vim Mode --
 # autoload -z edit-command-line 
