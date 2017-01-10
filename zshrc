@@ -113,6 +113,7 @@ source $ZPLUG_HOME/init.zsh
 
 # Plugins
 
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "plugins/cargo", from:oh-my-zsh, use:"plugins/cargo/_cargo"
 zplug "plugins/ssh-agent", from:oh-my-zsh, use:"plugins/ssh-agent/ssh-agent.plugin.zsh"
