@@ -103,13 +103,10 @@
         call dein#add('SirVer/ultisnips')                             " Snippets
         call dein#add('honza/vim-snippets')
         call dein#add('wellle/targets.vim')                           " Better motions
-        " call dein#add('scrooloose/syntastic')                        " Syntax check
-        " call dein#add('Konfekt/FastFold')                             " Fast Fold for deoplete
         call dein#add('neomake/neomake')                              " Async Syntax check
         call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
         call dein#add('mhinz/vim-grepper')                            " Multiple grep support
         call dein#add('sjl/gundo.vim')                               " Undo tree
-        call dein#add('Chiel92/vim-autoformat')                       " AutoFormat code
         call dein#add('mhinz/vim-startify')                           " Start Screen
         call dein#add('godlygeek/tabular')                            " Align code
         if OSX()
@@ -119,6 +116,7 @@
     " Prose {
         call dein#add('reedes/vim-pencil', {'lazy': 1})                            " Better Writting
         call dein#add('junegunn/goyo.vim', {'lazy': 1})
+        call dein#add('junegunn/limelight.vim', {'lazy': 1})
     " }
     " VCS {
         call dein#add('tpope/vim-fugitive')                           " Git wrapper
@@ -144,10 +142,10 @@
                     \ 'on_ft': 'json'
                     \ })
         call dein#add('pangloss/vim-javascript', {
-                    \ 'on_ft': ['javascript', 'javascript.jsx']
                     \ })
         call dein#add('mxw/vim-jsx', {
-                    \ 'on_ft': ['javascript', 'javascript.jsx']
+                    \ })
+        call dein#add('jaawerth/nrun.vim', {
                     \ })
         call dein#add('davidhalter/jedi-vim', {
                     \ 'on_ft': 'python'
@@ -158,9 +156,6 @@
         if OSX()
             call dein#add('OmniSharp/omnisharp-vim', {
                         \ 'build': 'sh -c "cd server/ && xbuild"',
-                        \ 'on_ft': 'cs'
-                        \ })
-            call dein#add('OrangeT/vim-csharp', {
                         \ 'on_ft': 'cs'
                         \ })
             call dein#add('https://gitlab.com/mixedCase/deoplete-omnisharp.git', {
@@ -287,6 +282,7 @@
 
     if has('nvim')
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+        let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
     endif
 
     if has('termguicolors')
@@ -438,7 +434,7 @@
         nnoremap [spell] <nop>
         nmap <leader>s [spell]
         nnoremap <silent> [spell]s :setlocal spell spelllang=es_es<cr>
-        nnoremap <silent> [spell]g :setlocal spell spelllang=en_en<cr>
+        nnoremap <silent> [spell]n :setlocal spell spelllang=en_en<cr>
     " }
 
     " Yank from the cursor to the end of the line, to be consistent with C and D.
@@ -536,13 +532,14 @@
         if dein#tap("neomake")
             autocmd! BufWritePost,BufEnter * Neomake
             let g:neomake_echo_current_error=1
-            let g:neomake_verbose=0
+            let g:neomake_verbose=1
 
             " JS {
+                " you can set your enabled makers globally (like below) or on the buffer level as part of an autocmd - see Neomake docs for details
                 let g:neomake_javascript_enabled_makers = ['eslint']
-                if findfile('.eslintrc', '.;') ==# ''
-                    let g:neomake_javascript_enabled_makers = ['standard']
-                endif
+                " when switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
+                au BufEnter *.js let b:neomake_javascript_eslint_exe = nrun#Which('eslint')
+                " autocmd! FileType javascript,BufWinEnter,BufWritePost * Neomake
             " }
 
             nnoremap [neomake] <nop>
@@ -814,69 +811,50 @@
         if dein#tap("goyo.vim")
             " let g:goyo_margin_top=0
             " let g:goyo_margin_bottom=0
-            nnoremap <leader>G :Goyo<CR>
+            nnoremap <leader>G :Goyo <CR> :Limelight<CR>
         endif
     " }
 
     " OmniSharp {
-        if dein#tap("OmniSharp.vim")
-            let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
+        if dein#tap("omnisharp-vim")
+            let g:OmniSharp_server_type = 'v1'
+            let g:OmniSharp_server_type = 'roslyn'
+            let g:OmniSharp_timeout = 100
 
-            " Synchronous build (blocks Vim)
-            "autocmd FileType cs nnoremap <F5> :wa!<cr>:OmniSharpBuild<cr>
-            " Builds can also run asynchronously with vim-dispatch installed
-            autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
-
+            au FileType cs OmniSharpHighlightTypes
             " Automatically add new cs files to the nearest project on save
             autocmd BufWritePost *.cs call OmniSharp#AddToProject()
-
             "show type information automatically when the cursor stops moving
-            autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-
-            "The following commands are contextual, based on the current cursor position.
+            " autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
 
             nnoremap [omnisharp] <nop>
             nmap <leader>o [omnisharp]
-            nnoremap <silent> [omnisharp]d :OmniSharpGotoDefinition<cr>
             nnoremap <silent> [omnisharp]i :OmniSharpFindImplementations<cr>
-            nnoremap <silent> [omnisharp]t :OmniSharpFindType<cr>
-            nnoremap <silent> [omnisharp]s :OmniSharpFindSymbol<cr>
             nnoremap <silent> [omnisharp]u :OmniSharpFindUsages<cr>
-            "finds members in the current buffer
-            nnoremap <silent> [omnisharp]fm :OmniSharpFindMembers<cr>
-            " cursor can be anywhere on the line containing an issue
-            nnoremap <silent> [omnisharp]x  :OmniSharpFixIssue<cr>
-            nnoremap <silent> [omnisharp]fx :OmniSharpFixUsings<cr>
-            nnoremap <silent> [omnisharp]tt :OmniSharpTypeLookup<cr>
-            nnoremap <silent> [omnisharp]dc :OmniSharpDocumentation<cr>
+            nnoremap <silent> [omnisharp]f :OmniSharpFindMembers<cr>
+            nnoremap <silent> [omnisharp]x :OmniSharpFixIssue<cr>
+            nnoremap <silent> [omnisharp]X :OmniSharpFixUsings<cr>
+            nnoremap <silent> [omnisharp]l :OmniSharpTypeLookup<cr>
+            nnoremap <silent> [omnisharp]r :OmniSharpRename<cr>
+            nnoremap <silent> [omnisharp]R :OmniSharpReloadSolution<cr>
+            nnoremap <silent> [omnisharp]F :OmniSharpCodeFormat<cr>
+            nnoremap <silent> [omnisharp]h :OmniSharpHighlightTypes<cr>
+
+            " Override Vim Gotodefinition
+            autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
             "navigate up by method/property/field
             autocmd FileType cs nnoremap <C-K> :OmniSharpNavigateUp<cr>
             "navigate down by method/property/field
             autocmd FileType cs nnoremap <C-J> :OmniSharpNavigateDown<cr>
-
-            " Contextual code actions (requires CtrlP or unite.vim)
-            nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
-            " Run code actions with text selected in visual mode to extract method
-            vnoremap <leader><space> :call OmniSharp#GetCodeActions('visual')<cr>
-
-            " rename with dialog
-            nnoremap <leader>nm :OmniSharpRename<cr>
-            nnoremap <F2> :OmniSharpRename<cr>
             " rename without dialog - with cursor on the symbol to rename... ':Rename newname'
-            command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
+            command! -nargs=1 ORename :call OmniSharp#RenameTo("<args>")
 
-            " Force OmniSharp to reload the solution. Useful when switching branches etc.
-            nnoremap <leader>rl :OmniSharpReloadSolution<cr>
-            nnoremap <leader>cf :OmniSharpCodeFormat<cr>
-            " Load the current .cs file to the nearest project
-            nnoremap <leader>tp :OmniSharpAddToProject<cr>
-
-            " (Experimental - uses vim-dispatch or vimproc plugin) - Start the omnisharp server for the current solution
-            nnoremap <leader>ss :OmniSharpStartServer<cr>
-            nnoremap <leader>sp :OmniSharpStopServer<cr>
-
-            " Add syntax highlighting for types and interfaces
-            nnoremap <leader>th :OmniSharpHighlightTypes<cr>
+            " Not supported with denite yet
+            " let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
+            " nnoremap <silent> [omnisharp]t :OmniSharpFindType<cr>
+            " nnoremap <silent> [omnisharp]s :OmniSharpFindSymbol<cr>
+            " nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
+            " vnoremap <leader><space> :call OmniSharp#GetCodeActions('visual')<cr>
         endif
     " }
 
