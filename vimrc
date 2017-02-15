@@ -114,9 +114,13 @@
         endif
     " }
     " Prose {
-        call dein#add('reedes/vim-pencil', {'lazy': 1})                            " Better Writting
-        call dein#add('junegunn/goyo.vim', {'lazy': 1})
-        call dein#add('junegunn/limelight.vim', {'lazy': 1})
+        call dein#add('reedes/vim-pencil', {'on_ft': ['markdown', 'text']})
+        call dein#add('reedes/vim-lexical', {'on_ft': ['markdown', 'text']})
+        call dein#add('reedes/vim-wordy', {'on_ft': ['markdown', 'text']})
+        call dein#add('dbmrq/vim-ditto', {'on_ft': ['markdown', 'text']})
+        call dein#add('junegunn/goyo.vim', {'on_ft': ['markdown', 'text']})
+        call dein#add('junegunn/limelight.vim', {'on_ft': ['markdown', 'text']})
+        " call dein#add('reedes/vim-textobj-sentence', {'in_ft': 'markdown'})
     " }
     " VCS {
         call dein#add('tpope/vim-fugitive')                           " Git wrapper
@@ -807,11 +811,43 @@
         endif
     " }
 
-    " Goyo and Limelight {
+    " Lexical {
+        if dein#tap("vim-lexical")
+            " let g:lexical#spelllang = ['en_us', 'es_mx',]
+        endif
+    " }
+
+    " Lexical {
+        if dein#tap("vim-ditto")
+            au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
+        endif
+    " }
+
+    " Pencil {
+        if dein#tap("vim-pencil")
+            let g:pencil#wrapModeDefault = 'soft'
+            " autocmd Filetype markdown call pencil#init()
+            augroup pencil
+                autocmd!
+                autocmd FileType markdown,mkd,md call pencil#init()
+                autocmd FileType text         call pencil#init()
+            augroup END
+        endif
+    " }
+
+    " Goyo and Limelight and Pencil{
         if dein#tap("goyo.vim")
             " let g:goyo_margin_top=0
             " let g:goyo_margin_bottom=0
-            nnoremap <leader>G :Goyo <CR> :Limelight<CR>
+            autocmd! User GoyoEnter Limelight
+            autocmd! User GoyoLeave Limelight!
+            nnoremap <leader>G :Goyo<CR>
+
+            autocmd Filetype markdown call LaunchGoyo()
+            autocmd Filetype text call LaunchGoyo()
+            function LaunchGoyo()
+              Goyo
+            endfunction
         endif
     " }
 
