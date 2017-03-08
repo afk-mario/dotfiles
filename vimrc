@@ -109,6 +109,7 @@
         call dein#add('sjl/gundo.vim')                               " Undo tree
         call dein#add('mhinz/vim-startify')                           " Start Screen
         call dein#add('godlygeek/tabular')                            " Align code
+        call dein#add('AndrewRadev/switch.vim')                       " Toggle between true false
         if OSX()
             call dein#add('wakatime/vim-wakatime')                        " register time 
         endif
