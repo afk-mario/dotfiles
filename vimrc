@@ -954,6 +954,7 @@
                 nnoremap <silent> [denite]d :Denite dein<cr>
                 nnoremap <silent> [denite]h :Denite help<cr>
                 nnoremap <silent> [denite]c :Denite colorscheme<cr>
+                nnoremap <silent> [denite]f :<C-u>DeniteCursorWord grep:.<CR>
 
                 call denite#custom#map('insert', '<c-k>', '<denite:move_to_previous_line>', 'noremap')
                 call denite#custom#map('insert', '<c-j>', '<denite:move_to_next_line>', 'noremap')
