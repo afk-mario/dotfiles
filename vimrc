@@ -163,9 +163,9 @@
                         \ 'build': 'sh -c "cd server/ && xbuild"',
                         \ 'on_ft': 'cs'
                         \ })
-            call dein#add('https://gitlab.com/mixedCase/deoplete-omnisharp.git', {
-                        \ 'on_ft': 'cs'
-                        \ })
+            " call dein#add('https://gitlab.com/mixedCase/deoplete-omnisharp.git', {
+            "             \ 'on_ft': 'cs'
+            "             \ })
         endif
         call dein#add('jdonaldson/vaxe', {
                     \ 'on_ft': 'haxe'
@@ -607,7 +607,23 @@
         if dein#tap("deoplete.nvim")
             let g:deoplete#enable_at_startup = 1
             let g:deoplete#enable_smart_case = 1
+            let g:deoplete#sources = {}
+            let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
+            let g:deoplete#sources.clojure=['async_clj', 'file', 'dictionary', 'ultisnips']
+            let g:deoplete#sources.cs = ['omni', 'file', 'buffer', 'ultisnips']
+            " let g:deoplete#omni_patterns = {}
+            let g:deoplete#omni#input_patterns = {}
+            let g:deoplete#omni#input_patterns.cs = ['\w*']
+            let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
+            let g:deoplete#keyword_patterns = {}
+            let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.]*'
 
+            let g:deoplete#sources#dictionary#dictionaries = {
+                \ 'default' : '',
+                \ 'vimshell' : $HOME.'/.vimshell_hist',
+                \ 'scheme' : $HOME.'/.gosh_completions'
+                    \ }
+            " Use Tab
             imap <silent><expr> <TAB>
                 \ pumvisible() ? "\<C-n>" :
                 \ <SID>check_back_space() ? "\<TAB>" :
@@ -621,11 +637,7 @@
             " Close window on finish
             autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-
             au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
-            let g:deoplete#omni_patterns = {}
-
-            let g:deoplete#omni_patterns.rust = '[(\.)(::)]'
 
             aug omnicomplete
                 au!
@@ -635,27 +647,7 @@
                 au FileType xml setl omnifunc=xmlcomplete#CompleteTags
             aug END
 
-            " Omnisharp Settings {
-                " Define dictionary 
-                let g:deoplete#sources#dictionary#dictionaries = {
-                    \ 'default' : '',
-                    \ 'vimshell' : $HOME.'/.vimshell_hist',
-                    \ 'scheme' : $HOME.'/.gosh_completions'
-                        \ }
 
-                " Define keyword.
-                if !exists('g:deoplete#keyword_patterns')
-                    let g:deoplete#keyword_patterns = {}
-                endif
-                let g:deoplete#keyword_patterns['default'] = '\h\w*'
-
-                autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-                " Enable heavy omni completion.
-                if !exists('g:deoplete#sources#omni#input_patterns')
-                  let g:deoplete#sources#omni#input_patterns = {}
-                endif
-
-                let g:deoplete#sources#omni#input_patterns.cs = '.*[^=\);]'
             " }
         endif
     " }
@@ -683,13 +675,16 @@
 
     " UltiSnips {
         if dein#tap("ultisnips")
-            let g:UltiSnipsExpandTrigger="<c-k>"
-            let g:UltiSnipsJumpForwardTrigger="<c-b>"
-            let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+            " Trigger configuration.
+            let g:UltiSnipsExpandTrigger='<c-e>'
+            let g:UltiSnipsJumpForwardTrigger='<c-r>'
+            let g:UltiSnipsJumpBackwardTrigger='<c-w>'
+
             " If you want :UltiSnipsEdit to split your window.
             let g:UltiSnipsEditSplit="vertical"
-            let g:UltiSnipsSnippetsDir="~/.vim/UltiSnipps/"
-            let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
+            let g:UltiSnipsSnippetsDir="~/.vim/snips/"
+            let g:UltiSnipsSnippetDirectories = ["UltiSnips","snips"]
+
             " Use Python Version
             let g:UltiSnipsUsePythonVersion = 3
             let g:ultisnips_python_style="google"
@@ -885,6 +880,8 @@
             autocmd FileType cs nnoremap <C-J> :OmniSharpNavigateDown<cr>
             " rename without dialog - with cursor on the symbol to rename... ':Rename newname'
             command! -nargs=1 ORename :call OmniSharp#RenameTo("<args>")
+
+            autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
             " Not supported with denite yet
             " let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
