@@ -109,7 +109,7 @@
         call dein#add('sjl/gundo.vim')                               " Undo tree
         call dein#add('mhinz/vim-startify')                           " Start Screen
         call dein#add('godlygeek/tabular')                            " Align code
-        call dein#add('AndrewRadev/switch.vim')                       " Toggle between true false
+        call dein#add('mjbrownie/swapit')                       " Toggle between true false
         if OSX()
             call dein#add('wakatime/vim-wakatime')                        " register time 
         endif
@@ -163,9 +163,10 @@
                         \ 'build': 'sh -c "cd server/ && xbuild"',
                         \ 'on_ft': 'cs'
                         \ })
-            " call dein#add('https://gitlab.com/mixedCase/deoplete-omnisharp.git', {
-            "             \ 'on_ft': 'cs'
-            "             \ })
+            call dein#add('Robzz/deoplete-omnisharp/',{
+                        \ 'on_ft': 'cs',
+                        \ 'depends': 'omnisharp-vim'
+                        \ })
         endif
         call dein#add('jdonaldson/vaxe', {
                     \ 'on_ft': 'haxe'
@@ -609,9 +610,7 @@
             let g:deoplete#enable_smart_case = 1
             let g:deoplete#sources = {}
             let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
-            let g:deoplete#sources.clojure=['async_clj', 'file', 'dictionary', 'ultisnips']
-            let g:deoplete#sources.cs = ['omni', 'file', 'buffer', 'ultisnips']
-            " let g:deoplete#omni_patterns = {}
+            let g:deoplete#sources.cs = ['cs', 'ultisnips', 'buffer']
             let g:deoplete#omni#input_patterns = {}
             let g:deoplete#omni#input_patterns.cs = ['\w*']
             let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
@@ -850,7 +849,7 @@
     " OmniSharp {
         if dein#tap("omnisharp-vim")
             let g:OmniSharp_server_type = 'v1'
-            let g:OmniSharp_server_type = 'roslyn'
+            " let g:OmniSharp_server_type = 'roslyn'
             let g:OmniSharp_timeout = 100
 
             au FileType cs OmniSharpHighlightTypes
