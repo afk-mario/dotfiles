@@ -56,9 +56,19 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
     export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
     # https://github.com/sfackler/rust-openssl/issues/255
-    export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
-    export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
-    export DEP_OPENSSL_INCLUDE=`brew --prefix openssl`/include
+
+    # Android dev viarables
+    export ANT_HOME=/usr/local/opt/ant
+    export MAVEN_HOME=/usr/local/opt/maven
+    export GRADLE_HOME=/usr/local/opt/gradle
+    export ANDROID_HOME=/usr/local/opt/android-sdk
+    export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
+    export PATH=$ANT_HOME/bin:$PATH
+    export PATH=$MAVEN_HOME/bin:$PATH
+    export PATH=$GRADLE_HOME/bin:$PATH
+    export PATH=$ANDROID_HOME/tools:$PATH
+    export PATH=$ANDROID_HOME/platform-tools:$PATH
+    export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 elif [[ "$OSTYPE" == "msys" ]]; then

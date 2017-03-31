@@ -10,24 +10,24 @@ Host *
 Host linodeDev
     HostName 104.237.141.167
     User arlefreak
-    IdentityFile ~/.ssh/id_rsa.pub
+    IdentityFile ~/.ssh/id_rsa
 
 Host linodeClient
     HostName 45.33.81.42
     User arlefreak
-    IdentityFile ~/.ssh/id_rsa.pub
+    IdentityFile ~/.ssh/id_rsa
 
 Host OsecanDev
     HostName 138.197.17.118
     User arlefreak
-    IdentityFile ~/.ssh/id_rsa.pub
+    IdentityFile ~/.ssh/id_rsa
 
 Host HyperServerRoot
     HostName 104.131.113.41
     User root
-    IdentityFile ~/.ssh/id_rsa.pub
+    IdentityFile ~/.ssh/id_rsa
 
 Host HyperServer
     HostName 104.131.113.41
     User arlefreak
-    IdentityFile ~/.ssh/id_rsa.pub
+    IdentityFile ~/.ssh/id_rsa

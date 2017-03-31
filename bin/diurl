@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Script to Download all images from url
+
+for i in {1..10}
+do
+    wget --accept .jpg,.jpeg,.png,.gif --cookies=on --load-cookies=cookies.txt -p "{i}" -O "image${i}.jpg" || rm "image${i}.jpg"
+done
