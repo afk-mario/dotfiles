@@ -43,12 +43,12 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
+super + {t,shift + t,s,fg
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
-super + ctrl + {x,y,z}
-	bspc node -g {locked,sticky,private}
+super + ctrl + {x,y,z,s}
+	bspc node -g {locked,sticky,private,hidden}
 
 #
 # focus/swap
@@ -115,7 +115,7 @@ super + alt + shift + {h,j,k,l}
 	bspc node -z {east -20 0,north 0 20,south 0 -20,west 20 0}
 
 # move a floating window
-super + {west,Down,Up,east}
+super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Start ncmpcpp with termite (floating)
@@ -125,7 +125,7 @@ super + {_,shift + }m
 
 # Sticky nodes
 super + e
-	bspc node -t sticky
+	bspc node -g sticky
 
 # Reducing gap on the fly
 alt + {minus,equal}
