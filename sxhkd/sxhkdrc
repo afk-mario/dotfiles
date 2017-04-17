@@ -50,6 +50,10 @@ super + {t,shift + t,s,fg
 super + ctrl + {x,y,z,s}
 	bspc node -g {locked,sticky,private,hidden}
 
+# Unhide
+super + ctrl + shift + s
+	bspc node $(bspc query -N -n .hidden | tail -n1) -g hidden=off
+
 #
 # focus/swap
 #
