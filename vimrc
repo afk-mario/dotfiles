@@ -159,6 +159,8 @@
         call dein#add('vim-scripts/django.vim', {
                     \ 'on_ft': 'python'
                     \ })
+        call dein#add('chr4/nginx.vim', {
+                    \ })
         if OSX()
             call dein#add('OmniSharp/omnisharp-vim', {
                         \ 'build': 'sh -c "cd server/ && xbuild"',
