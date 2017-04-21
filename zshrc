@@ -48,6 +48,7 @@ alias tre='tree -C -L 2'
 fpath+=~/.zfunc
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     export LIBRARY_PATH="/usr/local/lib"
