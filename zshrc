@@ -48,6 +48,7 @@ alias tre='tree -C -L 2'
 fpath+=~/.zfunc
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    # http://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
