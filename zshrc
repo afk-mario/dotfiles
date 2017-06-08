@@ -54,6 +54,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     export LIBRARY_PATH="/usr/local/lib"
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export PATH="$HOME/Library/Python/2.7/bin:$PATH"
     alias ctags="`brew --prefix`/bin/ctags"
     export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
     export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib

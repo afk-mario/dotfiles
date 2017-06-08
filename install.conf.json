@@ -26,6 +26,7 @@
         "link": {
             "~/.dotfiles": "",
             "~/.tmux.conf": "tmux.conf",
+            "~/.tmux.macos.conf": "tmux.macos.conf",
             "~/.vim/vimrc": "vimrc",
             "~/.vim/test.vim": "test.vim",
             "~/.vim/after": "vim/after",
