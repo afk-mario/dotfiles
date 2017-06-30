@@ -27,8 +27,8 @@ if type "$rustc" > /dev/null; then
 fi
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
-export ADBI_INSTALL_PATH="$HOME/Google Drive/HyperBeard Games/Builds/Android/"
-export UNITY_INSTALL_PATH="$HOME/Google Drive/HyperBeard Games/Builds/"
+export ADBI_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
+export UNITY_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
 export UNITY_PROJECTS_PATH="$HOME/Projects/Games/Unity/"
 
 alias vimconfig="nvim ~/.vim/vimrc"
