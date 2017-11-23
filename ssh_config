@@ -26,3 +26,8 @@ Host HyperServer
     HostName 104.131.113.41
     User arlefreak
     IdentityFile ~/.ssh/id_rsa
+
+Host Odelan
+    HostName 104.236.14.163
+    user root
+    IdentityFile ~/.ssh/id_rsa

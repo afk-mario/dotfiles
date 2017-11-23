@@ -107,10 +107,10 @@
         call dein#add('Raimondi/delimitMate')                        " Auto close quotes parentesis etc
         call dein#add('mhinz/vim-grepper')                            " Multiple grep support
         call dein#add('sjl/gundo.vim')                               " Undo tree
-        call dein#add('mhinz/vim-startify')                           " Start Screen
         call dein#add('godlygeek/tabular')                            " Align code
         call dein#add('vim-scripts/BufOnly.vim')                      " Close All other buffers
-        call dein#add('mjbrownie/swapit')                       " Toggle between true false
+        call dein#add('qpkorr/vim-bufkill')
+        call dein#add('mjbrownie/swapit')                            " Toggle between true false
         if OSX()
             call dein#add('wakatime/vim-wakatime')                        " register time 
         endif
@@ -144,12 +144,22 @@
         call dein#add('othree/html5.vim', {
                     \ 'on_ft': 'html'
                     \ })
+        call dein#add('hail2u/vim-css3-syntax', {
+                    \ 'on_ft': 'css'
+                    \ })
         call dein#add('elzr/vim-json', {
                     \ 'on_ft': 'json'
                     \ })
         call dein#add('pangloss/vim-javascript', {
                     \ })
         call dein#add('mxw/vim-jsx', {
+                    \ })
+        call dein#add('ternjs/tern_for_vim', {
+                    \ })
+        call dein#add('carlitux/deoplete-ternjs', {
+                    \ })
+        call dein#add('prettier/vim-prettier', {
+                    \ 'on_ft': [ 'json', 'javascript', 'css' ]
                     \ })
         call dein#add('jaawerth/nrun.vim', {
                     \ })
@@ -222,7 +232,7 @@
     set history=1000                    " Store a ton of history (default is 20)
     " set spell                           " Spell checking on
     " set spell spelllang=es_es
-    set hidden                          " Allow buffer switching without saving
+    set nohidden                          " Allow buffer switching without saving https://github.com/tpope/vim-vinegar/issues/13
     set iskeyword-=.                    " '.' is an end of word designator
     set iskeyword-=#                    " '#' is an end of word designator
     set iskeyword-=-                    " '-' is an end of word designator
@@ -291,7 +301,6 @@
 
     if has('nvim')
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-        let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
     endif
 
     if has('termguicolors')
@@ -299,9 +308,8 @@
     endif
 
     if dein#tap('gruvbox')
+        " change depenging on hour http://benjamintan.io/blog/2014/04/10/switch-solarized-light-slash-dark-depending-on-the-time-of-day/
         colorscheme gruvbox
-    elseif OSX() && dein#tap('vim-gotham')
-        colorscheme gotham
     elseif dein#tap('vim-hybrid')
         let g:hybrid_custom_term_colors = 1
         colorscheme hybrid
@@ -339,6 +347,7 @@
             set statusline+=%c,     "cursor column
             set statusline+=%l/%L   "cursor line/total lines
             set statusline+=\ %P    "percent through file
+
 
             set statusline+=%#warningmsg#
             set statusline+=%*
@@ -379,10 +388,20 @@
     highlight VertSplit cterm=none ctermbg=none ctermfg=247
 
     " Netrw {
-        let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro rnu'  " --> I want line numbers on the netrw buffer
+        " https://github.com/tpope/vim-vinegar/issues/13
+        autocmd FileType netrw setl bufhidden=delete
+        augroup netrw_buf_hidden_fix
+            autocmd!
+            " Set all non-netrw buffers to bufhidden=hide
+            autocmd BufWinEnter *
+                        \  if &ft != 'netrw'
+                        \|     set bufhidden=hide
+                        \| endif
+        augroup end
+        " let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro rnu'  " --> I want line numbers on the netrw buffer
         let g:netrw_browse_split = 4
-        let g:netrw_banner = 0
-        let g:netrw_winsize = 25
+        " let g:netrw_banner = 0
+        " let g:netrw_winsize = 25
     " }
 " }
 
@@ -426,6 +445,8 @@
         nnoremap <silent> [buffer]s :ls<cr>
         nnoremap <silent> [buffer]1 :bfirst<cr>
         nnoremap <silent> [buffer]0 :blast<cr>
+        " https://stackoverflow.com/questions/4298910/vim-close-buffer-but-not-split-window
+        " nnoremap <silent> [buffer], :b#<bar>bd#<cr>
     " }
 
     " Tabs {
@@ -513,11 +534,17 @@
     "}
 
     " JSBeutifier {
-        
         if dein#tap("js-beautify")
             autocmd FileType javascript noremap <buffer><leader>jb :call JsBeautify()<cr>
             autocmd FileType html noremap <buffer><leader>jb :call HtmlBeautify()<cr>
             autocmd FileType css noremap <buffer><leader>jb :call CSSBeautify()<cr>
+        endif
+    " }
+
+    " JSX {
+        if dein#tap("vim-jsx")
+            let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+            " autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
         endif
     " }
 
@@ -596,7 +623,8 @@
     " Flagship {
         if dein#tap("vim-flagship")
             autocmd User Flags call Hoist("window", "SyntasticStatuslineFlag")
-            autocmd User Flags call Hoist("global", "%{&ignorecase ? '[IC]' : ''}")
+            " autocmd User Flags call Hoist("global", "%{&ignorecase ? '[IC]' : ''}")
+            let g:tabprefix = "[afk]"
         endif
     " }
 
@@ -615,11 +643,11 @@
             let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
             let g:deoplete#sources.cs = ['cs', 'ultisnips', 'buffer']
             let g:deoplete#sources.python = ['jedi', 'ultisnips', 'buffer']
+            let g:deoplete#sources.javascript = ['ternjs', 'ultisnips', 'buffer']
             let g:deoplete#omni#input_patterns = {}
             let g:deoplete#omni#input_patterns.cs = ['\w*']
             let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
             let g:deoplete#keyword_patterns = {}
-            let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.]*'
 
             let g:deoplete#sources#dictionary#dictionaries = {
                 \ 'default' : '',
@@ -678,6 +706,7 @@
 
     " UltiSnips {
         if dein#tap("ultisnips")
+            set runtimepath+=~/.vim/snips
             " Trigger configuration.
             let g:UltiSnipsExpandTrigger='<c-e>'
             let g:UltiSnipsJumpForwardTrigger='<c-r>'
@@ -685,8 +714,8 @@
 
             " If you want :UltiSnipsEdit to split your window.
             let g:UltiSnipsEditSplit="vertical"
-            let g:UltiSnipsSnippetsDir="~/.vim/snips/"
-            let g:UltiSnipsSnippetDirectories = ["UltiSnips","snips"]
+            let g:UltiSnipsSnippetsDir="~/.vim/snips/UltiSnips"
+            let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 
             " Use Python Version
             let g:UltiSnipsUsePythonVersion = 3
@@ -772,31 +801,6 @@
             let g:startify_files_number = 5
             let g:startify_session_autoload = 1
             let g:startify_change_to_vcs_root = 1
-            " let g:startify_custom_footer = [
-            "             \' ',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-            "             \'   AAAAAAAAAAA~                     AAAAAA',
-            "             \'   AAAAAAAAAAAAA          .AAAAA.   AAAAAA',
-            "             \'   AAAAAA AAAAAAAA       .AAAAAAA.  AAAAAA',
-            "             \'   AAAAAA  DAAAAAAA      .AAAAAAA.  AAAAAA',
-            "             \'   AAAAAA    AAAAAAAA     AAAAAAA   AAAAAA',
-            "             \'   AAAAAA     IAAAAAAAO    AAAAA    AAAAAA',
-            "             \'   AAAAAA       DAAAAAAA            AAAAAA',
-            "             \'   AAAAAA         AAAAAAAD          AAAAAA',
-            "             \'   AAAAAA          AAAAAAAA         AAAAAA      arlefreak.com',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAA       AAAAAA',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAD     AAAAAA',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAA    AAAAAA',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  AAAAAA',
-            "             \'   AAAAAA                  AAAAAAAA AAAAAA',
-            "             \'   AAAAAA                    AAAAAAAAAAAAA',
-            "             \'   AAAAAA                      AAAAAAAAAAA',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-            "             \'   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-            " \]
         endif
     " }
 
@@ -961,6 +965,41 @@
                 call denite#custom#map('insert', '<c-j>', '<denite:move_to_next_line>', 'noremap')
                 call denite#custom#map('insert', '<c-r>', '<denite:redraw>', 'noremap')
             " }
+        endif
+    " }
+
+    " Bufkill {
+        if dein#tap("vim-bufkill")
+            let g:BufKillCreateMappings = 0
+            nnoremap <silent> [buffer], :BD<cr>
+        endif
+    " }
+
+    " Tern {
+        if dein#tap("deoplete-ternjs")
+            let g:tern_request_timeout = 1
+            let g:tern_request_timeout = 6000
+            let g:tern#command = ["tern"]
+            let g:tern#arguments = ["--persistent"]
+            let g:deoplete#sources#ternjs#types = 1
+            let g:deoplete#sources#ternjs#depths = 1
+            let g:deoplete#sources#ternjs#docs = 1
+            let g:deoplete#sources#ternjs#filter = 0
+            let g:deoplete#sources#ternjs#case_insensitive = 1
+            let g:deoplete#sources#ternjs#include_keywords = 1
+            let g:deoplete#sources#ternjs#in_literal = 0
+            let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ ]
+        endif
+    " }
+
+    " Prettier {
+        if dein#tap("vim-prettier")
+            let g:prettier#config#single_quote = 'true'
+            let g:prettier#config#trailing_comma = 'all'
         endif
     " }
 " }
