@@ -92,9 +92,6 @@
     call dein#add('hail2u/vim-css3-syntax', {
                 \ 'on_ft': 'css'
                 \ })
-    call dein#add('prettier/vim-prettier', {
-                \ 'on_ft': [ 'json', 'javascript', 'css' ]
-                \ })
     call dein#add('jaawerth/nrun.vim', {
                 \ })
     call dein#add('zchee/deoplete-jedi', {

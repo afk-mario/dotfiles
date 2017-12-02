@@ -14,7 +14,6 @@
     " }
 
     " Rust {
-        nmap <leader>f :RustFmt<cr>
         let g:formatdef_rustfmt='"rustfmt"'
         let g:formatters_rust=['rustfmt']
         let g:rustfmt_autosave = 1
@@ -33,7 +32,7 @@
 " Tabular {
     if dein#tap('tabular')
         nnoremap [tabular] <nop>
-        nmap <leader>t [tabular]
+        nmap <Leader>t [tabular]
         nmap <Leader> [tabular]& :Tabularize /&<CR>
         vmap <Leader> [tabular]= :Tabularize /^[^=]*\zs=<CR>
         nmap <Leader> [tabular]1= :Tabularize 1=<CR>
@@ -72,9 +71,21 @@
 
 " Ale {
     let g:ale_sign_column_always = 1
+    let g:ale_fix_on_save = 1
+
     let g:ale_linters = {
     \   'javascript': ['eslint'],
-    \}
+    \   'python': ['flake8'],
+    \ }
+
+    let g:ale_fixers = {}
+    let g:ale_fixers['javascript'] = ['prettier']
+    let g:ale_fixers['python'] = ['isort', 'yapf']
+    let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+
+    nnoremap [ale] <nop>
+    nmap <leader>a [ale]
+    nnoremap <silent> [ale]f :ALEFix<cr>
 " }
 
 " Emmet {
@@ -402,12 +413,5 @@
             \ 'javascript.jsx',
             \ 'vue',
             \ ]
-    endif
-" }
-
-" Prettier {
-    if dein#tap('vim-prettier')
-        let g:prettier#config#single_quote = 'true'
-        let g:prettier#config#trailing_comma = 'all'
     endif
 " }
