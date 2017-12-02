@@ -30,6 +30,7 @@
             "~/.vim/vimrc": "vimrc",
             "~/.vim/test.vim": "test.vim",
             "~/.vim/after": "vim/after",
+            "~/.vim/config": "vim/config",
             "~/.vim/autoload": "vim/autoload",
             "~/.vim/ftplugin": "vim/ftplugin",
             "~/.vim/syntax": "vim/syntax",
