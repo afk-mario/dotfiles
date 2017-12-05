@@ -22,13 +22,11 @@ export PATH="$HOME/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
-if type "$rustc" > /dev/null; then
-    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
-fi
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
-export ADBI_INSTALL_PATH="$HOME/Google Drive/HyperBeard Games/Builds/Android/"
-export UNITY_INSTALL_PATH="$HOME/Google Drive/HyperBeard Games/Builds/"
+export ADBI_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
+export UNITY_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
 export UNITY_PROJECTS_PATH="$HOME/Projects/Games/Unity/"
 
 alias vimconfig="nvim ~/.vim/vimrc"
@@ -43,6 +41,7 @@ alias tim="nvim -u $HOME/.vim/test.vim"
 alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'
+alias slackmojify="mogrify -resize 128x128 -unsharp 2x1.4+0.5+0 -quality 100 -verbose"
 
 # Cumpletitions https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md
 fpath+=~/.zfunc
@@ -54,24 +53,16 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     export LIBRARY_PATH="/usr/local/lib"
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export PATH="/Applications/Transmission.app/Contents/MacOS/:$PATH"
+    export PATH="$HOME/Library/Python/2.7/bin:$PATH"
     alias ctags="`brew --prefix`/bin/ctags"
     export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
     export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
     # https://github.com/sfackler/rust-openssl/issues/255
 
-    # Android dev viarables
-    export ANT_HOME=/usr/local/opt/ant
-    export MAVEN_HOME=/usr/local/opt/maven
-    export GRADLE_HOME=/usr/local/opt/gradle
-    # export ANDROID_HOME=/usr/local/opt/android-sdk
-    export ANDROID_HOME=/usr/local/share/android-sdk
-    # export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
-    export PATH=$ANT_HOME/bin:$PATH
-    export PATH=$MAVEN_HOME/bin:$PATH
-    export PATH=$GRADLE_HOME/bin:$PATH
-    export PATH=$ANDROID_HOME/tools:$PATH
-    export PATH=$ANDROID_HOME/platform-tools:$PATH
-    export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
+    # https://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 elif [[ "$OSTYPE" == "msys" ]]; then
@@ -179,6 +170,7 @@ zplug "MikeDacre/cdbk"
 zplug "baskerville/bspwm", use: "contrib/zsh_completion"
 zplug "jonas/tig", use: "contrib/tig-completion.zsh"
 
+zplug "sferik/t", use: "etc/t-completion.zsh"
 # Theme
 # zplug "arlefreak/odin", defer:19
 # zplug "~/.zsh/Odin", from:local, defer:19

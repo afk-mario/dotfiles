@@ -7,11 +7,6 @@ Host *
      ServerAliveInterval 60
      ServerAliveCountMax 30
 
-Host linodeDev
-    HostName 104.237.141.167
-    User arlefreak
-    IdentityFile ~/.ssh/id_rsa
-
 Host linodeClient
     HostName 45.33.81.42
     User arlefreak
@@ -30,4 +25,9 @@ Host HyperServerRoot
 Host HyperServer
     HostName 104.131.113.41
     User arlefreak
+    IdentityFile ~/.ssh/id_rsa
+
+Host Odelan
+    HostName 104.236.14.163
+    user root
     IdentityFile ~/.ssh/id_rsa
