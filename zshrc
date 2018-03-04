@@ -25,7 +25,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
 
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 export ADBI_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
@@ -68,6 +67,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     # https://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx
     export JAVA_HOME=$(/usr/libexec/java_home)
     export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
+    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 elif [[ "$OSTYPE" == "msys" ]]; then
