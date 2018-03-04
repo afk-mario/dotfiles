@@ -31,17 +31,17 @@
 
 " Tabular {
     if dein#tap('tabular')
-        nnoremap [tabular] <nop>
-        nmap <Leader>t [tabular]
-        nmap <Leader> [tabular]& :Tabularize /&<CR>
-        vmap <Leader> [tabular]= :Tabularize /^[^=]*\zs=<CR>
-        nmap <Leader> [tabular]1= :Tabularize 1=<CR>
-        nmap <Leader> [tabular]=> :Tabularize /=><CR>
-        nmap <Leader> [tabular]: :Tabularize /:<CR>
-        nmap <Leader> [tabular]:: :Tabularize /:\zs<CR>
-        nmap <Leader> [tabular], :Tabularize /,<CR>
-        nmap <Leader> [tabular],, :Tabularize /,\zs<CR>
-        nmap <Leader> [tabular]<Bar> :Tabularize /<Bar><CR>
+        " nnoremap [tabular] <nop>
+        " nmap <Leader>t [tabular]
+        " nmap <Leader> [tabular]& :Tabularize /&<CR>
+        " vmap <Leader> [tabular]= :Tabularize /^[^=]*\zs=<CR>
+        " nmap <Leader> [tabular]1= :Tabularize 1=<CR>
+        " nmap <Leader> [tabular]=> :Tabularize /=><CR>
+        " nmap <Leader> [tabular]: :Tabularize /:<CR>
+        " nmap <Leader> [tabular]:: :Tabularize /:\zs<CR>
+        " nmap <Leader> [tabular], :Tabularize /,<CR>
+        " nmap <Leader> [tabular],, :Tabularize /,\zs<CR>
+        " nmap <Leader> [tabular]<Bar> :Tabularize /<Bar><CR>
     endif
 "}
 
@@ -76,12 +76,17 @@
     let g:ale_linters = {
     \   'javascript': ['eslint'],
     \   'python': ['flake8'],
+    \   'rust': ['cargo'],
     \ }
 
     let g:ale_fixers = {}
     let g:ale_fixers['javascript'] = ['prettier']
+    let g:ale_fixers['json'] = ['prettier']
+    let g:ale_fixers['css'] = ['prettier']
     let g:ale_fixers['python'] = ['isort', 'yapf']
+    let g:ale_fixers['rust'] = ['rustfmt']
     let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+
 
     nnoremap [ale] <nop>
     nmap <leader>a [ale]
@@ -113,15 +118,30 @@
     if dein#tap('deoplete.nvim')
         let g:deoplete#enable_at_startup = 1
         let g:deoplete#enable_smart_case = 1
+        let g:deoplete#auto_complete_delay = 0
+        let g:deoplete#auto_complete_start_length = 1
+
+        let g:deoplete#file#enable_buffer_path=1
+        call deoplete#custom#source('buffer', 'mark', '[b]')
+        call deoplete#custom#source('tern', 'mark', '[js]')
+        call deoplete#custom#source('omni', 'mark', '[⌾]')
+        call deoplete#custom#source('file', 'mark', '[f]')
+        call deoplete#custom#source('jedi', 'mark', '[j]')
+        call deoplete#custom#source('ultisnips', 'mark', '[u]')
+
         let g:deoplete#sources = {}
-        let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
-        let g:deoplete#sources.cs = ['cs', 'ultisnips', 'buffer']
-        let g:deoplete#sources.python = ['jedi', 'ultisnips', 'buffer']
-        let g:deoplete#sources.javascript = ['ternjs', 'ultisnips', 'buffer']
+        let g:deoplete#sources._=['buffer', 'ultisnips', 'file']
+
+        let g:deoplete#sources.cs = ['cs', 'ultisnips', 'file']
+        let g:deoplete#sources.python = ['jedi', 'ultisnips', 'file']
+        let g:deoplete#sources['javascript.jsx'] = ['tern', 'ultisnips', 'buffer', 'omni']
+
         let g:deoplete#omni#input_patterns = {}
         let g:deoplete#omni#input_patterns.cs = ['\w*']
         let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
+
         let g:deoplete#keyword_patterns = {}
+
 
         let g:deoplete#sources#dictionary#dictionaries = {
             \ 'default' : '',
@@ -151,6 +171,7 @@
             au FileType html,htmldjango,jinja,markdown setl omnifunc=emmet#completeTag
             au FileType python setl omnifunc=pythoncomplete#Complete
             au FileType xml setl omnifunc=xmlcomplete#CompleteTags
+            au FileType javascript,javascript.jsx setl omnifunc=javascriptcomplete#CompleteJS
         aug END
 
     endif
@@ -397,21 +418,30 @@
 
 " Tern {
     if dein#tap('deoplete-ternjs')
-        let g:tern_request_timeout = 1
-        let g:tern_request_timeout = 6000
+        " echo 'deoplete_ternjs'
+        " let g:tern_request_timeout = 1
+        " let g:tern_map_keys=1
+
+        " let g:deoplete#sources#ternjs#types = 1
+        " let g:deoplete#sources#ternjs#depths = 1
+        " let g:deoplete#sources#ternjs#docs = 1
+        " let g:deoplete#sources#ternjs#filter = 0
+        " let g:deoplete#sources#ternjs#case_insensitive = 1
+        " let g:deoplete#sources#ternjs#include_keywords = 1
+        " let g:deoplete#sources#ternjs#in_literal = 0
+        " let g:deoplete#sources#ternjs#filetypes = [
+        "     \ 'jsx',
+        "     \ 'javascript.jsx',
+        "     \ 'vue',
+        "     \ ]
+    endif
+
+    if dein#tap('tern_for_vim')
+        " echo 'tern_for_vim'
         let g:tern#command = ['tern']
         let g:tern#arguments = ['--persistent']
-        let g:deoplete#sources#ternjs#types = 1
-        let g:deoplete#sources#ternjs#depths = 1
-        let g:deoplete#sources#ternjs#docs = 1
-        let g:deoplete#sources#ternjs#filter = 0
-        let g:deoplete#sources#ternjs#case_insensitive = 1
-        let g:deoplete#sources#ternjs#include_keywords = 1
-        let g:deoplete#sources#ternjs#in_literal = 0
-        let g:deoplete#sources#ternjs#filetypes = [
-            \ 'jsx',
-            \ 'javascript.jsx',
-            \ 'vue',
-            \ ]
+        let g:tern_show_argument_hints = 'on_hold'
+        let g:tern_show_signature_in_pum = 1
+        autocmd FileType javascript,javascript.jsx setlocal omnifunc=tern#Complete
     endif
 " }

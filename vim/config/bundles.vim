@@ -100,6 +100,13 @@
     call dein#add('vim-scripts/django.vim', {
                 \ 'on_ft': 'python'
                 \ })
+    call dein#add('ternjs/tern_for_vim', {
+                \ 'build': 'npm install',
+                \ 'on_ft': ['javascript','javascript.jsx']
+                \ })
+    call dein#add('carlitux/deoplete-ternjs', {
+                \ 'on_ft': ['javascript','javascript.jsx']
+                \ })
     if OSX()
         call dein#add('OmniSharp/omnisharp-vim', {
                     \ 'build': 'sh -c "cd server/ && xbuild"',

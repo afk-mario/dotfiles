@@ -1,6 +1,9 @@
 # no beep sound when complete list displayed
 setopt nolistbeep
 
+# Set comments inline
+setopt interactivecomments
+
 # historical backward/forward search with linehead string binded to ^P/^N
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
@@ -42,6 +45,7 @@ alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'
 alias slackmojify="mogrify -resize 128x128 -unsharp 2x1.4+0.5+0 -quality 100 -verbose"
+alias prp="pipenv run python"
 
 # Cumpletitions https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md
 fpath+=~/.zfunc
@@ -54,6 +58,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export LIBRARY_PATH="/usr/local/lib"
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export PATH="/Applications/Transmission.app/Contents/MacOS/:$PATH"
+    export PATH="/Library/TeX/texbin:$PATH"
     export PATH="$HOME/Library/Python/2.7/bin:$PATH"
     alias ctags="`brew --prefix`/bin/ctags"
     export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
