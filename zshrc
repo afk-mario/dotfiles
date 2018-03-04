@@ -91,23 +91,6 @@ export MANPAGER="nvim -c 'set ft=man' -"
 # bindkey -v
 # export KEYTIMEOUT=1
 
-#VirtualEnvWrapper
-
-if [ -f /usr/local/bin/python3 ]; then
-    VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-elif [ -f /usr/bin/python3 ]; then
-    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-fi
-
-export VIRTUALENVWRAPPER_PYTHON
-export WORKON_HOME=$HOME/.virtualenvs
-
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-elif [ -f /usr/bin/python3 ]; then
-    source /usr/bin/virtualenvwrapper.sh
-fi
-
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 # ZPLUG config and load
