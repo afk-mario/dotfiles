@@ -52,6 +52,7 @@ fpath+=~/.zfunc
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # http://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+    export PIPENV_VENV_IN_PROJECT=1
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     export LIBRARY_PATH="/usr/local/lib"

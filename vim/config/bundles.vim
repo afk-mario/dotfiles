@@ -112,10 +112,10 @@
                     \ 'build': 'sh -c "cd server/ && xbuild"',
                     \ 'on_ft': 'cs'
                     \ })
-        call dein#add('Robzz/deoplete-omnisharp/',{
-                    \ 'on_ft': 'cs',
-                    \ 'depends': 'omnisharp-vim'
-                    \ })
+        " call dein#add('Robzz/deoplete-omnisharp/',{
+        "             \ 'on_ft': 'cs',
+        "             \ 'depends': 'omnisharp-vim'
+        "             \ })
     endif
 " }
 
