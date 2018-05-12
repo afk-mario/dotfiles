@@ -45,6 +45,8 @@ alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'
 alias slackmojify="mogrify -resize 128x128 -unsharp 2x1.4+0.5+0 -quality 100 -verbose"
 alias prp="pipenv run python"
+# https://stackoverflow.com/questions/1571461/git-a-quick-command-to-go-to-root-of-the-working-tree/1571525#1571525
+alias git-root='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
 
 # Cumpletitions https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md
 fpath+=~/.zfunc
@@ -173,5 +175,8 @@ if ! zplug check --verbose; then
     fi
 fi
 
+# Fix tmux not letting go to begining and end of line
+bindkey -e
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
+task
