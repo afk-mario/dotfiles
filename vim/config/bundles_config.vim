@@ -117,11 +117,25 @@
 " Deoplete {
     if dein#tap('deoplete.nvim')
         let g:deoplete#enable_at_startup = 1
-        let g:deoplete#enable_smart_case = 1
-        let g:deoplete#auto_complete_delay = 0
-        let g:deoplete#auto_complete_start_length = 1
+        " let g:deoplete#file#enable_buffer_path=1
 
-        let g:deoplete#file#enable_buffer_path=1
+        call deoplete#custom#option({
+            \ 'auto_complete_delay': 0,
+            \ 'smart_case': v:true,
+        \ })
+
+        call deoplete#custom#option('sources', {
+            \ '_': ['buffer', 'ultisnips', 'file', 'buffer'],
+            \ 'cs': ['cs', 'ultisnips', 'file', 'buffer'],
+            \ 'python': ['jedi', 'ultisnips', 'file', 'buffer'],
+            \ 'javascript.jsx': ['tern', 'ultisnips', 'buffer'],
+            \})
+
+        call deoplete#custom#source('omni', 'input_patterns', {
+                    \ 'cs': '\w*',
+                    \ 'rust': '[(\.)(::)]',
+                    \})
+
         call deoplete#custom#source('buffer', 'mark', '[b]')
         call deoplete#custom#source('tern', 'mark', '[js]')
         call deoplete#custom#source('omni', 'mark', '[⌾]')
@@ -129,25 +143,7 @@
         call deoplete#custom#source('jedi', 'mark', '[j]')
         call deoplete#custom#source('ultisnips', 'mark', '[u]')
 
-        let g:deoplete#sources = {}
-        let g:deoplete#sources._=['buffer', 'ultisnips', 'file']
-
-        let g:deoplete#sources.cs = ['cs', 'ultisnips', 'file']
-        let g:deoplete#sources.python = ['jedi', 'ultisnips', 'file']
-        let g:deoplete#sources['javascript.jsx'] = ['tern', 'ultisnips', 'buffer', 'omni']
-
-        let g:deoplete#omni#input_patterns = {}
-        let g:deoplete#omni#input_patterns.cs = ['\w*']
-        let g:deoplete#omni#input_patterns.rust = '[(\.)(::)]'
-
-        let g:deoplete#keyword_patterns = {}
-
-
-        let g:deoplete#sources#dictionary#dictionaries = {
-            \ 'default' : '',
-            \ 'vimshell' : $HOME.'/.vimshell_hist',
-            \ 'scheme' : $HOME.'/.gosh_completions'
-                \ }
+        call deoplete#custom#source('_', 'min_pattern_length', 2)
 
         " Use Tab
         imap <silent><expr> <TAB>
