@@ -35,7 +35,6 @@
     cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [commit]
 	verbose = true
-	template = /Users/arlefreak/.stCommitMsg
 [init]
 	templatedir = ~/.git_template
 [filter "lfs"]
