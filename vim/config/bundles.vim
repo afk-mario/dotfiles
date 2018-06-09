@@ -64,6 +64,10 @@
     call dein#add('qpkorr/vim-bufkill')
     call dein#add('mjbrownie/swapit')              " Toggle between true false
     if OSX()
+        call dein#add('ternjs/tern_for_vim', {
+                    \ 'build': 'npm install',
+                    \ 'on_ft': ['javascript','javascript.jsx']
+                    \ })
         call dein#add('wakatime/vim-wakatime')     " register time
     endif
 " }
@@ -101,10 +105,6 @@
                 \ })
     call dein#add('vim-scripts/django.vim', {
                 \ 'on_ft': 'python'
-                \ })
-    call dein#add('ternjs/tern_for_vim', {
-                \ 'build': 'npm install',
-                \ 'on_ft': ['javascript','javascript.jsx']
                 \ })
     call dein#add('carlitux/deoplete-ternjs', {
                 \ 'on_ft': ['javascript','javascript.jsx']
