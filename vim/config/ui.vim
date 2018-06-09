@@ -22,6 +22,12 @@ endif
 if dein#tap('gruvbox')
     " change depenging on hour http://benjamintan.io/blog/2014/04/10/switch-solarized-light-slash-dark-depending-on-the-time-of-day/
     colorscheme gruvbox
+elseif dein#tap('ayu-vim')
+    set termguicolors     " enable true colors support
+    " let ayucolor="light"  " for light version of theme
+    " let ayucolor="mirage" " for mirage version of theme
+    let ayucolor="dark"   " for dark version of theme
+    colorscheme ayu
 elseif dein#tap('vim-hybrid')
     let g:hybrid_custom_term_colors = 1
     colorscheme hybrid

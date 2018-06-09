@@ -10,7 +10,6 @@
     if dein#tap('vim-polyglot')
     " JSX {
         let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-        " autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
     " }
 
     " Rust {
@@ -221,10 +220,11 @@
 "}
 
 " indent_guides {
-    if dein#tap('vim-ident-guides')
-        let g:indent_guides_start_level = 2
-        let g:indent_guides_guide_size = 1
-        let g:indent_guides_enable_on_vim_startup = 1
+    if dein#tap('indentLine')
+        let g:indentLine_char = '│'
+        let g:indentLine_first_char = '│'
+        let g:indentLine_showFirstIndentLevel = 1
+        " let g:indentLine_setColors = 0
     endif
 " }
 
@@ -439,5 +439,16 @@
         let g:tern_show_argument_hints = 'on_hold'
         let g:tern_show_signature_in_pum = 1
         autocmd FileType javascript,javascript.jsx setlocal omnifunc=tern#Complete
+    endif
+" }
+
+" context-commentstring {
+    if dein#tap('vim-context-commentstring')
+        let g:context#commentstring#table['javascript.jsx'] = {
+                    \ 'jsComment' : '// %s',
+                    \ 'jsImport' : '// %s',
+                    \ 'jsxStatment' : '// %s',
+                    \ 'jsxRegion' : '{/*%s*/}',
+                    \}
     endif
 " }

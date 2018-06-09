@@ -57,7 +57,11 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export PIPENV_VENV_IN_PROJECT=1
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
+    export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
     export LIBRARY_PATH="/usr/local/lib"
+    export PATH="$PATH:$ANDROID_SDK_ROOT/tools"
+    export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
+    export PATH="$PATH:/usr/local/bin/tidy"
     export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export PATH="/Applications/Transmission.app/Contents/MacOS/:$PATH"
     export PATH="/Library/TeX/texbin:$PATH"
@@ -71,6 +75,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
     export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
+    export LC_ALL=en_US.UTF-8
+    export LANG=en_US.UTF-8
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 elif [[ "$OSTYPE" == "msys" ]]; then

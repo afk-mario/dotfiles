@@ -45,6 +45,8 @@
     call dein#add('tpope/vim-abolish')             " Better replace
     call dein#add('tpope/vim-unimpaired')          " Key mappings for [
 
+    call dein#add('suy/vim-context-commentstring') " suuport for jsx comments
+
     call dein#add('editorconfig/editorconfig-vim')
     call dein#add('tommcdo/vim-exchange')          " Exchange motion
     call dein#add('AndrewRadev/splitjoin.vim')     " Split onelinners with gS
@@ -121,11 +123,12 @@
 
 " Vim UI {
     call dein#add('tpope/vim-flagship')               " Statusline
-    call dein#add('nathanaelkane/vim-indent-guides')  " Ident visual guide
+    call dein#add('Yggdroot/indentLine')  " Ident visual guide
     call dein#add('gregsexton/MatchTag')              " Highlite Matching tag
     call dein#add('altercation/vim-colors-solarized')
     call dein#add('w0ng/vim-hybrid')
     call dein#add('morhetz/gruvbox')
+    call dein#add('ayu-theme/ayu-vim')
 " }
 
 call dein#end()
