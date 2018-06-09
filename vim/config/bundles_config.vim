@@ -444,11 +444,13 @@
 
 " context-commentstring {
     if dein#tap('vim-context-commentstring')
-        let g:context#commentstring#table['javascript.jsx'] = {
-                    \ 'jsComment' : '// %s',
-                    \ 'jsImport' : '// %s',
-                    \ 'jsxStatment' : '// %s',
-                    \ 'jsxRegion' : '{/*%s*/}',
-                    \}
+        " https://github.com/tpope/vim-commentary/issues/68
+        " let g:context#commentstring#table.jsx = { \ 'jsxStatment' : '/*%s*/', \ 'jsxRegion' : '{/*%s*/}', \}
+        " let g:context#commentstring#table['javascript.jsx'] = {
+        "             \ 'jsComment' : '// %s',
+        "             \ 'jsImport' : '// %s',
+        "             \ 'jsxStatment' : '// %s',
+        "             \ 'jsxRegion' : '{/*%s*/}',
+        "             \}
     endif
 " }
