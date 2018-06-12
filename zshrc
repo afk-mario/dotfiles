@@ -1,5 +1,5 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    source ~/.dotfiles/minzshrc
+    source ~/.dotfiles/bigzshrc
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     source ~/.dotfiles/bigzshrc
 elif [[ "$OSTYPE" == "cygwin" ]]; then
