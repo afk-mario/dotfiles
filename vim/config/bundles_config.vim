@@ -70,26 +70,32 @@
 
 " Ale {
     let g:ale_sign_column_always = 1
+    let g:ale_javascript_prettier_use_local_config = 1
     let g:ale_fix_on_save = 1
 
     let g:ale_linters = {
     \   'javascript': ['eslint'],
+    \   'graphql': [''],
     \   'python': ['flake8'],
     \   'rust': ['cargo'],
     \ }
 
     let g:ale_fixers = {}
-    let g:ale_fixers['javascript'] = ['prettier']
+    let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+    let g:ale_fixers['graphql'] = ['prettier']
     let g:ale_fixers['json'] = ['prettier']
     let g:ale_fixers['css'] = ['prettier']
+    let g:ale_fixers['scss'] = ['prettier']
     let g:ale_fixers['python'] = ['isort', 'yapf']
     let g:ale_fixers['rust'] = ['rustfmt']
-    let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+    let g:ale_fixers['sh'] = ['shfmt']
 
 
     nnoremap [ale] <nop>
     nmap <leader>a [ale]
     nnoremap <silent> [ale]f :ALEFix<cr>
+    nnoremap <silent> [ale]j :ALENext<cr>
+    nnoremap <silent> [ale]k :ALEPrevious<cr>
 " }
 
 " Emmet {
@@ -142,7 +148,7 @@
         call deoplete#custom#source('jedi', 'mark', '[j]')
         call deoplete#custom#source('ultisnips', 'mark', '[u]')
 
-        call deoplete#custom#source('_', 'min_pattern_length', 2)
+        call deoplete#custom#source('_', 'min_pattern_length', 1)
 
         " Use Tab
         imap <silent><expr> <TAB>

@@ -1,4 +1,10 @@
 !-------------------------------------------------------------------------------
+!!! XScreensaver Settings
+!-------------------------------------------------------------------------------
+xscreensaver.newLoginCommand: light-locker-command -l
+xscreensaver.logFile:/var/log/xscreensaver.log
+xscreensaver.verbose:false
+!-------------------------------------------------------------------------------
 !!! XFT SETTINGS !!!
 !-------------------------------------------------------------------------------
 Xft.autohint: 0
@@ -11,9 +17,8 @@ Xft.rgba: rgb
 !-------------------------------------------------------------------------------
 !!! URXVT SETTINGS !!!
 !-------------------------------------------------------------------------------
-urxvt*font: xft:terminus:pixelsize=12,xft:DejaVu Sans Mono for Powerline-7.3:pixelsize=12
+urxvt*font: xft:terminus:pixelsize=12,xft:Fira Code:pixelsize=12
 Urxvt*depth: 33
-URxvt*cursorBlink: true
 URxvt*geometry: 80x25
 URxvt*internalBorder: 16
 URxvt*borderLess: false

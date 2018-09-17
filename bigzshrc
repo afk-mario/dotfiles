@@ -21,8 +21,12 @@ setopt hist_ignore_dups  # ignore duplication command history list
 setopt hist_ignore_space # ignore when commands starts with space
 setopt share_history     # share command history data
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 export PATH="$HOME/bin:$PATH"
-export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
 
@@ -75,8 +79,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
     export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
-    export LC_ALL=en_US.UTF-8
-    export LANG=en_US.UTF-8
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
 elif [[ "$OSTYPE" == "msys" ]]; then
@@ -109,17 +111,22 @@ elif [ -d $HOME/.zplug ]; then
     ZPLUG_HOME=$HOME/.zplug
 fi
 
+
 export ZPLUG_HOME
 source $ZPLUG_HOME/init.zsh
 
 # Plugins
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+zplug "plugins/ssh-agent", from:oh-my-zsh
+# zplug "plugins/kubectl", from:oh-my-zsh
+zplug "lib/directories", from:oh-my-zsh
+
 zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "plugins/cargo", from:oh-my-zsh, use:"plugins/cargo/_cargo"
-zplug "plugins/ssh-agent", from:oh-my-zsh, use:"plugins/ssh-agent/ssh-agent.plugin.zsh"
-zplug "lib/clipboard", from:oh-my-zsh, use:"lib/clipboard.zsh",if:"[[ $OSTYPE == *darwin* ]]"
-zplug "lib/directories", from:oh-my-zsh
+zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+
 zplug "zsh-users/zsh-completions"
 zplug "unixorn/git-extra-commands"
 
@@ -168,6 +175,8 @@ zplug "baskerville/bspwm", use: "contrib/zsh_completion"
 zplug "jonas/tig", use: "contrib/tig-completion.zsh"
 
 zplug "sferik/t", use: "etc/t-completion.zsh"
+# Add fzf command history things
+zplug "junegunn/fzf", use:"shell/*.zsh"
 # Theme
 # zplug "arlefreak/odin", defer:19
 # zplug "~/.zsh/Odin", from:local, defer:19
@@ -186,3 +195,7 @@ bindkey -e
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
 task
+
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi

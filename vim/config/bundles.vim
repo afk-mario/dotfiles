@@ -53,6 +53,7 @@
 
     call dein#add('SirVer/ultisnips')              " Snippets
     call dein#add('honza/vim-snippets')
+    call dein#add('epilande/vim-react-snippets')   " react-snippets
 
     call dein#add('w0rp/ale')                      " Async Lint checker
     call dein#add('wellle/targets.vim')            " Better motions
@@ -63,13 +64,11 @@
     call dein#add('vim-scripts/BufOnly.vim')       " Close All other buffers
     call dein#add('qpkorr/vim-bufkill')
     call dein#add('mjbrownie/swapit')              " Toggle between true false
-    if OSX()
-        call dein#add('ternjs/tern_for_vim', {
-                    \ 'build': 'npm install',
-                    \ 'on_ft': ['javascript','javascript.jsx']
-                    \ })
-        call dein#add('wakatime/vim-wakatime')     " register time
-    endif
+    call dein#add('ternjs/tern_for_vim', {
+                \ 'build': 'npm install',
+                \ 'on_ft': ['javascript','javascript.jsx']
+                \ })
+    call dein#add('wakatime/vim-wakatime')     " register time
 " }
 
 " Prose {

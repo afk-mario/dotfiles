@@ -12,3 +12,4 @@ elif [[ "$OSTYPE" == "freebsd"* ]]; then
     source ~/.dotfiles/minzshrc
 else
 fi
+source /usr/share/nvm/init-nvm.sh

@@ -30,25 +30,25 @@ super + {_,shift + }w
 super + m
 	bspc desktop -l next
 
-# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
+# send the newest marked node to the newest preselected node
 super + y
-	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
+    bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 #
 # state/flags
 #
 
 # set the window state
-super + {t,shift + t,s,fg
+super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
-super + ctrl + {x,y,z,s}
-	bspc node -g {locked,sticky,private,hidden}
+super + ctrl + {m,x,y,z}
+    bspc node -g {marked,locked,sticky,private}
 
 # Unhide
 super + ctrl + shift + s
@@ -58,7 +58,7 @@ super + ctrl + shift + s
 # focus/swap
 #
 
-# focus the node in the given direction
+# focus/ swap the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
@@ -66,13 +66,13 @@ super + {_,shift + }{h,j,k,l}
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node
+# focus the next/previous node in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}
+	bspc node -f {next,prev}.local
 
-# focus the next/previous desktop
-super + bracket{west,east}
-	bspc desktop -f {prev,next}
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -86,7 +86,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect
@@ -109,18 +109,18 @@ super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 # move/resize
-#
+
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {west -20 0,south 0 20,north 0 -20,east 20 0}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {east -20 0,north 0 20,south 0 -20,west 20 0}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Start ncmpcpp with termite (floating)
 super + {_,shift + }m
@@ -132,23 +132,39 @@ super + e
 	bspc node -g sticky
 
 # Reducing gap on the fly
-alt + {minus,equal}
+super + alt + {minus,equal}
 	bspc config -d focused node_gap $((`bspc config -d focused node_gap` {+,-} 2 ))
 
 # Language Change
+ctrl + space
+    (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap es -option ctrl:nocaps || setxkbmap us -option ctrl:nocaps
+
 super + shift + n
-	setxkbmap es && xmodmap $HOME/.Xmodmap
+	setxkbmap es -option ctrl:nocaps
 super + n
-	setxkbmap us && xmodmap $HOME/.Xmodmap
+	setxkbmap us -option ctrl:nocaps
+
+super + ctrl + shift + l
+    xscreensaver-command -lock
+
+# Media Keys
+XF86AudioPlay
+    playerctl play-pause
+
+XF86AudioNext
+    playerctl next
+
+XF86AudioPrev
+    playerctl prev
 
 # Increase volume
 XF86AudioRaiseVolume
-    amixer set Master 1%+
+    sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
 
 # Lowers volume
 XF86AudioLowerVolume
-    amixer set Master 1%-
+    sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
 
 # Mutes
 XF86AudioMute
-    amixer set Master toggle
+    pactl set-sink-mute 0 toggle
