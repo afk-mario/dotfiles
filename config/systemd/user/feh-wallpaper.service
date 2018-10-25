@@ -4,7 +4,7 @@ Description=Random wallpaper with feh
 [Service]
 Type=oneshot
 EnvironmentFile=%h/.wallpaper
-ExecStart=/bin/bash -c '/usr/bin/feh --bg-max --no-xinerama "$@" --randomize "/home/arlefreak/Media/Wallpapers/"'
+ExecStart=/bin/bash -c '/usr/bin/feh --bg-fill "$(find "$HOME/Dropbox/Media/Wallpapers/" -type f -name '*.jpg' -o -name '*.png' | shuf -n 1)"'
 
 [Install]
 WantedBy=default.target
