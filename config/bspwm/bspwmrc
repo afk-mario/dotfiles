@@ -1,15 +1,12 @@
 #!/bin/sh
 sxhkd &
 numlockx on &
-dunst &
-compton -b --config ~/.config/compton/compton.conf &
+setxkbmap -option ctrl:nocaps &
 xrdb -load ~/.Xdefaults &
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/misc
-xset +fp $HOME/.fonts
+xset +fp "$HOME/.fonts"
 xset fp rehash
-xrandr --output DVI-I-2 --primary
-xrandr --output DVI-I-3 --auto --left-of DVI-I-2
 
 export BSPWM_TREE=/tmp/bspwm.tree
 export BSPWM_HISTORY=/tmp/bspwm.history
@@ -18,65 +15,60 @@ export BSPWM_STACK=/tmp/bspwm.stack
 export PANEL_FIFO="/tmp/panel-fifo"
 export PATH=$PATH:~/.config/bspwm/panel/
 
-
 #Loop
-if [ -e "$BSPWM_TREE" ] ; then
-	bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
-	rm "$BSPWM_TREE" "$BSPWM_HISTORY" "$BSPWM_STACK"
+if [ -e "$BSPWM_TREE" ]; then
+    bspc wm -l "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
+    rm "$BSPWM_TREE" "$BSPWM_HISTORY" "$BSPWM_STACK"
 fi
 
-## Monitor Setup
-wmname LG3D &
-bspc monitor -f ^1
-bspc monitor ^1 --reset-desktops 'URXVT' 'VIM' 'SSH' 'IRC' 'SUBL'
-bspc monitor ^2 --reset-desktops 'CHROME' 'PDF' 'FIREFOX' 'THUNAR' 'MEDIA'
-
-
 ## SETTINGS {{{
-bspc config border_width                    1
-bspc config window_gap                      5
-bspc config top_padding                     20
-bspc config left_padding                    2
-bspc config right_padding                   2
-bspc config bottom_padding                  2
-bspc config focused_frame_opacity           0.5
-bspc config normal_frame_opacity            0.2
+bspc config border_width 2
+bspc config window_gap 5
+bspc config top_padding 15
+bspc config left_padding 2
+bspc config right_padding 2
+bspc config bottom_padding 2
+bspc config focused_frame_opacity 0.5
+bspc config normal_frame_opacity 0.2
 
-bspc config growth_factor                   0.1
-bspc config split_ratio                     0.50
-bspc config borderless_monocle              false
-bspc config gapless_monocle                 false
-bspc config focus_follows_pointer           true
-bspc config history_aware_focus             true
-bspc config auto_alternate                  true
-bspc config auto_cancel                     true
-bspc config apply_floating_atom             true
-bspc config ignore_ewmh_focus               true
+bspc config growth_factor 0.1
+bspc config split_ratio 0.50
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config focus_follows_pointer true
+bspc config history_aware_focus true
+bspc config auto_alternate true
+bspc config auto_cancel true
+bspc config apply_floating_atom true
+bspc config ignore_ewmh_focus true
 ## }}}
 
-
 ## COLORS {{{
-bspc config focused_border_color            "#03a9f4"
-bspc config normal_border_color             "#81d4fa"
+bspc config focused_border_color "#81d4fa"
+bspc config normal_border_color "#000000"
 
-bspc config focused_sticky_border_color     "#8bc34a"
-bspc config normal_sticky_border_color      "#ceecab"
+bspc config focused_sticky_border_color "#8bc34a"
+bspc config normal_sticky_border_color "#ceecab"
 
-bspc config focused_locked_border_color     "#ffc107"
-bspc config normal_locked_border_color      "#ffa000"
+bspc config focused_locked_border_color "#ffc107"
+bspc config normal_locked_border_color "#ffa000"
 
-bspc config focused_private_border_color    "#cfd8dc"
-bspc config normal_private_border_color     "#eceff1"
+bspc config focused_private_border_color "#cfd8dc"
+bspc config normal_private_border_color "#eceff1"
 
-bspc config urgent_border_color             "#ff9800"
-bspc config presel_border_color             "#ffa74d"
+bspc config urgent_border_color "#ff9800"
+bspc config presel_border_color "#ffa74d"
 ## }}}
 
 # Rules
-bspc rule -a Firefox desktop=^8
-bspc rule -a Subl3 desktop=^5
-bspc rule -a Thunar  desktop=^9
-bspc rule -a google-chrome desktop=^6
-bspc rule -a "crx_nckgahadagoaajjgafhacjanaoiihapd" floating=true
+bspc rule -a "Firefox Developer Edition" desktop=^3
+bspc rule -a "TelegramDesktop" desktop=^4
+bspc rule -a "Spotify" desktop=^8
+bspc rule -a "Thunderbird" desktop=^9
+bspc rule -a "Thunar" desktop=^0
+bspc rule -a "Pick-colour-picker" state=floating follow=on
 #Background
-exec sh ~/.fehbg & ~/.config/bspwm/panel/panel &> /tmp/panel.log
+exec sh ~/bin/fehbg &
+~/.config/polybar/launch.sh &
+light-locker &
+~ /bin/monitor_config &

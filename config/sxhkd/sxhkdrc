@@ -1,103 +1,12 @@
 #
-# bspwm hotkeys
-#
-
-super + alt + Escape
-	bspc quit
-
-super + alt + {_,shift + }Escape
-	{bspc query -T > "$BSPWM_TREE"; \
-		bspc query -H > "$BSPWM_HISTORY"; \
-			bspc quit,\
-	bspc quit 1}
-
-super + w
-	bspc window -c
-
-super + t
-	bspc desktop -l next
-
-super + b
-	bspc desktop -B
-
-super + {s,f}
-	bspc window -t {floating,fullscreen}
-
-super + {grave,Tab}
-	bspc {window,desktop} -f last
-
-super + apostrophe
-	bspc window -s last
-
-super + {o,i}
-	bspc control --record-history off; \
-	bspc window {older,newer} -f; \
-	bspc control --record-history on
-
-super + y
-	bspc window -w last.manual
-
-super + m
-	bspc window -s biggest
-
-super + {_,shift + }{h,j,k,l}
-	bspc window -{f,s} {left,down,up,right}
-
-super + {_,shift + }c
-	bspc window -f {next,prev}
-
-super + {comma,period}
-	bspc desktop -C {backward,forward}
-
-super + bracket{left,right}
-	bspc desktop -f {prev,next}
-
-super + ctrl + {h,j,k,l}
-	bspc window -p {left,down,up,right}
-
-super + ctrl + {_,shift + }space
-	bspc {window -p cancel,desktop -c}
-
-super + alt + {h,j,k,l}
-	bspc window -e {left -10,down +10,up -10,right +10}
-
-super + alt + shift + {h,j,k,l}
-	bspc window -e {right -10,up +10,down -10,left +10}
-
-super + ctrl + {1-9}
-	bspc window -r 0.{1-9}
-
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
-
-super + ctrl + shift {h,j,k,l}
-	bspc window -p {left,down,up,rigth}
-
-super + r
-	bspc window -R down 270
-
-super + shift +r
-	bspc window -R right 270
-
-~button1
-	bspc pointer -g focus
-
-super + button{1-3}
-	bspc pointer -g {move,resize_side,resize_corner}
-
-super + !button{1-3}
-	bspc pointer -t %i %i
-
-super + @button{1-3}
-	bspc pointer -u
-
-#
 # wm independent hotkeys
 #
 
+# terminal emulator
 super + Return
-	urxvt
+	termite
 
+# program launcher
 super + space
 	rofi -show run
 
@@ -105,33 +14,160 @@ super + space
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# Start ncmpcpp with urxvt (floating)
-super + {_,shift + }m
-	bspc rule -a URxvt -o floating=on; \
-	urxvt -geometry 130x40 -e ncmpcpp
+#
+# bspwm hotkeys
+#
 
-# Sticky windows
+# quit bspwm normally
+super + alt + Escape
+	bspc quit
+
+# close and kill
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+super + y
+    bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest.local
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+    bspc node -g {marked,locked,sticky,private}
+
+# Unhide
+super + ctrl + shift + s
+	bspc node $(bspc query -N -n .hidden | tail -n1) -g hidden=off
+
+#
+# focus/swap
+#
+
+# focus/ swap the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous node in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# move/resize
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Start ncmpcpp with termite (floating)
+super + {_,shift + }m
+	bspc rule -a termite -o floating=on; \
+	termite -geometry 130x40 -e ncmpcpp
+
+# Sticky nodes
 super + e
-	bspc window -t sticky
+	bspc node -g sticky
 
 # Reducing gap on the fly
-alt + {minus,equal}
-	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+super + alt + {minus,equal}
+	bspc config -d focused node_gap $((`bspc config -d focused node_gap` {+,-} 2 ))
 
 # Language Change
+ctrl + space
+    (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap es -option ctrl:nocaps || setxkbmap us -option ctrl:nocaps
+
 super + shift + n
-	setxkbmap es
+	setxkbmap es -option ctrl:nocaps
 super + n
-	setxkbmap us
+	setxkbmap us -option ctrl:nocaps
+
+super + ctrl + shift + l
+    xscreensaver-command -lock
+
+# Media Keys
+XF86AudioPlay
+    playerctl play-pause
+
+XF86AudioNext
+    playerctl next
+
+XF86AudioPrev
+    playerctl prev
 
 # Increase volume
 XF86AudioRaiseVolume
-    amixer set Master 1%+
+    sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
 
 # Lowers volume
 XF86AudioLowerVolume
-    amixer set Master 1%-
+    sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
 
 # Mutes
 XF86AudioMute
-    amixer set Master toggle
+    pactl set-sink-mute 0 toggle
+
+Print
+    flameshot gui -p ~/Pictures/Screenshots

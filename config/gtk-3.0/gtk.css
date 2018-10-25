@@ -1,0 +1,7 @@
+VteTerminal {
+    -VteTerminal-inner-border: 40px;
+}
+
+VteTerminal, vte-terminal {
+padding: 10px;
+}

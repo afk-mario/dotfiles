@@ -1,0 +1,77 @@
+# yamllint disable rule:document-start
+
+- defaults:
+    link:
+      create: true
+      relink: true
+      glob: true
+
+- clean: ["~", "~/.config"]
+
+- shell:
+    -
+      - mkdir -p ~/.ssh
+      - Creating config directories
+    -
+      - mkdir -p ~/projects/web ~/projects/games ~/github ~/sandbox ~/interC
+      - Creating personal directories
+    -
+      - [mkdir -p ~/.vim/bundle/repos/github.com/Shougo/dein.vim']
+      - Creating dein.vim folders
+
+- link:
+   ~/bin: bin/
+   ~/.dotfiles: ""
+   ~/.vim/vimrc: vimrc
+   ~/.vim/test.vim: test.vim
+   ~/.vim/after: vim/after
+   ~/.vim/config: vim/config
+   ~/.vim/autoload: vim/autoload
+   ~/.vim/ftplugin: vim/ftplugin
+   ~/.vim/syntax: vim/syntax
+   ~/.vim/snips: vim/snips
+   ~/.vim/vimrcmin: vimrcmin
+   ~/.ssh/config: ssh_config
+   ~/.gitconfig: .gitconfig
+   ~/.gitignore_global: .gitignore_global
+   ~/.git_template: .git_template
+   ~/.agignore: .agignore
+   ~/.zshrc: .zshrc
+   ~/.ncmpcpp: .ncmpcpp
+   ~/.weechat: .weechat
+   ~/.Xdefaults: .Xdefaults
+   ~/.Xmodmap: .Xmodmap
+   ~/.userStyle.css: .userStyle.css
+   ~/.config/alacritty: config/alacritty
+   ~/.config/bspwm: config/bspwm
+   ~/.config/compton: config/compton
+   ~/.config/dunst: config/dunst
+   ~/.config/gtk-2.0: config/gtk-2.0
+   ~/.config/gtk-3.0: config/gtk-3.0
+   ~/.config/i3: config/i3
+   ~/.config/polybar: config/polybar
+   ~/.config/rofi: config/rofi
+   ~/.config/sxhkd: config/sxhkd
+   ~/.config/systemd: config/systemd
+   ~/.config/termite: config/termite
+   ~/.config/tmux: config/tmux
+
+- shell:
+    -
+      command: [git submodule update --init --recursive]
+      description: Installing/updating submodules
+    -
+      command: git clone https://github.com/Shougo/dein.vim ~/.vim/bundle/repos/github.com/Shougo/dein.vim
+      description: Installing dein.vim
+    -
+      command: [mkdir -p $HOME/.zfunc]
+      description: Creating zfunc config folder
+    -
+      command: mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+      description: Creating nvim config folder
+    -
+      command: [ln -sf ~/.vim $HOME/.config/nvim]
+      description: Creating symLink for nvim
+    -
+      command: [ln -sf ~/.vim/vimrc $HOME/.config/nvim/init.vim]
+      description: Creating symLink for nvimrc

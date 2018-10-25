@@ -1,0 +1,353 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;==========================================================
+
+
+[dims]
+small = 2
+medium = 4
+big = 6
+
+[colors]
+BLACK=#263238
+WHITE=#cfd8dc
+RED=#ffa74d
+BLUE1=#03a9f4
+BLUE2=#81d4fa
+GREEN1=#8bc34a
+GREEN2=#ceecab
+YELLOW1=#ffc107
+YELLOW2=#ffa000
+MAGENTA1=#e91e63
+MAGENTA2=#ad1457
+CYAN1=#009688
+CYAN2=#26a69a
+
+background = #263238
+background-alt = #444
+foreground = #cfd8dc
+foreground-alt = #555
+primary = #03a9f4
+secondary = #81d4fa
+alert = #ffa74d
+
+[bar/top]
+monitor = ${env:MONITOR:}
+width = 100%
+height = 30
+radius = 0.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = ${colors.WHITE}
+
+border-size = 0
+border-color = ${colors.BLACK}
+
+padding-left = 0
+padding-right = ${dims.big}
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Wuncon Siji:pixelsize=8;1
+font-1 = creep regular:size=9;1
+
+modules-left = arch i3 bspwm xwindow
+modules-right = pulseaudio xkeyboard wlan battery date caffeine
+
+tray-position = center
+tray-padding = ${dims.medium}
+tray-background = ${colors.background}
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+format-prefix = "  |  "
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format = <label-layout>
+format-margin = ${dims.small}
+
+format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-margin = ${dims.small}
+
+label-layout = %layout%
+label-indicator = %name%
+label-indicator-padding = ${dims.small}
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = false
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+format = <label-state> <label-mode>
+label-mode = %mode%
+label-mode-padding = 2
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = ${dims.small}
+
+label-unfocused = %index%
+label-unfocused-padding = ${dims.small}
+
+label-occupied = %name%
+label-occupied-padding = ${dims.small}
+
+label-urgent = %name%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = ${dims.small}
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = ${dims.small}
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-mode>  <label-state>
+
+label-tiled = "  "
+label-pseudotiled = "  "
+label-locked = "  "
+label-sticky = "  "
+label-monocle = "  "
+label-floating = "  "
+
+label-focused = %name%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = ${dims.small}
+
+label-occupied = %name%
+label-occupied-padding = ${dims.small}
+
+label-urgent = %name%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = ${dims.small}
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = ${dims.small}
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = BL
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = ${colors.WHITE}
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = ${colors.foreground}
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/wlan]
+type = internal/network
+interface = "wlp1s0"
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-connected-spacing  = ${dims.small}
+format-connected-margin = ${dims.small}
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d - %b"
+date-alt = "%Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-padding = ${dims.small}
+
+label = %time% | %date%
+format = <label>
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+
+use-ui-max = true
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-spacing  = ${dims.small}
+format-volume-margin = ${dims.small}
+
+label-muted =  
+label-muted-foreground = ${colors.foreground}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+ramp-headphone-0 = 
+ramp-headphone-1 = 
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <animation-discharging> <label-discharging>
+
+format-full-prefix = ""
+format-full-prefix-margin = ${dims.small}
+format-full-prefix-foreground = ${colors.foreground-alt}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-framerate = 750
+
+[module/caffeine]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-open-padding = ${dims.small}
+label-close-padding = ${dims.small}
+label-separator = " "
+
+menu-0-0 = 
+menu-0-0-exec = caffeine -a
+menu-0-1 = 
+menu-0-1-exec = caffeine -d
+menu-0-2 = 
+menu-0-2-exec = caffeine kill
+
+[module/arch]
+type = custom/text
+content = ""
+label-active-font = 2
+content-background = ${colors.MAGENTA1}
+content-foreground = ${colors.foreground}
+content-padding = ${dims.small}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
