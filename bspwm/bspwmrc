@@ -1,6 +1,5 @@
 #!/bin/sh
 sxhkd &
-monitor_config &
 numlockx on &
 setxkbmap -option ctrl:nocaps &
 xrdb -load ~/.Xdefaults &
@@ -72,3 +71,4 @@ bspc rule -a "Pick-colour-picker" state=floating follow=on
 exec sh ~/bin/fehbg &
 ~/.config/polybar/launch.sh &
 light-locker &
+~ /bin/monitor_config &

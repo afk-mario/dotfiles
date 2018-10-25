@@ -168,3 +168,6 @@ XF86AudioLowerVolume
 # Mutes
 XF86AudioMute
     pactl set-sink-mute 0 toggle
+
+Print
+    flameshot gui -p ~/Pictures/Screenshots

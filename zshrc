@@ -1,15 +1,14 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    source ~/.dotfiles/bigzshrc
+    source ~/.dotfiles/zshrc.big
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    source ~/.dotfiles/bigzshrc
+    source ~/.dotfiles/zshrc.big
 elif [[ "$OSTYPE" == "cygwin" ]]; then
-    source ~/.dotfiles/minzshrc
+    source ~/.dotfiles/zshrc.min
 elif [[ "$OSTYPE" == "msys" ]]; then
-    source ~/.dotfiles/minzshrc
+    source ~/.dotfiles/zshrc.min
 elif [[ "$OSTYPE" == "win32" ]]; then
-    source ~/.dotfiles/minzshrc
+    source ~/.dotfiles/zshrc.min
 elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    source ~/.dotfiles/minzshrc
+    source ~/.dotfiles/zshrc.min
 else
 fi
-source /usr/share/nvm/init-nvm.sh

@@ -40,6 +40,7 @@
     call dein#add('tpope/vim-obsession')           " Session Managment
     call dein#add('tpope/vim-eunuch')              " Unix helpers
     call dein#add('tpope/vim-commentary')          " Toggle comments
+    call dein#add('tpope/vim-scriptease')       
     call dein#add('tpope/vim-surround')            " Sorroundings
     call dein#add('tpope/vim-repeat')              " More . command
     call dein#add('tpope/vim-abolish')             " Better replace
