@@ -1,4 +1,4 @@
-Arlefreak Dotfiles
+[dotfiles.afk]
 ========
 
 Dotfiles
