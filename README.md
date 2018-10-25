@@ -1,7 +1,13 @@
 [dotfiles.afk]
 ========
 
-Dotfiles
+
+- wm: bspwm
+- editor: nvim
+- bar: polybar
+- gtk: Arc-Dark
+
+
 ![screen1](/screens/screen1.png "Screen1")
 ![screen2](/screens/screen2.png "Screen2")
 ![screen3](/screens/screen3.png "Screen3")
