@@ -41,6 +41,7 @@
    ~/.weechat: .weechat
    ~/.Xdefaults: .Xdefaults
    ~/.Xmodmap: .Xmodmap
+   ~/.ansible.cfg: .ansible.cfg
    ~/.userStyle.css: .userStyle.css
    ~/.config/alacritty: config/alacritty
    ~/.config/bspwm: config/bspwm
