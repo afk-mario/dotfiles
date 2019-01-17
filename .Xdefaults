@@ -4,6 +4,7 @@
 xscreensaver.newLoginCommand: light-locker-command -l
 xscreensaver.logFile:/var/log/xscreensaver.log
 xscreensaver.verbose:false
+xscreensaver.font: -*-creep-regular-*-normal-*-*-120-*-*-*-*-*-*
 !-------------------------------------------------------------------------------
 !!! XFT SETTINGS !!!
 !-------------------------------------------------------------------------------
