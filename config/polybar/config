@@ -222,7 +222,7 @@ card = intel_backlight
 
 [module/wlan]
 type = internal/network
-interface = "wlp1s0"
+interface = "wlp2s0"
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
