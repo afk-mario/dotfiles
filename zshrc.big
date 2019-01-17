@@ -175,6 +175,7 @@ zplug "rupa/z", use:"*.sh"
 zplug "MikeDacre/cdbk"
 
 zplug "docker/cli", use: "contrib/completion/zsh/_docker"
+zplug "docker/compose", use: "contrib/completion/zsh/_docker-compose"
 
 zplug "baskerville/bspwm", use: "contrib/zsh_completion"
 zplug "jonas/tig", use: "contrib/tig-completion.zsh"

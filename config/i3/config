@@ -35,8 +35,10 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+w kill
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+space exec rofi -show run
+# start rofi-calc calculator
+bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
