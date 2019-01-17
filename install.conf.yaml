@@ -40,6 +40,7 @@
    ~/.ncmpcpp: .ncmpcpp
    ~/.weechat: .weechat
    ~/.Xdefaults: .Xdefaults
+   ~/.xscreensaver: .xscreensaver
    ~/.Xmodmap: .Xmodmap
    ~/.ansible.cfg: .ansible.cfg
    ~/.userStyle.css: .userStyle.css
