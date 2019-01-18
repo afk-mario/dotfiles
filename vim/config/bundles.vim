@@ -69,7 +69,6 @@
                 \ 'build': 'npm install',
                 \ 'on_ft': ['javascript','javascript.jsx']
                 \ })
-    call dein#add('wakatime/vim-wakatime')     " register time
 " }
 
 " Prose {
