@@ -1,5 +1,5 @@
 [global]
-    font = Fira Code Retina 11
+    font = Fira Code 12
 
     # allow a small subset of html markup:
     # <b>bold</b>

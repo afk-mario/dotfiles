@@ -84,19 +84,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Fira Code  # should be "Menlo" or something on macOS.
+    family: SF Mono # Fira Code  # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: Fira Code # should be "Menlo" or something on macOS.
+    family: SF Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: Fira Code # should be "Menlo" or something on macOS.
+    family: SF Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Italic
 
@@ -208,8 +208,25 @@ mouse:
   # The `double_click` and `triple_click` settings control the time
   # alacritty should wait for accepting multiple clicks as one double
   # or triple click.
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
+  double_click: {threshold: 300}
+  triple_click: {threshold: 300}
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: false
+
+  url:
+    # URL launcher
+    #
+    # The URL is always added to the command as the last parameter.
+    #
+    # Default:
+    #   - (macOS) open
+    #   - (Linux) xdg-open
+    #   - (Windows) explorer
+    launcher: xdg-open
+
+    # URL modifiers
+    modifiers: Control
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
