@@ -39,22 +39,3 @@
     endfunction
     call InitializeDirectories()
 " }
-
-" Create dir new buffers {
-    function! <SID>AutoMkdir() abort
-    let l:dir = expand('<afile>:p:h')
-    if !isdirectory(l:dir)
-        echohl WarningMsg
-        let l:ans = input(l:dir . ' does not exist, create it [Y/n]? ')
-        echohl None
-        if empty(l:ans) || l:ans ==# 'y'
-            call mkdir(l:dir, 'p')
-        endif
-    endif
-    endfunction
-    augroup AutoMkdir
-    autocmd!
-    autocmd BufWritePre,FileWritePre,BufNewFile *
-                \ call <SID>AutoMkdir()
-    augroup end
-" }

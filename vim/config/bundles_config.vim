@@ -21,53 +21,6 @@
     endif
 " }
 
-" Gundo {
-    if dein#tap('gundo.vim')
-        let g:gundo_prefer_python3 = 1
-        nnoremap <leader>g :GundoToggle<CR>
-    endif
-" }
-
-" Tabular {
-    if dein#tap('tabular')
-        " nnoremap [tabular] <nop>
-        " nmap <Leader>t [tabular]
-        " nmap <Leader> [tabular]& :Tabularize /&<CR>
-        " vmap <Leader> [tabular]= :Tabularize /^[^=]*\zs=<CR>
-        " nmap <Leader> [tabular]1= :Tabularize 1=<CR>
-        " nmap <Leader> [tabular]=> :Tabularize /=><CR>
-        " nmap <Leader> [tabular]: :Tabularize /:<CR>
-        " nmap <Leader> [tabular]:: :Tabularize /:\zs<CR>
-        " nmap <Leader> [tabular], :Tabularize /,<CR>
-        " nmap <Leader> [tabular],, :Tabularize /,\zs<CR>
-        " nmap <Leader> [tabular]<Bar> :Tabularize /<Bar><CR>
-    endif
-"}
-
-" NeoMake {
-    if dein#tap('neomake')
-        autocmd! BufWritePost,BufEnter * Neomake
-        let g:neomake_echo_current_error=1
-        let g:neomake_verbose=1
-
-        " JS {
-            " you can set your enabled makers globally (like below) or on the buffer level as part of an autocmd - see Neomake docs for details
-            let g:neomake_javascript_enabled_makers = ['eslint']
-            " when switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
-            au BufEnter *.js let b:neomake_javascript_eslint_exe = nrun#Which('eslint')
-            " autocmd! FileType javascript,BufWinEnter,BufWritePost * Neomake
-        " }
-
-        nnoremap [neomake] <nop>
-        nmap <leader>c [neomake]
-        nnoremap <silent> [neomake]o :lopen<cr>
-        nnoremap <silent> [neomake]c :lclose<cr>
-        nnoremap <silent> [neomake], :ll<cr>
-        nnoremap <silent> [neomake]l :lnext<cr>
-        nnoremap <silent> [neomake]h :lprev<cr>
-    endif
-" }
-
 " Ale {
     let g:ale_sign_column_always = 1
     let g:ale_javascript_prettier_use_local_config = 1
@@ -122,7 +75,6 @@
 " Deoplete {
     if dein#tap('deoplete.nvim')
         let g:deoplete#enable_at_startup = 1
-        " let g:deoplete#file#enable_buffer_path=1
 
         call deoplete#custom#option({
             \ 'auto_complete_delay': 0,
@@ -230,70 +182,6 @@
         let g:indentLine_char = '│'
         let g:indentLine_first_char = '│'
         let g:indentLine_showFirstIndentLevel = 1
-        " let g:indentLine_setColors = 0
-    endif
-" }
-
-" Startify {
-    if dein#tap('vim-startify')
-        let g:startify_list_order = [
-            \ [' Sessions '],
-            \ 'sessions',
-            \ [' Bookmarks '],
-            \ 'bookmarks',
-            \ [' MRU (dir)'],
-            \ 'dir',
-            \ [' MRU '],
-            \ 'files',
-        \ ]
-        let g:startify_bookmarks = [ {'v': '~/.vim/'}, {'z': '~/.zshrc'} ]
-        let g:startify_files_number = 5
-        let g:startify_session_autoload = 1
-        let g:startify_change_to_vcs_root = 1
-    endif
-" }
-
-" Lexical {
-    if dein#tap('vim-lexical')
-        " let g:lexical#spelllang = ['en_us', 'es_mx',]
-    endif
-" }
-
-" Ditto {
-    if dein#tap('vim-ditto')
-        augroup ditto
-            au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
-        augroup end
-    endif
-" }
-
-" Pencil {
-    if dein#tap('vim-pencil')
-        let g:pencil#wrapModeDefault = 'soft'
-        " autocmd Filetype markdown call pencil#init()
-        augroup pencil
-            autocmd!
-            autocmd FileType markdown,mkd,md call pencil#init()
-            autocmd FileType text         call pencil#init()
-        augroup END
-    endif
-" }
-
-" Goyo and Limelight and Pencil{
-    if dein#tap('goyo.vim')
-        " let g:goyo_margin_top=0
-        " let g:goyo_margin_bottom=0
-        augroup goyo
-            autocmd! User GoyoEnter Limelight
-            autocmd! User GoyoLeave Limelight!
-        augroup end
-        nnoremap <leader>G :Goyo<CR>
-
-        autocmd Filetype markdown call LaunchGoyo()
-        autocmd Filetype text call LaunchGoyo()
-        function LaunchGoyo()
-          Goyo
-        endfunction
     endif
 " }
 
@@ -339,18 +227,6 @@
         " nnoremap <silent> [omnisharp]s :OmniSharpFindSymbol<cr>
         " nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
         " vnoremap <leader><space> :call OmniSharp#GetCodeActions('visual')<cr>
-    endif
-" }
-
-" Grepper {
-    if dein#tap('vim-grepper')
-        " Mimic :grep and make ag the default tool.
-        let g:grepper = {
-            \ 'tools': ['rg', 'ag', 'git','grep'],
-            \ }
-        nnoremap [grepper] <nop>
-        nmap <leader>/ [grepper]
-        nnoremap <silent> [grepper] :Grepper -cword -noprompt<cr>
     endif
 " }
 
@@ -445,19 +321,5 @@
         let g:tern_show_argument_hints = 'on_hold'
         let g:tern_show_signature_in_pum = 1
         autocmd FileType javascript,javascript.jsx setlocal omnifunc=tern#Complete
-    endif
-" }
-
-" context-commentstring {
-    if dein#tap('vim-context-commentstring')
-        " https://github.com/tpope/vim-commentary/issues/68
-        " echo g:context#commentstring#table['javascript.jsx']
-        " let g:context#commentstring#table['javascript.jsx'] = {
-        "     \ 'jsComment' : '// %s',
-        "     \ 'jsBlock' : '// %s',
-        "     \ 'jsImport' : '// %s',
-        "     \ 'jsxStatment' : '// %s',
-        "     \ 'jsxTag' : '{/*%s*/}',
-        "     \}
     endif
 " }

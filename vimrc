@@ -4,9 +4,6 @@
     " [afk] https://ellugar.co
 " }
 
-source ~/.vim/config/test.vim
-
-source ~/.vim/config/enviroment.vim
 source ~/.vim/config/bundles.vim
 source ~/.vim/config/general.vim
 source ~/.vim/config/ui.vim

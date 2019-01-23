@@ -25,10 +25,10 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="/opt/sublime_merge:$PATH"
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export ASEPRITE_ACCEPT_EULA=yes
 
@@ -46,7 +46,7 @@ alias zshreload="source ~/.zshrc"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias vi="vim -u $HOME/.vim/vimrcmin"
-alias tim="nvim -u $HOME/.vim/test.vim"
+alias tim="nvim -U NONE -u $HOME/.vim/test.vim"
 alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'
