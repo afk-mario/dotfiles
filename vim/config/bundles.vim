@@ -43,6 +43,7 @@ call dein#add('tpope/vim-repeat')              " More . command
 call dein#add('tpope/vim-abolish')             " Better replace
 call dein#add('tpope/vim-unimpaired')          " Key mappings for [
 
+call dein#add('wellle/targets.vim')            " Vim plugin that provides additional text objects
 call dein#add('editorconfig/editorconfig-vim')
 call dein#add('AndrewRadev/splitjoin.vim')     " Split onelinners with gS
 
@@ -73,6 +74,7 @@ call dein#add('jaawerth/nrun.vim')
 call dein#add('zchee/deoplete-jedi')
 call dein#add('carlitux/deoplete-ternjs')
 call dein#add('OmniSharp/omnisharp-vim')
+call dein#add('hail2u/vim-css3-syntax')
 " }
 
 " Vim UI {
