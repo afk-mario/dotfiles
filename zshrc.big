@@ -106,6 +106,9 @@ export MANPAGER="nvim -c 'set ft=man' -"
 # bindkey -v
 # export KEYTIMEOUT=1
 
+# Fix tmux not letting me go use ctrl
+bindkey -e
+
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 source ~/.dotfiles/zplug.zsh
