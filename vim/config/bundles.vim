@@ -43,6 +43,8 @@ call dein#add('tpope/vim-repeat')              " More . command
 call dein#add('tpope/vim-abolish')             " Better replace
 call dein#add('tpope/vim-unimpaired')          " Key mappings for [
 
+call dein#add('suy/vim-context-commentstring')     " Context commentstring for JSX
+
 call dein#add('wellle/targets.vim')            " Vim plugin that provides additional text objects
 call dein#add('editorconfig/editorconfig-vim')
 call dein#add('AndrewRadev/splitjoin.vim')     " Split onelinners with gS
