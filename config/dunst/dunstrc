@@ -1,5 +1,5 @@
 [global]
-    font = Fira Code 12
+    font = SF mono 12
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -59,7 +59,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "200x0-5+25"
+    geometry = "250x0-14+45"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -125,7 +125,7 @@
 
 [frame]
     width = 1
-    color = "#645240"
+    color = "#83a598"
 
 [shortcuts]
     # shortcuts are specified as [modifier+][modifier+]...key
@@ -147,21 +147,19 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#191919"
-    foreground = "#e3e3e3"
-    timeout = 2
+    background = "#282828"
+    foreground = "#ebdbb2"
+    timeout = 5
 
 [urgency_normal]
-    background = "#191919"
-    foreground = "#CBE6CB"
-    timeout = 2
+    background = "#282828"
+    foreground = "#ebdbb2"
+    timeout = 20
 
 [urgency_critical]
-    background = "#191919"
-    foreground = "#D19485"
-    timeout = 5
+    background = "#282828"
+    foreground = "#ebdbb2"
+    timeout = 0
 
 
 # Every section that isn't one of the above is interpreted as a rules
