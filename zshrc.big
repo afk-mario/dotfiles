@@ -97,6 +97,7 @@ else
 fi
 
 export EDITOR=nvim
+export SYSTEMD_EDITOR=$EDITOR
 export MANPAGER="nvim -c 'set ft=man' -"
 
 # -- Vim Mode --

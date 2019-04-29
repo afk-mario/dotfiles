@@ -238,19 +238,19 @@ endif
 if dein#tap('denite.nvim')
     " custom var
     call denite#custom#var(
-                \ 'file_rec', 
+                \ 'file/rec', 
                 \ 'command',
                 \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 
     " change matchers.
     call denite#custom#source(
-                \ 'file_rec', 
+                \ 'file/rec', 
                 \ 'matchers', 
                 \ ['matcher_fuzzy','matcher_ignore_globs'])
 
     " change sorters.
     call denite#custom#source(
-                \ 'file_rec',
+                \ 'file/rec',
                 \ 'sorters',
                 \ ['sorter_sublime'])
 
@@ -272,7 +272,7 @@ if dein#tap('denite.nvim')
     " custom mappings {
     nnoremap [denite] <nop>
     nmap <leader>u [denite]
-    nnoremap <silent> [denite]p :Denite file_rec<cr>
+    nnoremap <silent> [denite]p :Denite file/rec<cr>
     nnoremap <silent> [denite]r :Denite file_mru<cr>
     nnoremap <silent> [denite]b :Denite buffer<cr>
     nnoremap <silent> [denite]m :Denite menu<cr>

@@ -71,6 +71,7 @@ call dein#add('ternjs/tern_for_vim', {
             \ 'on_ft': ['javascript','javascript.jsx']
             \ })
 call dein#add('sheerun/vim-polyglot')
+call dein#add('jparise/vim-graphql')
 call dein#add('mattn/emmet-vim')
 call dein#add('jaawerth/nrun.vim')
 call dein#add('zchee/deoplete-jedi')

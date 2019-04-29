@@ -1,7 +1,7 @@
 [user]
 	name = afk
 	email = afk@ellugar.co
-	signingkey = FE979E464CB4BA6B
+	signingkey = 18CFE606E9AF4AFE
 [push]
 	default = simple
 [mergetool "fugitive"]
@@ -47,6 +47,7 @@
 	required = true
 [core]
 	excludesfile = /Users/arlefreak/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
