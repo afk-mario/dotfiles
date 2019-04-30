@@ -72,7 +72,54 @@ endif
 if dein#tap('vim-flagship')
     autocmd User Flags call Hoist("window", "SyntasticStatuslineFlag")
     " autocmd User Flags call Hoist("global", "%{&ignorecase ? '[IC]' : ''}")
+    set title titlestring=%{getcwd()}
     let g:tabprefix = '[afk]'
+    let g:tablabel =
+                \ "%N%{flagship#tabmodified()} %{flagship#tabcwds('shorten',',')}"
+
+    function! LinterStatus() abort
+        let l:counts = ale#statusline#Count(bufnr(''))
+        let l:all_errors = l:counts.error + l:counts.style_error
+        let l:all_non_errors = l:counts.total - l:all_errors
+        return l:counts.total == 0 ? '' : printf(
+                    \ 'w.%d e.%d |',
+                    \ l:all_non_errors,
+                    \ l:all_errors
+                    \)
+    endfunction
+
+
+    function! GitInfo()
+        let git = fugitive#head()
+        let info = ''
+        if git !=# ''
+            let info='g.' . git . ' |'
+        endif
+        return info
+    endfunction
+
+    set statusline=
+    set statusline+=%2*
+    set statusline+=\ b.%n
+    set statusline+=\ %*
+    set statusline+=\ %f
+    set statusline+=\ %*
+
+
+    set statusline+=%=
+    " Git integration
+    if dein#tap('vim-fugitive')
+        set statusline+=\ %{GitInfo()}
+    endif
+    set statusline+=\ %{LinterStatus()}
+    set statusline+=\ l.%l
+    set statusline+=\ c.%c
+    set statusline+=\ \|
+    set statusline+=\ %P
+    set statusline+=\ %*
+
+    let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
+
 endif
 " }
 
@@ -169,9 +216,6 @@ if dein#tap('vim-fugitive')
     " Mnemonic _i_nteractive
     nnoremap <silent> [fugitive]i :Git add -p %<CR>
     nnoremap <silent> [fugitive]g :SignifyToggle<CR>
-    if !dein#tap('vim-flagship')
-        set statusline+=%{fugitive#statusline()} " Git integration
-    endif
 endif
 "}
 
