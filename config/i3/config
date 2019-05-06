@@ -188,7 +188,7 @@ bindsym $mod+r mode "resize"
 bindsym Print exec --no-startup-id "flameshot gui -p ~/pictures/screenshots"
 
 bindsym $mod+Control+Shift+l exec "xscreensaver-command -lock"
-bindsym Control+space exec "~/bin/toggle_lang"
+bindsym Control+space exec "~/bin/toggle-lang"
 
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -203,6 +203,8 @@ bindsym XF86AudioPrev exec "playerctl prev"
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+bindsym $mod+Shift+n exec --no-startup-id "~/bin/toggle-theme"
 
 new_window 1pixel
 

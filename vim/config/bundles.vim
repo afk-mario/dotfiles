@@ -85,6 +85,7 @@ call dein#add('tpope/vim-flagship')               " Statusline
 call dein#add('Yggdroot/indentLine')            " Ident visual guide
 call dein#add('gregsexton/MatchTag')              " Highlite Matching tag
 call dein#add('morhetz/gruvbox')
+call dein#add('NLKNguyen/papercolor-theme')
 " }
 
 call dein#end()

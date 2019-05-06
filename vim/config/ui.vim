@@ -6,13 +6,18 @@
 " This should handle all UI configs
 " }
 
-set background=dark
 set termguicolors
+
+if exists('theme') && theme ==# 'light'
+  set background=light
+else
+  set background=dark
+endif
+
 
 if dein#tap('gruvbox')
     colorscheme gruvbox
 endif
-
 
 highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode

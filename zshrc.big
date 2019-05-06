@@ -45,7 +45,7 @@ alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias tmuxconfig="nvim ~/.tmux.conf"
 alias tmuxreload="tmux source-file ~/.tmux.conf"
 alias zshreload="source ~/.zshrc"
-alias vim="nvim"
+alias vim="vim"
 alias vimdiff="nvim -d"
 alias vi="vim -u $HOME/.vim/vimrcmin"
 alias tim="nvim -U NONE -u $HOME/.vim/test.vim"
@@ -112,5 +112,13 @@ export MANPAGER="nvim -c 'set ft=man' -"
 bindkey -e
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+function vim {
+  THEME=$(~/bin/alacritty-colorscheme -s)
+  if [[ "$THEME" == "gruvbox_light.yaml" ]]; then
+    env nvim --cmd "let theme = 'light'" $@
+  else
+    env nvim --cmd "let theme = 'dark'" $@
+  fi
+}
 
 source ~/.dotfiles/zplug.zsh
