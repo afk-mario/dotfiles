@@ -3,7 +3,7 @@
 export DAY="DAY"
 export NIGHT="bar"
 export NIGHT_THEME="gruvbox_dark.yaml"
-export DAY_THEME="gruvbox_light.yaml"
+export DAY_THEME="ayu_light.yaml"
 
 ~/bin/alacritty-colorscheme -C ~/alacritty-theme/themes -t $DAY_THEME $NIGHT_THEME
 

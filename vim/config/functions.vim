@@ -50,3 +50,9 @@ augroup netrw_buf_hidden_fix
                 \| endif
 
 augroup end
+
+" For completition coc.nvim or dein.nvim
+function! s:check_back_space() abort
+    let l:col = col('.') - 1
+    return l:col || getline('.')[l:col - 1]  =~# '\s'
+endfunction

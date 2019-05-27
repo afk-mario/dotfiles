@@ -46,6 +46,7 @@ let g:ale_fixers['scss'] = ['prettier']
 let g:ale_fixers['python'] = ['isort', 'yapf']
 let g:ale_fixers['rust'] = ['rustfmt']
 let g:ale_fixers['sh'] = ['shfmt']
+let g:ale_fixers['go'] = ['gofmt']
 
 
 nnoremap [ale] <nop>
@@ -111,6 +112,8 @@ if dein#tap('vim-flagship')
     if dein#tap('vim-fugitive')
         set statusline+=\ %{GitInfo()}
     endif
+    set statusline+=\ f.%y
+    set statusline+=\ \|
     set statusline+=\ %{LinterStatus()}
     set statusline+=\ l.%l
     set statusline+=\ c.%c
@@ -125,7 +128,11 @@ endif
 
 " Deoplete {
 if dein#tap('deoplete.nvim')
+    set completeopt+=noselect
     let g:deoplete#enable_at_startup = 1
+    let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+    let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
 
     call deoplete#custom#option({
                 \ 'auto_complete_delay': 0,
@@ -133,17 +140,17 @@ if dein#tap('deoplete.nvim')
                 \ })
 
     call deoplete#custom#option('sources', {
-                \ '_': ['buffer', 'ultisnips', 'file', 'buffer'],
                 \ 'cs': ['cs', 'ultisnips', 'file', 'buffer'],
                 \ 'python': ['jedi', 'ultisnips', 'file', 'buffer'],
                 \ 'javascript.jsx': ['tern', 'ultisnips', 'buffer'],
                 \})
 
-    call deoplete#custom#source('omni', 'input_patterns', {
+    call deoplete#custom#option('omni_patterns', {
                 \ 'cs': '\w*',
                 \ 'rust': '[(\.)(::)]',
                 \})
 
+    call deoplete#custom#source('_', 'min_pattern_length', 1)
     call deoplete#custom#source('buffer', 'mark', '[b]')
     call deoplete#custom#source('tern', 'mark', '[js]')
     call deoplete#custom#source('omni', 'mark', '[⌾]')
@@ -151,32 +158,26 @@ if dein#tap('deoplete.nvim')
     call deoplete#custom#source('jedi', 'mark', '[j]')
     call deoplete#custom#source('ultisnips', 'mark', '[u]')
 
-    call deoplete#custom#source('_', 'min_pattern_length', 1)
-
     " Use Tab
     imap <silent><expr> <TAB>
                 \ pumvisible() ? "\<C-n>" :
                 \ <SID>check_back_space() ? "\<TAB>" :
                 \ deoplete#mappings#manual_complete()
 
-    function! s:check_back_space() abort
-        let l:col = col('.') - 1
-        return l:col || getline('.')[l:col - 1]  =~# '\s'
-    endfunction
 
     " Close window on finish
     autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
     au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
 
-    aug omnicomplete
-        au!
-        au FileType css,sass,scss,stylus,less setl omnifunc=csscomplete#CompleteCSS
-        au FileType html,htmldjango,jinja,markdown setl omnifunc=emmet#completeTag
-        au FileType python setl omnifunc=pythoncomplete#Complete
-        au FileType xml setl omnifunc=xmlcomplete#CompleteTags
-        au FileType javascript,javascript.jsx setl omnifunc=javascriptcomplete#CompleteJS
-    aug END
+    " aug omnicomplete
+    "     au!
+    "     au FileType css,sass,scss,stylus,less setl omnifunc=csscomplete#CompleteCSS
+    "     au FileType html,htmldjango,jinja,markdown setl omnifunc=emmet#completeTag
+    "     au FileType python setl omnifunc=pythoncomplete#Complete
+    "     au FileType xml setl omnifunc=xmlcomplete#CompleteTags
+    "     au FileType javascript,javascript.jsx setl omnifunc=javascriptcomplete#CompleteJS
+    " aug END
 
 endif
 " }

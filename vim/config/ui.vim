@@ -9,15 +9,19 @@
 set termguicolors
 
 if exists('theme') && theme ==# 'light'
-  set background=light
+    if dein#tap('ayu-vim')
+        set background=light
+        let ayucolor='light'
+        colorscheme ayu
+    endif
 else
-  set background=dark
+    set background=dark
+    if dein#tap('gruvbox')
+        colorscheme gruvbox
+    endif
 endif
 
 
-if dein#tap('gruvbox')
-    colorscheme gruvbox
-endif
 
 highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode

@@ -30,10 +30,12 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export PATH="$(yarn global bin):$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
 
+export GOPATH=$(go env GOPATH)
 export HAXE_STD_PATH="/usr/local/lib/haxe/std"
 export ADBI_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
 export UNITY_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
@@ -114,7 +116,7 @@ bindkey -e
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 function vim {
   THEME=$(~/bin/alacritty-colorscheme -s)
-  if [[ "$THEME" == "gruvbox_light.yaml" ]]; then
+  if [[ "$THEME" == "ayu_light.yaml" ]]; then
     env nvim --cmd "let theme = 'light'" $@
   else
     env nvim --cmd "let theme = 'dark'" $@
