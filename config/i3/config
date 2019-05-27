@@ -30,7 +30,7 @@ font pango:Inter UI 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+w kill

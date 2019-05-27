@@ -5,9 +5,12 @@ xscreensaver.newLoginCommand: light-locker-command -l
 xscreensaver.logFile:/var/log/xscreensaver.log
 xscreensaver.verbose:false
 xscreensaver.font: -*-creep-regular-*-normal-*-*-120-*-*-*-*-*-*
+
+!------------------------------------------------------------------------------
+! XFT SETTINGS 
+! https://wiki.archlinux.org/index.php/Font_configuration#Applications_without_fontconfig_support
 !-------------------------------------------------------------------------------
-!!! XFT SETTINGS !!!
-!-------------------------------------------------------------------------------
+
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
@@ -16,8 +19,9 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 !-------------------------------------------------------------------------------
-!!! URXVT SETTINGS !!!
+! URXVT SETTINGS
 !-------------------------------------------------------------------------------
+
 urxvt*font: xft:terminus:pixelsize=12,xft:Fira Code:pixelsize=12
 Urxvt*depth: 33
 URxvt*geometry: 80x25
@@ -29,7 +33,6 @@ URxvt*cursorUnderline: true
 URxvt*scrollColor: #8bc34a
 URxvt.underlineURLs: true
 
-
 URxvt.perl-ext-common: default,matcher,selection-to-clipboard
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
@@ -37,6 +40,26 @@ URxvt.keysym.C-Delete: perl:matcher:last
 URxvt.keysym.M-Delete: perl:matcher:list
 URxvt.colorUL: #ffc107
 URxvt*dynamicColors: on
+
+!-------------------------------------------------------------------------------
+!!! XTerm SETTINGS !!!
+!-------------------------------------------------------------------------------
+
+xterm*faceName: "SF Mono"
+xterm*faceSize: 14
+xterm*internalBorder: 15
+xterm*renderFont: true
+xterm*.saveLines: 4096
+
+xterm*locale: true
+xterm*utf8: 1
+xterm*SaveLines: 9000
+xterm*fullscreen: never
+
+/* https://lukas.zapletalovi.com/2013/07/hidden-gems-of-xterm.html */
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+XTerm*VT100*translations: #override Shift <Btn1Up>: exec-formatted("firefox-developer-edition '%t'", PRIMARY)
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
