@@ -19,37 +19,15 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 !-------------------------------------------------------------------------------
-! URXVT SETTINGS
-!-------------------------------------------------------------------------------
-
-urxvt*font: xft:terminus:pixelsize=12,xft:Fira Code:pixelsize=12
-Urxvt*depth: 33
-URxvt*geometry: 80x25
-URxvt*internalBorder: 16
-URxvt*borderLess: false
-URxvt*scrollBar: false
-URxvt*cursorBlink: true
-URxvt*cursorUnderline: true
-URxvt*scrollColor: #8bc34a
-URxvt.underlineURLs: true
-
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
-URxvt.keysym.C-Delete: perl:matcher:last
-URxvt.keysym.M-Delete: perl:matcher:list
-URxvt.colorUL: #ffc107
-URxvt*dynamicColors: on
-
-!-------------------------------------------------------------------------------
 !!! XTerm SETTINGS !!!
 !-------------------------------------------------------------------------------
 
 xterm*faceName: "SF Mono"
 xterm*faceSize: 14
-xterm*internalBorder: 15
 xterm*renderFont: true
-xterm*.saveLines: 4096
+
+xterm*internalBorder: 15
+xterm*saveLines: 4096
 
 xterm*locale: true
 xterm*utf8: 1

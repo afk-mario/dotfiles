@@ -237,4 +237,5 @@ exec light-locker
 exec sh ~/bin/fehbg
 exec --no-startup-id compton --config ~/.config/compton/compton.conf --respect-prop-shadow   
 exec --no-startup-id setxkbmap us -option ctrl:nocaps
+exec --no-startup-id ~/.screenlayout/screenlayout.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
