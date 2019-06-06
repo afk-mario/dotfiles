@@ -16,8 +16,11 @@
       - mkdir -p ~/projects/web ~/projects/games ~/github ~/sandbox ~/interC
       - Creating personal directories
     -
+      - mkdir -p ~/media/pictures ~/media/videos ~/media/audio ~/media/pictures/screenshots
+      - Creating media directories
+    -
       - [mkdir -p ~/.vim/bundle/repos/github.com/Shougo/dein.vim']
-      - Creating dein.vim folders
+      - Creating dein.vim directory
 
 - link:
    ~/bin: bin/
@@ -39,6 +42,7 @@
    ~/.zshrc: .zshrc
    ~/.ncmpcpp: .ncmpcpp
    ~/.weechat: .weechat
+   ~/.Xresources: .Xresources
    ~/.Xdefaults: .Xdefaults
    ~/.xscreensaver: .xscreensaver
    ~/.Xmodmap: .Xmodmap
