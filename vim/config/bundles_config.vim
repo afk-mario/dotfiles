@@ -30,12 +30,11 @@ let g:ale_sign_column_always = 1
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fix_on_save = 1
 
-let g:ale_linters = {
-            \   'javascript': ['eslint'],
-            \   'graphql': [''],
-            \   'python': ['flake8'],
-            \   'rust': ['cargo'],
-            \ }
+let g:ale_linters = {}
+let g:ale_linters['javascript'] = ['eslint']
+let g:ale_linters['graphql'] = ['']
+let g:ale_linters['python'] = ['flake8']
+let g:ale_linters['rust'] = ['cargo']
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
@@ -47,6 +46,7 @@ let g:ale_fixers['python'] = ['isort', 'yapf']
 let g:ale_fixers['rust'] = ['rustfmt']
 let g:ale_fixers['sh'] = ['shfmt']
 let g:ale_fixers['go'] = ['gofmt']
+let g:ale_fixers['sql'] = ['pgformatter']
 
 
 nnoremap [ale] <nop>
@@ -157,6 +157,12 @@ if dein#tap('deoplete.nvim')
     call deoplete#custom#source('file', 'mark', '[f]')
     call deoplete#custom#source('jedi', 'mark', '[j]')
     call deoplete#custom#source('ultisnips', 'mark', '[u]')
+
+    " For completition coc.nvim or dein.nvim
+    function! s:check_back_space() abort
+        let l:col = col('.') - 1
+        return l:col || getline('.')[l:col - 1]  =~# '\s'
+    endfunction
 
     " Use Tab
     imap <silent><expr> <TAB>
@@ -281,6 +287,10 @@ endif
 
 " Denite {
 if dein#tap('denite.nvim')
+    call denite#custom#option('_', {
+            \ 'start_filter': 1,
+            \ })
+
     " custom var
     call denite#custom#var(
                 \ 'file/rec', 
@@ -303,6 +313,8 @@ if dein#tap('denite.nvim')
     call denite#custom#filter('matcher_ignore_globs',
                 \ 'ignore_globs', 
                 \ split(&wildignore, ','))
+
+
 
     " grep {
     call denite#custom#var('grep', 'command', ['ag'])
@@ -329,9 +341,21 @@ if dein#tap('denite.nvim')
     nnoremap <silent> [denite]c :Denite colorscheme<cr>
     nnoremap <silent> [denite]f :<C-u>DeniteCursorWord grep:.<CR>
 
-    call denite#custom#map('insert', '<c-k>', '<denite:move_to_previous_line>', 'noremap')
-    call denite#custom#map('insert', '<c-j>', '<denite:move_to_next_line>', 'noremap')
-    call denite#custom#map('insert', '<c-r>', '<denite:redraw>', 'noremap')
+    autocmd FileType denite call s:denite_mappings()
+    function! s:denite_mappings() abort
+        nnoremap <silent><buffer><expr> <CR>
+                    \ denite#do_map('do_action')
+        nnoremap <silent><buffer><expr> d
+                    \ denite#do_map('do_action', 'delete')
+        nnoremap <silent><buffer><expr> p
+                    \ denite#do_map('do_action', 'preview')
+        nnoremap <silent><buffer><expr> q
+                    \ denite#do_map('quit')
+        nnoremap <silent><buffer><expr> i
+                    \ denite#do_map('open_filter_buffer')
+        nnoremap <silent><buffer><expr> <Space>
+                    \ denite#do_map('toggle_select').'j'
+    endfunction
     " }
 endif
 " }
