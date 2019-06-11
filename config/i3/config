@@ -38,7 +38,8 @@ bindsym $mod+w kill
 # start rofi (a program launcher)
 bindsym $mod+space exec rofi -show run
 # start rofi-calc calculator
-bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
+# bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xclip -selection clipboard"
 bindsym $mod+period exec rofi -show emoji -modi emoji
 
 # There also is the (new) i3-dmenu-desktop which only displays applications

@@ -37,7 +37,8 @@
 [difftool "nvimdiff"]
     cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [commit]
-	verbose = true
+  verbose = true
+	gpgsign = true
 [init]
 	templatedir = ~/.git_template
 [filter "lfs"]
