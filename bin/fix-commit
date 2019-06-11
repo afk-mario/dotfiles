@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git filter-branch --env-filter '
-WRONG_NAME="New Name Value"
+WRONG_NAME="Mario Carballo Zama"
 WRONG_EMAIL="arlefreak@gmail.com"
 NEW_NAME="afk"
 NEW_EMAIL="afk@ellugar.co"
