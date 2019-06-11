@@ -3,7 +3,7 @@
 git filter-branch --env-filter '
 WRONG_NAME="New Name Value"
 WRONG_EMAIL="arlefreak@gmail.com"
-NEW_NAME="Mario Carballo Zama"
+NEW_NAME="afk"
 NEW_EMAIL="afk@ellugar.co"
 
 if [ "$GIT_COMMITTER_NAME" = "$WRONG_NAME" ]
