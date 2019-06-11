@@ -4,7 +4,8 @@
 # TODO: simplify and enhance error handling (already existing repos etc.)
 #       expand script to handle: public repos, deletion, re-naming
 
-token="bt2HfZQH6dkwAkHcwAYa"
+# Get TOKEN from env
+token=""
 
 function usage {
   echo "Usage: $0 -n name"
