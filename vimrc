@@ -4,9 +4,9 @@
     " [afk] https://ellugar.co
 " }
 
+source ~/.vim/config/functions.vim
 source ~/.vim/config/bundles.vim
 source ~/.vim/config/general.vim
 source ~/.vim/config/ui.vim
 source ~/.vim/config/mappings.vim
 source ~/.vim/config/bundles_config.vim
-source ~/.vim/config/functions.vim

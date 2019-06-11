@@ -121,7 +121,22 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "0"
+set $ws0 "0"
+
+set $monitor-one "HDMI-A-1"
+set $monitor-two "DVI-D-0"
+
+workspace $ws0 output $monitor-one
+workspace $ws1 output $monitor-one
+workspace $ws2 output $monitor-one
+workspace $ws3 output $monitor-one
+workspace $ws4 output $monitor-one
+
+workspace $ws6 output $monitor-two
+workspace $ws6 output $monitor-two
+workspace $ws7 output $monitor-two
+workspace $ws8 output $monitor-two
+workspace $ws9 output $monitor-two
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -133,7 +148,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+0 workspace $ws0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -145,7 +160,11 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# move workspace to monitor
+bindsym $mod+Shift+greater move container to output right
+bindsym $mod+Shift+less move container to output left
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -188,7 +207,7 @@ bindsym $mod+r mode "resize"
 #}
 
 
-bindsym Print exec --no-startup-id "flameshot gui -p ~/pictures/screenshots"
+bindsym Print exec --no-startup-id "flameshot gui -p ~/media/pictures/screenshots"
 
 bindsym $mod+Control+Shift+l exec "xscreensaver-command -lock"
 bindsym Control+space exec "~/bin/toggle-lang"
@@ -220,12 +239,12 @@ assign [class="^Slack$"] → $ws5
 assign [class="^discord$"] → $ws5
 assign [class="^Ripcord$"] → $ws5
 
+assign [class="^Thunar$"] → $ws7
 assign [class="^spotify$"] → $ws8
 
 assign [class="^Thunderbird$"] → $ws9
 assign [class="^Mailspring$"] → $ws9
 
-assign [class="^Thunar$"] → $ws10
 
 for_window [class="Spotify"] move to workspace $ws8
 
