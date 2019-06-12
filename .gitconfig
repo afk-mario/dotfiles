@@ -1,20 +1,22 @@
 [user]
-	name = afk
-	email = afk@ellugar.co
-	signingkey = 18CFE606E9AF4AFE
+  name = Mario Carballo Zama
+  email = afk@ellugar.co
+  signkey = 0147D4B5964D51CA
+[include]
+  path = ~/.gitconfig-signkey
 [push]
-	default = simple
+  default = simple
 [mergetool "fugitive"]
-	cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
+  cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 [merge]
-	tool = fugitive
+  tool = fugitive
 [alias]
-    lol = log --graph --decorate --oneline
-    lola = log --graph --decorate --oneline --all
-	d = difftool
-	ctags = !.git/hooks/ctags
-	prune-branches = !git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d
-	czs = cz -S
+  lol = log --graph --decorate --oneline
+  lola = log --graph --decorate --oneline --all
+  d = difftool
+  ctags = !.git/hooks/ctags
+  prune-branches = !git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d
+  czs = cz -S
 [color]
   ui = auto
 [color "branch"]
@@ -31,29 +33,31 @@
   changed = green
   untracked = cyan
 [diff]
-	tool = nvimdiff
+  tool = nvimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [difftool "nvimdiff"]
-    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [commit]
   verbose = true
-	gpgsign = true
+  gpgsign = true
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [core]
-	excludesfile = /Users/arlefreak/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = /Users/arlefreak/.gitignore_global
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
+[gpg]
+	program = gpg2
