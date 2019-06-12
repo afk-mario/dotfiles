@@ -110,6 +110,27 @@ bindsym $mod+x move workspace to output right
 # Put this window on the primary output.
 bindsym $mod+Shift+x move workspace to output primary
 
+
+# set primary gruvbox colorscheme colors
+set $background #282828
+set $foreground #ebdbb2
+set $color0  #282828
+set $color8  #928374
+set $color1  #cc241d
+set $color9  #fb4934
+set $color2  #98971a
+set $color10 #b8bb26
+set $color3  #d79921
+set $color11 #fabd2f
+set $color4  #458588
+set $color12 #83a598
+set $color5  #b16286
+set $color13 #d3869b
+set $color6  #689d6a
+set $color14 #8ec07c
+set $color7  #a89984
+set $color15 #ebdbb2
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -248,9 +269,21 @@ assign [class="^Mailspring$"] → $ws9
 
 for_window [class="Spotify"] move to workspace $ws8
 
-gaps inner 15
+gaps inner 20
 gaps outer 0
-smart_gaps on
+smart_borders on
+# smart_gaps on
+
+#start of window title bars & borders section
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $background $background $foreground $color13 $color12
+client.focused_inactive $color4 $background $foreground $color13 $color4
+client.unfocused        $color7 $background $foreground $color13 $color7
+client.urgent           $color1 $background $foreground $color1 $color1
+
+#end of window title bars & borders section
 
 exec numlockx on
 exec light-locker

@@ -287,9 +287,11 @@ endif
 
 " Denite {
 if dein#tap('denite.nvim')
-    call denite#custom#option('_', {
-            \ 'start_filter': 1,
-            \ })
+
+    " Set start with filter
+    call denite#custom#option('interactive', {
+                \ 'start_filter': 1,
+                \ })
 
     " custom var
     call denite#custom#var(
@@ -329,7 +331,7 @@ if dein#tap('denite.nvim')
     " custom mappings {
     nnoremap [denite] <nop>
     nmap <leader>u [denite]
-    nnoremap <silent> [denite]p :Denite file/rec<cr>
+    nnoremap <silent> [denite]p :Denite file/rec -buffer-name=interactive<cr>
     nnoremap <silent> [denite]r :Denite file_mru<cr>
     nnoremap <silent> [denite]b :Denite buffer<cr>
     nnoremap <silent> [denite]m :Denite menu<cr>
@@ -357,6 +359,13 @@ if dein#tap('denite.nvim')
                     \ denite#do_map('toggle_select').'j'
     endfunction
     " }
+
+    autocmd FileType denite-filter call s:denite_filter_settings()
+    function! s:denite_filter_settings() abort
+        inoremap <silent><buffer><expr> <C-c>   denite#do_map('quit')
+        nnoremap <silent><buffer><expr> <C-c>   denite#do_map('quit')
+    endfunction
+
 endif
 " }
 
