@@ -1,7 +1,6 @@
 [user]
   name = Mario Carballo Zama
   email = afk@ellugar.co
-  signkey = 0147D4B5964D51CA
 [include]
   path = ~/.gitconfig-signkey
 [push]
