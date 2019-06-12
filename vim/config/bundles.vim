@@ -90,7 +90,7 @@ call dein#add('zchee/deoplete-go', {
 call dein#add('tpope/vim-flagship')               " Statusline
 call dein#add('Yggdroot/indentLine')            " Ident visual guide
 call dein#add('gregsexton/MatchTag')              " Highlite Matching tag
-call dein#add('morhetz/gruvbox')
+call dein#add('gruvbox-community/gruvbox')
 call dein#add('ayu-theme/ayu-vim')
 " }
 

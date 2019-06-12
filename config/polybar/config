@@ -23,27 +23,15 @@ medium = 4
 big = 6
 
 [colors]
-BLACK=#263238
-WHITE=#cfd8dc
-RED=#ffa74d
-BLUE1=#03a9f4
-BLUE2=#81d4fa
-GREEN1=#8bc34a
-GREEN2=#ceecab
-YELLOW1=#ffc107
-YELLOW2=#ffa000
 MAGENTA1=#e91e63
-MAGENTA2=#ad1457
-CYAN1=#009688
-CYAN2=#26a69a
 
-background = #263238
-background-alt = #444
-foreground = #cfd8dc
-foreground-alt = #555
-primary = #03a9f4
-secondary = #81d4fa
-alert = #ffa74d
+background = ${xrdb:background}
+background-alt = ${xrdb:color4}
+foreground = ${xrdb:foreground}
+foreground-alt = ${xrdb:color5}
+primary = ${xrdb:color12}
+secondary = ${xrdb:14}
+alert = ${xrdb:color9}
 
 [bar/top]
 monitor = ${env:MONITOR:}
@@ -56,22 +44,22 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 0
-line-color = ${colors.WHITE}
+line-color = ${colors.foreground}
 
 border-size = 0
-border-color = ${colors.BLACK}
+border-color = ${colors.background}
 
 padding-left = 0
-padding-right = ${dims.big}
+padding-right = ${dims.medium}
 
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Siji:pixelsize=8:antialias=false;0
+font-0 = Wuncon Siji:pixelsize=8:antialias=false;0
 font-1 = creep regular:size=8:antialias=false;1
 
 modules-left = arch i3 bspwm xwindow
-modules-right = pulseaudio xkeyboard wlan battery date caffeine
+modules-right = pulseaudio xkeyboard wlan battery date
 
 tray-position = center
 tray-padding = ${dims.medium}
@@ -206,7 +194,7 @@ label = BL
 
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = ${colors.WHITE}
+bar-indicator-foreground = ${colors.foreground}
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
@@ -226,10 +214,10 @@ interface = "wlp2s0"
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.foreground-alt}
 label-connected = %essid%
 
-format-connected-spacing  = ${dims.small}
+; format-connected-spacing  = ${dims.small}
 format-connected-margin = ${dims.small}
 
 format-disconnected =
@@ -270,17 +258,18 @@ sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 use-ui-max = true
 
 format-volume = <ramp-volume> <label-volume>
-format-volume-spacing  = ${dims.small}
+; format-volume-spacing  = ${dims.small}
 format-volume-margin = ${dims.small}
 
 label-muted =  
-label-muted-foreground = ${colors.foreground}
+label-muted-foreground = ${colors.alert}
 
 ; Only applies if <ramp-volume> is used
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
+ramp-volume-foreground = ${colors.foreground-alt}
 
 ramp-headphone-0 = 
 ramp-headphone-1 = 
