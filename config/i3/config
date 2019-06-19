@@ -152,8 +152,8 @@ workspace $ws1 output $monitor-one
 workspace $ws2 output $monitor-one
 workspace $ws3 output $monitor-one
 workspace $ws4 output $monitor-one
+workspace $ws5 output $monitor-one
 
-workspace $ws6 output $monitor-two
 workspace $ws6 output $monitor-two
 workspace $ws7 output $monitor-two
 workspace $ws8 output $monitor-two

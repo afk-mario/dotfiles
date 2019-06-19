@@ -35,6 +35,7 @@ endif
 
 " Formatting {
 set wrap                        " wrap long lines
+set linebreak                   " dont break words
 set autoindent                  " Indent at the same level of the previous line
 set expandtab                   " Tabs are spaces, not tabs
 set shiftwidth=2                " Use indents of 4 spaces

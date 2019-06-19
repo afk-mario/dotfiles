@@ -293,6 +293,12 @@ if dein#tap('denite.nvim')
                 \ 'start_filter': 1,
                 \ })
 
+    call denite#custom#option('_', {
+                \ 'highlight_matched_char': 'Underlined',
+                \ 'prompt': 'λ ',
+                \ 'statusline': 0,
+                \ })
+
     " custom var
     call denite#custom#var(
                 \ 'file/rec', 
@@ -360,10 +366,17 @@ if dein#tap('denite.nvim')
     endfunction
     " }
 
+    autocmd FileType denite-filter call s:denite_filter_my_settings()
+    function! s:denite_filter_my_settings() abort
+    endfunction
+
     autocmd FileType denite-filter call s:denite_filter_settings()
     function! s:denite_filter_settings() abort
-        inoremap <silent><buffer><expr> <C-c>   denite#do_map('quit')
-        nnoremap <silent><buffer><expr> <C-c>   denite#do_map('quit')
+        inoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
+        nnoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
+        inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+        imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
+        call deoplete#custom#buffer_option('auto_complete', v:false)
     endfunction
 
 endif

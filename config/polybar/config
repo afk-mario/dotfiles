@@ -136,7 +136,7 @@ fuzzy-match = true
 
 format = <label-state> <label-mode>
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = 0
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
@@ -156,6 +156,8 @@ label-urgent-padding = ${dims.small}
 label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = ${dims.small}
+
+label-visible-padding = ${dims.small}
 
 [module/bspwm]
 type = internal/bspwm
