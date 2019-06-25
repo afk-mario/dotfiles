@@ -56,5 +56,6 @@ session
 spell
 postDiary
 nohup.out
-
+gtk
 bookmarks
+gtkfilechooser.ini
