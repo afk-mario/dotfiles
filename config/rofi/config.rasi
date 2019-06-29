@@ -6,9 +6,8 @@
 
 /* global settings and color variables */
 * {
-   maincolor:        #ed8712;
-   highlight:        bold #ed8712;
-   urgentcolor:      #e53714;
+   maincolor:        #edbbb2;
+   urgentcolor:      #fb4934;
 
    fgwhite:          #cfcfcf;
    blackdarkest:     #1d1d1d;
@@ -16,7 +15,7 @@
    blackentry:       #292929;
    blackselect:      #303030;
    darkgray:         #848484;
-   scrollbarcolor:   #505050;
+   scrollbarcolor:   #a89984;
    font: "Inter UI 14";
    background-color: @blackdarkest;
 }
@@ -31,7 +30,6 @@ window {
 mainbox {
    background-color: @blackdarkest;
    spacing:0px;
-   children: [inputbar, message, sidebar, listview];
 }
 
 message {
@@ -107,7 +105,7 @@ element alternate.active {
 scrollbar {
    background-color: @blackwidget;
    handle-color: @darkgray;
-   handle-width: 15px;
+   handle-width: 5px;
 }
 
 sidebar {
