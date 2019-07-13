@@ -78,9 +78,6 @@ call dein#add('zchee/deoplete-jedi')
 call dein#add('carlitux/deoplete-ternjs')
 call dein#add('OmniSharp/omnisharp-vim')
 call dein#add('hail2u/vim-css3-syntax')
-call dein#add('fatih/vim-go', {
-            \ 'build': ':GoUpdateBinaries'
-            \ })
 call dein#add('zchee/deoplete-go', {
             \ 'build': 'make'
             \ })
