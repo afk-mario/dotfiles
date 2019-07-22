@@ -287,6 +287,7 @@ client.urgent           $color1 $background $foreground $color1 $color1
 exec numlockx on
 exec light-locker
 exec sh ~/bin/fehbg
+exec --no-startup-id dunst
 exec --no-startup-id compton --config ~/.config/compton/compton.conf --respect-prop-shadow   
 exec --no-startup-id setxkbmap us -option ctrl:nocaps
 exec --no-startup-id ~/.screenlayout/screenlayout.sh

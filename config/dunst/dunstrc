@@ -166,7 +166,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/Arc/actions/16
 
     ### History ###
 
@@ -299,17 +299,16 @@
 
 [Spotify]
     appname = Spotify
-    format = "<b>%a</b>\n\n%s\n%b"
+    format = "<b>🎵 %s</b>\n\n%b"
     timeout = 10
     urgency = normal
     frame_color = "#b8bb26"
-    new_icon = spotify-client
 
 [Telegram]
-    appname = Telegram
+    desktop_entry = telegramdesktop
     timeout = 10
     urgency = normal
-    format = "<b>%a</b>\n\n%s\n%b"
+    format = "<b>💬 %s</b>\n\n%b"
     frame_color = "#458588"
 
 # Every section that isn't one of the above is interpreted as a rules to
