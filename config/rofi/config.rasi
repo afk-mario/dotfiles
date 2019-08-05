@@ -16,7 +16,7 @@
    blackselect:      #303030;
    darkgray:         #848484;
    scrollbarcolor:   #a89984;
-   font: "Inter UI 14";
+   font: "Inter 14";
    background-color: @blackdarkest;
 }
 
