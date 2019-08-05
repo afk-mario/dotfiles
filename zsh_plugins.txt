@@ -1,0 +1,21 @@
+robbyrussell/oh-my-zsh path:plugins/ssh-agent
+robbyrussell/oh-my-zsh path:plugins/cargo
+robbyrussell/oh-my-zsh path:plugins/docker
+robbyrussell/oh-my-zsh path:plugins/docker-compose
+
+zsh-users/zsh-completions
+
+rupa/z
+MikeDacre/cdbk
+caarlos0/ports
+caarlos0/zsh-git-sync kind:path
+
+unixorn/git-extra-commands
+xvoland/Extract
+djui/alias-tips
+
+jonas/tig path:contrib/tig-completion.zsh
+
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting
+subnixr/minimal

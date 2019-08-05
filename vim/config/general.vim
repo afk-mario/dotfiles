@@ -76,3 +76,5 @@ set wildignore+=node_modules/**,
 set wildignore+=temp/,
 set wildignore+=vendor/bundle/**,
 " }
+"
+autocmd BufRead,BufNewFile *.p8 setfiletype lua

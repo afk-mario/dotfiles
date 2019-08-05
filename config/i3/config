@@ -36,12 +36,13 @@ bindsym $mod+Return exec xterm
 bindsym $mod+w kill
 
 # start rofi (a program launcher)
-bindsym $mod+space exec rofi -show run
+bindsym $mod+space exec rofi -show combi -combi-modi 'run#drun'
+# rofi -show run
 # start rofi-calc calculator
 # bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo '{result}' | xclip -selection clipboard"
 bindsym $mod+period exec rofi -show emoji -modi emoji
-bindsym $mod+Shift+space exec rofi -modi 1pass:rofi-1pass -show 1pass
+# bindsym $mod+Shift+space exec rofi -modi 1pass:rofi-1pass -show 1pass
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
