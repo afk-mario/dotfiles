@@ -253,7 +253,7 @@ bindsym $mod+Shift+n exec --no-startup-id "~/bin/toggle-theme"
 
 new_window 1pixel
 
-assign [class="^Firefox *"] → $ws3
+assign [class="^(?i)firefox *"] → $ws3
 
 assign [class="^TelegramDesktop$"] → $ws4
 assign [class="^whats-app-nativefier-*"] → $ws4
