@@ -60,6 +60,7 @@ export GOPATH=$(go env GOPATH)
 export ADBI_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
 export UNITY_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
 export UNITY_PROJECTS_PATH="$HOME/Projects/Games/Unity/"
+export PASTEL_COLOR_MODE=24bit
 
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"
@@ -75,6 +76,7 @@ alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'
 alias prp="pipenv run python"
+
 # https://stackoverflow.com/questions/1571461/git-a-quick-command-to-go-to-root-of-the-working-tree/1571525#1571525
 alias git-root='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
 
