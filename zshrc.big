@@ -7,36 +7,23 @@ setopt interactivecomments
 #completition things
 # https://carlosbecker.com/posts/speeding-up-zsh/
 autoload -Uz compinit
+
 for dump in ~/.zcompdump(N.mh+24); do
   compinit
 done
+
 compinit -C
 autoload compaudit
 
+# Vi mode https://dougblack.io/words/zsh-vi-mode.html
+bindkey -v
+export KEYTIMEOUT=1
 
-# Load fzf if present
-# https://github.com/getantibody/antibody/issues/222
-if test -d /usr/share/fzf; then
-  source /usr/share/fzf/key-bindings.zsh
-else
-  # historical backward/forward search with linehead string binded to ^P/^N
-  autoload history-search-end
-  zle -N history-beginning-search-backward-end history-search-end
-  zle -N history-beginning-search-forward-end history-search-end
-  bindkey "^P" history-beginning-search-backward-end
-  bindkey "^N" history-beginning-search-forward-end
-  bindkey '^R' history-incremental-search-backward
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-  bindkey -M vicmd 'k' history-substring-search-up
-  bindkey -M vicmd 'j' history-substring-search-down
-fi
-
-# export original variable
 # Command history configuration
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+
 setopt hist_ignore_dups  # ignore duplication command history list
 setopt hist_ignore_space # ignore when commands starts with space
 setopt share_history     # share command history data
@@ -59,14 +46,18 @@ export ASEPRITE_ACCEPT_EULA=yes
 export GOPATH=$(go env GOPATH)
 export ADBI_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
 export UNITY_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
-export UNITY_PROJECTS_PATH="$HOME/Projects/Games/Unity/"
-export PASTEL_COLOR_MODE=24bit
+export UNITY_PROJECTS_PATH="$HOME/Projects/games/Unity/"
+
+export EDITOR=nvim
+export SYSTEMD_EDITOR=$EDITOR
+export MANPAGER="nvim -c 'set ft=man' -"
+export PIPENV_VENV_IN_PROJECT=1
 
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"
-alias tmux="tmux -f ~/.config/tmux/tmux.conf"
-alias tmuxconfig="nvim ~/.tmux.conf"
-alias tmuxreload="tmux source-file ~/.tmux.conf"
+alias tmux="tmux -2 -f ~/.config/tmux/tmux.conf"
+alias tmuxconfig="nvim ~/.config/tmux/tmux.conf"
+alias tmuxreload="tmux source-file ~/.config/tmux/tmux.conf"
 alias zshreload="source ~/.zshrc"
 alias vim="vim"
 alias vimdiff="nvim -d"
@@ -86,9 +77,7 @@ fpath+=~/.zfunc
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # http://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-  export PIPENV_VENV_IN_PROJECT=1
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  # Mac OSX
+elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
   export LIBRARY_PATH="/usr/local/lib"
   export PATH="$PATH:$ANDROID_SDK_ROOT/tools"
@@ -103,38 +92,11 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
   # https://github.com/sfackler/rust-openssl/issues/255
 
-    # https://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx
-    export JAVA_HOME=$(/usr/libexec/java_home)
-    export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
-    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
-  elif [[ "$OSTYPE" == "cygwin" ]]; then
-    # POSIX compatibility layer and Linux environment emulation for Windows
-    elif [[ "$OSTYPE" == "msys" ]]; then
-      # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-      elif [[ "$OSTYPE" == "win32" ]]; then
-        # I'm not sure this can happen.
-      elif [[ "$OSTYPE" == "freebsd"* ]]; then
-        # ...
-      else
-        # Unknown.
-      fi
+  # https://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx
+  export JAVA_HOME=$(/usr/libexec/java_home)
+  export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
+fi
 
-      export EDITOR=nvim
-      export SYSTEMD_EDITOR=$EDITOR
-      export MANPAGER="nvim -c 'set ft=man' -"
-
-# -- Vim Mode --
-# autoload -z edit-command-line 
-# zle -N edit-command-line
-# bindkey "^X^E" edit-command-line
-# bindkey -M vicmd v edit-command-line
-# bindkey -v
-# export KEYTIMEOUT=1
-
-# Fix tmux not letting me go use ctrl
-bindkey -e
-
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 function vim {
   THEME=$(~/bin/alacritty-colorscheme -s)
   if [[ "$THEME" == "ayu_light.yaml" ]]; then
@@ -144,6 +106,23 @@ function vim {
   fi
 }
 
+# Load fzf if present
+# https://github.com/getantibody/antibody/issues/222
+if test -d /usr/share/fzf; then
+  source /usr/share/fzf/key-bindings.zsh
+else
+  # historical backward/forward search with linehead string binded to ^P/^N
+  autoload history-search-end
+  zle -N history-beginning-search-backward-end history-search-end
+  zle -N history-beginning-search-forward-end history-search-end
+  bindkey "^P" history-beginning-search-backward-end
+  bindkey "^N" history-beginning-search-forward-end
+  bindkey '^R' history-incremental-search-backward
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+  bindkey -M vicmd 'k' history-substring-search-up
+  bindkey -M vicmd 'j' history-substring-search-down
+fi
 
 # https://gist.github.com/fredw08/1999371
 zstyle ':completion:*:*:kill:*' menu yes select
