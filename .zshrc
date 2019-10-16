@@ -7,3 +7,5 @@ elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
 else
     source ~/.dotfiles/zshrc.min
 fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

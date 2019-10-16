@@ -8,7 +8,7 @@
 [mergetool "fugitive"]
   cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 [merge]
-  tool = fugitive
+	tool = smerge
 [alias]
   lol = log --graph --decorate --oneline
   lola = log --graph --decorate --oneline --all
@@ -52,10 +52,10 @@
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path = 
-[mergetool "sourcetree"]
-  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
 [credential]
   helper = osxkeychain
 [gpg]
 	program = gpg2
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
