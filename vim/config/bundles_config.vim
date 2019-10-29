@@ -13,7 +13,8 @@ if dein#tap('vim-polyglot')
     let g:jsx_ext_required = 0 " Allow JSX in normal JS files
     " }
 
-    " CSS {
+    " Markdown {
+    let g:vim_markdown_conceal = 0
     " }
 
     " Rust {
