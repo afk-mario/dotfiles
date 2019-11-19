@@ -30,6 +30,8 @@ setopt share_history     # share command history data
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export XKB_DEFAULT_LAYOUT="es,us"
+export XKB_DEFAULT_OPTIONS="shift:both_capslock,caps:ctrl_modifier,grp:ctrls_toggle,grp:win_space_toggle"
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/apps:$PATH"

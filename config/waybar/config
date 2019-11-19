@@ -2,7 +2,7 @@
   "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["tray"],
-    "modules-right": ["pulseaudio", "clock"],
+    "modules-right": ["pulseaudio", "clock", "custom/keyboard_layout"],
     "height": 25,
     "sway/window": {
       "max-length": 50
@@ -13,6 +13,11 @@
     "tray": {
       "icon-size": 15,
       "spacing": 10
+    },
+    "custom/keyboard_layout": {
+      "format": "🎹 {}", // piano keyboard. Normal keyboard: ⌨️
+      "exec": "keyboard_layout_monitor",
+      "on-click": "keyboard_layout_switcher"
     }
 }
 
