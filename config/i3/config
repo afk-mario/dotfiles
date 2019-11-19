@@ -30,7 +30,7 @@ font pango:Inter 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec 
 
 # kill focused window
 bindsym $mod+w kill

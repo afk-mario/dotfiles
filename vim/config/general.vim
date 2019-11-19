@@ -6,6 +6,9 @@
 " This should handle General configs
 " }
 
+
+" https://github.com/neovim/neovim/issues/6802
+let $COLORTERM = "gnome-terminal"
 filetype plugin indent on   " Automatically detect file types.
 syntax on                   " Syntax highlighting
 set mouse=a                 " Automatically enable mouse usage
