@@ -1,0 +1,11 @@
+background-color=#1d2021
+text-color=#ebdbb2
+
+default-timeout=10000
+ignore-timeout=1
+
+font=SF Mono
+
+border-size=2
+border-color=#83a598
+padding=10

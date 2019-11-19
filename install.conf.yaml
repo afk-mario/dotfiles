@@ -64,6 +64,8 @@
    ~/.config/fontconfig: config/fontconfig
    ~/.config/sway: config/sway
    ~/.config/waybar: config/waybar
+   ~/.config/swaylock: config/swaylock
+   ~/.config/mako: config/mako
 
 - shell:
     -

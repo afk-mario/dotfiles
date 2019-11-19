@@ -81,11 +81,12 @@ output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+bindsym $mod+Control+Shift+l exec "swaylock"
+exec swayidle -w \
+         timeout 10 'swaylock' \
+         timeout 10 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -319,5 +320,10 @@ input $keyboard {
 }
 
 bindsym Control+Space exec keyboard_layout_switcher
+
+exec_always import-gsettings \
+    gtk-theme:gtk-theme-name \
+    icon-theme:gtk-icon-theme-name \
+    cursor-theme:gtk-cursor-theme-name
 
 include /etc/sway/config.d/*
