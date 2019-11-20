@@ -36,38 +36,27 @@ set $monitor-one "HDMI-A-2"
 set $monitor-two "DVI-D-1"
 
 # set primary gruvbox colorscheme colors
-set $background #282828
-set $foreground #ebdbb2
-set $color0  #282828
-set $color8  #928374
-set $color1  #cc241d
-set $color9  #fb4934
-set $color2  #98971a
-set $color10 #b8bb26
-set $color3  #d79921
-set $color11 #fabd2f
-set $color4  #458588
-set $color12 #83a598
-set $color5  #b16286
-set $color13 #d3869b
-set $color6  #689d6a
-set $color14 #8ec07c
-set $color7  #a89984
-set $color15 #ebdbb2
-
+set $bg0 #282828
+set $bg0hard #1d2021
+set $fg1 #ebdbb2
+set $fg4  #a89984
+set $reddark  #cc241d
+set $bluedark  #458588
+set $purplelight #d3869b
+set $white #ffffff
+set $black #000000
 
 font pango:Inter 8
 
-client.focused          $background $background $foreground $color13 $color12
-client.focused_inactive $color4 $background $foreground $color13 $color4
-client.unfocused        $color7 $background $foreground $color13 $color7
-client.urgent           $color1 $background $foreground $color1 $color1
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $bg0hard $bg0hard $fg1 $bg0 $bg0hard
+client.focused_inactive $bg0 $bg0 $fg1 $bg0 $bg0hard
+client.unfocused        $bg0 $bg0 $fg4 $white $bg0
+client.urgent           $bg0hard $bg0hard $fg1 $reddark $reddark
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-
 set $wallpapers_path $HOME/Dropbox/Media/Wallpapers
 output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 #
@@ -313,7 +302,7 @@ exec mako
 
 ## Input settings
 # Change keyboard layout
-set $keyboard "6940:6921:ckb1:_Corsair_K70B_Gaming_Keyboard_vM"
+set $keyboard "*"
 input $keyboard {
 	xkb_layout "us,es"
 	xkb_options ctrl:nocaps
