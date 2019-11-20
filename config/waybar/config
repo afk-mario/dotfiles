@@ -15,7 +15,7 @@
       "spacing": 10
     },
     "custom/keyboard_layout": {
-      "format": "{}",
+      "format": " {}",
       "exec": "keyboard_layout_monitor",
       "on-click": "keyboard_layout_switcher"
     },
@@ -24,10 +24,22 @@
       "format": "{ifname}",
       "format-wifi": " {essid}",
       "format-ethernet": " {ifname} ",
-      "format-disconnected": "",
+      "format-disconnected": "",
       "tooltip-format": "{ifname}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      "tooltip-format-ethernet": "{ifname} ",
+      "tooltip-format-ethernet": "eth {ifname} ",
+      "tooltip-format-disconnected": "Disconnected",
+      "max-length": 50
+    },
+    "network": {
+      "interface": "*",
+      "format": "{ifname}",
+      "format-wifi": " {essid}",
+      "format-ethernet": " {ifname} ",
+      "format-disconnected": "",
+      "tooltip-format": "{ifname}",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+      "tooltip-format-ethernet": "eth {ifname}",
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
     },
