@@ -35,28 +35,28 @@
 
 
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "Inter";
-    font-size: 12px;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: "Inter";
+  font-size: 12px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: #1d2021;
-    color: #fbf1c7;
+  background: #1d2021;
+  color: #fbf1c7;
 }
 
 #workspaces button {
-    padding: 0 4px;
-    background: transparent;
-    color: #fbf1c7;
-    border-bottom: 2px solid transparent;
+  padding: 0 4px;
+  background: transparent;
+  color: #fbf1c7;
+  border-bottom: 2px solid transparent;
 }
 
 #workspaces button.focused {
-    background: #181818;
-    border-bottom: 2px solid #d3869b;
+  background: #181818;
+  border-bottom: 2px solid #d3869b;
 }
 
 
@@ -74,22 +74,12 @@ window#waybar {
 #idle_inhibitor,
 #custom-keyboard_layout,
 #mpd {
-    padding: 0 8px;
-    margin: 0;
+  padding: 0 8px;
+  margin: 0;
 }
 
 #clock {
-    background-color: #282828;
-}
-
-#battery {
-    background-color: #98971a;
-    color: #1d2021;
-}
-
-#battery.charging {
-    color: white;
-    background-color: #26A65B;
+  background-color: #282828;
 }
 
 #network {
@@ -105,23 +95,48 @@ window#waybar {
 }
 
 #idle_inhibitor.activated {
-    background-color: #fb4934;
-    color: white;
+  background-color: #fb4934;
+  color: white;
+}
+
+#custom-keyboard_layout {
+  border-bottom: 2px solid #8ec07c;
 }
 
 @keyframes blink {
-    to {
-        background-color: #26A65B;
-        color: #fb4934;
-    }
+  to {
+    background-color: #26A65B;
+    color: #fb4934;
+  }
 }
 
+#battery {
+  background-color: #98971a;
+  color: #1d2021;
+}
+
+#battery.full {
+  background-color: transparent;
+  color: #b8bb26;
+}
+
+#battery.discharging {
+  color: #1d2021;
+  background-color: #d79921;
+}
+
+#battery.charging {
+  background-color: #98971a;
+  color: #1d2021;
+}
+
+
 #battery.warning:not(.charging) {
-    background: #cc241d;
-    color: #26A65B;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background: #cc241d;
+  color: #26A65B;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
