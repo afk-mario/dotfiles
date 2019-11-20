@@ -83,8 +83,8 @@ output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 #
 bindsym $mod+Control+Shift+l exec "swaylock"
 exec swayidle -w \
-         timeout 10 'swaylock' \
-         timeout 10 'swaymsg "output * dpms off"' \
+         timeout 20 'swaylock' \
+         timeout 100 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock'
 #

@@ -12,7 +12,7 @@ swaymsg --type get_inputs --raw | \
 	  select(contains("English \\(US\\)") | not)
      ] |
      first |
-     sub("English \\(US\\)"; "us") | sub("Portuguese \\(Brazil\\)"; "br")
+     sub("English \\(US\\)"; "us") | sub("Spanish"; "es")
     '
 
 swaymsg --type subscribe --monitor --raw '["input"]' | \
@@ -20,4 +20,5 @@ swaymsg --type subscribe --monitor --raw '["input"]' | \
     '
       select(.change == "xkb_layout") |
         .input.xkb_active_layout_name |
-	sub("English \\(US\\)"; "us") | sub("Portuguese \\(Brazil\\)"; "br")
+	sub("English \\(US\\)"; "us") | sub("Spanish"; "es")
+    '

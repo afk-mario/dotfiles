@@ -2,7 +2,7 @@
   "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["tray"],
-    "modules-right": ["pulseaudio", "clock", "network", "custom/keyboard_layout"],
+    "modules-right": ["idle_inhibitor" ,"pulseaudio", "network", "custom/keyboard_layout" ,"battery", "clock"],
     "height": 25,
     "sway/window": {
       "max-length": 50
@@ -15,21 +15,44 @@
       "spacing": 10
     },
     "custom/keyboard_layout": {
-      "format": "🎹 {}", // piano keyboard. Normal keyboard: ⌨️
+      "format": "{}",
       "exec": "keyboard_layout_monitor",
       "on-click": "keyboard_layout_switcher"
     },
     "network": {
       "interface": "wlp2s0",
       "format": "{ifname}",
-      "format-wifi": "{essid} ({signalStrength}%) ",
+      "format-wifi": "WiFi {essid}",
       "format-ethernet": "{ifname} ",
-      "format-disconnected": "", //An empty format will hide the module.
+      "format-disconnected": "",
       "tooltip-format": "{ifname}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
       "tooltip-format-ethernet": "{ifname} ",
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "0",
+        "deactivated": "-"
+      }
+    },
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-bluetooth": "{volume}% {icon}",
+      "format-muted": "/",
+      "format-icons": {
+        "headphones": "H",
+        "handsfree": "F",
+        "headset": "S",
+        "default": ["S", "S"]
+      },
+      "scroll-step": 1,
+      "on-click": "pavucontrol"
+    },
+    "battery": {
+      "format": "BAT {capacity}%"
     }
 }
 
