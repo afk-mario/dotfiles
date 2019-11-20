@@ -188,11 +188,12 @@ workspace $ws9 output $monitor-two
 
 ### AFK's keybindings
 
-bindsym Print exec grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
-
-bindsym $mod+Shift+Print exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+bindsym Print exec grim -g "$(slurp)" ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
 
 bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy
+
+bindsym $mod+Shift+Print exec grim ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%

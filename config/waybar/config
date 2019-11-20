@@ -1,6 +1,6 @@
 {
   "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["custom/arch","sway/workspaces", "sway/mode"],
     "modules-center": ["tray"],
     "modules-right": ["idle_inhibitor" ,"pulseaudio", "network", "custom/keyboard_layout" ,"battery", "clock"],
     "height": 25,
@@ -22,8 +22,8 @@
     "network": {
       "interface": "wlp2s0",
       "format": "{ifname}",
-      "format-wifi": "WiFi {essid}",
-      "format-ethernet": "{ifname} ",
+      "format-wifi": " {essid}",
+      "format-ethernet": " {ifname} ",
       "format-disconnected": "",
       "tooltip-format": "{ifname}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
@@ -34,25 +34,35 @@
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
-        "activated": "0",
-        "deactivated": "-"
+        "activated": "",
+        "deactivated": ""
       }
     },
     "pulseaudio": {
-      "format": "{icon}  {volume}%",
-      "format-bluetooth": "{volume}% {icon}",
-      "format-muted": "/",
+      "format": "{icon} {volume}%",
+      "format-muted": "",
       "format-icons": {
-        "headphones": "H",
-        "handsfree": "F",
-        "headset": "S",
-        "default": ["S", "S"]
+        "headphones": "",
+        "default": ["", ""]
       },
       "scroll-step": 1,
       "on-click": "pavucontrol"
     },
     "battery": {
-      "format": "BAT {capacity}%"
+      "bat": "BAT0",
+      "interval": 60,
+      "states": {
+        "good": 80,
+        "warning": 50,
+        "critical": 35
+      },
+      "format": "{icon} {capacity}%",
+      "format-icons": ["", ""]
+      },
+      "max-length": 25
+    },
+    "custom/arch": {
+      "format": ""
     }
 }
 

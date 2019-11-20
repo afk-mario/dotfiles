@@ -37,7 +37,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "Inter";
+  font-family: "Inter","Material Icons", monospace;
   font-size: 12px;
   min-height: 0;
 }
@@ -73,6 +73,7 @@ window#waybar {
 #mode,
 #idle_inhibitor,
 #custom-keyboard_layout,
+#custom-arch,
 #mpd {
   padding: 0 8px;
   margin: 0;
@@ -101,6 +102,11 @@ window#waybar {
 
 #custom-keyboard_layout {
   border-bottom: 2px solid #8ec07c;
+}
+
+#custom-arch {
+  color: white;
+  background: #e91e63;
 }
 
 @keyframes blink {
