@@ -1,3 +1,7 @@
+// based on:
+//  - https://www.reddit.com/r/swaywm/comments/d1tksf/i_made_a_keyboard_layout_switcher_for_swaywaybar/
+//  - https://github.com/ericonr/dotfiles/blob/master/sourcecode/keyboard_layout_switcher.go
+
 package main
 
 import (
