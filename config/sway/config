@@ -283,8 +283,10 @@ smart_borders on
 
 
 assign [class="^(?i)firefox *"] → $ws3
+assign [app_id="firefox"] → $ws3
 
 assign [class="^TelegramDesktop$"] → $ws4
+assign [app_id="telegram"] → $ws4
 assign [class="^whats-app-nativefier-*"] → $ws4
 
 assign [class="^Slack$"] → $ws5
@@ -294,8 +296,7 @@ assign [class="^Ripcord$"] → $ws5
 assign [class="^spotify$"] → $ws8
 
 assign [class="^Thunderbird$"] → $ws9
-assign [class="^Mailspring$"] → $ws9
-
+assign [app_id="thunderbird"] → $ws9
 
 for_window [class="Spotify"] move to workspace $ws8
 
