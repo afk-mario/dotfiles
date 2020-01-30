@@ -1,8 +1,8 @@
 [user]
   name = Mario Carballo Zama
   email = afk@ellugar.co
-[include]
-  path = ~/.gitconfig-signkey
+[gpg]
+	program = gpg
 [push]
   default = simple
 [mergetool "fugitive"]
@@ -54,8 +54,8 @@
   path = 
 [credential]
   helper = osxkeychain
-[gpg]
-	program = gpg2
 [mergetool "smerge"]
 	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
+[include]
+  path = ~/.gitconfig-signkey
