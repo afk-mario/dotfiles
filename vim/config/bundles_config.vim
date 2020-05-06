@@ -37,6 +37,7 @@ let g:ale_linters['graphql'] = ['']
 let g:ale_linters['python'] = ['flake8']
 let g:ale_linters['rust'] = ['cargo']
 let g:ale_linters['go'] = ['gometalinter', 'gofmt']
+let g:ale_linters['cs'] = ['OmniSharp']
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']

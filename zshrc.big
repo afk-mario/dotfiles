@@ -46,8 +46,8 @@ export PATH="$(yarn global bin):$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
 
 export GOPATH=$(go env GOPATH)
-export ADBI_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
-export UNITY_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
+export ADBI_INSTALL_PATH="$HOME/builds/"
+export UNITY_INSTALL_PATH="$HOME/builds/"
 export UNITY_PROJECTS_PATH="$HOME/Projects/games/Unity/"
 
 export EDITOR=nvim
