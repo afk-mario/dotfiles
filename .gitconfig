@@ -2,41 +2,29 @@
   name = Mario Carballo Zama
   email = afk@ellugar.co
 [gpg]
-	program = gpg
+  program = gpg
 [push]
   default = simple
-[mergetool "fugitive"]
-  cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 [merge]
-	tool = smerge
+  tool = smerge
 [alias]
   lol = log --graph --decorate --oneline
   lola = log --graph --decorate --oneline --all
   d = difftool
   ctags = !.git/hooks/ctags
   czs = cz -S
-	slm = !echo $(git log --author=\"$(git config user.name)\" --no-merges --before=$(date \"+%Y-%m-01T00:00\") --after=$(date -d \"-$(date +%d) days -1 month\" \"+%Y-%m-%dT23:59\") --reverse | grep commit | wc -l) commits, $(git log --author=\"$(git config user.name)\" --no-merges --before=$(date \"+%Y-%m-01T00:00\") --after=$(date -d \"-$(date +%d) days -1 month\" \"+%Y-%m-%dT23:59\") --reverse --stat | grep -Eo \"[0-9]{1,} files? changed\" | grep -Eo \"[0-9]{1,}\" | awk \"{ sum += \\$1 } END { print sum }\") files changed, $(git log --author=\"$(git config user.name)\" --no-merges --before=$(date \"+%Y-%m-01T00:00\") --after=$(date -d \"-$(date +%d) days -1 month\" \"+%Y-%m-%dT23:59\") --reverse --stat | grep -Eo \"[0-9]{1,} insertions?\" | grep -Eo \"[0-9]{1,}\" | awk \"{ sum += \\$1 } END { print sum }\") insertions and $(git log --author=\"$(git config user.name)\" --no-merges --before=$(date \"+%Y-%m-01T00:00\") --after=$(date -d \"-$(date +%d) days -1 month\" \"+%Y-%m-%dT23:59\") --reverse --stat | grep -Eo \"[0-9]{1,} deletions?\" | grep -Eo \"[0-9]{1,}\" | awk \"{ sum += \\$1 } END { print sum }\") deletions last month
 [color]
   ui = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
   remote = green
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
 [color "status"]
   added = yellow
   changed = green
   untracked = cyan
-[diff]
-  tool = nvimdiff
 [difftool]
   prompt = false
-[difftool "nvimdiff"]
-  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [commit]
   verbose = true
   gpgsign = true
@@ -48,15 +36,18 @@
   process = git-lfs filter-process
   required = true
 [core]
-  excludesfile = /Users/arlefreak/.gitignore_global
-  pager = diff-so-fancy | less --tabs=4 -RFX
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path = 
+  excludesfile = $HOME/.gitignore_global
+  pager = delta --theme='Dracula'
 [credential]
   helper = osxkeychain
+[mergetool "fugitive"]
+  cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 [mergetool "smerge"]
-	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
+  cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+  trustExitCode = true
+[difftool "nvimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [include]
   path = ~/.gitconfig-signkey
+[interactive]
+  diffFilter = delta --color-only
