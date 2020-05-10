@@ -6,6 +6,9 @@ Host *
      Protocol 2
      ServerAliveInterval 60
      ServerAliveCountMax 30
+     AddKeysToAgent yes
+     UseKeychain yes
+     IdentityFile ~/.ssh/id_rsa
 
 Host OsecanDev
     HostName 138.197.17.118
@@ -41,3 +44,4 @@ Host web01
   HostName 167.99.169.207
   user deploy
   IdentityFile ~/.ssh/deploy
+
