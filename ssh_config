@@ -7,7 +7,6 @@ Host *
      ServerAliveInterval 60
      ServerAliveCountMax 30
      AddKeysToAgent yes
-     UseKeychain yes
      IdentityFile ~/.ssh/id_rsa
 
 Host OsecanDev
