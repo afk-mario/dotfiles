@@ -79,5 +79,10 @@ set wildignore+=node_modules/**,
 set wildignore+=temp/,
 set wildignore+=vendor/bundle/**,
 " }
-"
+
+
+" NETWR
+
+let g:netrw_browse_split = 4
+
 autocmd BufRead,BufNewFile *.p8 setfiletype lua

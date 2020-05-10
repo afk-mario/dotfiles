@@ -56,10 +56,10 @@ client.unfocused        $bg0 $bg0 $fg4 $white $bg0
 client.urgent           $bg0hard $bg0hard $fg1 $reddark $reddark
 
 ### Output configuration
-#
-set $wallpapers_path $HOME/Dropbox/Media/Wallpapers
-output * bg `find $wallpapers_path -type f | shuf -n 1` fill
-#
+
+# set $wallpapers_path $HOME/Dropbox/Media/Wallpapers
+# output * bg `find $wallpapers_path -type f | shuf -n 1` fill
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -190,7 +190,7 @@ workspace $ws9 output $monitor-two
 
 bindsym Print exec grim -g "$(slurp)" ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
 
-bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
 
 bindsym $mod+Shift+Print exec grim ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
 
@@ -301,6 +301,8 @@ assign [app_id="thunderbird"] → $ws9
 for_window [class="Spotify"] move to workspace $ws8
 
 exec mako
+exec oguri
+exec_always ogurictl output '*' --image $(ls $HOME/Dropbox/Media/Wallpapers/*.jpg | shuf -n1)
 
 ## Input settings
 # Change keyboard layout

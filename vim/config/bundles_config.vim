@@ -48,7 +48,7 @@ let g:ale_fixers['yaml'] = ['prettier']
 let g:ale_fixers['python'] = ['isort', 'black']
 let g:ale_fixers['rust'] = ['rustfmt']
 let g:ale_fixers['sh'] = ['shfmt']
-" let g:ale_fixers['go'] = ['gofmt', 'goimports']
+let g:ale_fixers['go'] = ['gofmt', 'goimports']
 let g:ale_fixers['sql'] = ['pgformatter']
 
 

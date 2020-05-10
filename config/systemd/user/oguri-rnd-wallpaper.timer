@@ -1,0 +1,12 @@
+[Unit]
+Description=Random wallpaper with oguri Timer
+RefuseManualStart=no
+RefuseManualStop=no
+
+[Timer]
+Persistent=false
+OnCalendar=*:0/59
+Unit=oguri-rnd-wallpaper.service
+
+[Install]
+WantedBy=default.target

@@ -43,11 +43,12 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export PATH="$(yarn global bin):$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
 
 export GOPATH=$(go env GOPATH)
-export ADBI_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
-export UNITY_INSTALL_PATH="$HOME/Dropbox/Projects/Builds/"
+export ADBI_INSTALL_PATH="$HOME/builds/"
+export UNITY_INSTALL_PATH="$HOME/builds/"
 export UNITY_PROJECTS_PATH="$HOME/Projects/games/Unity/"
 
 export EDITOR=nvim
@@ -69,6 +70,8 @@ alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
 alias tre='tree -C -L 2'
 alias prp="pipenv run python"
+alias ssh="TERM=xterm-256color ssh"
+alias sway="$HOME/bin/sway-vars"
 
 # https://stackoverflow.com/questions/1571461/git-a-quick-command-to-go-to-root-of-the-working-tree/1571525#1571525
 alias git-root='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
