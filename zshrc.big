@@ -72,6 +72,7 @@ alias tre='tree -C -L 2'
 alias prp="pipenv run python"
 alias ssh="TERM=xterm-256color ssh"
 alias sway="$HOME/bin/sway-vars"
+alias lg='lazygit'
 
 # https://stackoverflow.com/questions/1571461/git-a-quick-command-to-go-to-root-of-the-working-tree/1571525#1571525
 alias git-root='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
