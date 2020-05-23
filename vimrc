@@ -10,3 +10,5 @@ source ~/.vim/config/general.vim
 source ~/.vim/config/ui.vim
 source ~/.vim/config/mappings.vim
 source ~/.vim/config/bundles_config.vim
+source ~/.vim/config/enviroment.vim
+source ~/.vim/config/tmp.vim

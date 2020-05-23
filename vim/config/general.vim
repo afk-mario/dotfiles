@@ -24,16 +24,11 @@ set undoreload=10000  " Maximum number lines to save for undo on a buffer reload
 
 set backspace=indent,eol,start  " Backspace for dummies
 
+" Character after pasting from browser ^M
+" https://github.com/vim/vim/issues/1404
+
 if has('nvim')
     set inccommand=nosplit
-endif
-
-if has('clipboard')
-    if has('unnamedplus')  " When possible use + register for copy-paste
-        set clipboard=unnamed,unnamedplus
-    else         " On mac and Windows, use * register for copy-paste
-        set clipboard=unnamed
-    endif
 endif
 
 " Formatting {
@@ -79,7 +74,6 @@ set wildignore+=node_modules/**,
 set wildignore+=temp/,
 set wildignore+=vendor/bundle/**,
 " }
-
 
 " NETWR
 
