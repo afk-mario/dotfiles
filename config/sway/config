@@ -72,10 +72,10 @@ client.urgent           $bg0hard $bg0hard $fg1 $reddark $reddark
 #
 bindsym $mod+Control+Shift+l exec "swaylock"
 exec swayidle -w \
-         timeout 20 'swaylock' \
-         timeout 100 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock'
+       timeout 20 'swaylock' \
+       timeout 100 'swaymsg "output * dpms off"' \
+       resume 'swaymsg "output * dpms on"' \
+       before-sleep 'swaylock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -100,109 +100,109 @@ exec swayidle -w \
 # Basics:
 #
 # start a terminal
-bindsym $mod+Return exec $term
+       bindsym $mod+Return exec $term
 
 # kill focused window
-bindsym $mod+w kill
+       bindsym $mod+w kill
 
 # start your launcher
-bindsym $mod+space exec $menu
-bindsym $mod+period exec $emoji
-bindsym $mod+c exec $calc
+       bindsym $mod+space exec $menu
+       bindsym $mod+period exec $emoji
+       bindsym $mod+c exec $calc
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
 # Despite the name, also works for non-floating windows.
 # Change normal to inverse to use left mouse button for resizing and right
 # mouse button for dragging.
-floating_modifier $mod normal
+       floating_modifier $mod normal
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+       bindsym $mod+Shift+c reload
 
 # exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+       bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
 # Move your focus around
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
+       bindsym $mod+$left focus left
+       bindsym $mod+$down focus down
+       bindsym $mod+$up focus up
+       bindsym $mod+$right focus right
 # or use $mod+[up|down|left|right]
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+       bindsym $mod+Left focus left
+       bindsym $mod+Down focus down
+       bindsym $mod+Up focus up
+       bindsym $mod+Right focus right
 
 # _move_ the focused window with the same, but add Shift
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+       bindsym $mod+Shift+$left move left
+       bindsym $mod+Shift+$down move down
+       bindsym $mod+Shift+$up move up
+       bindsym $mod+Shift+$right move right
 # ditto, with arrow keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+       bindsym $mod+Shift+Left move left
+       bindsym $mod+Shift+Down move down
+       bindsym $mod+Shift+Up move up
+       bindsym $mod+Shift+Right move right
 #
 # Workspaces:
 #
 # switch to workspace
-bindsym $mod+0 workspace $ws0
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
+       bindsym $mod+0 workspace $ws0
+       bindsym $mod+1 workspace $ws1
+       bindsym $mod+2 workspace $ws2
+       bindsym $mod+3 workspace $ws3
+       bindsym $mod+4 workspace $ws4
+       bindsym $mod+5 workspace $ws5
+       bindsym $mod+6 workspace $ws6
+       bindsym $mod+7 workspace $ws7
+       bindsym $mod+8 workspace $ws8
+       bindsym $mod+9 workspace $ws9
 # move focused container to workspace
-bindsym $mod+Shift+0 move container to workspace $ws0
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
+       bindsym $mod+Shift+0 move container to workspace $ws0
+       bindsym $mod+Shift+1 move container to workspace $ws1
+       bindsym $mod+Shift+2 move container to workspace $ws2
+       bindsym $mod+Shift+3 move container to workspace $ws3
+       bindsym $mod+Shift+4 move container to workspace $ws4
+       bindsym $mod+Shift+5 move container to workspace $ws5
+       bindsym $mod+Shift+6 move container to workspace $ws6
+       bindsym $mod+Shift+7 move container to workspace $ws7
+       bindsym $mod+Shift+8 move container to workspace $ws8
+       bindsym $mod+Shift+9 move container to workspace $ws9
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 
-workspace $ws0 output $monitor-one
-workspace $ws1 output $monitor-one
-workspace $ws2 output $monitor-one
-workspace $ws3 output $monitor-one
-workspace $ws4 output $monitor-one
-workspace $ws5 output $monitor-one
+       workspace $ws0 output $monitor-one
+       workspace $ws1 output $monitor-one
+       workspace $ws2 output $monitor-one
+       workspace $ws3 output $monitor-one
+       workspace $ws4 output $monitor-one
+       workspace $ws5 output $monitor-one
 
-workspace $ws6 output $monitor-two
-workspace $ws7 output $monitor-two
-workspace $ws8 output $monitor-two
-workspace $ws9 output $monitor-two
+       workspace $ws6 output $monitor-two
+       workspace $ws7 output $monitor-two
+       workspace $ws8 output $monitor-two
+       workspace $ws9 output $monitor-two
 
 ### AFK's keybindings
 
-bindsym Print exec grim -g "$(slurp)" ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+       bindsym Print exec grim -g "$(slurp)" ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
 
-bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
+       bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
 
-bindsym $mod+Shift+Print exec grim ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+       bindsym $mod+Shift+Print exec grim ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
 
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+       bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+       bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+       bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+       bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-bindsym XF86AudioPlay exec "playerctl play-pause"
-bindsym XF86AudioNext exec "playerctl next"
-bindsym XF86AudioPrev exec "playerctl prev"
+       bindsym XF86AudioPlay exec "playerctl play-pause"
+       bindsym XF86AudioNext exec "playerctl next"
+       bindsym XF86AudioPrev exec "playerctl prev"
 
 
 #
@@ -211,25 +211,25 @@ bindsym XF86AudioPrev exec "playerctl prev"
 # You can "split" the current object of your focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
 # respectively.
-bindsym $mod+b splith
-bindsym $mod+v splitv
+       bindsym $mod+b splith
+       bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+       bindsym $mod+s layout stacking
+       bindsym $mod+t layout tabbed
+       bindsym $mod+e layout toggle split
 
 # Make the current focus fullscreen
-bindsym $mod+f fullscreen
+       bindsym $mod+f fullscreen
 
 # Toggle the current focus between tiling and floating mode
-bindsym $mod+Shift+space floating toggle
+       bindsym $mod+Shift+space floating toggle
 
 # Swap focus between the tiling area and the floating area
 # bindsym $mod+space focus mode_toggle
 
 # move focus to the parent container
-bindsym $mod+a focus parent
+       bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -237,34 +237,34 @@ bindsym $mod+a focus parent
 # You can send windows there and get them back later.
 
 # Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+       bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+       bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
 #
-mode "resize" {
+       mode "resize" {
 # left will shrink the containers width
 # right will grow the containers width
 # up will shrink the containers height
 # down will grow the containers height
-  bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+         bindsym $left resize shrink width 10px
+           bindsym $down resize grow height 10px
+           bindsym $up resize shrink height 10px
+           bindsym $right resize grow width 10px
 
 # ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+           bindsym Left resize shrink width 10px
+           bindsym Down resize grow height 10px
+           bindsym Up resize shrink height 10px
+           bindsym Right resize grow width 10px
 
 # return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+           bindsym Return mode "default"
+           bindsym Escape mode "default"
+       }
 bindsym $mod+r mode "resize"
 
 #
@@ -287,7 +287,7 @@ assign [app_id="firefox"] → $ws3
 
 assign [class="^TelegramDesktop$"] → $ws4
 assign [app_id="telegram"] → $ws4
-assign [class="^whats-app-nativefier-*"] → $ws4
+assign [class="^whatsapp-nativefier-*"] → $ws4
 
 assign [class="^Slack$"] → $ws5
 assign [class="^discord$"] → $ws5
@@ -297,6 +297,8 @@ assign [class="^spotify$"] → $ws8
 
 assign [class="^Thunderbird$"] → $ws9
 assign [app_id="thunderbird"] → $ws9
+assign [app_id="newsflash"] → $ws9
+assign [app_id="NewsFlashGTK"] → $ws9
 
 for_window [class="Spotify"] move to workspace $ws8
 
@@ -308,15 +310,16 @@ exec_always ogurictl output '*' --image $(ls $HOME/Dropbox/Media/Wallpapers/*.jp
 # Change keyboard layout
 set $keyboard "*"
 input $keyboard {
-	xkb_layout "us,es"
-	xkb_options ctrl:nocaps
+xkb_layout "us,es"
+xkb_options ctrl:nocaps
+xkb_numlock enabled
 }
 
 bindsym Control+Space exec keyboard_layout_switcher
 
 exec_always import-gsettings \
-    gtk-theme:gtk-theme-name \
-    icon-theme:gtk-icon-theme-name \
-    cursor-theme:gtk-cursor-theme-name
+gtk-theme:gtk-theme-name \
+icon-theme:gtk-icon-theme-name \
+cursor-theme:gtk-cursor-theme-name
 
 include /etc/sway/config.d/*

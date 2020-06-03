@@ -33,11 +33,10 @@
 /* $gb-dm-light-orange: #f38019; */
 /* $gb-dm-light-gray: #a89984; */
 
-
 * {
   border: none;
   border-radius: 0;
-  font-family: "SF Mono","Material Icons", monospace;
+  font-family: "SF Mono", "Material Icons", monospace;
   font-size: 12px;
   min-height: 0;
 }
@@ -59,7 +58,6 @@ window#waybar {
   border-bottom: 2px solid #d3869b;
 }
 
-
 #clock,
 #battery,
 #cpu,
@@ -68,12 +66,13 @@ window#waybar {
 #backlight,
 #network,
 #pulseaudio,
-#custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
 #custom-keyboard_layout,
 #custom-arch,
+#custom-disturb_on,
+#custom-disturb_off,
 #mpd {
   padding: 0 8px;
   margin: 0;
@@ -91,7 +90,7 @@ window#waybar {
   border-bottom: 2px solid #83a598;
 }
 
-#idle_inhibitor{
+#idle_inhibitor {
   border-bottom: 2px solid #cc241d;
 }
 
@@ -104,6 +103,8 @@ window#waybar {
   border-bottom: 2px solid #8ec07c;
 }
 
+#custom-disturb-on,
+#custom-disturb-off,
 #custom-arch {
   color: white;
   background: #e91e63;
@@ -111,7 +112,7 @@ window#waybar {
 
 @keyframes blink {
   to {
-    background-color: #26A65B;
+    background-color: #26a65b;
     color: #fb4934;
   }
 }
@@ -136,10 +137,9 @@ window#waybar {
   color: #1d2021;
 }
 
-
 #battery.warning:not(.charging) {
   background: #cc241d;
-  color: #26A65B;
+  color: #26a65b;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;

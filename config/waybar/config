@@ -2,7 +2,7 @@
   "layer": "top",
     "modules-left": ["custom/arch","sway/workspaces", "sway/mode"],
     "modules-center": ["tray"],
-    "modules-right": ["idle_inhibitor" ,"pulseaudio", "network", "custom/keyboard_layout" ,"battery", "clock"],
+    "modules-right": ["idle_inhibitor" ,"pulseaudio", "network", "custom/keyboard_layout" ,"battery", "clock", "custom/disturb_on", "custom/disturb_off"],
     "height": 25,
     "sway/window": {
       "max-length": 50
@@ -69,12 +69,19 @@
         "critical": 35
       },
       "format": "{icon} {capacity}%",
-      "format-icons": ["", ""]
-      },
+      "format-icons": ["", ""],
       "max-length": 25
     },
     "custom/arch": {
       "format": ""
+    },
+    "custom/disturb_on":{
+      "format": "-",
+      "on-click":"makoctl set invisible=1"
+    },
+    "custom/disturb_off":{
+      "format": "+",
+      "on-click":"makoctl set invisible=0"
     }
 }
 
