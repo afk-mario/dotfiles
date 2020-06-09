@@ -1,0 +1,58 @@
+#!/bin/bash
+# pi8bd - A script to build and deploy games to Itch from pico8
+
+FILE_PATH=
+game=
+
+function check {
+  if test -f "$FILE_PATH"; then
+    # Get name without extension
+    game=$(echo $FILE_PATH | sed -r 's/.+\/(.+)\..+/\1/')
+    build
+  fi
+}
+
+function build {
+  echo "Building the game $game at $FILE_PATH ..."
+  ~/apps/pico-8/pico8 $FILE_PATH -export index.html
+  sed -i 's/background-color:#222/background-color:#000/g' index.html
+  zip "${game}.zip" index.{html,js}
+  deploy
+}
+
+
+function deploy {
+  butler push "${game}.zip" "afk-mario/${game}:html5"
+  clean
+}
+
+function clean {
+  echo "Removing generated files"
+  rm index.{html,js}
+  rm "${game}.zip"
+}
+
+function usage
+{
+  echo "usage: pi8bd game | [[-h]]"
+}
+
+if [ "$1" != "" ]; then
+    FILE_PATH=$1
+    check
+else
+    echo "No FILE_PATH specified"
+    usage
+fi
+
+
+while [ "$1" != "" ]; do
+  case $1 in
+    -h | --help )           usage
+      exit
+      ;;
+    * )
+      exit 1
+  esac
+  shift
+done

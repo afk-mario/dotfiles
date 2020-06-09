@@ -1,9 +1,10 @@
 #!/bin/bash
 
+export XDG_SESSION_TYPE=wayland
 export MOZ_ENABLE_WAYLAND=1
 export QT_QPA_PLATFORM=wayland-egl
 export QT_QPA_PLATFORMTHEME=qt5ct
 # export SDL_VIDEODRIVER=wayland
 export QT_WAYLAND_FORCE_DPI=physical
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-exec dbus-launch --sh-syntax --exit-with-session sway
+exec systemd-cat -t sway sway
