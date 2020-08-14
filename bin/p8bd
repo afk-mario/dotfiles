@@ -1,5 +1,5 @@
 #!/bin/bash
-# pi8bd - A script to build and deploy games to Itch from pico8
+# p8bd - A script to build and deploy games to Itch from pico8
 
 FILE_PATH=
 game=
@@ -34,7 +34,7 @@ function clean {
 
 function usage
 {
-  echo "usage: pi8bd game | [[-h]]"
+  echo "usage: p8bd game | [[-h]]"
 }
 
 if [ "$1" != "" ]; then

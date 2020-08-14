@@ -117,7 +117,7 @@ exec swayidle -w \
 # mouse button for dragging.
        floating_modifier $mod normal
 
-# reload the configuration file
+# 
        bindsym $mod+Shift+c reload
 
 # exit sway (logs you out of your Wayland session)
@@ -281,9 +281,36 @@ gaps inner 10
 gaps outer 0
 smart_borders on
 
+# Floating windows
+
+
+# For X
+for_window [window_type="menu"]            floating enable
+for_window [window_role="app"]             floating enable
+for_window [window_role="pop-up"]          floating enable
+for_window [window_role="task_dialog"]     floating enable
+for_window [window_type="dialog"]          floating enable
+
+# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="^Steam Keyboard$"] floating enable
+
+# Native Wayland
+for_window [app_id="firefoxdeveloperedition" title="About *"] floating enable
+for_window [app_id="xdg-desktop-portal-gtk" title="Choose files"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+
 
 assign [class="^(?i)firefox *"] → $ws3
-assign [app_id="firefox"] → $ws3
+assign [app_id="firefoxdeveloperedition"] → $ws3
 
 assign [class="^TelegramDesktop$"] → $ws4
 assign [app_id="telegram"] → $ws4
@@ -304,7 +331,7 @@ for_window [class="Spotify"] move to workspace $ws8
 
 exec mako
 exec oguri
-exec_always ogurictl output '*' --image $(ls $HOME/Dropbox/Media/Wallpapers/*.jpg | shuf -n1)
+exec_always ogurictl output '*' --image $(ls $HOME/Dropbox/Media/Wallpapers/*.{jpg,png} | shuf -n1)
 
 ## Input settings
 # Change keyboard layout

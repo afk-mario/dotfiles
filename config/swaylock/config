@@ -1,4 +1,4 @@
-image=$HOME/Dropbox/Media/Wallpapers/merveilles_dice.jpg 
+image=$(ls $HOME/Dropbox/Media/Wallpapers/*.{jpg,png} | shuf -n1)
 font=Inter
 font-size=13
 
