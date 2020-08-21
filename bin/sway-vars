@@ -8,4 +8,5 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # export SDL_VIDEODRIVER=wayland
 export QT_WAYLAND_FORCE_DPI=physical
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export MANGOHUD=1
 exec systemd-cat -t sway sway
