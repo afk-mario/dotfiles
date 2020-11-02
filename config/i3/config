@@ -8,6 +8,7 @@ set $bluedark  #458588
 set $purplelight #d3869b
 set $white #ffffff
 set $black #000000
+
 set $mod Mod4
 
 
@@ -216,15 +217,15 @@ bindsym Control+space exec "~/bin/toggle-lang"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-
 bindsym XF86AudioPlay exec "playerctl play-pause"
 bindsym XF86AudioNext exec "playerctl next"
 bindsym XF86AudioPrev exec "playerctl prev"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 bindsym $mod+Shift+n exec --no-startup-id "~/bin/toggle-theme"
 
@@ -245,7 +246,7 @@ assign [class="^Mailspring$"] → $ws9
 
 for_window [class="Spotify"] move to workspace $ws8
 
-gaps inner 20
+gaps inner 8
 gaps outer 0
 smart_borders on
 # smart_gaps on
@@ -263,7 +264,7 @@ exec numlockx on
 exec light-locker
 exec sh ~/bin/fehbg
 exec --no-startup-id dunst
-exec --no-startup-id compton --config ~/.config/compton/compton.conf --respect-prop-shadow   
+exec --no-startup-id compton --config ~/.config/compton/compton.conf --respect-prop-shadow
 exec --no-startup-id setxkbmap us -option ctrl:nocaps
 exec --no-startup-id ~/.screenlayout/screenlayout.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh &

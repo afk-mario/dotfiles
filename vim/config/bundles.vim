@@ -7,92 +7,63 @@
 " }
 
 " Config {
-set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
-call dein#begin(expand('~/.vim/bundle'))
-call dein#add('Shougo/dein.vim')
-" }
-
-" Denite {
-call dein#add('Shougo/denite.nvim')
-call dein#add('Shougo/neomru.vim', {
-            \'depends': 'denite.nvim'
-            \})
-call dein#add('Shougo/unite-outline', {
-            \'depends': 'denite.nvim'
-            \})
-call dein#add('Shougo/neoyank.vim', {
-            \'depends': 'denite.nvim'
-            \})
-call dein#add('tacroe/unite-mark', {
-            \'depends': 'denite.nvim'
-            \})
-call dein#add('tsukkee/unite-tag', {
-            \'depends': 'denite.nvim'
-            \})
+call plug#begin('~/.vim/plugged')
 " }
 
 " Utilities{
-call dein#add('Shougo/deoplete.nvim')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-call dein#add('tpope/vim-vinegar')             " Netrw helper
-call dein#add('tpope/vim-obsession')           " Session Managment
-call dein#add('tpope/vim-eunuch')              " Unix helpers
-call dein#add('tpope/vim-commentary')          " Toggle comments
-call dein#add('tpope/vim-surround')            " Sorroundings
-call dein#add('tpope/vim-repeat')              " More . command
-call dein#add('tpope/vim-abolish')             " Better replace
-call dein#add('tpope/vim-unimpaired')          " Key mappings for [
+Plug 'Shougo/deoplete.nvim'
 
-call dein#add('suy/vim-context-commentstring')     " Context commentstring for JSX
+Plug 'tpope/vim-vinegar'             " Netrw helper
+Plug 'tpope/vim-obsession'           " Session Managment
+Plug 'tpope/vim-eunuch'              " Unix helpers
+Plug 'tpope/vim-commentary'          " Toggle comments
+Plug 'tpope/vim-surround'            " Sorroundings
+Plug 'tpope/vim-repeat'              " More . command
+Plug 'tpope/vim-abolish'             " Better replace
+Plug 'tpope/vim-unimpaired'          " Key mappings for [
 
-call dein#add('wellle/targets.vim')            " Vim plugin that provides additional text objects
-call dein#add('editorconfig/editorconfig-vim')
-call dein#add('AndrewRadev/splitjoin.vim')     " Split onelinners with gS
+Plug 'suy/vim-context-commentstring'     " Context commentstring for JSX
 
-call dein#add('SirVer/ultisnips')              " Snippets
-call dein#add('honza/vim-snippets')
+Plug 'wellle/targets.vim'            " Vim plugin that provides additional text objects
+Plug 'editorconfig/editorconfig-vim'
+Plug 'AndrewRadev/splitjoin.vim'     " Split onelinners with gS
 
-call dein#add('w0rp/ale')                      " Async Lint checker
-call dein#add('Raimondi/delimitMate')          " Auto close quotes parentesis etc
-call dein#add('godlygeek/tabular')             " Align code
-call dein#add('vim-scripts/BufOnly.vim')       " Close All other buffers
-call dein#add('qpkorr/vim-bufkill')
-call dein#add('mjbrownie/swapit')              " Toggle between true false
+Plug 'SirVer/ultisnips'              " Snippets
+Plug 'honza/vim-snippets'
+
+Plug 'w0rp/ale'                      " Async Lint checker
+Plug 'Raimondi/delimitMate'          " Auto close quotes parentesis etc
+Plug 'godlygeek/tabular'             " Align code
+Plug 'vim-scripts/BufOnly.vim'       " Close All other buffers
+Plug 'qpkorr/vim-bufkill'
+Plug 'mjbrownie/swapit'              " Toggle between true false
 " }
 
 " VCS {
-call dein#add('tpope/vim-fugitive')     " Git wrapper
-call dein#add('airblade/vim-gitgutter') " Git gutter simbols
+Plug 'tpope/vim-fugitive'     " Git wrapper
+Plug 'tpope/vim-rhubarb'     " Git wrapper
+Plug 'airblade/vim-gitgutter' " Git gutter simbols
 " }
 
 " Languages {
-call dein#add('ternjs/tern_for_vim', {
-            \ 'build': 'npm install',
-            \ 'on_ft': ['javascript','javascript.jsx']
-            \ })
-call dein#add('sheerun/vim-polyglot')
-call dein#add('jparise/vim-graphql')
-call dein#add('mattn/emmet-vim')
-call dein#add('jaawerth/nrun.vim')
-call dein#add('zchee/deoplete-jedi')
-call dein#add('carlitux/deoplete-ternjs')
-call dein#add('OmniSharp/omnisharp-vim')
-call dein#add('hail2u/vim-css3-syntax')
-call dein#add('fatih/vim-go')
+Plug 'sheerun/vim-polyglot'
+Plug 'jparise/vim-graphql'
+Plug 'mattn/emmet-vim'
+Plug 'jaawerth/nrun.vim'
+Plug 'zchee/deoplete-jedi'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'fatih/vim-go'
 " }
 
 " Vim UI {
-call dein#add('tpope/vim-flagship')               " Statusline
-call dein#add('Yggdroot/indentLine')            " Ident visual guide
-call dein#add('gregsexton/MatchTag')              " Highlite Matching tag
-call dein#add('gruvbox-community/gruvbox')
-call dein#add('ayu-theme/ayu-vim')
+Plug 'tpope/vim-flagship'               " Statusline
+Plug 'Yggdroot/indentLine'            " Ident visual guide
+Plug 'gregsexton/MatchTag'              " Highlite Matching tag
+Plug 'gruvbox-community/gruvbox'
+Plug 'ayu-theme/ayu-vim'
 " }
 
-call dein#end()
-
-if dein#check_install()
-    call dein#install()
-endif
-call dein#check_lazy_plugins()
-call dein#save_state()
+call plug#end()

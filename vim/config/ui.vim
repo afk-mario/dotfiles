@@ -9,16 +9,12 @@
 set termguicolors
 
 if exists('theme') && theme ==# 'light'
-    if dein#tap('ayu-vim')
-        set background=light
-        let ayucolor='light'
-        colorscheme ayu
-    endif
+    set background=light
+    let ayucolor='light'
+    colorscheme ayu
 else
     set background=dark
-    if dein#tap('gruvbox')
-        colorscheme gruvbox
-    endif
+    colorscheme gruvbox
 endif
 
 
@@ -55,7 +51,7 @@ if has('statusline')
     set guioptions-=e
     set statusline=%t       "tail of the filename
 
-    if !dein#tap('vim-flagship')
+    " if !dein#tap('vim-flagship')
         set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
         set statusline+=%{&ff}] "file format
         set statusline+=%h      "help file flag
@@ -70,5 +66,5 @@ if has('statusline')
 
         set statusline+=%#warningmsg#
         set statusline+=%*
-    endif
+    " endif
 endif

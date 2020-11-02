@@ -20,7 +20,7 @@
 [dims]
 small = 2
 medium = 4
-big = 6
+big = 8
 
 [colors]
 MAGENTA1=#e91e63
@@ -36,7 +36,7 @@ alert = ${xrdb:color9}
 [bar/top]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 30
+height = 25
 radius = 0.0
 fixed-center = false
 
@@ -307,22 +307,6 @@ animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
-[module/caffeine]
-type = custom/menu
-
-label-open = 
-label-close = 
-label-open-padding = ${dims.small}
-label-close-padding = ${dims.small}
-label-separator = " "
-
-menu-0-0 = 
-menu-0-0-exec = caffeine -a
-menu-0-1 = 
-menu-0-1-exec = caffeine -d
-menu-0-2 = 
-menu-0-2-exec = caffeine kill
-
 [module/arch]
 type = custom/text
 content = ""
@@ -330,6 +314,23 @@ label-active-font = 2
 content-background = ${colors.MAGENTA1}
 content-foreground = ${colors.foreground}
 content-padding = ${dims.small}
+
+[module/caffeine]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-open-padding = 0
+label-close-padding = 1
+label-separator = "-"
+content-padding = ${dims.small}
+
+menu-0-0 = y
+menu-0-0-exec = caffeine -a
+menu-0-1 = n
+menu-0-1-exec = caffeine -d
+menu-0-2 = k
+menu-0-2-exec = caffeine kill
 
 [settings]
 screenchange-reload = true
@@ -339,7 +340,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 10
-margin-bottom = 10
+margin-top = 8
+margin-bottom = 8
 
 ; vim:ft=dosini

@@ -40,7 +40,6 @@ Host web02
   IdentityFile ~/.ssh/deploy
 
 Host web01
-  HostName 167.99.169.207
+  HostName 164.90.153.57
   user deploy
   IdentityFile ~/.ssh/deploy
-

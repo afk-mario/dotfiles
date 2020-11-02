@@ -1,0 +1,17 @@
+#!/bin/bash
+
+x=""
+# while true
+# do
+#   x=$(ls $HOME/Dropbox/Media/Wallpapers/*.{jpg,png} | shuf -n1)
+#   echo "$x";
+#   ogurictl output '*' --image $x
+#   sleep 1;
+# done
+
+for file in $HOME/Dropbox/Media/Wallpapers/*.{jpg,png}
+do
+  echo "$file";
+  ogurictl output '*' --image $file
+  sleep 1;
+done
