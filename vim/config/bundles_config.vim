@@ -51,6 +51,7 @@ let g:ale_fixers['rust'] = ['rustfmt']
 let g:ale_fixers['sh'] = ['shfmt']
 let g:ale_fixers['go'] = ['gofmt', 'goimports']
 let g:ale_fixers['sql'] = ['pgformatter']
+let g:ale_fixers['c'] = ['uncrustify']
 
 
 nnoremap [ale] <nop>
