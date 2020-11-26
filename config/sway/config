@@ -304,6 +304,8 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
+for_window [title="^Playdate Simulator$"] floating enable
+
 # Native Wayland
 for_window [app_id="xdg-desktop-portal-gtk" title="Choose files"] floating enable
 for_window [app_id="pavucontrol"] floating enable
