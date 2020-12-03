@@ -40,6 +40,8 @@ Plug 'godlygeek/tabular'             " Align code
 Plug 'vim-scripts/BufOnly.vim'       " Close All other buffers
 Plug 'qpkorr/vim-bufkill'
 Plug 'mjbrownie/swapit'              " Toggle between true false
+Plug 'ludovicchabant/vim-gutentags'  " Tag files
+
 " }
 
 " VCS {
