@@ -15,6 +15,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " Markdown {
 let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 " }
 
 " Rust {
@@ -138,6 +139,11 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
+let g:lua_check_syntax = 0
+let g:lua_complete_omni = 1
+let g:lua_complete_dynamic = 0
+let g:lua_define_completion_mappings = 0
+
 
 call deoplete#custom#option({
             \ 'auto_complete_delay': 0,
@@ -155,6 +161,11 @@ call deoplete#custom#option('omni_patterns', {
             \ 'rust': '[(\.)(::)]',
             \ 'go': '[^. *\t]\.\w*',
             \})
+
+call deoplete#custom#var('omni', 'functions', {
+            \ 'lua': 'xolox#lua#omnifunc',
+            \ })
+
 
 call deoplete#custom#source('_', 'min_pattern_length', 1)
 call deoplete#custom#source('buffer', 'mark', '[b]')
@@ -234,7 +245,7 @@ nnoremap <silent> [fugitive]g :SignifyToggle<CR>
 
 " Obsession {
 " if dein#tap('vim-obsession')
-set statusline+=%{ObsessionStatus()}     " ObsessionStatus
+" set statusline+=%{ObsessionStatus()}     " ObsessionStatus
 " endif
 "}
 

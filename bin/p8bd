@@ -10,7 +10,8 @@ function check {
     # Get name without extension
     # https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
     fileName=$(basename -- "$FILE_PATH")
-    game="${fileName%.*}"
+    game="${fileName%%.*}"
+    echo "Building ${game} ..."
     build
   fi
 }
@@ -23,7 +24,6 @@ function build {
   deploy
 }
 
-
 function deploy {
   butler push "${game}.zip" "afk-mario/${game}:html5"
   clean
@@ -35,27 +35,27 @@ function clean {
   rm "${game}.zip"
 }
 
-function usage
-{
+function usage {
   echo "usage: p8bd game | [[-h]]"
 }
 
 if [ "$1" != "" ]; then
-    FILE_PATH=$1
-    check
+  FILE_PATH=$1
+  check
 else
-    echo "No FILE_PATH specified"
-    usage
+  echo "No FILE_PATH specified"
+  usage
 fi
-
 
 while [ "$1" != "" ]; do
   case $1 in
-    -h | --help )           usage
-      exit
-      ;;
-    * )
-      exit 1
+  -h | --help)
+    usage
+    exit
+    ;;
+  *)
+    exit 1
+    ;;
   esac
   shift
 done
