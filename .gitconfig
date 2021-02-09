@@ -30,6 +30,7 @@
   gpgsign = true
 [init]
   templatedir = ~/.git_template
+	defaultBranch = main
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
@@ -37,7 +38,6 @@
   required = true
 [core]
   excludesfile = $HOME/.gitignore_global
-  pager = delta --theme='Dracula'
 [credential]
   helper = osxkeychain
 [mergetool "fugitive"]
@@ -49,7 +49,5 @@
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [include]
   path = ~/.gitconfig-signkey
-[interactive]
-  diffFilter = delta --color-only
 [pull]
 	rebase = true

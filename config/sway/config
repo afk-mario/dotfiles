@@ -186,14 +186,22 @@ exec swayidle -w \
        workspace $ws8 output $monitor-two
        workspace $ws9 output $monitor-two
 
-### AFK's keybindings
+# AFK's keybindings
 
-       bindsym Print exec grim -g "$(slurp)" ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+## Screenshots
+       bindsym Print exec grimshot --notify copy area
+       bindsym Shift+Print exec grimshot --notify save area
+       bindsym Ctrl+Print exec grimshot --notify copy output
+       bindsym Ctrl+Shift+Print exec --notify grimshot save output
+       bindsym Alt+Print exec grimshot --notify copy window
+       bindsym Alt+Shift+Print exec grimshot --notify save window
 
-       bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
+## Screenrecord
+       bindsym $mod+F6 exec wf-record --notify start area
+       bindsym $mod+Shift+F6 exec wf-record --notify start output
+       bindsym $mod+Shift+BackSpace exec killall -s SIGINT wf-recorder
 
-       bindsym $mod+Shift+Print exec grim ~/pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
-
+## Audio
 
        bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
        bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -248,7 +256,7 @@ exec swayidle -w \
 #
        mode "resize" {
 # left will shrink the containers width
-# right will grow the containers width
+# right will grow th e containers width
 # up will shrink the containers height
 # down will grow the containers height
          bindsym $left resize shrink width 10px

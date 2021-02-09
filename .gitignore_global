@@ -60,3 +60,4 @@ $RECYCLE.BIN/
 *.lnk
 
 *.env
+/tags

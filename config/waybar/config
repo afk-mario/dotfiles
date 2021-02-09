@@ -2,7 +2,7 @@
   "layer": "top",
     "modules-left": ["custom/arch","sway/workspaces", "sway/mode"],
     "modules-center": ["tray"],
-    "modules-right": ["idle_inhibitor" ,"pulseaudio", "network", "custom/keyboard_layout" ,"battery", "clock", "custom/disturb_on", "custom/disturb_off"],
+    "modules-right": ["idle_inhibitor" ,"pulseaudio", "network", "sway/language","custom/keyboard_layout" ,"battery", "clock", "custom/disturb_on", "custom/disturb_off"],
     "height": 25,
     "sway/window": {
       "max-length": 50
