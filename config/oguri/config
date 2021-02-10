@@ -1,0 +1,5 @@
+[output *]
+image=/$HOME/Dropbox/Media/Wallpapers/wall-00001.jpg
+filter=nearest
+scaling-mode=fill
+anchor=center

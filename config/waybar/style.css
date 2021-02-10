@@ -58,6 +58,7 @@ window#waybar {
   border-bottom: 2px solid #d3869b;
 }
 
+#window,
 #clock,
 #battery,
 #cpu,
@@ -69,13 +70,17 @@ window#waybar {
 #tray,
 #mode,
 #idle_inhibitor,
-#custom-keyboard_layout,
+#language,
 #custom-arch,
 #custom-disturb_on,
 #custom-disturb_off,
 #mpd {
   padding: 0 8px;
   margin: 0;
+}
+
+#window {
+  border-left: 2px solid #b16286;
 }
 
 #clock {
@@ -99,7 +104,7 @@ window#waybar {
   color: white;
 }
 
-#custom-keyboard_layout {
+#language {
   border-bottom: 2px solid #8ec07c;
 }
 

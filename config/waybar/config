@@ -1,11 +1,17 @@
 {
   "layer": "top",
-    "modules-left": ["custom/arch","sway/workspaces", "sway/mode"],
+    "modules-left": ["custom/arch","sway/workspaces", "sway/window", "sway/mode"],
     "modules-center": ["tray"],
-    "modules-right": ["idle_inhibitor" ,"pulseaudio", "network", "sway/language","custom/keyboard_layout" ,"battery", "clock", "custom/disturb_on", "custom/disturb_off"],
+    "modules-right": ["idle_inhibitor" ,"pulseaudio", "network", "sway/language", "battery", "clock", "custom/disturb_on", "custom/disturb_off"],
     "height": 25,
     "sway/window": {
       "max-length": 50
+    },
+    "sway/language": {
+      "format": " {}",
+      "max-length": 50,
+      "on-click": "keyboard-layout-switcher",
+      "tooltip": false
     },
     "clock": {
       "format-alt": "{:%a, %d. %b  %H:%M}"
@@ -14,25 +20,7 @@
       "icon-size": 15,
       "spacing": 10
     },
-    "custom/keyboard_layout": {
-      "format": " {}",
-      "exec": "keyboard_layout_monitor",
-      "on-click": "keyboard_layout_switcher"
-    },
     "network": {
-      "interface": "wlp2s0",
-      "format": "{ifname}",
-      "format-wifi": " {essid}",
-      "format-ethernet": " {ifname} ",
-      "format-disconnected": "",
-      "tooltip-format": "{ifname}",
-      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      "tooltip-format-ethernet": "eth {ifname} ",
-      "tooltip-format-disconnected": "Disconnected",
-      "max-length": 50
-    },
-    "network": {
-      "interface": "*",
       "format": "{ifname}",
       "format-wifi": " {essid}",
       "format-ethernet": " {ifname} ",

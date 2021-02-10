@@ -2,6 +2,7 @@
 #
 # Sway script to get window information
 # https://gist.github.com/RPigott/a9a868174e82986d414129c8be31397b
+# https://www.reddit.com/r/swaywm/comments/hshzp8/xpropxwininfo_for_sway/
 
 ALL_NODES='recurse(.nodes[]?, .floating_nodes[]?) | select(.pid and .visible)'
 WINDOW_NAME='(.app_id // .window_properties.class)'
@@ -25,7 +26,6 @@ function getprop() {
 	selected="$(printf "%s\n" "${!views[@]}" | slurp)"
 	if [[ -n "$selected" ]]; then
 		printf '%s\n' "${views[${selected}]}"
-		notify-send Swayprop "${views[${selected}]}"
 	fi
 }
 
