@@ -3,30 +3,23 @@
 - defaults:
     link:
       create: true
-      relink: true
-      glob: true
+    relink: true
+    glob: true
 
 - clean: ["~", "~/.config"]
 
-- shell:
-    - - mkdir -p ~/.ssh
-    - Creating config directories
-    - - >
-        mkdir -p
-        ~/projects/web
-        ~/projects/games
-        ~/github
-        ~/sandbox
-        ~/interC
-    - Creating personal directories
-    - - >
-        mkdir -p
-        ~/media/pictures
-        ~/media/videos
-        ~/media/audio
-        ~/media/pictures/screenshots
-        ~/media/videos/screen-recordings
-    - Creating media directories
+- create:
+    - ~/.ssh
+    - ~/projects/web
+    - ~/projects/games
+    - ~/github
+    - ~/sandbox
+    - ~/interC
+    - ~/media/pictures
+    - ~/media/videos
+    - ~/media/audio
+    - ~/media/pictures/screenshots
+    - ~/media/videos/screen-recordings
 
 - link:
     ~/bin: bin/
@@ -53,17 +46,10 @@
     ~/.ansible.cfg: .ansible.cfg
     ~/.userStyle.css: .userStyle.css
     ~/.config/alacritty: config/alacritty
-    ~/.config/bspwm: config/bspwm
-    ~/.config/compton: config/compton
-    ~/.config/dunst: config/dunst
     ~/.config/gtk-2.0: config/gtk-2.0
     ~/.config/gtk-3.0: config/gtk-3.0
-    ~/.config/i3: config/i3
-    ~/.config/polybar: config/polybar
     ~/.config/rofi: config/rofi
-    ~/.config/sxhkd: config/sxhkd
     ~/.config/systemd: config/systemd
-    ~/.config/termite: config/termite
     ~/.config/tmux: config/tmux
     ~/.config/fontconfig: config/fontconfig
     ~/.config/sway: config/sway
@@ -71,6 +57,8 @@
     ~/.config/swaylock: config/swaylock
     ~/.config/mako: config/mako
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
+    ~/.config/mimeapps.list: config/mimeapps.list
+    ~/.config/imv: config/imv
 
 - shell:
     - command: [git submodule update --init --recursive]

@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Quickly renders some emojis to check it they work fine on the current
+# terminal.
+
+cat <<EOF
+Testing:
+
+😍🙍😅🌈🇳🇱😜📱💖🦾🦿🤢🥴🥱🤍🤏🏻
+
+It works! ✨
+(Unless any of them look broken 😂)
+EOF

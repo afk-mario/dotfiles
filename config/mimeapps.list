@@ -1,0 +1,35 @@
+[Default Applications]
+text/plain=sublime_text.desktop;
+text/markdown=sublime_text.desktop;
+application/json=sublime_text.desktop
+application/pdf=org.pwmt.zathura.desktop
+application/javascript=sublime_text.desktop;
+application/x-yaml=sublime_text.desktop;
+application/xml=sublime_text.desktop;
+image/bmp=imv.desktop
+image/gif=imv.desktop
+image/jpeg=imv.desktop
+image/jpg=imv.desktop
+image/pjpeg=imv.desktop
+image/png=imv.desktop
+image/tiff=imv.desktop
+image/webp=gimp.desktop
+image/x-bmp=imv.desktop
+image/x-pcx=imv.desktop
+image/x-png=imv.desktop
+image/x-portable-anymap=imv.desktop
+image/x-portable-bitmap=imv.desktop
+image/x-portable-graymap=imv.desktop
+image/x-portable-pixmap=imv.desktop
+image/x-tga=imv.desktop
+image/x-xbitmap=imv.desktop
+video/quicktime=vlc.desktop;
+video/mp4=vlc.desktop;
+
+[Added Associations]
+application/pdf=firefox.desktop;org.pwmt.zathura.desktop;
+text/html=firefox-developer-edition.desktop;sublime_text.desktop;google-chrome.desktop;
+text/css=sublime_text.desktop;
+text/csv=sublime_text.desktop;libreoffice-writer.desktop;
+application/epub+zip=com.github.johnfactotum.Foliate.desktop;
+application/pkcs8=sublime_text.desktop;

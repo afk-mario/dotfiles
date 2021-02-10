@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# Delete orphaned dependencies EXCEPT those that are optionally required by
+# installed packages.
+# https://gitlab.com/WhyNotHugo/dotfiles/-/blob/master/home/.local/bin/pkgclean
+
+paru -Sc --noconfirm
+
+if [ `pacman -Qdtq | wc -l` = 0 ]; then
+  exit 0;
+fi;
+
+sudo pacman -Rnscu $(pacman -Qdtq)
+

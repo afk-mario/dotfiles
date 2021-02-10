@@ -1,0 +1,6 @@
+#!/bin/bash
+
+kb_name='AT Translated Set 2 keyboard'
+
+xinput enable "$kb_name"
+/usr/bin/notify-send 'Laptop keyboard' 'enable' --icon=dialog-information --expire-time=4000
