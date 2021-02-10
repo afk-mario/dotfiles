@@ -45,20 +45,7 @@
     ~/.Xmodmap: .Xmodmap
     ~/.ansible.cfg: .ansible.cfg
     ~/.userStyle.css: .userStyle.css
-    ~/.config/alacritty: config/alacritty
-    ~/.config/gtk-2.0: config/gtk-2.0
-    ~/.config/gtk-3.0: config/gtk-3.0
-    ~/.config/rofi: config/rofi
-    ~/.config/systemd: config/systemd
-    ~/.config/tmux: config/tmux
-    ~/.config/fontconfig: config/fontconfig
-    ~/.config/sway: config/sway
-    ~/.config/waybar: config/waybar
-    ~/.config/swaylock: config/swaylock
-    ~/.config/mako: config/mako
-    ~/.config/user-dirs.dirs: config/user-dirs.dirs
-    ~/.config/mimeapps.list: config/mimeapps.list
-    ~/.config/imv: config/imv
+    ~/.config/: ./config/*
 
 - shell:
     - command: [git submodule update --init --recursive]
