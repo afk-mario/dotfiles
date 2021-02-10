@@ -1,0 +1,41 @@
+syntax on
+filetype plugin indent on
+
+set nocompatible
+set backspace=indent,eol,start
+set hidden
+set cursorline
+set backspace=indent,eol,start
+set number
+set relativenumber
+set splitright
+set splitbelow
+
+let mapleader="\<Space>"
+
+noremap j gj
+noremap k gk
+
+nnoremap Y y$
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap [buffer] <nop>
+nmap <leader>b [buffer]
+nnoremap <silent> [buffer]t :enew<cr>
+nnoremap <silent> [buffer]l :bnext<cr>
+nnoremap <silent> [buffer]h :bprevious<cr>
+nnoremap <silent> [buffer]q :bp <BAR> bd #<cr>
+nnoremap <silent> [buffer]w :bw<cr>
+nnoremap <silent> [buffer]s :ls<cr>
+nnoremap <silent> [buffer]1 :bfirst<cr>
+nnoremap <silent> [buffer]0 :blast<cr>
+
+nnoremap [tab] <nop>
+nmap <leader>t [tab]
+nnoremap <silent> [tab]t :tabnew<cr>
+nnoremap <silent> [tab]l :tabnext<cr>
+nnoremap <silent> [tab]h :tabprevious<cr>
+nnoremap <silent> [tab]q :tabclose<cr>
+nnoremap <silent> [tab]1 :tabfirst<cr>
+nnoremap <silent> [tab]0 :tablast<cr>
