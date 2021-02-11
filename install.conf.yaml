@@ -35,9 +35,6 @@
     ~/.Xresources: .Xresources
     ~/.Xdefaults: .Xdefaults
     ~/.xscreensaver: .xscreensaver
-    ~/.Xmodmap: .Xmodmap
-    ~/.ansible.cfg: .ansible.cfg
-    ~/.userStyle.css: .userStyle.css
     ~/.vim/:
       glob: true
       path: vim/*
