@@ -26,10 +26,10 @@
 - link:
     ~/bin: bin/
     ~/.dotfiles: ""
-    ~/.ssh/config: ssh_config
-    ~/.gitconfig: .gitconfig
-    ~/.gitignore_global: .gitignore_global
-    ~/.git_template: .git_template
+    ~/.ssh/config: ssh-config
+    ~/.gitconfig: git-config
+    ~/.gitignore_global: git-ignore-global
+    ~/.git_template: git-template
     ~/.agignore: .agignore
     ~/.zshrc: .zshrc
     ~/.Xresources: .Xresources
