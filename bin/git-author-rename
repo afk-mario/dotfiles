@@ -1,17 +1,20 @@
 #!/bin/bash
 
-git filter-branch --env-filter '
-WRONG_NAME="Mario Carballo Zama"
-WRONG_EMAIL="arlefreak@gmail.com"
-NEW_NAME="afk"
-NEW_EMAIL="afk@ellugar.co"
+OLD_NAME=$1
+OLD_EMAIL=$2
+NEW_NAME="${3:-afk}"
+NEW_EMAIL="${4:-afk@ellugar.co}"
 
-if [ "$GIT_COMMITTER_NAME" = "$WRONG_NAME" ]
+echo "Changing $OLD_NAME|${OLD_EMAIL} -> $NEW_NAME|$NEW_EMAIL"
+
+git filter-branch --env-filter '
+
+if [ "$GIT_COMMITTER_NAME" = "$OLD_NAME" ]
 then
     export GIT_COMMITTER_NAME="$NEW_NAME"
     export GIT_COMMITTER_EMAIL="$NEW_EMAIL"
 fi
-if [ "$GIT_AUTHOR_NAME" = "$WRONG_NAME" ]
+if [ "$GIT_AUTHOR_NAME" = "$OLD_NAME" ]
 then
     export GIT_AUTHOR_NAME="$NEW_NAME"
     export GIT_AUTHOR_EMAIL="$NEW_EMAIL"
