@@ -1,22 +1,25 @@
 #!/bin/bash
+#
+# DEPRECATED
+# https://stackoverflow.com/questions/58263216/how-to-change-commit-author-for-multiple-commits-using-filter-branch
 
 OLD_NAME=$1
 OLD_EMAIL=$2
 NEW_NAME="${3:-afk}"
 NEW_EMAIL="${4:-afk@ellugar.co}"
 
-echo "Changing $OLD_NAME|${OLD_EMAIL} -> $NEW_NAME|$NEW_EMAIL"
+echo "DEPRECATED USE MAILMAP: Changing $OLD_NAME|${OLD_EMAIL} -> $NEW_NAME|$NEW_EMAIL"
 
-git filter-branch --env-filter '
+# git filter-branch --env-filter '
 
-if [ "$GIT_COMMITTER_NAME" = "$OLD_NAME" ]
-then
-    export GIT_COMMITTER_NAME="$NEW_NAME"
-    export GIT_COMMITTER_EMAIL="$NEW_EMAIL"
-fi
-if [ "$GIT_AUTHOR_NAME" = "$OLD_NAME" ]
-then
-    export GIT_AUTHOR_NAME="$NEW_NAME"
-    export GIT_AUTHOR_EMAIL="$NEW_EMAIL"
-fi
-' -f --tag-name-filter cat -- --branches --tags
+# if [ "$GIT_COMMITTER_NAME" = "$OLD_NAME" ]
+# then
+#     export GIT_COMMITTER_NAME="$NEW_NAME"
+#     export GIT_COMMITTER_EMAIL="$NEW_EMAIL"
+# fi
+# if [ "$GIT_AUTHOR_NAME" = "$OLD_NAME" ]
+# then
+#     export GIT_AUTHOR_NAME="$NEW_NAME"
+#     export GIT_AUTHOR_EMAIL="$NEW_EMAIL"
+# fi
+# ' -f --tag-name-filter cat -- --branches --tags
