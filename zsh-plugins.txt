@@ -9,9 +9,7 @@ zsh-users/zsh-completions
 rupa/z
 MikeDacre/cdbk
 caarlos0/ports
-caarlos0/zsh-git-sync kind:path
 
-unixorn/git-extra-commands
 xvoland/Extract
 djui/alias-tips
 

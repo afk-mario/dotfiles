@@ -59,3 +59,6 @@ exec mako
 exec oguri
 # https://github.com/swaywm/sway/issues/4323
 exec_always import-gsettings
+# https://github.com/flatpak/xdg-desktop-portal/issues/285#issuecomment-665109459
+exec "dbus-update-activation-environment --systemd DISPLAY MOZ_DBUS_REMOTE"
+# exec "dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY"

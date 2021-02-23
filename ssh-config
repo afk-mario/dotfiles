@@ -43,3 +43,13 @@ Host web01
   HostName 164.90.153.57
   user deploy
   IdentityFile ~/.ssh/deploy
+
+Host corredor
+  HostName 128.199.5.84
+  user deploy
+  IdentityFile ~/.ssh/deploy
+  
+Host corredor
+  HostName 128.199.5.84
+  user root
+  IdentityFile ~/.ssh/deploy

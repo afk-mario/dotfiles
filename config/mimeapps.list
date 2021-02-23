@@ -27,9 +27,11 @@ video/quicktime=vlc.desktop;
 video/mp4=vlc.desktop;
 
 [Added Associations]
-application/pdf=firefox.desktop;org.pwmt.zathura.desktop;
+application/pdf=org.pwmt.zathura.desktop;
 text/html=firefox-developer-edition.desktop;sublime_text.desktop;google-chrome.desktop;
 text/css=sublime_text.desktop;
 text/csv=sublime_text.desktop;libreoffice-writer.desktop;
 application/epub+zip=com.github.johnfactotum.Foliate.desktop;
 application/pkcs8=sublime_text.desktop;
+x-scheme-handler/http=firefox-developer-edition.desktop
+x-scheme-handler/https=firefox-developer-edition.desktop

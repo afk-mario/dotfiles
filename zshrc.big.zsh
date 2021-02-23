@@ -59,6 +59,7 @@ export PIPENV_VENV_IN_PROJECT=1
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"
 alias tmux="tmux -2 -f ~/.config/tmux/tmux.conf"
+alias at="tmux a -t $1"
 alias tmuxconfig="nvim ~/.config/tmux/tmux.conf"
 alias tmuxreload="tmux source-file ~/.config/tmux/tmux.conf"
 alias zshreload="source ~/.zshrc"
@@ -76,7 +77,7 @@ alias lg='lazygit'
 alias ll='exa -lh --git'
 
 # https://stackoverflow.com/questions/1571461/git-a-quick-command-to-go-to-root-of-the-working-tree/1571525#1571525
-alias git-root='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
+alias groot='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
 
 # Cumpletitions https://github.com/rust-lang-nursery/rustup.rs/blob/master/README.md
 fpath+=~/.zfunc
