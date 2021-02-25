@@ -44,6 +44,7 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$HOME/Developer/PlaydateSDK/bin:$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
 
 export GOPATH=$(go env GOPATH)
@@ -75,6 +76,7 @@ alias ssh="TERM=xterm-256color ssh"
 alias sway="$HOME/bin/sway-vars"
 alias lg='lazygit'
 alias ll='exa -lh --git'
+alias pdc="pdc -sdkpath $HOME/Developer/PlaydateSDK $1"
 
 # https://stackoverflow.com/questions/1571461/git-a-quick-command-to-go-to-root-of-the-working-tree/1571525#1571525
 alias groot='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'

@@ -39,6 +39,7 @@ let g:ale_linters['python'] = ['flake8']
 let g:ale_linters['rust'] = ['cargo']
 let g:ale_linters['go'] = ['gometalinter', 'gofmt']
 let g:ale_linters['cs'] = ['OmniSharp']
+let g:ale_linters['lua'] = []
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
@@ -50,9 +51,10 @@ let g:ale_fixers['yaml'] = ['prettier']
 let g:ale_fixers['python'] = ['isort', 'black']
 let g:ale_fixers['rust'] = ['rustfmt']
 let g:ale_fixers['sh'] = ['shfmt']
-let g:ale_fixers['go'] = ['gofmt', 'goimports']
+let g:ale_fixers['go'] = ['gofmt']
 let g:ale_fixers['sql'] = ['pgformatter']
 let g:ale_fixers['c'] = ['clang-format']
+" let g:ale_fixers['lua'] = ['luacheck']
 
 
 nnoremap [ale] <nop>
