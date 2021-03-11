@@ -20,8 +20,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+Plug 'tpope/vim-sensible'            " Sensible defaults
 Plug 'tpope/vim-vinegar'             " Netrw helper
 Plug 'tpope/vim-eunuch'              " Unix helpers
 Plug 'tpope/vim-commentary'          " Toggle comments
@@ -29,6 +30,7 @@ Plug 'tpope/vim-surround'            " Sorroundings
 Plug 'tpope/vim-repeat'              " More . command
 Plug 'tpope/vim-abolish'             " Better replace
 Plug 'tpope/vim-unimpaired'          " Key mappings for [
+Plug 'tpope/vim-dispatch'            " Run async commands in GIT
 
 Plug 'suy/vim-context-commentstring' " Context commentstring for JSX
 
@@ -59,7 +61,7 @@ Plug 'airblade/vim-gitgutter' " Git gutter simbols
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'jaawerth/nrun.vim'
-Plug 'zchee/deoplete-jedi'
+" Plug 'zchee/deoplete-jedi'
 Plug 'OmniSharp/omnisharp-vim'
 " }
 
@@ -68,8 +70,6 @@ Plug 'tpope/vim-flagship'               " Statusline
 Plug 'Yggdroot/indentLine'              " Ident visual guide
 Plug 'gregsexton/MatchTag'              " Highlite Matching tag
 Plug 'gruvbox-community/gruvbox'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-lua-ftplugin'
 " }
 
 call plug#end()

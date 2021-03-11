@@ -6,25 +6,13 @@
 " This should handle all plugins config
 " }
 
-" Languages {
+" Polyglot {
 " if dein#tap('vim-polyglot')
 " let g:polyglot_disabled = ['css']
 " JSX {
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " }
 
-" Markdown {
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
-" }
-
-" Rust {
-let g:formatdef_rustfmt='"rustfmt"'
-let g:formatters_rust=['rustfmt']
-let g:rustfmt_autosave = 1
-let g:racer_cmd=expand('~/.cargo/bin/racer')
-" }
-" endif
 " }
 
 " Ale {
@@ -135,76 +123,39 @@ let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 " }
 
 " Deoplete {
-" if dein#tap('deoplete.nvim')
-set completeopt+=noselect
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-
-let g:lua_check_syntax = 0
-let g:lua_complete_omni = 1
-let g:lua_complete_dynamic = 0
-let g:lua_define_completion_mappings = 0
-
 
 call deoplete#custom#option({
             \ 'auto_complete_delay': 0,
             \ 'smart_case': v:true,
             \ })
 
-call deoplete#custom#option('sources', {
-            \ 'cs': ['cs', 'ultisnips', 'file', 'buffer'],
-            \ 'python': ['jedi', 'ultisnips', 'file', 'buffer'],
-            \ 'javascript.jsx': ['tern', 'ultisnips', 'buffer'],
-            \})
-
-call deoplete#custom#option('omni_patterns', {
-            \ 'cs': '\w*',
-            \ 'rust': '[(\.)(::)]',
-            \ 'go': '[^. *\t]\.\w*',
-            \})
-
-call deoplete#custom#var('omni', 'functions', {
-            \ 'lua': 'xolox#lua#omnifunc',
+" Why not always on omnifunc
+" https://github.com/Shougo/deoplete.nvim/issues/946
+call deoplete#custom#var('omni', 'input_patterns', {
+            \ 'javascript': '[^. *\t]\.\w*',
             \ })
-
 
 call deoplete#custom#source('_', 'min_pattern_length', 1)
 call deoplete#custom#source('buffer', 'mark', '[b]')
-call deoplete#custom#source('tern', 'mark', '[js]')
-call deoplete#custom#source('omni', 'mark', '[⌾]')
+call deoplete#custom#source('omni', 'mark', '[o]')
 call deoplete#custom#source('file', 'mark', '[f]')
 call deoplete#custom#source('jedi', 'mark', '[j]')
 call deoplete#custom#source('ultisnips', 'mark', '[u]')
 
-" For completition coc.nvim or dein.nvim
-function! s:check_back_space() abort
-    let l:col = col('.') - 1
-    return l:col || getline('.')[l:col - 1]  =~# '\s'
-endfunction
-
-" Use Tab
-imap <silent><expr> <TAB>
+" https://github.com/Shougo/deoplete.nvim/blob/a4683be7c58c346458e2cdb1f8b244e14fe35a8e/doc/deoplete.txt#L1905
+inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ deoplete#mappings#manual_complete()
+            \ <SID>check_back_space() ? "\<Tab>" :
+            \ deoplete#complete()
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 
 " Close window on finish
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-au BufNewFile,BufRead *.{stylus,styl} set ft=stylus.css
-
-" aug omnicomplete
-"     au!
-"     au FileType css,sass,scss,stylus,less setl omnifunc=csscomplete#CompleteCSS
-"     au FileType html,htmldjango,jinja,markdown setl omnifunc=emmet#completeTag
-"     au FileType python setl omnifunc=pythoncomplete#Complete
-"     au FileType xml setl omnifunc=xmlcomplete#CompleteTags
-"     au FileType javascript,javascript.jsx setl omnifunc=javascriptcomplete#CompleteJS
-" aug END
-
-" endif
 " }
 
 " UltiSnips {
@@ -254,7 +205,6 @@ nnoremap <silent> [fugitive]g :SignifyToggle<CR>
 " indent_guides {
 " if dein#tap('indentLine')
 let g:indentLine_char = '│'
-let g:indentLine_first_char = '│'
 let g:indentLine_showFirstIndentLevel = 1
 " endif
 " }
@@ -278,3 +228,8 @@ nnoremap <silent> [fzf]r :History<cr>
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 "
+
+" Dispatch {
+nmap <leader>r :Make!<cr>
+nmap <leader>R :Make<cr>
+" }

@@ -76,7 +76,7 @@ nmap <leader>f9 :set foldlevel=9<CR>
 
 nmap <leader>l :set list!<CR>
 
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-    nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
+" Zz for zooming in into a pane
+" Zo for zooming out
+noremap Zz <c-w>_ \| <c-w>\|
+noremap Zo <c-w>=
