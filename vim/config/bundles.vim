@@ -48,6 +48,7 @@ Plug 'vim-scripts/BufOnly.vim'       " Close All other buffers
 Plug 'qpkorr/vim-bufkill'            " Keep the window layout when closing buffers
 Plug 'mjbrownie/swapit'              " Toggle between true false
 Plug 'ludovicchabant/vim-gutentags'  " Tag files
+Plug 'takac/vim-hardtime'            " Break that annoying habit
 
 " }
 
@@ -70,6 +71,7 @@ Plug 'tpope/vim-flagship'               " Statusline
 Plug 'Yggdroot/indentLine'              " Ident visual guide
 Plug 'gregsexton/MatchTag'              " Highlite Matching tag
 Plug 'gruvbox-community/gruvbox'
+Plug 'psliwka/vim-smoothie'
 " }
 
 call plug#end()

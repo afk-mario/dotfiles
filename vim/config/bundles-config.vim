@@ -227,9 +227,13 @@ nnoremap <silent> [fzf]c :Colors<cr>
 nnoremap <silent> [fzf]r :History<cr>
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-"
+" }
 
 " Dispatch {
 nmap <leader>r :Make!<cr>
 nmap <leader>R :Make<cr>
+" }
+
+" Hard Time {
+let g:hardtime_default_on = 1
 " }
