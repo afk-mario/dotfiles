@@ -12,7 +12,10 @@
 " JSX {
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " }
-
+" Markdown {
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+" }
 " }
 
 " Ale {
@@ -235,5 +238,6 @@ nmap <leader>R :Make<cr>
 " }
 
 " Hard Time {
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
+nnoremap <silent><leader> :HardTimeToggle<cr>
 " }
