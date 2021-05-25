@@ -140,11 +140,11 @@ call deoplete#custom#var('omni', 'input_patterns', {
             \ })
 
 call deoplete#custom#source('_', 'min_pattern_length', 1)
-call deoplete#custom#source('buffer', 'mark', '[b]')
-call deoplete#custom#source('omni', 'mark', '[o]')
-call deoplete#custom#source('file', 'mark', '[f]')
-call deoplete#custom#source('jedi', 'mark', '[j]')
-call deoplete#custom#source('ultisnips', 'mark', '[u]')
+call deoplete#custom#source('buffer', 'mark', 'buffer')
+call deoplete#custom#source('omni', 'mark', 'omni')
+call deoplete#custom#source('file', 'mark', 'file')
+call deoplete#custom#source('jedi', 'mark', 'jedi')
+call deoplete#custom#source('ultisnips', 'mark', 'snip')
 
 " https://github.com/Shougo/deoplete.nvim/blob/a4683be7c58c346458e2cdb1f8b244e14fe35a8e/doc/deoplete.txt#L1905
 inoremap <silent><expr> <TAB>

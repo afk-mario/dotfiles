@@ -86,7 +86,12 @@ fpath+=~/.zfunc
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # http://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
-  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+  # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+  # https://wiki.archlinux.org/title/GNOME/Keyring#Terminal_applications
+  if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+  fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
   export LIBRARY_PATH="/usr/local/lib"
