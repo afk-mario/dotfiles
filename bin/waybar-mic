@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# https://git.sr.ht/~whynothugo/dotfiles/tree/adf6af99/item/home/.local/lib/waybar-mic
+# Helper for waybar to show current mic status.
+#
+# This shows a small icon with the current microphone status in the taskbar. I
+# use a global hotkey (Super+M) to control the microphone, so I don't have to
+# remember a different muting hotkey for each [web] application. It also makes
+# it easier to make sure I'm muted when handling multiple things at once.
+#
+# Waybar's CSS is set so that an open mic is a RED icon, and it's less flashy
+# when the mic is muted.
+#
+# It might make sense to hide the module if no microphone is unmuted. This
+# depends on: https://github.com/Alexays/Waybar/issues/699
+#
+# TODO: If a non-primary microphone is on, that should somehow be reflected.
+
+show() {
+  # Prints the current micrphone state.
+
+  if ponymix --source is-muted; then
+    CLASS="muted"
+    TEXT=""
+  else
+    CLASS="not-muted"
+    TEXT=""
+  fi
+
+  jq --compact-output \
+    --null-input \
+    --arg text "$TEXT" \
+    --arg class "$CLASS" \
+    '{"text": $text, "class": $class}'
+}
+
+monitor() {
+  # Monitors for changes in microphone state.
+
+  pactl subscribe | /usr/bin/grep --line-buffered "'change' on source" |
+    while read -r _; do
+      show
+    done
+  exit
+}
+
+show    # Print once, so that the right state is shown at startup.
+monitor # Update whenever pactl indicates there's been a change.

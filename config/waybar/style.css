@@ -74,6 +74,7 @@ window#waybar {
 #custom-arch,
 #custom-disturb_on,
 #custom-disturb_off,
+#custom-mic,
 #mpd {
   padding: 0 8px;
   margin: 0;
@@ -113,6 +114,22 @@ window#waybar {
 #custom-arch {
   color: white;
   background: #e91e63;
+}
+
+#custom-mic {
+  border-bottom: 2px solid transparent;
+}
+
+#custom-mic.not-muted {
+  color: #b8bb26;
+  border-bottom-color: #b8bb26;
+}
+
+#custom-mic.muted {
+  /* color: #fb4934; */
+  border-bottom-color: #fb4934;
+  color: #fbf1c7;
+  background-color: #fb4934;
 }
 
 @keyframes blink {
