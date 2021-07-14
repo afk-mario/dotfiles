@@ -59,6 +59,7 @@ Plug 'airblade/vim-gitgutter' " Git gutter simbols
 " }
 
 " Languages {
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'jaawerth/nrun.vim'
