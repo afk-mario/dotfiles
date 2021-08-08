@@ -7,17 +7,16 @@
 " }
 
 set termguicolors
+colorscheme gruvbox
 
-if exists('theme') && theme ==# 'light'
-    set background=light
-    let ayucolor='light'
-    colorscheme ayu
-else
-    set background=dark
-    colorscheme gruvbox
-endif
-
-
+" https://joshtronic.com/2018/06/04/set-vim-background-based-on-your-terminals-background-color/
+" if exists('theme') && theme ==# 'light'
+"     set background=light
+"     colorscheme one
+" else
+"     set background=dark
+"     colorscheme gruvbox
+" endif
 
 highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode

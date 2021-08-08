@@ -70,8 +70,8 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'tpope/vim-flagship'               " Statusline
 Plug 'Yggdroot/indentLine'              " Ident visual guide
 Plug 'gregsexton/MatchTag'              " Highlite Matching tag
-Plug 'gruvbox-community/gruvbox'
-Plug 'psliwka/vim-smoothie'
+Plug 'gruvbox-community/gruvbox'        " Dark color scheme
+Plug 'psliwka/vim-smoothie'             " Smooth Scroll
 " }
 
 call plug#end()
