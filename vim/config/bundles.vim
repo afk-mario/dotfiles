@@ -47,8 +47,6 @@ Plug 'godlygeek/tabular'             " Align code
 Plug 'vim-scripts/BufOnly.vim'       " Close All other buffers
 Plug 'qpkorr/vim-bufkill'            " Keep the window layout when closing buffers
 Plug 'mjbrownie/swapit'              " Toggle between true false
-Plug 'ludovicchabant/vim-gutentags'  " Tag files
-Plug 'takac/vim-hardtime'            " Break that annoying habit
 
 " }
 
@@ -65,6 +63,7 @@ Plug 'mattn/emmet-vim'
 Plug 'jaawerth/nrun.vim'
 " Plug 'zchee/deoplete-jedi'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'karolbelina/uxntal.vim'
 " }
 
 " Vim UI {

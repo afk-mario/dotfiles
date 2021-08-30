@@ -35,6 +35,7 @@ export XKB_DEFAULT_OPTIONS="shift:both_capslock,caps:ctrl_modifier,grp:ctrls_tog
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/apps:$PATH"
+export PATH="$HOME/apps/uxn:$PATH"
 export PATH="$HOME/.itch:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
@@ -44,7 +45,6 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
-export PATH="$HOME/Developer/PlaydateSDK/bin:$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
 
 export GOPATH=$(go env GOPATH)
@@ -76,8 +76,6 @@ alias ssh="TERM=xterm-256color ssh"
 alias sway="$HOME/bin/sway-vars"
 alias lg='lazygit'
 alias ll='exa -lh --git'
-alias pdc="pdc -sdkpath $HOME/Developer/PlaydateSDK $1"
-
 # https://stackoverflow.com/questions/1571461/git-a-quick-command-to-go-to-root-of-the-working-tree/1571525#1571525
 alias groot='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
 
@@ -92,6 +90,12 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
   fi
+
+  # PLAYDATE
+  alias pdc="pdc -sdkpath $HOME/Developer/PlaydateSDK-1.3.1 $1"
+  export PATH="$HOME/Developer/PlaydateSDK-1.3.1/bin:$PATH"
+  export PLAYDATE_SDK="$HOME/Developer/PlaydateSDK-1.3.1"
+
 elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
   export LIBRARY_PATH="/usr/local/lib"

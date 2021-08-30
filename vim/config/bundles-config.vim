@@ -236,8 +236,3 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 nmap <leader>r :Make!<cr>
 nmap <leader>R :Make<cr>
 " }
-
-" Hard Time {
-let g:hardtime_default_on = 0
-nnoremap <silent><leader> :HardTimeToggle<cr>
-" }
