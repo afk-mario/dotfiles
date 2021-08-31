@@ -145,6 +145,7 @@ call deoplete#custom#source('omni', 'mark', 'omni')
 call deoplete#custom#source('file', 'mark', 'file')
 call deoplete#custom#source('jedi', 'mark', 'jedi')
 call deoplete#custom#source('ultisnips', 'mark', 'snip')
+call deoplete#custom#source('ale', 'dup', v:true)
 
 " https://github.com/Shougo/deoplete.nvim/blob/a4683be7c58c346458e2cdb1f8b244e14fe35a8e/doc/deoplete.txt#L1905
 inoremap <silent><expr> <TAB>
