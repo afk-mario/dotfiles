@@ -92,9 +92,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   fi
 
   # PLAYDATE
-  alias pdc="pdc -sdkpath $HOME/Developer/PlaydateSDK-1.3.1 $1"
-  export PATH="$HOME/Developer/PlaydateSDK-1.3.1/bin:$PATH"
   export PLAYDATE_SDK="$HOME/Developer/PlaydateSDK-1.3.1"
+  alias pdc="pdc -sdkpath $PLAYDATE_SDK $1"
+  export PATH="$HOME/Developer/$PLAYDATE_SDK/bin:$PATH"
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export ANDROID_SDK_ROOT=/usr/local/share/android-sdk

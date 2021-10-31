@@ -1,11 +1,12 @@
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
 
-" Notes {
+"i3config Notes {
 " Personal vimrc of Mario Carballo Zama
 " [afk] https://ellugar.co
 " This shoould handle all bundle installations
 " }
 
+let g:polyglot_disabled = ['i3config', 'swayconfig', 'gdscript']
 " Config {
 " if empty(glob("${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"))
 "   silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim" --create-dirs
@@ -19,8 +20,6 @@ call plug#begin('~/.vim/plugged')
 " Utilities{
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'tpope/vim-sensible'            " Sensible defaults
 Plug 'tpope/vim-vinegar'             " Netrw helper
@@ -38,10 +37,6 @@ Plug 'wellle/targets.vim'            " Vim plugin that provides additional text 
 Plug 'editorconfig/editorconfig-vim' " Editor configurations .editorconfig
 Plug 'AndrewRadev/splitjoin.vim'     " Split onelinners with gS
 
-Plug 'SirVer/ultisnips'              " Snippets
-Plug 'honza/vim-snippets'
-
-Plug 'w0rp/ale'                      " Async Lint checker
 Plug 'Raimondi/delimitMate'          " Auto close quotes parentesis etc
 Plug 'godlygeek/tabular'             " Align code
 Plug 'vim-scripts/BufOnly.vim'       " Close All other buffers
@@ -61,9 +56,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'jaawerth/nrun.vim'
-" Plug 'zchee/deoplete-jedi'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'jamespeapen/swayconfig.vim'
 Plug 'karolbelina/uxntal.vim'
+Plug 'habamax/vim-godot'
 " }
 
 " Vim UI {
@@ -73,5 +69,26 @@ Plug 'gregsexton/MatchTag'              " Highlite Matching tag
 Plug 'gruvbox-community/gruvbox'        " Dark color scheme
 Plug 'psliwka/vim-smoothie'             " Smooth Scroll
 " }
+
+" LSP {
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'w0rp/ale'                      " Async Lint checker
+Plug 'onsails/lspkind-nvim'
+
+" }
+
+" Completion {
+
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'rafamadriz/friendly-snippets'
+
+"scroll_docs }
 
 call plug#end()

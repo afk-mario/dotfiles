@@ -1,36 +1,55 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Copyright (C) 2020-2021 Bob Hepple <bob.hepple@gmail.com>
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or (at
+# your option) any later version.
 #
-# Sway script to get window information
-# https://gist.github.com/RPigott/a9a868174e82986d414129c8be31397b
-# https://www.reddit.com/r/swaywm/comments/hshzp8/xpropxwininfo_for_sway/
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-ALL_NODES='recurse(.nodes[]?, .floating_nodes[]?) | select(.pid and .visible)'
-WINDOW_NAME='(.app_id // .window_properties.class)'
-ID_PREFIX='"\(.id):"'
-WINDOW_PROTOCOL='(if .shell == "xwayland" then "X11" else "wayland" end)'
-WINDOW_GEOMETRY='(.rect | "\(.x),\(.y) \(.width)x\(.height) ")'
-WINDOW_PID='(.pid | tostring)'
+# http://bhepple.freeshell.org
 
-# Output format, e.g. "1234 - 12:firefox (wayland)" or "5678 - 17:discord (X11)"
-FORMAT="$WINDOW_PID + \" - \" + $ID_PREFIX + $WINDOW_NAME + \" (\" + $WINDOW_PROTOCOL + \")\""
-FILT="$ALL_NODES | $WINDOW_GEOMETRY + $FORMAT"
+PROG=$(basename $0)
 
-function getprop() {
-	typeset -A views
-	local selected
+case "$1" in
+-h | --help)
+	echo "Usage: $PROG"
+	echo
+	echo 'shows the properties of the focused window
 
-	while read POS GEOM INFO; do
-		views["$POS $GEOM"]="$INFO"
-	done
+best bindings:
+bindsym  $mod+question exec sway-prop
+bindsym $a+$c+question exec sway-prop
 
-	selected="$(printf "%s\n" "${!views[@]}" | slurp)"
-	if [[ -n "$selected" ]]; then
-		printf '%s\n' "${views[${selected}]}"
-	fi
-}
+but if running from a terminal rather than a sway key binding:
+sleep 2; sway-prop'
+	exit 0
+	;;
+esac
 
-if [[ "$1" == "wait" ]]; then
-	swaymsg -t subscribe '["workspace"]' | jq -r ".current | $FILT" | getprop
+TMP=/tmp/sway-prop-$$.tmp
+
+trap "rm $TMP" EXIT
+
+swaymsg -t get_tree | jq '.. | select(.type?) | select(.focused==true)' >"$TMP"
+
+if [[ "$1" || -t 1 ]]; then
+	cat "$TMP"
 else
-	swaymsg -t get_tree | jq -r "$FILT" | getprop
+	# I prefer to popup a terminal eg:
+	if type kitty &>/dev/null; then
+		kitty --class floating -e bash -c "less $TMP"
+	else
+		# ... but sway doesn't have anything like i3-sensible-terminal.
+		# swaynag is always installed with sway, so:
+		swaynag -l -m "sway-prop" <"$TMP"
+	fi
 fi

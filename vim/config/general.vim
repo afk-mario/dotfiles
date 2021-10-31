@@ -47,9 +47,8 @@ let g:netrw_browse_split = 4
 " Complete {
 " Recomended settings over
 " https://github.com/lifepillar/vim-mucomplete
-
-set completeopt+=noselect
+" set completeopt+=noselect
 " If Vim beeps during completion
-set belloff+=ctrlg 
-set omnifunc=syntaxcomplete#Complete
+set belloff+=ctrlg
+" set omnifunc=syntaxcomplete#Complete
 " }

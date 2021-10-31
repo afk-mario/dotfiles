@@ -16,9 +16,21 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 " }
+let g:polyglot_disabled = ['i3config', 'swayconfig']
 " }
 
 " Ale {
+"
+" GDScript {
+function! FormatGd(buffer) abort
+    return {
+    \   'command': 'gdformat -l 80 -'
+    \}
+endfunction
+
+execute ale#fix#registry#Add('gdformat', 'FormatGd', ['gdscript'], 'gdformat for gdscript')
+" }
+
 let g:ale_sign_column_always = 1
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_fix_on_save = 1
@@ -31,6 +43,9 @@ let g:ale_linters['rust'] = ['cargo']
 let g:ale_linters['go'] = ['gometalinter', 'gofmt']
 let g:ale_linters['cs'] = ['OmniSharp']
 let g:ale_linters['lua'] = ['luac']
+
+let g:ale_linters_ignore = {}
+let g:ale_linters_ignore['json'] = ['eslint']
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
@@ -46,6 +61,8 @@ let g:ale_fixers['go'] = ['gofmt']
 let g:ale_fixers['sql'] = ['pgformatter']
 let g:ale_fixers['c'] = ['clang-format']
 let g:ale_fixers['lua'] = ['lua-format']
+let g:ale_fixers['gdscript'] = ['gdformat']
+
 
 
 nnoremap [ale] <nop>
@@ -62,9 +79,9 @@ nnoremap <silent> [ale]k :ALEPrevious<cr>
 iabbrev </ </<C-X><C-O>
 let g:user_emmet_settings = {
             \  'javascript' : {
-            \      'extends' : 'jsx',
-            \  },
-            \}
+                \      'extends' : 'jsx',
+                \  },
+                \}
 " endif
 " }
 
@@ -123,43 +140,6 @@ set statusline+=\ %*
 let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 
 " endif
-" }
-
-" Deoplete {
-let g:deoplete#enable_at_startup = 1
-
-call deoplete#custom#option({
-            \ 'auto_complete_delay': 0,
-            \ 'smart_case': v:true,
-            \ })
-
-" Why not always on omnifunc
-" https://github.com/Shougo/deoplete.nvim/issues/946
-call deoplete#custom#var('omni', 'input_patterns', {
-            \ 'javascript': '[^. *\t]\.\w*',
-            \ })
-
-call deoplete#custom#source('_', 'min_pattern_length', 1)
-call deoplete#custom#source('buffer', 'mark', 'buffer')
-call deoplete#custom#source('omni', 'mark', 'omni')
-call deoplete#custom#source('file', 'mark', 'file')
-call deoplete#custom#source('jedi', 'mark', 'jedi')
-call deoplete#custom#source('ultisnips', 'mark', 'snip')
-call deoplete#custom#source('ale', 'dup', v:true)
-
-" https://github.com/Shougo/deoplete.nvim/blob/a4683be7c58c346458e2cdb1f8b244e14fe35a8e/doc/deoplete.txt#L1905
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<Tab>" :
-            \ deoplete#complete()
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-
-" Close window on finish
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }
 
 " UltiSnips {

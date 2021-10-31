@@ -18,7 +18,7 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" Buffers {
+"require'lspconfig' Buffers {
 nnoremap [buffer] <nop>
 nmap <leader>b [buffer]
 nnoremap <silent> [buffer]t :enew<cr>
