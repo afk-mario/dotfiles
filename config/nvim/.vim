@@ -1,1 +1,1 @@
-/home/afk/.vim
+/Users/mariocarballozama/.vim
