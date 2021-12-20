@@ -83,6 +83,7 @@ alias groot='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse 
 fpath+=~/.zfunc
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  export TERMCMD=alacritty
   # http://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
   # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
   # https://wiki.archlinux.org/title/GNOME/Keyring#Terminal_applications
@@ -92,7 +93,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   fi
 
   # PLAYDATE
-  export PLAYDATE_SDK="$HOME/Developer/PlaydateSDK-1.3.1"
+  export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
   alias pdc="pdc -sdkpath $PLAYDATE_SDK $1"
   export PATH="$HOME/Developer/$PLAYDATE_SDK/bin:$PATH"
 

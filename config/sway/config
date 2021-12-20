@@ -58,7 +58,7 @@ exec swayidle -w \
 exec mako
 exec oguri
 exec copyq
-exec_always udiskie --tray
+exec udiskie --tray
 exec_always dbus_dumb_agent
 # https://github.com/swaywm/sway/issues/4323
 exec_always import-gsettings

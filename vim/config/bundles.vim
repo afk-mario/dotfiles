@@ -60,6 +60,7 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'jamespeapen/swayconfig.vim'
 Plug 'karolbelina/uxntal.vim'
 Plug 'habamax/vim-godot'
+Plug 'lluchs/vim-wren'
 " }
 
 " Vim UI {
