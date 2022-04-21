@@ -19,7 +19,7 @@
 show() {
   # Prints the current micrphone state.
 
-  if pamixer --default-source --get-mute; then
+  if pamixer --default-source --get-mute >/dev/null; then
     CLASS="muted"
     TEXT=""
   else

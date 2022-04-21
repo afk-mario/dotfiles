@@ -11,6 +11,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # https://github.com/swaywm/sway/issues/2424
 export QT_WAYLAND_FORCE_DPI=96
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export MANGOHUD=1
+# export MANGOHUD=1
 export PIPEWIRE_DEBUG=3
 exec systemd-cat -t sway sway

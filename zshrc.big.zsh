@@ -54,7 +54,7 @@ export UNITY_PROJECTS_PATH="$HOME/Projects/games/Unity/"
 
 export EDITOR=nvim
 export SYSTEMD_EDITOR=$EDITOR
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER="nvim +Man!"
 export PIPENV_VENV_IN_PROJECT=1
 
 alias vimconfig="nvim ~/.vim/vimrc"
@@ -70,7 +70,8 @@ alias vi="vim -u $HOME/.vim/vimrcmin"
 alias tim="nvim -U NONE -u $HOME/.vim/test.vim"
 alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
-alias tre='tree -C -L 2'
+alias tree='tree -C'
+alias tre='tree -L 2'
 alias prp="pipenv run python"
 alias ssh="TERM=xterm-256color ssh"
 alias sway="$HOME/bin/sway-vars"
@@ -96,6 +97,21 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
   alias pdc="pdc -sdkpath $PLAYDATE_SDK $1"
   export PATH="$HOME/Developer/$PLAYDATE_SDK/bin:$PATH"
+
+  # NVM
+  [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+  source /usr/share/nvm/nvm.sh
+  source /usr/share/nvm/bash_completion
+  source /usr/share/nvm/install-nvm-exec
+
+  # FLY.io
+  export FLYCTL_INSTALL="/home/afk/.fly"
+  export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+  # Foot
+
+  source ~/.dotfiles/foot.zsh
+  alias gd4="$HOME/apps/Godot/Godot4"
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
@@ -153,4 +169,5 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:*:kill:*:processes' command 'ps xo pid,user:10,cmd | rg -v "sshd:|-zsh$"'
 
 # source ~/.dotfiles/zplug.zsh
+source ~/.dotfiles/ssh-auto-load.zsh
 source ~/.dotfiles/antibody.zsh

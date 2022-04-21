@@ -1,8 +1,8 @@
 {
   "layer": "top",
-    "modules-left": ["custom/arch","sway/workspaces", "sway/window", "sway/mode"],
+    "modules-left": ["custom/arch", "sway/workspaces", "sway/window", "sway/mode"],
     "modules-center": ["tray"],
-    "modules-right": ["custom/mic","idle_inhibitor" ,"pulseaudio", "network", "sway/language", "battery", "clock", "custom/disturb_on", "custom/disturb_off"],
+    "modules-right": ["idle_inhibitor", "custom/mic", "pulseaudio", "network", "sway/language", "battery", "clock"],
     "height": 25,
     "sway/window": {
       "max-length": 50
@@ -67,14 +67,9 @@
       "format": "-",
       "on-click":"makoctl set invisible=1"
     },
-    "custom/disturb_off":{
-      "format": "+",
-      "on-click":"makoctl set invisible=0"
-    },
     "custom/mic": {
       "exec": "$HOME/bin/waybar-mic",
       "return-type": "json",
       "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     }
 }
-

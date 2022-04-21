@@ -8,6 +8,7 @@
 
 set termguicolors
 colorscheme gruvbox
+" colorscheme nightfly
 
 " https://joshtronic.com/2018/06/04/set-vim-background-based-on-your-terminals-background-color/
 " if exists('theme') && theme ==# 'light'

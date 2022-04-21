@@ -1,4 +1,4 @@
-robbyrussell/oh-my-zsh path:plugins/ssh-agent
+# robbyrussell/oh-my-zsh path:plugins/ssh-agent
 robbyrussell/oh-my-zsh path:plugins/docker
 robbyrussell/oh-my-zsh path:plugins/docker-compose
 robbyrussell/oh-my-zsh path:plugins/git-flow
@@ -11,8 +11,6 @@ caarlos0/ports
 
 xvoland/Extract
 djui/alias-tips
-
-jonas/tig path:contrib/tig-completion.zsh
 
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting

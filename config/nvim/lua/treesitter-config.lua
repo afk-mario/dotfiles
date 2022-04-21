@@ -1,8 +1,7 @@
-local tree = require'nvim-treesitter.configs'
-
+local tree = require 'nvim-treesitter.configs'
 
 tree.setup {
-  ensure_installed = "maintained",
-  highlight = { enable = false },
-  indent = { enable = false }
+    ensure_installed = "all",
+    highlight = {enable = false},
+    indent = {enable = true}
 }

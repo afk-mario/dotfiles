@@ -7,16 +7,11 @@
 " }
 
 " Polyglot {
-" if dein#tap('vim-polyglot')
 " let g:polyglot_disabled = ['css']
-" JSX {
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-" }
 " Markdown {
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 " }
-let g:polyglot_disabled = ['i3config', 'swayconfig']
 " }
 
 " Ale {
@@ -37,6 +32,7 @@ let g:ale_fix_on_save = 1
 
 let g:ale_linters = {}
 let g:ale_linters['javascript'] = ['eslint']
+let g:ale_linters['javascriptreact'] = ['eslint']
 let g:ale_linters['graphql'] = ['']
 let g:ale_linters['python'] = ['flake8']
 let g:ale_linters['rust'] = ['cargo']
@@ -48,10 +44,14 @@ let g:ale_linters_ignore = {}
 let g:ale_linters_ignore['json'] = ['eslint']
 
 let g:ale_fixers = {}
+let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+let g:ale_fixers['javascriptreact'] = ['prettier', 'eslint']
 let g:ale_fixers['graphql'] = ['prettier']
 let g:ale_fixers['json'] = ['prettier']
 let g:ale_fixers['css'] = ['prettier']
+let g:ale_fixers['html'] = ['prettier']
+let g:ale_fixers['md'] = ['prettier']
 let g:ale_fixers['scss'] = ['prettier']
 let g:ale_fixers['yaml'] = ['prettier']
 let g:ale_fixers['python'] = ['isort', 'black']

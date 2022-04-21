@@ -6,7 +6,8 @@
 " This shoould handle all bundle installations
 " }
 
-let g:polyglot_disabled = ['i3config', 'swayconfig', 'gdscript']
+let g:polyglot_disabled = ['i3config', 'swayconfig', 'gdscript', 'jsonc']
+
 " Config {
 " if empty(glob("${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"))
 "   silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim" --create-dirs
@@ -31,7 +32,7 @@ Plug 'tpope/vim-abolish'             " Better replace
 Plug 'tpope/vim-unimpaired'          " Key mappings for [
 Plug 'tpope/vim-dispatch'            " Run async commands in GIT
 
-Plug 'suy/vim-context-commentstring' " Context commentstring for JSX
+" Plug 'suy/vim-context-commentstring' " Context commentstring for JSX
 
 Plug 'wellle/targets.vim'            " Vim plugin that provides additional text objects
 Plug 'editorconfig/editorconfig-vim' " Editor configurations .editorconfig
