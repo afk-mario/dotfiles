@@ -31,6 +31,7 @@ Plug 'tpope/vim-repeat'              " More . command
 Plug 'tpope/vim-abolish'             " Better replace
 Plug 'tpope/vim-unimpaired'          " Key mappings for [
 Plug 'tpope/vim-dispatch'            " Run async commands in GIT
+Plug 'tpope/vim-endwise'             " Add end after if in lua
 
 " Plug 'suy/vim-context-commentstring' " Context commentstring for JSX
 
@@ -91,6 +92,6 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
 
-"scroll_docs }
+"}
 
 call plug#end()

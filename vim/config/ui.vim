@@ -47,6 +47,7 @@ if has('statusline')
     set showtabline=2
     set guioptions-=e
     set statusline=%t       "tail of the filename
+    set laststatus=3        "global statusline
 
     " if !dein#tap('vim-flagship')
         set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
