@@ -18,17 +18,15 @@ cmp.setup({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true
         },
-
         ['<C-e>'] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close()
         }),
         ['<CR>'] = function(fallback)
-            if cmp.visible() then
-                cmp.mapping.confirm({select = true})
-            else
-                fallback()
-            end
+            return cmp.mapping.confirm({
+                select = true,
+                behavior = cmp.ConfirmBehavior.Replace
+            })(fallback)
         end
     }),
     sources = {
@@ -46,8 +44,7 @@ cmp.setup({
                 nvim_lsp = "[LSP]",
                 nvim_lua = "[api]",
                 path = "[PATH]",
-                luasnip = "[SNIP]",
-                gh_issues = "[ISSUE]"
+                luasnip = "[SNIP]"
             }
         }
     },

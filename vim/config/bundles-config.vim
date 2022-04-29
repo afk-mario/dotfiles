@@ -15,7 +15,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 " }
 
 " Ale {
-"
+
 " GDScript {
 function! FormatGd(buffer) abort
     return {
@@ -73,7 +73,6 @@ nnoremap <silent> [ale]k :ALEPrevious<cr>
 " }
 
 " Emmet {
-" if dein#tap('emmet-vim')
 " let g:user_emmet_install_global = 0
 " autocmd FileType html,css,jsx,js EmmetInstall
 iabbrev </ </<C-X><C-O>
@@ -82,13 +81,10 @@ let g:user_emmet_settings = {
                 \      'extends' : 'jsx',
                 \  },
                 \}
-" endif
 " }
 
 " Flagship {
-" if dein#tap('vim-flagship')
 autocmd User Flags call Hoist("window", "SyntasticStatuslineFlag")
-" autocmd User Flags call Hoist("global", "%{&ignorecase ? '[IC]' : ''}")
 set title titlestring=%{getcwd()}
 let g:tabprefix = '[afk]'
 let g:tablabel =
@@ -139,30 +135,9 @@ set statusline+=\ %*
 
 let g:flagship_skip = 'fugitive#statusline\|FugitiveStatusline'
 
-" endif
-" }
-
-" UltiSnips {
-" if dein#tap('ultisnips')
-set runtimepath+=~/.vim/snips
-" Trigger configuration.
-let g:UltiSnipsExpandTrigger='<c-e>'
-let g:UltiSnipsJumpForwardTrigger='<c-r>'
-let g:UltiSnipsJumpBackwardTrigger='<c-w>'
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsSnippetsDir='~/.vim/snips/UltiSnips'
-let g:UltiSnipsSnippetDirectories = ['UltiSnips']
-
-" Use Python Version
-let g:UltiSnipsUsePythonVersion = 3
-let g:ultisnips_python_style='google'
-" endif
 " }
 
 " Fugitive {
-" if dein#tap('vim-fugitive')
 nnoremap [fugitive] <nop>
 nmap <leader>g [fugitive]
 nnoremap <silent> [fugitive]s :Gstatus<CR>
@@ -177,27 +152,16 @@ nnoremap <silent> [fugitive]e :Gedit<CR>
 " Mnemonic _i_nteractive
 nnoremap <silent> [fugitive]i :Git add -p %<CR>
 nnoremap <silent> [fugitive]g :SignifyToggle<CR>
-" endif
-"}
-
-" Obsession {
-" if dein#tap('vim-obsession')
-" set statusline+=%{ObsessionStatus()}     " ObsessionStatus
-" endif
 "}
 
 " indent_guides {
-" if dein#tap('indentLine')
 let g:indentLine_char = '│'
 let g:indentLine_showFirstIndentLevel = 1
-" endif
 " }
 
 " Bufkill {
-" if dein#tap('vim-bufkill')
 let g:BufKillCreateMappings = 0
 nnoremap <silent> [buffer], :BD<cr>
-" endif
 " }
 
 " FZF {

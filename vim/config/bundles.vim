@@ -75,8 +75,8 @@ Plug 'psliwka/vim-smoothie'             " Smooth Scroll
 
 " LSP {
 
-Plug 'neovim/nvim-lspconfig'
 Plug 'w0rp/ale'                      " Async Lint checker
+Plug 'neovim/nvim-lspconfig'
 Plug 'onsails/lspkind-nvim'
 
 " }

@@ -64,7 +64,7 @@ alias at="tmux a -t $1"
 alias tmuxconfig="nvim ~/.config/tmux/tmux.conf"
 alias tmuxreload="tmux source-file ~/.config/tmux/tmux.conf"
 alias zshreload="source ~/.zshrc"
-alias vim="vim"
+alias vim="nvim"
 alias vimdiff="nvim -d"
 alias vi="vim -u $HOME/.vim/vimrcmin"
 alias tim="nvim -U NONE -u $HOME/.vim/test.vim"
@@ -133,15 +133,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
   export GPG_TTY=$(tty)
 fi
-
-function vim {
-  THEME=$(~/bin/alacritty-colorscheme -s)
-  if [[ "$THEME" == "ayu_light.yaml" ]]; then
-    env nvim --cmd "let theme = 'light'" $@
-  else
-    env nvim --cmd "let theme = 'dark'" $@
-  fi
-}
 
 # Load fzf if present
 # https://github.com/getantibody/antibody/issues/222

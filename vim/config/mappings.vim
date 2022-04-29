@@ -18,7 +18,7 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-"require'lspconfig' Buffers {
+" Buffers {
 nnoremap [buffer] <nop>
 nmap <leader>b [buffer]
 nnoremap <silent> [buffer]t :enew<cr>
@@ -50,9 +50,6 @@ nmap <leader>s [spell]
 nnoremap <silent> [spell]s :setlocal spell spelllang=es_es<cr>
 nnoremap <silent> [spell]n :setlocal spell spelllang=en_en<cr>
 " }
-
-" Yank from the cursor to the end of the line, to be consistent with C and D.
-nnoremap Y y$
 
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
