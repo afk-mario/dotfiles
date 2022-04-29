@@ -69,7 +69,8 @@ Plug 'lluchs/vim-wren'
 Plug 'tpope/vim-flagship'               " Statusline
 Plug 'Yggdroot/indentLine'              " Ident visual guide
 Plug 'gregsexton/MatchTag'              " Highlite Matching tag
-Plug 'gruvbox-community/gruvbox'        " Dark color scheme
+" Plug 'gruvbox-community/gruvbox'        " Dark color scheme
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'psliwka/vim-smoothie'             " Smooth Scroll
 " }
 

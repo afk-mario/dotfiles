@@ -10,6 +10,8 @@
 set mouse=a
 " Backups are nice ...
 set backup
+# Don't know why for default is on the current folder
+set backupdir=~/.local/share/nvim/backup//
 " Allow for cursor beyond last character
 set virtualedit=onemore
 

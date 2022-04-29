@@ -26,7 +26,7 @@ set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set foldenable                  " Auto fold code
 set list
-set fillchars=vert:│,fold:-
+
 highlight VertSplit cterm=none ctermbg=none ctermfg=247
 
 if has('statusline')
@@ -35,20 +35,18 @@ if has('statusline')
     set statusline=%t       "tail of the filename
     set laststatus=3        "global statusline
 
-    " if !dein#tap('vim-flagship')
-        set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-        set statusline+=%{&ff}] "file format
-        set statusline+=%h      "help file flag
-        set statusline+=%m      "modified flag
-        set statusline+=%r      "read only flag
-        set statusline+=%y      "filetype
-        set statusline+=%=      "left/right separator
-        set statusline+=%c,     "cursor column
-        set statusline+=%l/%L   "cursor line/total lines
-        set statusline+=\ %P    "percent through file
+    set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+    set statusline+=%{&ff}] "file format
+    set statusline+=%h      "help file flag
+    set statusline+=%m      "modified flag
+    set statusline+=%r      "read only flag
+    set statusline+=%y      "filetype
+    set statusline+=%=      "left/right separator
+    set statusline+=%c,     "cursor column
+    set statusline+=%l/%L   "cursor line/total lines
+    set statusline+=\ %P    "percent through file
 
 
-        set statusline+=%#warningmsg#
-        set statusline+=%*
-    " endif
+    set statusline+=%#warningmsg#
+    set statusline+=%*
 endif

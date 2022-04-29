@@ -29,9 +29,6 @@ nnoremap <silent> [buffer]w :bw<cr>
 nnoremap <silent> [buffer]s :ls<cr>
 nnoremap <silent> [buffer]1 :bfirst<cr>
 nnoremap <silent> [buffer]0 :blast<cr>
-" https://stackoverflow.com/questions/4298910/vim-close-buffer-but-not-split-window
-" nnoremap <silent> [buffer], :b#<bar>bd#<cr>
-" }
 
 " Tabs {
 nnoremap [tab] <nop>
