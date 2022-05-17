@@ -17,4 +17,6 @@ if has('nvim')
     lua require('treesitter-config')
     lua require('lsp-config')
     lua require('cmp-config')
+    lua require('comment-config')
+    lua require('indent-blankline')
 endif

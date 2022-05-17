@@ -25,6 +25,10 @@ set undolevels=1000   " Maximum number of changes that can be undone
 set undoreload=10000  " Maximum number lines to save for undo on a buffer reload
 
 set inccommand=nosplit
+" https://github.com/nvim-treesitter/nvim-treesitter#available-modules=
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable
 
 " Formatting {
 set wrap                        " wrap long lines

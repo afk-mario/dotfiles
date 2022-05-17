@@ -24,7 +24,6 @@ set smartcase                   " Case sensitive when uc present
 set wildmode=longest:full,full  " Command <Tab> completion, list matches, then longest common part, then all.
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
-set foldenable                  " Auto fold code
 set list
 
 highlight VertSplit cterm=none ctermbg=none ctermfg=247

@@ -9,8 +9,6 @@
 " Polyglot {
 " let g:polyglot_disabled = ['css']
 " Markdown {
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
 " }
 " }
 
@@ -64,7 +62,6 @@ let g:ale_fixers['lua'] = ['lua-format']
 let g:ale_fixers['gdscript'] = ['gdformat']
 
 
-
 nnoremap [ale] <nop>
 nmap <leader>a [ale]
 nnoremap <silent> [ale]f :ALEFix<cr>
@@ -103,7 +100,7 @@ endfunction
 
 
 function! GitInfo()
-    let git = fugitive#head()
+    let git = FugitiveHead()
     let info = ''
     if git !=# ''
         let info='g.' . git . ' |'
@@ -155,8 +152,11 @@ nnoremap <silent> [fugitive]g :SignifyToggle<CR>
 "}
 
 " indent_guides {
-let g:indentLine_char = '│'
-let g:indentLine_showFirstIndentLevel = 1
+" let g:indentLine_char = '│'
+" let g:indentLine_showFirstIndentLevel = 1
+" let g:vim_markdown_conceal = 0
+" let g:vim_markdown_conceal_code_blocks = 0
+" let g:vim_json_syntax_conceal = 0
 " }
 
 " Bufkill {

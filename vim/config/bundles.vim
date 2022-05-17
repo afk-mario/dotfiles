@@ -25,15 +25,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sensible'            " Sensible defaults
 Plug 'tpope/vim-vinegar'             " Netrw helper
 Plug 'tpope/vim-eunuch'              " Unix helpers
-Plug 'tpope/vim-commentary'          " Toggle comments
 Plug 'tpope/vim-surround'            " Sorroundings
 Plug 'tpope/vim-repeat'              " More . command
 Plug 'tpope/vim-abolish'             " Better replace
 Plug 'tpope/vim-unimpaired'          " Key mappings for [
 Plug 'tpope/vim-dispatch'            " Run async commands in GIT
 Plug 'tpope/vim-endwise'             " Add end after if in lua
-
-" Plug 'suy/vim-context-commentstring' " Context commentstring for JSX
 
 Plug 'wellle/targets.vim'            " Vim plugin that provides additional text objects
 Plug 'editorconfig/editorconfig-vim' " Editor configurations .editorconfig
@@ -44,6 +41,7 @@ Plug 'godlygeek/tabular'             " Align code
 Plug 'vim-scripts/BufOnly.vim'       " Close All other buffers
 Plug 'qpkorr/vim-bufkill'            " Keep the window layout when closing buffers
 Plug 'mjbrownie/swapit'              " Toggle between true false
+Plug 'numToStr/Comment.nvim'
 
 " }
 
@@ -67,7 +65,8 @@ Plug 'lluchs/vim-wren'
 
 " Vim UI {
 Plug 'tpope/vim-flagship'               " Statusline
-Plug 'Yggdroot/indentLine'              " Ident visual guide
+" Plug 'Yggdroot/indentLine'              " Ident visual guide
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'gregsexton/MatchTag'              " Highlite Matching tag
 " Plug 'gruvbox-community/gruvbox'        " Dark color scheme
 Plug 'ellisonleao/gruvbox.nvim'
