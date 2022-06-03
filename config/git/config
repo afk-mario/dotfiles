@@ -29,7 +29,7 @@
   verbose = true
   gpgsign = true
 [init]
-  templatedir = ~/.git_template
+  templatedir = $XDG_CONFIG_HOME/git/template
 	defaultBranch = main
 [filter "lfs"]
   clean = git-lfs clean -- %f
@@ -37,7 +37,7 @@
   process = git-lfs filter-process
   required = true
 [core]
-  excludesfile = $HOME/.gitignore_global
+  excludesfile = $XDG_CONFIG_HOME/git/ignore-global
 [credential]
   helper = osxkeychain
 [mergetool "fugitive"]
@@ -48,6 +48,6 @@
 [difftool "nvimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [include]
-  path = ~/.gitconfig-signkey
+  path = $XDG_CONFIG_HOME/git/signkey
 [pull]
 	rebase = true

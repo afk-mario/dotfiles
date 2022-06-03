@@ -7,6 +7,7 @@ setopt interactivecomments
 #completition things
 # https://carlosbecker.com/posts/speeding-up-zsh/
 autoload -Uz compinit
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 for dump in ~/.zcompdump(N.mh+24); do
   compinit
@@ -33,6 +34,11 @@ export LANG=en_US.UTF-8
 export XKB_DEFAULT_LAYOUT="es,us"
 export XKB_DEFAULT_OPTIONS="shift:both_capslock,caps:ctrl_modifier,grp:ctrls_toggle,grp:win_space_toggle"
 
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/apps:$PATH"
 export PATH="$HOME/apps/uxn:$PATH"
@@ -47,7 +53,6 @@ export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
 
-export GOPATH=$(go env GOPATH)
 export ADBI_INSTALL_PATH="$HOME/builds/"
 export UNITY_INSTALL_PATH="$HOME/builds/"
 export UNITY_PROJECTS_PATH="$HOME/Projects/games/Unity/"
@@ -56,6 +61,28 @@ export EDITOR=nvim
 export SYSTEMD_EDITOR=$EDITOR
 export MANPAGER="nvim +Man!"
 export PIPENV_VENV_IN_PROJECT=1
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export GEM_HOME=${XDG_DATA_HOME}/gem
+export GEM_SPEC_CACHE=${XDG_CACHE_HOME}/gem
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GOPATH="$XDG_DATA_HOME"/go
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export LESSHISTFILE=${XDG_CACHE_HOME}/less/history
+export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export WEECHAT_HOME=${XDG_CONFIG_HOME}/weechat
+export WINEPREFIX="$XDG_DATA_HOME"/wine
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export _Z_DATA="$XDG_DATA_HOME/z"
 
 alias vimconfig="nvim ~/.vim/vimrc"
 alias zshconfig="nvim ~/.zshrc"
@@ -77,6 +104,10 @@ alias ssh="TERM=xterm-256color ssh"
 alias sway="$HOME/bin/sway-vars"
 alias lg='lazygit'
 alias ll='exa -lh --git'
+alias pidgin='pidgin --config="$XDG_DATA_HOME"/purple'
+alias weechat=weechat -d ${XDG_CONFIG_HOME}/weechat
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+
 # https://stackoverflow.com/questions/1571461/git-a-quick-command-to-go-to-root-of-the-working-tree/1571525#1571525
 alias groot='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
 

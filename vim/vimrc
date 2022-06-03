@@ -14,9 +14,10 @@ source ~/.vim/config/enviroment.vim
 source ~/.vim/config/tmp.vim
 
 if has('nvim')
-    lua require('treesitter-config')
-    lua require('lsp-config')
-    lua require('cmp-config')
-    lua require('comment-config')
-    lua require('indent-blankline')
+    lua print("hey loaded nvim")
+    lua require"user.lsp"
+    lua require"user.treesitter"
+    lua require"user.cmp"
+    lua require"user.comment"
+    lua require"user.indent-blankline"
 endif

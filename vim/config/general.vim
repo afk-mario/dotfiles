@@ -12,7 +12,7 @@ set mouse=a
 set backup
 
 " Dont know why for default is on the current folder
-set backupdir=~/.local/share/nvim/backup//
+set backupdir=$XDG_DATA_HOME/nvim/backup/
 
 " Allow for cursor beyond last character
 set virtualedit=onemore

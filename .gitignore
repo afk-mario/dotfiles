@@ -60,3 +60,4 @@ gtk
 bookmarks
 gtkfilechooser.ini
 /tags
+/config/git/signkey

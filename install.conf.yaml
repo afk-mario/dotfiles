@@ -27,9 +27,6 @@
     ~/bin: bin/
     ~/.dotfiles: ""
     ~/.ssh/config: ssh-config
-    ~/.gitconfig: git-config
-    ~/.gitignore_global: git-ignore-global
-    ~/.git_template: git-template
     ~/.agignore: .agignore
     ~/.zshrc: .zshrc
     ~/.Xresources: .Xresources

@@ -25,6 +25,7 @@ set wildmode=longest:full,full  " Command <Tab> completion, list matches, then l
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set list
+set signcolumn=yes              " Avoid LSP signs to flicker size of buffer
 
 highlight VertSplit cterm=none ctermbg=none ctermfg=247
 
