@@ -53,9 +53,6 @@ export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
 
-
-export SSH_AUTH_SOCK=~/.1password/agent.sock
-
 export ADBI_INSTALL_PATH="$HOME/builds/"
 export UNITY_INSTALL_PATH="$HOME/builds/"
 export UNITY_PROJECTS_PATH="$HOME/Projects/games/Unity/"
@@ -64,6 +61,7 @@ export EDITOR=nvim
 export SYSTEMD_EDITOR=$EDITOR
 export MANPAGER="nvim +Man!"
 export PIPENV_VENV_IN_PROJECT=1
+export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
@@ -118,15 +116,6 @@ alias groot='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse 
 fpath+=~/.zfunc
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  export TERMCMD=alacritty
-  # http://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
-  # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-  # https://wiki.archlinux.org/title/GNOME/Keyring#Terminal_applications
-  # if [ -n "$DESKTOP_SESSION" ];then
-  #   eval $(gnome-keyring-daemon --start)
-  #   export SSH_AUTH_SOCK
-  # fi
-
   # PLAYDATE
   export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
   alias pdc="pdc -sdkpath $PLAYDATE_SDK $1"
