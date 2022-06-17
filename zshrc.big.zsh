@@ -157,11 +157,12 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   alias ctags="`brew --prefix`/bin/ctags"
   export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
   export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
+  export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
   # https://github.com/sfackler/rust-openssl/issues/255
 
   # https://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx
-  export JAVA_HOME=$(/usr/libexec/java_home)
-  export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
+  # export JAVA_HOME=$(/usr/libexec/java_home)
+  # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src/"
   export GPG_TTY=$(tty)
 fi
 

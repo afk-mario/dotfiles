@@ -1,6 +1,7 @@
 [user]
   name = Mario Carballo Zama
   email = afk@ellugar.co
+	signingkey = EAB36F90934AC1DC
 [gpg]
   program = gpg
 [push]
