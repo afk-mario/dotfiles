@@ -1,7 +1,6 @@
 [user]
   name = Mario Carballo Zama
   email = afk@ellugar.co
-	signingkey = EAB36F90934AC1DC
 [gpg]
   program = gpg
 [push]
@@ -49,6 +48,6 @@
 [difftool "nvimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [include]
-  path = $XDG_CONFIG_HOME/git/signkey
+  path = ~/.config/git/signkey
 [pull]
 	rebase = true
