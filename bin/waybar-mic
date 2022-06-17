@@ -17,9 +17,9 @@
 # TODO: If a non-primary microphone is on, that should somehow be reflected.
 
 show() {
-  # Prints the current micrphone state.
+  isMuted=$(pamixer --default-source --get-mute);
 
-  if pamixer --default-source --get-mute >/dev/null; then
+  if $isMuted; then
     CLASS="muted"
     TEXT=""
   else
