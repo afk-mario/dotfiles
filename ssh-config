@@ -7,7 +7,6 @@ Host *
      ServerAliveInterval 60
      ServerAliveCountMax 30
      AddKeysToAgent yes
-     UseKeychain yes
      IdentityAgent ~/.1password/agent.sock
 
 Host OsecanDev
@@ -50,3 +49,6 @@ Host corredor
   HostName 128.199.5.84
   user root
   IdentityFile ~/.ssh/deploy
+
+Host *
+  IdentityAgent ~/.1password/agent.sock

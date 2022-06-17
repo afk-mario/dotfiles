@@ -53,6 +53,9 @@ export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 export ASEPRITE_ACCEPT_EULA=yes
 
+
+export SSH_AUTH_SOCK=~/.1password/agent.sock
+
 export ADBI_INSTALL_PATH="$HOME/builds/"
 export UNITY_INSTALL_PATH="$HOME/builds/"
 export UNITY_PROJECTS_PATH="$HOME/Projects/games/Unity/"
@@ -119,10 +122,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # http://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
   # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
   # https://wiki.archlinux.org/title/GNOME/Keyring#Terminal_applications
-  if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-  fi
+  # if [ -n "$DESKTOP_SESSION" ];then
+  #   eval $(gnome-keyring-daemon --start)
+  #   export SSH_AUTH_SOCK
+  # fi
 
   # PLAYDATE
   export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
@@ -157,7 +160,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   alias ctags="`brew --prefix`/bin/ctags"
   export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
   export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
-  export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
   # https://github.com/sfackler/rust-openssl/issues/255
 
   # https://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx
