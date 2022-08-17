@@ -1,6 +1,6 @@
 local M = {}
 
-local exclude_formatting_servers = {"tsserver", "stylelint_lsp"}
+local exclude_formatting_servers = {"tsserver"}
 
 M.setup = function()
     local signs = {
@@ -19,7 +19,18 @@ M.setup = function()
         update_in_insert = false,
         virtual_text = {source = "if_many"},
         signs = {active = signs},
-        float = {source = "always"}
+        float = {
+            source = "always",
+            format = function(diagnostic)
+                if diagnostic.source == 'eslint' then
+                    return string.format('%s [%s]', diagnostic.message,
+                    -- shows the name of the rule
+                                         diagnostic.user_data.lsp.code)
+                end
+                return string.format('%s [%s]', diagnostic.message,
+                                     diagnostic.source)
+            end
+        }
     }
     vim.diagnostic.config(config)
 end

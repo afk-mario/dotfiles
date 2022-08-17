@@ -1,0 +1,23 @@
+#!/bin/bash
+
+modes=$(makoctl mode)
+dnd="dnd"
+
+ON=""
+OFF=""
+TEXT=$OFF
+CLASS="-off"
+TOOLTIP=$modes
+
+if [[ "$modes" == *"$dnd"* ]]; then
+  TEXT=$ON
+  CLASS="-on"
+fi
+
+jq --compact-output \
+  --null-input \
+  --arg text "$TEXT" \
+  --arg tooltip "$TOOLTIP" \
+  --arg class "$CLASS" \
+  '{"text": $text, "tooltip": $tooltip, "class": $class}'
+

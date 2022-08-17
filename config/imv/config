@@ -1,7 +1,7 @@
 [binds]
-<Shift+X> = exec trash "$imv_current_file"; next
-x = exec trash "$imv_current_file"; next
 n = next
 p = prev
 c = exec wl-copy "$imv_current_file"
-
+<Shift+R> = exec mogrify -rotate 90 "$imv_current_file"
+x = exec trash "$imv_current_file"; next
+<Shift+X> = exec trash "$imv_current_file"; close

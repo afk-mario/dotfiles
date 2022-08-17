@@ -1,0 +1,9 @@
+#!/bin/sh
+
+COMPONENT_NAME=$1
+
+mkdir "./${COMPONENT_NAME}"
+touch "./${COMPONENT_NAME}/index.jsx"
+touch "./${COMPONENT_NAME}/${COMPONENT_NAME}.scss"
+touch "./${COMPONENT_NAME}/${COMPONENT_NAME}.jsx"
+echo "export { default } from './${COMPONENT_NAME}';" > "./${COMPONENT_NAME}/index.jsx"

@@ -6,15 +6,17 @@
     "sway/window",
     "sway/mode"
   ],
-  "modules-center": ["tray"],
+  "modules-center": ["custom/scratchpad-indicator", "tray"],
   "modules-right": [
-    "idle_inhibitor",
-    "custom/mic",
     "pulseaudio",
     "network",
     "sway/language",
     "battery",
-    "clock"
+    "clock",
+    "custom/dnd",
+    "idle_inhibitor",
+    "custom/mic",
+    "custom/dismiss_notifications"
   ],
   "height": 25,
   "sway/window": {
@@ -76,13 +78,33 @@
   "custom/arch": {
     "format": ""
   },
-  "custom/disturb_on": {
-    "format": "-",
-    "on-click": "makoctl set invisible=1"
-  },
   "custom/mic": {
     "exec": "$HOME/bin/waybar-mic",
     "return-type": "json",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  },
+  "custom/dismiss_notifications": {
+    "exec-if": "command -v makoctl",
+    "exec": "( makoctl list | jq -e '.data[] | length > 0' > /dev/null && echo '\nDismiss all notifications\n' ) || echo '' ",
+    "format": "{}",
+    "on-click": "makoctl dismiss -a",
+    "interval": 3
+  },
+  "custom/dnd": {
+    "exec-if": "sleep 0.5",
+    "exec-on-event": true,
+    "exec": "dnd-check",
+    "return-type": "json",
+    "format": "{}",
+    "on-click": "dnd-toggle > /dev/null",
+    "interval": 3
+  },
+  "custom/scratchpad-indicator": {
+    "interval": 3,
+    "return-type": "json",
+    "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
+    "format": "{} 🗗",
+    "on-click": "exec swaymsg 'scratchpad show'",
+    "on-click-right": "exec swaymsg 'move scratchpad'"
   }
 }

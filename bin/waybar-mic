@@ -17,7 +17,9 @@
 # TODO: If a non-primary microphone is on, that should somehow be reflected.
 
 show() {
+  echo "before"
   isMuted=$(pamixer --default-source --get-mute);
+  echo "after"
 
   if $isMuted; then
     CLASS="muted"

@@ -74,7 +74,6 @@ export LESSHISTFILE=${XDG_CACHE_HOME}/less/history
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export NVM_DIR="$XDG_DATA_HOME"/nvm
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
@@ -92,13 +91,13 @@ alias at="tmux a -t $1"
 alias tmuxconfig="nvim ~/.config/tmux/tmux.conf"
 alias tmuxreload="tmux source-file ~/.config/tmux/tmux.conf"
 alias zshreload="source ~/.zshrc"
-alias vim="nvim"
-alias vimdiff="nvim -d"
 alias vi="vim -u $HOME/.vim/vimrcmin"
 alias tim="nvim -U NONE -u $HOME/.vim/test.vim"
+alias vim="nvim"
+alias vimdiff="nvim -d"
 alias ls="ls --color=auto"
 alias ag='ag --path-to-ignore ~/.agignore'
-alias tree='tree -C'
+alias tree='tree -C -I "node_modules|bower_components"'
 alias tre='tree -L 2'
 alias prp="pipenv run python"
 alias ssh="TERM=xterm-256color ssh"
@@ -118,14 +117,16 @@ fpath+=~/.zfunc
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # PLAYDATE
   export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
-  alias pdc="pdc -sdkpath $PLAYDATE_SDK $1"
   export PATH="$HOME/Developer/$PLAYDATE_SDK/bin:$PATH"
+  export P3D_INCLUDE_PATH=/usr/include/panda3d/
+  export P3D_LIB_PATH=/usr/lib/panda3d/
+  alias pdc="pdc -sdkpath $PLAYDATE_SDK $1"
 
   # NVM
-  [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-  source /usr/share/nvm/nvm.sh
-  source /usr/share/nvm/bash_completion
-  source /usr/share/nvm/install-nvm-exec
+  # [ -z "$NVM_DIR" ] && export NVM_DIR="$XDG_DATA_HOME/nvm"
+  # source /usr/share/nvm/nvm.sh
+  # source /usr/share/nvm/bash_completion
+  # source /usr/share/nvm/install-nvm-exec
 
   # FLY.io
   export FLYCTL_INSTALL="/home/afk/.fly"

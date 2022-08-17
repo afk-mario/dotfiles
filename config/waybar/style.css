@@ -75,6 +75,8 @@ window#waybar {
 #custom-disturb_on,
 #custom-disturb_off,
 #custom-mic,
+#custom-dismiss_notifications,
+#custom-dnd,
 #mpd {
   padding: 0 8px;
   margin: 0;
@@ -132,6 +134,16 @@ window#waybar {
   background-color: #fb4934;
 }
 
+#custom-dnd {
+  border-bottom: 2px solid #d79921;
+  color: #fadb2f;
+}
+
+#custom-dnd.-on {
+  color: #282828;
+  background-color: #fabd2f;
+}
+
 @keyframes blink {
   to {
     background-color: #26a65b;
@@ -167,4 +179,8 @@ window#waybar {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#custom-dismiss_notifications {
+  border-bottom: 2px solid #cc241d;
 }

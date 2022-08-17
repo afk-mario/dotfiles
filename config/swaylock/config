@@ -1,6 +1,8 @@
-image=$(ls $HOME/Dropbox/Media/Wallpapers/*.{jpg,png} | shuf -n1)
+# vim: ft=dosini
+
+image=$(ls $HOME/Dropbox/Media/Wallpapers/4k/*.{jpg,png} | shuf -n1)
 font=Inter
-font-size=13
+font-size=26
 
 ignore-empty-password
 

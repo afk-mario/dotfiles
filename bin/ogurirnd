@@ -2,10 +2,13 @@
 #
 # Loop though all the Wallpapers using oguri
 
-x=""
-for file in $HOME/Dropbox/Media/Wallpapers/*.{jpg,png}
-do
-  echo "$file";
-  ogurictl output '*' --image $file
-  sleep 1;
-done
+# x=""
+# for file in $HOME/Dropbox/Media/Wallpapers/4k/*.{jpg,png}
+# do
+#   echo "$file";
+#   ogurictl output '*' --image $file
+#   sleep 1;
+# done
+
+ogurictl output "*" --image "$(find "$HOME/Dropbox/Media/Wallpapers/4k/" -type f -name '*.jpg' -o -name '*.png' -o -name '*.webp' | shuf -n 1)"
+
