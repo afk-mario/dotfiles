@@ -1,6 +1,6 @@
 local M = {}
 
-local exclude_formatting_servers = {"tsserver"}
+local exclude_formatting_servers = {"tsserver", "stylelint_lsp"}
 
 M.setup = function()
     local signs = {
@@ -40,18 +40,25 @@ local function lsp_diagnostics(client)
     client.handlers["textDocument/publishDiagnostics"] = function() end
 end
 
-local function lsp_format_setup(client, bufnr)
-    -- TODO: update this when neovim 8.0 drops
-    if vim.tbl_contains(exclude_formatting_servers, client.name) then
-        client.resolved_capabilities.document_formatting = false
-    end
+local function lsp_formatting(bufnr)
+    vim.lsp.buf.format({
+        filter = function(client)
+            local should_exclude = vim.tbl_contains(exclude_formatting_servers,
+                                                    client.name)
 
+            return not should_exclude
+        end,
+        bufnr = bufnr
+    })
+end
+
+local function lsp_formatting_setup(client, bufnr)
     if client.supports_method("textDocument/formatting") then
         vim.api.nvim_clear_autocmds({group = augroup, buffer = bufnr})
         vim.api.nvim_create_autocmd("BufWritePre", {
             group = augroup,
             buffer = bufnr,
-            callback = function() vim.lsp.buf.formatting_sync() end
+            callback = function() lsp_formatting(bufnr) end
         })
     end
 end
@@ -68,17 +75,18 @@ local function lsp_keymaps(client, bufnr)
 end
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 M.on_attach = function(...)
     lsp_diagnostics(...)
-    lsp_format_setup(...)
+    lsp_formatting_setup(...)
     lsp_keymaps(...)
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then return M end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+local capabilities = cmp_nvim_lsp.default_capabilities()
+
+M.capabilities = capabilities
 
 return M

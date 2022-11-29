@@ -5,6 +5,7 @@
   program = gpg
 [push]
   default = simple
+	autoSetupRemote = true
 [merge]
   tool = smerge
 [alias]
@@ -27,7 +28,7 @@
   prompt = false
 [commit]
   verbose = true
-  gpgsign = true
+	gpgsign = false
 [init]
   templatedir = $XDG_CONFIG_HOME/git/template
 	defaultBranch = main
