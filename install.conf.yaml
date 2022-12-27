@@ -32,6 +32,8 @@
     ~/.Xresources: .Xresources
     ~/.Xdefaults: .Xdefaults
     ~/.xscreensaver: .xscreensaver
+    ~/.config/godot/editor_settings-3.tres: godot/editor_settings-3.tres
+    ~/.config/godot/editor_settings-4.tres: godot/editor_settings-4.tres
     ~/.vim/:
       glob: true
       path: vim/*
