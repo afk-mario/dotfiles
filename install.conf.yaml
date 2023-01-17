@@ -46,9 +46,5 @@
 - shell:
     - command: mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
       description: Creating nvim config folder
-    - command: [ln -sf ~/.vim $HOME/.config/nvim]
-      description: Creating symLink for nvim
-    - command: [ln -sf ~/.vim/vimrc $HOME/.config/nvim/init.vim]
-      description: Creating symLink for nvimrc
     - command: [git submodule update --init --recursive]
       description: Installing/updating submodules

@@ -1,1 +1,0 @@
-/home/afk/.vim/vimrc
