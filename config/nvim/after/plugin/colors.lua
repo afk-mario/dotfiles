@@ -1,18 +1,23 @@
-local colors = require("gruvbox.palette")
-require("gruvbox").setup(
-	{
-		overrides = {
-			SignColumn = {bg = colors.dark0},
-			LineNr = {bg = colors.dark0},
-			-- Placeholder while the groups are added to gruvbox
-			Whitespace = {fg = colors.dark1},
-			Label = {fg = colors.dark4}
-		}
-	}
-)
-
+-- OLD setup for gruvbox.nvim
+-- local colors = require("gruvbox.palette")
+-- require("gruvbox").setup(
+-- 	{
+-- 		overrides = {
+-- 			SignColumn = {bg = colors.dark0},
+-- 			LineNr = {bg = colors.dark0},
+-- 			-- Placeholder while the groups are added to gruvbox
+-- 			Whitespace = {fg = colors.dark1},
+-- 			Label = {fg = colors.dark4}
+-- 		}
+-- 	}
+-- )
+-- SignColumn should match background
 -- vim.cmd [[highlight clear SignColumn]]
+-- Current line number row will have same background color in relative mode
 -- vim.cmd [[highlight clear LineNr]]
-vim.cmd [[highlight VertSplit cterm=none ctermbg=none ctermfg=247]]
-
+-- vim.cmd [[highlight Whitespace guifg=#3c3836 gui=nocombine]]
+-- vim.cmd [[highlight Label guifg=#7c6f64 gui=nocombine]]
+-- vim.cmd [[highlight VertSplit cterm=none ctermbg=none ctermfg=247]]
+-- SignColumn should match background
+vim.g.gruvbox_sign_column = "bg0"
 vim.cmd([[colorscheme gruvbox]])

@@ -136,8 +136,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # Foot
 
   source ~/.dotfiles/foot.zsh
-  alias gd4="$HOME/apps/Godot/Godot4"
-
 elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
   export LIBRARY_PATH="/usr/local/lib"

@@ -43,10 +43,10 @@ include *.conf
 include outputs
 
 exec swayidle -w \
-  timeout 20 'swaylock' \
+  timeout 20 'chayang && swaylock' \
   timeout 100 'swaymsg "output * dpms off"' \
   resume 'swaymsg "output * dpms on"' \
-  before-sleep 'swaylock'
+  before-sleep 'chayang && swaylock'
 
 # Status Bar
 # Read `man 5 sway-bar` for more information about this section.

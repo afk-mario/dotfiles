@@ -44,13 +44,15 @@ return require("packer").startup(
 		-- This makes JS/JSX good syntax highlight
 		use "yuezk/vim-js"
 		use "maxmellon/vim-jsx-pretty"
+		use "habamax/vim-godot"
 
 		-- Vim UI
 		use "tpope/vim-flagship" -- Statusline
 		use "lukas-reineke/indent-blankline.nvim"
 		use "gregsexton/MatchTag" -- Highlite Matching tag
 		use "psliwka/vim-smoothie" -- Smooth Scroll
-		use "ellisonleao/gruvbox.nvim"
+		use "gruvbox-community/gruvbox"
+		-- use "ellisonleao/gruvbox.nvim"
 
 		use {
 			"VonHeikemen/lsp-zero.nvim",

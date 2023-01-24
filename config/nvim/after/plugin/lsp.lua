@@ -2,6 +2,7 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
+lsp.setup_servers({"gdscript"})
 lsp.ensure_installed(
 	{
 		"tsserver",
@@ -9,7 +10,7 @@ lsp.ensure_installed(
 		"cssls",
 		"eslint",
 		"stylelint_lsp",
-		"pyright"
+		"ruff_lsp"
 	}
 )
 
@@ -36,6 +37,19 @@ lsp.configure(
 			client.server_capabilities.documentFormattingProvider = false
 			client.server_capabilities.documentFormattingRangeProvider = false
 		end
+	}
+)
+
+lsp.configure(
+	"gdscript", {
+		on_attach = function(client)
+			local _notify = client.notify
+			client.notify = function(method, params)
+				if method == "textDocument/didClose" then return end
+				_notify(method, params)
+			end
+		end,
+		flags = {debounce_text_changes = 150}
 	}
 )
 
@@ -128,7 +142,8 @@ null_ls.setup(
 		sources = {
 			-- Replace these with the tools you have installed
 			null_ls.builtins.formatting.prettier.with({prefer_local = true}),
-			null_ls.builtins.formatting.lua_format
+			null_ls.builtins.formatting.lua_format,
+			null_ls.builtins.formatting.gdformat
 		}
 	}
 )
