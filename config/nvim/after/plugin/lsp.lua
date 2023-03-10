@@ -6,7 +6,7 @@ lsp.setup_servers({"gdscript"})
 lsp.ensure_installed(
 	{
 		"tsserver",
-		"sumneko_lua",
+		"lua_ls",
 		"cssls",
 		"eslint",
 		"stylelint_lsp",
@@ -16,7 +16,7 @@ lsp.ensure_installed(
 
 -- Fix Undefined global for vim things
 lsp.configure(
-	"sumneko_lua",
+	"lua_ls",
 		{settings = {Lua = {diagnostics = {globals = {"vim", "augroup"}}}}}
 )
 
@@ -143,7 +143,9 @@ null_ls.setup(
 			-- Replace these with the tools you have installed
 			null_ls.builtins.formatting.prettier.with({prefer_local = true}),
 			null_ls.builtins.formatting.lua_format,
-			null_ls.builtins.formatting.gdformat
+			null_ls.builtins.formatting.gdformat,
+			null_ls.builtins.formatting.pg_format,
+			null_ls.builtins.formatting.black
 		}
 	}
 )

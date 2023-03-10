@@ -72,3 +72,4 @@ exec "dbus-update-activation-environment --systemd DISPLAY MOZ_DBUS_REMOTE"
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec hash dbus-update-activation-environment 2>/dev/null && \
        dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec_always earlyoom -r 3600 -n --avoid '(^|/)(init|systemd|Xorg|sshd)$'

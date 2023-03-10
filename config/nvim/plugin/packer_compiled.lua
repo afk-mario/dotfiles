@@ -194,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/afk/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["pgsql.vim"] = {
+    loaded = true,
+    path = "/home/afk/.local/share/nvim/site/pack/packer/start/pgsql.vim",
+    url = "https://github.com/lifepillar/pgsql.vim"
+  },
   playground = {
     loaded = true,
     path = "/home/afk/.local/share/nvim/site/pack/packer/start/playground",

@@ -19,7 +19,7 @@ tree.setup {
 	sync_install = false,
 	highlight = {
 		enable = true,
-		disable = {"javascript"},
+		disable = {"javascript", "typescriptreact", "sql", "htmldjango"},
 
 		-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
 		-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
