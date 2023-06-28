@@ -8,7 +8,7 @@
   ],
   "modules-center": ["custom/scratchpad-indicator", "tray"],
   "modules-right": [
-    "pulseaudio",
+    "wireplumber",
     "network",
     "sway/language",
     "battery",
@@ -54,6 +54,16 @@
     }
   },
   "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+  "wireplumber": {
     "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {

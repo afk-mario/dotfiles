@@ -67,6 +67,7 @@ window#waybar {
 #backlight,
 #network,
 #pulseaudio,
+#wireplumber,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -94,7 +95,8 @@ window#waybar {
   border-bottom: 2px solid #b16286;
 }
 
-#pulseaudio {
+#pulseaudio,
+#wireplumber {
   border-bottom: 2px solid #83a598;
 }
 

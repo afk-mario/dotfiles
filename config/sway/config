@@ -65,11 +65,12 @@ exec dropbox
 exec_always ogurirnd
 exec_always copyq
 exec_always nwg-drawer -r
+
 # https://github.com/flatpak/xdg-desktop-portal/issues/285#issuecomment-665109459
 exec "dbus-update-activation-environment --systemd DISPLAY MOZ_DBUS_REMOTE"
 
 # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
-exec hash dbus-update-activation-environment 2>/dev/null && \
-       dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec systemctl --user import-environment
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 exec_always earlyoom -r 3600 -n --avoid '(^|/)(init|systemd|Xorg|sshd)$'

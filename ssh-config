@@ -12,6 +12,7 @@ Host *
 Host OsecanDev
   HostName 138.197.17.118
   User arlefreak
+  IdentityFile ~/.ssh/_old_id_rsa
 
 Host Pi
   HostName 192.168.3.124

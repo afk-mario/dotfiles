@@ -142,7 +142,7 @@ null_ls.setup(
 		sources = {
 			-- Replace these with the tools you have installed
 			null_ls.builtins.formatting.prettier.with({prefer_local = true}),
-			null_ls.builtins.formatting.lua_format,
+			-- null_ls.builtins.formatting.lua_format,
 			null_ls.builtins.formatting.gdformat,
 			null_ls.builtins.formatting.pg_format,
 			null_ls.builtins.formatting.black

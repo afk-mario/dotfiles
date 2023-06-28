@@ -38,6 +38,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
+export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/apps:$PATH"
@@ -117,11 +118,9 @@ fpath+=~/.zfunc
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # PLAYDATE
-  export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
-  export PATH="$HOME/Developer/$PLAYDATE_SDK/bin:$PATH"
+  export PATH="$PLAYDATE_SDK_PATH/bin:$PATH"
   export P3D_INCLUDE_PATH=/usr/include/panda3d/
   export P3D_LIB_PATH=/usr/lib/panda3d/
-  alias pdc="pdc -sdkpath $PLAYDATE_SDK $1"
 
   # NVM
   # [ -z "$NVM_DIR" ] && export NVM_DIR="$XDG_DATA_HOME/nvm"
