@@ -33,9 +33,10 @@ return require("packer").startup(
     use "numToStr/Comment.nvim"
 
     -- VCS
-    use "tpope/vim-fugitive"     -- Git wrapper
-    use "tpope/vim-rhubarb"      -- Github extension
-    use "airblade/vim-gitgutter" -- Git gutter simbols
+    use "tpope/vim-fugitive" -- Git wrapper
+    use "tpope/vim-rhubarb"  -- Github extension
+    use "lewis6991/gitsigns.nvim"
+    -- use "airblade/vim-gitgutter" -- Git gutter simbols
 
     -- Languages
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
@@ -47,6 +48,7 @@ return require("packer").startup(
     use "yuezk/vim-js"
     use "maxmellon/vim-jsx-pretty"
     use "habamax/vim-godot"
+    use "pfeiferj/nvim-hurl"
 
     -- Vim UI
     use "tpope/vim-flagship"   -- Statusline

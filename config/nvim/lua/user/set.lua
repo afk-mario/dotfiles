@@ -24,9 +24,13 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- NETWR
-vim.g.netrw_browse_split = 4
+vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+vim.cmd([[
+autocmd FileType netrw setl bufhidden=delete
+]])
+
 
 -- UI
 vim.opt.guicursor = ""
@@ -50,7 +54,7 @@ vim.opt.ignorecase = true
 -- Case sensitive when uc present
 vim.opt.smartcase = true
 -- Command <Tab> completion, list matches, then longest common part, then all.
-vim.opt.wildmode = {"longest:full", "full"}
+vim.opt.wildmode = { "longest:full", "full" }
 -- Backspace and cursor keys wrap too
 -- vim.opt.whichwrap = { "b","s","h","l","<",">","[","]" }
 -- Lines to scroll when cursor leaves screen

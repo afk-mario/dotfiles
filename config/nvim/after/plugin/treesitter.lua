@@ -1,32 +1,34 @@
 local tree = require "nvim-treesitter.configs"
+require("hurl").setup()
 
 tree.setup {
-	ensure_installed = {
-		"lua",
-		"javascript",
-		"bash",
-		"css",
-		"gdscript",
-		"glsl",
-		"go",
-		"graphql",
-		"html",
-		"json",
-		"typescript",
-		"vim"
-	},
-	auto_install = true,
-	sync_install = false,
-	highlight = {
-		enable = true,
-		disable = {"javascript", "typescriptreact", "sql", "htmldjango"},
+  ensure_installed = {
+    "lua",
+    "javascript",
+    "bash",
+    "css",
+    "gdscript",
+    "glsl",
+    "go",
+    "graphql",
+    "html",
+    "json",
+    "typescript",
+    "vim",
+    "hurl"
+  },
+  auto_install = true,
+  sync_install = false,
+  highlight = {
+    enable = true,
+    disable = { "javascript", "typescriptreact", "sql", "htmldjango" },
 
-		-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-		-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-		-- Using this option may slow down your editor, and you may see some duplicate highlights.
-		-- Instead of true it can also be a list of languages
-		additional_vim_regex_highlighting = {"gdscript"}
-	}
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = { "gdscript" }
+  }
 }
 
 -- https://github.com/nvim-treesitter/nvim-treesitter#folding

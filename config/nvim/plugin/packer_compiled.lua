@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/afk/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/afk/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/afk/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -188,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/afk/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-hurl"] = {
+    loaded = true,
+    path = "/home/afk/.local/share/nvim/site/pack/packer/start/nvim-hurl",
+    url = "https://github.com/pfeiferj/nvim-hurl"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -283,11 +293,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/afk/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/home/afk/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-godot"] = {
     loaded = true,
