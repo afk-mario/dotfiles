@@ -48,10 +48,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export PATH="$(yarn global bin):$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 export ASEPRITE_ACCEPT_EULA=yes
 
 export ADBI_INSTALL_PATH="$HOME/builds/"
