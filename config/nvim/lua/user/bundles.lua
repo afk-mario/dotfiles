@@ -44,6 +44,7 @@ return require("packer").startup(
     use "mattn/emmet-vim"
     use "jamespeapen/swayconfig.vim"
     use "lifepillar/pgsql.vim"
+    use "tweekmonster/django-plus.vim"
     -- This makes JS/JSX good syntax highlight
     use "yuezk/vim-js"
     use "maxmellon/vim-jsx-pretty"
