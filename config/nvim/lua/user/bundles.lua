@@ -27,6 +27,7 @@ return require("packer").startup(
 
     -- use 'Raimondi/delimitMate'          -- Auto close quotes parentesis etc
     use "godlygeek/tabular"       -- Align code
+    -- use "vim-scripts/a.vim"
     use "vim-scripts/BufOnly.vim" -- Close All other buffers
     use "qpkorr/vim-bufkill"      -- Keep the window layout when closing buffers
     use "mjbrownie/swapit"        -- Toggle between true false
@@ -41,7 +42,6 @@ return require("packer").startup(
     -- Languages
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
     use "nvim-treesitter/playground"
-    use "mattn/emmet-vim"
     use "jamespeapen/swayconfig.vim"
     use "lifepillar/pgsql.vim"
     use "tweekmonster/django-plus.vim"
@@ -57,10 +57,12 @@ return require("packer").startup(
     use "gregsexton/MatchTag"  -- Highlite Matching tag
     use "psliwka/vim-smoothie" -- Smooth Scroll
     use "gruvbox-community/gruvbox"
+    use { "catppuccin/nvim", as = "catppuccin" }
     -- use "ellisonleao/gruvbox.nvim"
 
     use {
       "VonHeikemen/lsp-zero.nvim",
+      branch = 'v3.x',
       requires = {
         -- LSP Support
         { "neovim/nvim-lspconfig" },             -- Required

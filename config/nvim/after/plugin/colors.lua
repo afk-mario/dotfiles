@@ -19,5 +19,6 @@
 -- vim.cmd [[highlight Label guifg=#7c6f64 gui=nocombine]]
 -- vim.cmd [[highlight VertSplit cterm=none ctermbg=none ctermfg=247]]
 -- SignColumn should match background
-vim.g.gruvbox_sign_column = "bg0"
-vim.cmd([[colorscheme gruvbox]])
+-- vim.g.gruvbox_sign_column = "bg0"
+-- vim.cmd([[colorscheme gruvbox]])
+vim.cmd.colorscheme "catppuccin"

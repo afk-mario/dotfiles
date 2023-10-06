@@ -35,6 +35,7 @@ autocmd FileType netrw setl bufhidden=delete
 -- UI
 vim.opt.guicursor = ""
 vim.opt.termguicolors = true
+vim.opt.showtabline = 1
 
 -- Only show 15 tabs
 vim.opt.tabpagemax = 15
