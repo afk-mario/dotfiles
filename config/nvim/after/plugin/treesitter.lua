@@ -15,7 +15,8 @@ tree.setup {
     "json",
     "typescript",
     "vim",
-    "hurl"
+    "hurl",
+    "comment"
   },
   auto_install = true,
   sync_install = false,

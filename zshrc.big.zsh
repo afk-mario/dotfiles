@@ -40,17 +40,17 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 export PLAYDATE_SDK_PATH="$HOME/Developer/PlaydateSDK"
 
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/apps:$PATH"
-export PATH="$HOME/apps/uxn:$PATH"
-export PATH="$HOME/.itch:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/apps"
+export PATH="$PATH:$HOME/apps/uxn"
+export PATH="$PATH:$HOME/.itch"
+export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-export PATH="$(yarn global bin):$PATH"
-export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$PATH:$(yarn global bin)"
+export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 export ASEPRITE_ACCEPT_EULA=yes
 
@@ -121,6 +121,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   export PATH="$PLAYDATE_SDK_PATH/bin:$PATH"
   export P3D_INCLUDE_PATH=/usr/include/panda3d/
   export P3D_LIB_PATH=/usr/lib/panda3d/
+  export _JAVA_AWT_WM_NONREPARENTING=1
 
   # NVM
   # [ -z "$NVM_DIR" ] && export NVM_DIR="$XDG_DATA_HOME/nvm"

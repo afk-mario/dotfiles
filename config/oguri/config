@@ -1,5 +1,5 @@
 [output *]
-image=/$HOME/Dropbox/Media/Wallpapers/4k/*.png
+image=/mnt/2TB/Dropbox/Media/Wallpapers/4k/*.png
 filter=nearest
 scaling-mode=fill
 anchor=center

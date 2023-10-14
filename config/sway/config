@@ -54,13 +54,13 @@ exec swayidle -w \
    swaybar_command waybar
  }
 
+exec dropbox
 exec mako
 exec oguri
 exec udiskie --tray
 exec polkit-dumb-agent
 exec blueman-applet
 exec easyeffects --gapplication-service
-exec dropbox
 
 exec_always ogurirnd
 exec_always copyq

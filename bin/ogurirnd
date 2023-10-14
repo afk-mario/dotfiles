@@ -10,5 +10,5 @@
 #   sleep 1;
 # done
 
-ogurictl output "*" --image "$(find "$HOME/Dropbox/Media/Wallpapers/4k/" -type f -name '*.jpg' -o -name '*.png' -o -name '*.webp' | shuf -n 1)"
+ogurictl output "*" --image "$(find "/mnt/2TB/Dropbox/Media/Wallpapers/4k/" -type f -name '*.jpg' -o -name '*.png' -o -name '*.webp' | shuf -n 1)"
 
