@@ -2,6 +2,9 @@
 # Read `man 5 sway` for a complete reference.
 # vim: ft=swayconfig
 
+# The sway package provides the 50-systemd-user.conf drop-in file, which imports several environment variables into the systemd user session and dbus
+include /etc/sway/config.d/*
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
@@ -58,7 +61,9 @@ exec dropbox
 exec mako
 exec oguri
 exec udiskie --tray
-exec polkit-dumb-agent
+# TODO: when it's updated maybe re-install
+# exec polkit-dumb-agent
+exec lxqt-policykit-agent
 exec blueman-applet
 exec easyeffects --gapplication-service
 
@@ -67,10 +72,9 @@ exec_always copyq
 exec_always nwg-drawer -r
 
 # https://github.com/flatpak/xdg-desktop-portal/issues/285#issuecomment-665109459
-exec "dbus-update-activation-environment --systemd DISPLAY MOZ_DBUS_REMOTE"
+exec dbus-update-activation-environment --systemd MOZ_DBUS_REMOTE
 
 # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
-exec systemctl --user import-environment
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 exec_always earlyoom -r 3600 -n --avoid '(^|/)(init|systemd|Xorg|sshd)$'

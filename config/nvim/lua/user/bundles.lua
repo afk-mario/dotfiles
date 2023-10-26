@@ -1,92 +1,92 @@
--- Only required if you have packer configured as `opt`
-vim.cmd.packadd("packer.nvim")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require("packer").startup(
-  function(use)
-    -- Packer can manage itself
-    use "wbthomason/packer.nvim"
-    use "nvim-lua/plenary.nvim"
 
-    -- Utilities
-    use "junegunn/fzf"
-    use "junegunn/fzf.vim"
-    use "mbbill/undotree"
+local plugins = {
+  "nvim-lua/plenary.nvim",
 
-    use "tpope/vim-eunuch"              -- Unix helpers
-    use "tpope/vim-surround"            -- Sorroundings
-    use "tpope/vim-repeat"              -- More . command
-    use "tpope/vim-abolish"             -- Better replace
-    use "tpope/vim-unimpaired"          -- Key mappings for [
-    use "tpope/vim-dispatch"            -- Run async commands in GIT
-    use "tpope/vim-endwise"             -- Add end after if in lua
-    use "tpope/vim-projectionist"       -- granular project configuration
+  -- Utilities
+  "junegunn/fzf",
+  "junegunn/fzf.vim",
+  "mbbill/undotree",
 
-    use "wellle/targets.vim"            -- Vim plugin that provides additional text objects
-    use "editorconfig/editorconfig-vim" -- Editor configurations .editorconfig
-    use "AndrewRadev/splitjoin.vim"     -- Split onelinners with gS
+  "tpope/vim-eunuch",              -- Unix helpers
+  "tpope/vim-surround",            -- Sorroundings
+  "tpope/vim-repeat",              -- More . command
+  "tpope/vim-abolish",             -- Better replace
+  "tpope/vim-unimpaired",          -- Key mappings for [
+  "tpope/vim-dispatch",            -- Run async commands in GIT
+  "tpope/vim-endwise",             -- Add end after if in lua
+  "tpope/vim-projectionist",       -- granular project configuration
 
-    -- use 'Raimondi/delimitMate'          -- Auto close quotes parentesis etc
-    use "godlygeek/tabular"       -- Align code
-    -- use "vim-scripts/a.vim"
-    use "vim-scripts/BufOnly.vim" -- Close All other buffers
-    use "qpkorr/vim-bufkill"      -- Keep the window layout when closing buffers
-    use "mjbrownie/swapit"        -- Toggle between true false
-    use "numToStr/Comment.nvim"
+  "wellle/targets.vim",            -- Vim plugin that provides additional text objects
+  "editorconfig/editorconfig-vim", -- Editor configurations .editorconfig
+  "AndrewRadev/splitjoin.vim",     -- Split onelinners with gS
 
-    -- VCS
-    use "tpope/vim-fugitive" -- Git wrapper
-    use "tpope/vim-rhubarb"  -- Github extension
-    use "lewis6991/gitsigns.nvim"
-    -- use "airblade/vim-gitgutter" -- Git gutter simbols
+  "godlygeek/tabular",             -- Align code
+  "vim-scripts/BufOnly.vim",       -- Close All other buffers
+  "qpkorr/vim-bufkill",            -- Keep the window layout when closing buffers
+  "mjbrownie/swapit",              -- Toggle between true false
+  "numToStr/Comment.nvim",
 
-    -- Languages
-    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-    use "nvim-treesitter/playground"
-    use "jamespeapen/swayconfig.vim"
-    use "lifepillar/pgsql.vim"
-    use "tweekmonster/django-plus.vim"
-    -- This makes JS/JSX good syntax highlight
-    use "yuezk/vim-js"
-    use "maxmellon/vim-jsx-pretty"
-    use "habamax/vim-godot"
-    use "pfeiferj/nvim-hurl"
+  -- VCS
+  "tpope/vim-fugitive", -- Git wrapper
+  "tpope/vim-rhubarb",  -- Github extension
+  "lewis6991/gitsigns.nvim",
 
-    -- Vim UI
-    use "tpope/vim-flagship"   -- Statusline
-    use "lukas-reineke/indent-blankline.nvim"
-    use "gregsexton/MatchTag"  -- Highlite Matching tag
-    use "psliwka/vim-smoothie" -- Smooth Scroll
-    use "gruvbox-community/gruvbox"
-    use { "catppuccin/nvim", as = "catppuccin" }
-    -- use "ellisonleao/gruvbox.nvim"
+  -- Languages
+  { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+  "nvim-treesitter/playground",
+  "jamespeapen/swayconfig.vim",
+  "lifepillar/pgsql.vim",
+  "tweekmonster/django-plus.vim",
+  -- This makes JS/JSX good syntax highlight
+  "yuezk/vim-js",
+  "maxmellon/vim-jsx-pretty",
+  "habamax/vim-godot",
+  "pfeiferj/nvim-hurl",
 
-    use {
-      "VonHeikemen/lsp-zero.nvim",
-      branch = 'v3.x',
-      requires = {
-        -- LSP Support
-        { "neovim/nvim-lspconfig" },             -- Required
-        { "williamboman/mason.nvim" },           -- Optional
-        { "williamboman/mason-lspconfig.nvim" }, -- Optional
+  -- Vim UI
+  "tpope/vim-flagship",   -- Statusline
+  "lukas-reineke/indent-blankline.nvim",
+  "gregsexton/MatchTag",  -- Highlite Matching tag
+  "psliwka/vim-smoothie", -- Smooth Scroll
+  -- "ellisonleao/gruvbox.nvim"
+  "gruvbox-community/gruvbox",
+  { "catppuccin/nvim",                  name = "catppuccin", priority = 1000 },
 
-        -- Autocompletion
-        { "hrsh7th/nvim-cmp" },         -- Required
-        { "hrsh7th/cmp-nvim-lsp" },     -- Required
-        { "hrsh7th/cmp-buffer" },       -- Optional
-        { "hrsh7th/cmp-path" },         -- Optional
-        { "saadparwaiz1/cmp_luasnip" }, -- Optional
-        { "hrsh7th/cmp-nvim-lua" },     -- Optional
+  -- LSP
+  { 'williamboman/mason.nvim' },
+  { 'williamboman/mason-lspconfig.nvim' },
+  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+  { "neovim/nvim-lspconfig" },
 
-        -- Snippets
-        { "L3MON4D3/LuaSnip" },             -- Required
-        { "rafamadriz/friendly-snippets" }, -- Optional
+  -- Autocompletion
+  { "hrsh7th/nvim-cmp" },         -- Required
+  { "hrsh7th/cmp-nvim-lsp" },     -- Required
+  { "hrsh7th/cmp-buffer" },       -- Optional
+  { "hrsh7th/cmp-path" },         -- Optional
+  { "saadparwaiz1/cmp_luasnip" }, -- Optional
+  { "hrsh7th/cmp-nvim-lua" },     -- Optional
 
-        -- Only for prettier
-        { "jose-elias-alvarez/null-ls.nvim" }
-      }
-    }
+  -- Snippets
+  { 'L3MON4D3/LuaSnip' },
+  { "rafamadriz/friendly-snippets" }, -- Optional
 
-    use 'mfussenegger/nvim-dap'
-    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
-  end
-)
+  -- Only for prettier
+  { "jose-elias-alvarez/null-ls.nvim" }
+}
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)

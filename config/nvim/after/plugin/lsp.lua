@@ -27,7 +27,7 @@ require('mason-lspconfig').setup({
       lsp.tsserver.setup({
         on_init = function(client)
           -- This is probably a miss config on my side but oh well
-          client.handlers["textDocument/publishDiagnostics"] = function() end
+          -- client.handlers["textDocument/publishDiagnostics"] = function() end
           -- Disable formatting on tsserver because we use null-ls
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentFormattingRangeProvider = false
@@ -64,7 +64,9 @@ lsp_zero.format_on_save({
   },
   servers = {
     ['lua_ls'] = { 'lua' },
-    ['null-ls'] = { 'javascript', 'javascriptreact', 'typescript', 'python', 'css', 'gdscript', 'psql', 'c', 'cpp' },
+    ['null-ls'] = { 'json', 'markdown', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'typescript',
+      'python', 'css', 'gdscript',
+      'psql', 'c', 'cpp' },
   }
 })
 
@@ -114,5 +116,8 @@ null_ls.setup(
 )
 
 vim.diagnostic.config({
-  virtual_text = false
+  virtual_text = false,
+  float = {
+    source = true,
+  }
 })

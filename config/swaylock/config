@@ -1,6 +1,6 @@
 # vim: ft=dosini
 
-image=$(ls $HOME/Dropbox/Media/Wallpapers/4k/*.{jpg,png} | shuf -n1)
+image=$(ls /mnt/2TB/Dropbox/Media/Wallpapers/4k/*.{jpg,png} | shuf -n1)
 font=Inter
 font-size=26
 
