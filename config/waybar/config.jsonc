@@ -20,7 +20,12 @@
   ],
   "height": 25,
   "sway/window": {
-    "max-length": 50
+    "format": "{shell} {title}",
+    "max-length": 50,
+    "rewrite": {
+     "xdg_shell (.*)": "$1",
+     "xwayland (.*)": "[𝕏] $1",
+    }
   },
   "sway/language": {
     "format": " {}",
