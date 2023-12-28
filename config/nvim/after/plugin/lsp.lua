@@ -15,6 +15,7 @@ require('mason-lspconfig').setup({
     "ruff_lsp",
     "clangd",
     "emmet_language_server",
+    "bashls"
   },
   handlers = {
     lsp_zero.default_setup,
@@ -66,7 +67,7 @@ lsp_zero.format_on_save({
     ['lua_ls'] = { 'lua' },
     ['null-ls'] = { 'json', 'markdown', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'typescript',
       'python', 'css', 'gdscript',
-      'psql', 'c', 'cpp' },
+      'psql', 'c', 'cpp', 'sh' },
   }
 })
 
@@ -110,7 +111,8 @@ null_ls.setup(
       null_ls.builtins.formatting.gdformat,
       null_ls.builtins.formatting.pg_format,
       null_ls.builtins.formatting.black,
-      null_ls.builtins.formatting.clang_format
+      null_ls.builtins.formatting.clang_format,
+      null_ls.builtins.formatting.shfmt
     }
   }
 )

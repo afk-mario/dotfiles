@@ -76,8 +76,9 @@ window#waybar {
 #custom-disturb_on,
 #custom-disturb_off,
 #custom-mic,
-#custom-dismiss_notifications,
+#custom-dismiss-notifications,
 #custom-dnd,
+#custom-wf-recorder,
 #mpd {
   padding: 0 8px;
   margin: 0;
@@ -183,6 +184,12 @@ window#waybar {
   animation-direction: alternate;
 }
 
-#custom-dismiss_notifications {
+#custom-dismiss-notifications {
+  border-bottom: 2px solid #cc241d;
+}
+
+#custom-wf-recorder {
+  background-color: #fb4934;
+  color: white;
   border-bottom: 2px solid #cc241d;
 }

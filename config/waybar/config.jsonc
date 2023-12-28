@@ -16,7 +16,8 @@
     "custom/dnd",
     "idle_inhibitor",
     "custom/mic",
-    "custom/dismiss_notifications"
+    "custom/wf-recorder",
+    "custom/dismiss-notifications"
   ],
   "height": 25,
   "sway/window": {
@@ -98,7 +99,7 @@
     "return-type": "json",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
   },
-  "custom/dismiss_notifications": {
+  "custom/dismiss-notifications": {
     "exec-if": "command -v makoctl",
     "exec": "( makoctl list | jq -e '.data[] | length > 0' > /dev/null && echo '\nDismiss all notifications\n' ) || echo '' ",
     "format": "{}",
@@ -121,5 +122,14 @@
     "format": "{} 🗗",
     "on-click": "exec swaymsg 'scratchpad show'",
     "on-click-right": "exec swaymsg 'move scratchpad'"
-  }
+  },
+  "custom/wf-recorder": {
+		"format": "{}",
+		"interval": "once",
+		"exec": "echo ''",
+		"tooltip": "stop recording",
+		"exec-if": "pgrep 'wf-recorder'",
+		"on-click": "exec $HOME/bin/wf-record-toggle --notify start area",
+		"signal": 8
+	}
 }
