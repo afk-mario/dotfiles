@@ -135,6 +135,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
   # Foot
 
+  alias aseprite="/mnt/2TB/SteamLibrary/steamapps/common/Aseprite/aseprite"
   source ~/.dotfiles/foot.zsh
 elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
