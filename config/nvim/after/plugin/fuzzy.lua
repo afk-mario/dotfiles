@@ -5,5 +5,5 @@ vim.keymap.set("n", "<leader>pl", vim.cmd.Lines)
 vim.keymap.set("n", "<leader>pc", vim.cmd.Colors)
 vim.keymap.set("n", "<leader>pr", vim.cmd.History)
 
-vim.cmd [[let $FZF_DEFAULT_COMMAND = 'rg --files --hidden']]
+vim.cmd [[let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob=!.git/']]
 vim.g.fzf_history_dir = "~/.local/share/fzf-history"

@@ -68,7 +68,6 @@ exec blueman-applet
 exec easyeffects --gapplication-service
 
 exec_always ogurirnd
-exec_always copyq
 exec_always nwg-drawer -r
 
 # https://github.com/flatpak/xdg-desktop-portal/issues/285#issuecomment-665109459
@@ -78,3 +77,4 @@ exec dbus-update-activation-environment --systemd MOZ_DBUS_REMOTE
 # exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 exec_always earlyoom -r 3600 -n --avoid '(^|/)(init|systemd|Xorg|sshd)$'
+exec_always systembus-notify

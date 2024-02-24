@@ -1,7 +1,9 @@
 local lsp = require('lspconfig')
 local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(_, bufnr)
+  local opts = { buffer = bufnr }
   lsp_zero.default_keymaps({ buffer = bufnr })
+  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
 end)
 
 require('mason').setup({})
@@ -15,7 +17,8 @@ require('mason-lspconfig').setup({
     "ruff_lsp",
     "clangd",
     "emmet_language_server",
-    "bashls"
+    "bashls",
+    "yamlls"
   },
   handlers = {
     lsp_zero.default_setup,
@@ -67,7 +70,7 @@ lsp_zero.format_on_save({
     ['lua_ls'] = { 'lua' },
     ['null-ls'] = { 'json', 'markdown', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'typescript',
       'python', 'css', 'gdscript',
-      'psql', 'c', 'cpp', 'sh' },
+      'psql', 'c', 'cpp', 'sh', 'yaml' },
   }
 })
 

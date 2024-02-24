@@ -84,7 +84,11 @@ local plugins = {
   { "rafamadriz/friendly-snippets" }, -- Optional
 
   -- Only for prettier
-  { "jose-elias-alvarez/null-ls.nvim" }
+  { "jose-elias-alvarez/null-ls.nvim" },
+
+  -- DAP
+  { 'mfussenegger/nvim-dap' },
+  { 'rcarriga/nvim-dap-ui' }
 }
 
 local opts = {}
