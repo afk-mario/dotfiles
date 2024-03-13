@@ -1,9 +1,0 @@
-[Unit]
-Description=Random wallpaper with oguri
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash -c '${HOME}/bin/ogurirnd'
-
-[Install]
-WantedBy=multi-user.target

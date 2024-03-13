@@ -59,7 +59,6 @@ exec swayidle -w \
 
 exec dropbox
 exec mako
-exec oguri
 exec udiskie --tray
 # TODO: when it's updated maybe re-install
 # exec polkit-dumb-agent
@@ -67,7 +66,7 @@ exec lxqt-policykit-agent
 exec blueman-applet
 exec easyeffects --gapplication-service
 
-exec_always ogurirnd
+exec_always rnd_wallpaper
 exec_always nwg-drawer -r
 
 # https://github.com/flatpak/xdg-desktop-portal/issues/285#issuecomment-665109459

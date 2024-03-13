@@ -1,0 +1,15 @@
+#!/bin/bash
+
+OLD_PID="$(pidof swaybg)"
+WALL_PATH="$(find "/mnt/2TB/Dropbox/Media/Wallpapers/4k/" -type f -name '*.jpg' -o -name '*.png' -o -name '*.webp' | shuf -n 1)"
+
+echo pid "old: $OLD_PID"
+echo "path: $WALL_PATH"
+
+# ogurictl output "*" --image "$WALL_PATH"
+swaybg -m fill -i "$WALL_PATH" &
+
+if [[ -n $OLD_PID ]]; then
+	sleep 1
+	kill -9 "$OLD_PID"
+fi
