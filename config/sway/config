@@ -66,7 +66,7 @@ exec lxqt-policykit-agent
 exec blueman-applet
 exec easyeffects --gapplication-service
 
-exec_always rnd_wallpaper
+exec wpaperd
 exec_always nwg-drawer -r
 
 # https://github.com/flatpak/xdg-desktop-portal/issues/285#issuecomment-665109459
