@@ -20,23 +20,21 @@ local plugins = {
   "junegunn/fzf.vim",
   "mbbill/undotree",
 
-  "tpope/vim-eunuch",              -- Unix helpers
-  "tpope/vim-surround",            -- Sorroundings
-  "tpope/vim-repeat",              -- More . command
-  "tpope/vim-abolish",             -- Better replace
-  "tpope/vim-unimpaired",          -- Key mappings for [
-  "tpope/vim-dispatch",            -- Run async commands in GIT
-  "tpope/vim-endwise",             -- Add end after if in lua
-  "tpope/vim-projectionist",       -- granular project configuration
+  "tpope/vim-eunuch",          -- Unix helpers
+  "tpope/vim-surround",        -- Sorroundings
+  "tpope/vim-repeat",          -- More . command
+  "tpope/vim-abolish",         -- Better replace
+  "tpope/vim-unimpaired",      -- Key mappings for [
+  "tpope/vim-dispatch",        -- Run async commands in GIT
+  "tpope/vim-endwise",         -- Add end after if in lua
+  "tpope/vim-projectionist",   -- granular project configuration
 
-  "wellle/targets.vim",            -- Vim plugin that provides additional text objects
-  "editorconfig/editorconfig-vim", -- Editor configurations .editorconfig
-  "AndrewRadev/splitjoin.vim",     -- Split onelinners with gS
+  "wellle/targets.vim",        -- Vim plugin that provides additional text objects
+  "AndrewRadev/splitjoin.vim", -- Split onelinners with gS
 
-  "godlygeek/tabular",             -- Align code
-  "vim-scripts/BufOnly.vim",       -- Close All other buffers
-  "qpkorr/vim-bufkill",            -- Keep the window layout when closing buffers
-  "mjbrownie/swapit",              -- Toggle between true false
+  "godlygeek/tabular",         -- Align code
+  "vim-scripts/BufOnly.vim",   -- Close All other buffers
+  "qpkorr/vim-bufkill",        -- Keep the window layout when closing buffers
   "numToStr/Comment.nvim",
 
   -- VCS
@@ -46,10 +44,10 @@ local plugins = {
 
   -- Languages
   { "nvim-treesitter/nvim-treesitter",                                    build = ":TSUpdate" },
-  "nvim-treesitter/playground",
   "jamespeapen/swayconfig.vim",
   "lifepillar/pgsql.vim",
   "tweekmonster/django-plus.vim",
+
   -- This makes JS/JSX good syntax highlight
   "yuezk/vim-js",
   "maxmellon/vim-jsx-pretty",
@@ -62,29 +60,29 @@ local plugins = {
   "gregsexton/MatchTag",  -- Highlite Matching tag
   "psliwka/vim-smoothie", -- Smooth Scroll
   -- "ellisonleao/gruvbox.nvim"
-  "gruvbox-community/gruvbox",
+  -- "gruvbox-community/gruvbox",
   { "catppuccin/nvim",                                                    name = "catppuccin", priority = 1000 },
 
   -- LSP
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },
-  { 'VonHeikemen/lsp-zero.nvim',                                          branch = 'v3.x' },
+  { 'VonHeikemen/lsp-zero.nvim' },
   { "neovim/nvim-lspconfig" },
 
   -- Autocompletion
-  { "hrsh7th/nvim-cmp" },         -- Required
-  { "hrsh7th/cmp-nvim-lsp" },     -- Required
-  { "hrsh7th/cmp-buffer" },       -- Optional
-  { "hrsh7th/cmp-path" },         -- Optional
-  { "saadparwaiz1/cmp_luasnip" }, -- Optional
-  { "hrsh7th/cmp-nvim-lua" },     -- Optional
+  { "hrsh7th/nvim-cmp" },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
+  { "saadparwaiz1/cmp_luasnip" },
+  { "hrsh7th/cmp-nvim-lua" },
 
   -- Snippets
-  { 'L3MON4D3/LuaSnip' },
-  { "rafamadriz/friendly-snippets" }, -- Optional
+  { "L3MON4D3/LuaSnip" },
+  { "rafamadriz/friendly-snippets" },
 
   -- Only for prettier
-  { "jose-elias-alvarez/null-ls.nvim" },
+  { "stevearc/conform.nvim", },
 
   -- DAP
   -- { 'mfussenegger/nvim-dap' },

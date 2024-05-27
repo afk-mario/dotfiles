@@ -20,6 +20,7 @@ require('mason-lspconfig').setup({
     "bashls",
     "yamlls"
   },
+
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -30,9 +31,7 @@ require('mason-lspconfig').setup({
     tsserver = function()
       lsp.tsserver.setup({
         on_init = function(client)
-          -- This is probably a miss config on my side but oh well
-          -- client.handlers["textDocument/publishDiagnostics"] = function() end
-          -- Disable formatting on tsserver because we use null-ls
+          -- Disable formatting on tsserver because we use prettier
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentFormattingRangeProvider = false
         end
@@ -48,71 +47,6 @@ require('mason-lspconfig').setup({
   }
 })
 
-lsp_zero.format_on_save({
-  format_opts = {
-    async = false,
-    timeout_ms = 10000,
-  },
-  servers = {
-    ['lua_ls'] = { 'lua' },
-    ['clangd'] = { 'c', 'cpp' },
-    ['ruff_lsp'] = { 'python' },
-    ['bashls'] = { 'sh' },
-    ['null-ls'] = {
-      'json',
-      'markdown',
-      'typescript',
-      'typescriptreact',
-      'javascript',
-      'javascriptreact',
-      'typescript',
-      'css',
-      'yaml',
-      'psql',
-    },
-  }
-})
-
-
-local cmp = require('cmp')
-local cmp_format = lsp_zero.cmp_format()
-local cmp_action = lsp_zero.cmp_action()
-require("luasnip.loaders.from_vscode").lazy_load()
-
-cmp.setup({
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'luasnip' },
-    { name = 'path' },
-  },
-  formatting = cmp_format,
-  mapping = cmp.mapping.preset.insert({
-    -- scroll up and down the documentation window
-    ['<C-CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),
-    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-  }),
-})
-
-
-local null_ls = require("null-ls")
-local null_opts = lsp_zero.build_options("null-ls", {})
-
-null_ls.setup(
-  {
-    on_attach = function(client, bufnr)
-      null_opts.on_attach(client, bufnr)
-    end,
-    sources = {
-      -- Replace these with the tools you have installed
-      null_ls.builtins.formatting.prettier.with({ prefer_local = true }),
-      null_ls.builtins.formatting.pg_format,
-    }
-  }
-)
 
 vim.diagnostic.config({
   virtual_text = false,
