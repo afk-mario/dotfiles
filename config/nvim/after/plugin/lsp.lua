@@ -48,19 +48,6 @@ require('mason-lspconfig').setup({
   }
 })
 
--- gdscript = function()
---   lsp.gdscript.setup({
---     on_attach = function(client)
---       local _notify = client.notify
---       client.notify = function(method, params)
---         if method == "textDocument/didClose" then return end
---         _notify(method, params)
---       end
---     end,
---     flags = { debounce_text_changes = 150 }
---   })
--- end
-
 lsp_zero.format_on_save({
   format_opts = {
     async = false,
@@ -68,9 +55,21 @@ lsp_zero.format_on_save({
   },
   servers = {
     ['lua_ls'] = { 'lua' },
-    ['null-ls'] = { 'json', 'markdown', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'typescript',
-      'python', 'css', 'gdscript',
-      'psql', 'c', 'cpp', 'sh', 'yaml' },
+    ['clangd'] = { 'c', 'cpp' },
+    ['ruff_lsp'] = { 'python' },
+    ['bashls'] = { 'sh' },
+    ['null-ls'] = {
+      'json',
+      'markdown',
+      'typescript',
+      'typescriptreact',
+      'javascript',
+      'javascriptreact',
+      'typescript',
+      'css',
+      'yaml',
+      'psql',
+    },
   }
 })
 
@@ -110,12 +109,7 @@ null_ls.setup(
     sources = {
       -- Replace these with the tools you have installed
       null_ls.builtins.formatting.prettier.with({ prefer_local = true }),
-      -- null_ls.builtins.formatting.lua_format,
-      null_ls.builtins.formatting.gdformat,
       null_ls.builtins.formatting.pg_format,
-      null_ls.builtins.formatting.black,
-      null_ls.builtins.formatting.clang_format,
-      null_ls.builtins.formatting.shfmt
     }
   }
 )

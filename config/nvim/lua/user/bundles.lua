@@ -45,7 +45,7 @@ local plugins = {
   "lewis6991/gitsigns.nvim",
 
   -- Languages
-  { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter",                                    build = ":TSUpdate" },
   "nvim-treesitter/playground",
   "jamespeapen/swayconfig.vim",
   "lifepillar/pgsql.vim",
@@ -63,12 +63,12 @@ local plugins = {
   "psliwka/vim-smoothie", -- Smooth Scroll
   -- "ellisonleao/gruvbox.nvim"
   "gruvbox-community/gruvbox",
-  { "catppuccin/nvim",                  name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim",                                                    name = "catppuccin", priority = 1000 },
 
   -- LSP
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },
-  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+  { 'VonHeikemen/lsp-zero.nvim',                                          branch = 'v3.x' },
   { "neovim/nvim-lspconfig" },
 
   -- Autocompletion
@@ -87,8 +87,11 @@ local plugins = {
   { "jose-elias-alvarez/null-ls.nvim" },
 
   -- DAP
-  { 'mfussenegger/nvim-dap' },
-  { 'rcarriga/nvim-dap-ui' }
+  -- { 'mfussenegger/nvim-dap' },
+  -- { 'rcarriga/nvim-dap-ui' },
+
+  -- Whitebox
+  { dir = "~/apps/whitebox/whitebox_v0.122.0/editor_plugins/whitebox-vim" },
 }
 
 local opts = {}
