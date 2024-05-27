@@ -1,1 +1,1 @@
-vim.filetype.add({ extension = { qs = "javascript" } })
+vim.filetype.add({ extension = { qs = 'javascript' } })
