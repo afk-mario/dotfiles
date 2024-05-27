@@ -51,8 +51,8 @@ all_colors=${DITHER_COLORS:-16}
 scale=${DITHER_SCALE:-4}
 
 if [ ! -d "$input_dir" ]; then
-  echo >&2 "Could not find the '$input_dir' directory."
-  exit 1
+	echo >&2 "Could not find the '$input_dir' directory."
+	exit 1
 fi
 
 mkdir -p "$output_dir"
@@ -60,26 +60,26 @@ mkdir -p "$output_dir"
 cd "$input_dir"
 
 for src in *.*; do
-  for colors in $all_colors; do
-    dst="../${output_dir}/${src}~${colors}c@${scale}x.png"
-    if [ "$src" = '*.*' ]; then
-      echo >&2 "No images found in the '$input_dir' directory."
-      exit 1
-    elif [ -e "$dst" ]; then
-      echo "Skipping ${dst}"
-    else
-      echo "Writing ${dst}"
-      tmpfile=.dither-wallpaper-tmp.png
-      nice convert "$src" \
-        -unsharp '0x5' -resize "${size}^" \
-        -gravity 'center' -extent "$size" \
-        -brightness-contrast '-2x5' \
-        -ordered-dither 'o8x8,6' \
-        -colors "$colors" -depth 4 \
-        -filter 'point' -resize "${scale}00%" \
-        -strip "PNG8:${tmpfile}"
-      mv "$tmpfile" "$dst"
-    fi
-  done
+	for colors in $all_colors; do
+		dst="../${output_dir}/${src}~${colors}c@${scale}x.png"
+		if [ "$src" = '*.*' ]; then
+			echo >&2 "No images found in the '$input_dir' directory."
+			exit 1
+		elif [ -e "$dst" ]; then
+			echo "Skipping ${dst}"
+		else
+			echo "Writing ${dst}"
+			tmpfile=.dither-wallpaper-tmp.png
+			nice convert "$src" \
+				-unsharp '0x5' -resize "${size}^" \
+				-gravity 'center' -extent "$size" \
+				-brightness-contrast '-2x5' \
+				-ordered-dither 'o8x8,6' \
+				-colors "$colors" -depth 4 \
+				-filter 'point' -resize "${scale}00%" \
+				-strip "PNG8:${tmpfile}"
+			mv "$tmpfile" "$dst"
+		fi
+	done
 done
 echo 'Done'

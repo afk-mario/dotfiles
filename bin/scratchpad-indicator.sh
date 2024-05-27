@@ -3,13 +3,13 @@
 
 # Subscribe to all sway window change events that match new, move, floating, or close
 swaymsg -t subscribe -m '["window"]' |
-  jq -c -r --unbuffered 'select(.change | IN("new", "move", "floating", "close"))' |
-  while IFS= read -r _ ; do
-  # Every time we read a line from the previous command update the text and
-  # tooltip of our indicator, outputting something empty if there are no
-  # windows in the scratchpad
-  swaymsg -t get_tree |
-    jq --unbuffered --compact-output '
+	jq -c -r --unbuffered 'select(.change | IN("new", "move", "floating", "close"))' |
+	while IFS= read -r _; do
+		# Every time we read a line from the previous command update the text and
+		# tooltip of our indicator, outputting something empty if there are no
+		# windows in the scratchpad
+		swaymsg -t get_tree |
+			jq --unbuffered --compact-output '
       (
         recurse(.nodes[])
         | select(.name == "__i3_scratch")
@@ -30,4 +30,4 @@ swaymsg -t subscribe -m '["window"]' |
           }
           else empty end
       '
-done
+	done

@@ -10,34 +10,33 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 if [ -z "$WIFI" ]; then
-  echo "Not connected to any wifi network."
-  exit 1
+	echo "Not connected to any wifi network."
+	exit 1
 else
-  echo "Connected to wifi ${bold}$WIFI${normal}."
+	echo "Connected to wifi ${bold}$WIFI${normal}."
 fi
 
-host www.google.com > /dev/null
+host www.google.com >/dev/null
 
 if [ $? = 0 ]; then
-  echo "DNS resolutions seems to work fine."
+	echo "DNS resolutions seems to work fine."
 else
-  echo "DNS resolution failing."
-  exit 2
+	echo "DNS resolution failing."
+	exit 2
 fi
 
 CAP=$(curl --silent captive.apple.com)
 
 if [ $? != 0 ]; then
-  echo "HTTP traffic is failing (or there's an odd captive portal around."
-  exit 3
+	echo "HTTP traffic is failing (or there's an odd captive portal around."
+	exit 3
 fi
 
 if [ $CAP = "<HTML><HEAD><TITLE>Success</TITLE></HEAD><BODY>Success</BODY></HTML>" ]; then
-  echo "No captive portal detected, network fine."
+	echo "No captive portal detected, network fine."
 else
-  echo "Captive portal or weird firewall detected"
-  exit 4
+	echo "Captive portal or weird firewall detected"
+	exit 4
 fi
 
 echo "All good, network seems functional! ✨"
-

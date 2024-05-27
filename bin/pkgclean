@@ -6,9 +6,8 @@
 
 paru -Sc --noconfirm
 
-if [ `pacman -Qdtq | wc -l` = 0 ]; then
-  exit 0;
-fi;
+if [ $(pacman -Qdtq | wc -l) = 0 ]; then
+	exit 0
+fi
 
 sudo pacman -Rnscu $(pacman -Qdtq)
-

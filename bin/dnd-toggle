@@ -5,12 +5,11 @@ dnd="dnd"
 is_dnd=false
 
 if [[ "$modes" == *"$dnd"* ]]; then
-  is_dnd=true
+	is_dnd=true
 fi
 
-if $is_dnd;
-then
-  makoctl mode -r $dnd
+if $is_dnd; then
+	makoctl mode -r $dnd
 else
-  makoctl mode -a $dnd
+	makoctl mode -a $dnd
 fi

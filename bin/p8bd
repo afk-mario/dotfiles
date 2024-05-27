@@ -7,56 +7,56 @@ fileName=
 BG_COLOR="#000"
 
 function check {
-  if test -f "$FILE_PATH"; then
-    # Get name without extension
-    # https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
-    fileName=$(basename -- "$FILE_PATH")
-    game="${fileName%%.*}"
-    echo "Building ${game} ..."
-    build
-  fi
+	if test -f "$FILE_PATH"; then
+		# Get name without extension
+		# https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
+		fileName=$(basename -- "$FILE_PATH")
+		game="${fileName%%.*}"
+		echo "Building ${game} ..."
+		build
+	fi
 }
 
 function build {
-  echo "Building the game $game at $FILE_PATH ..."
-  ~/apps/pico-8/pico-8/pico8 $FILE_PATH -export index.html
-  sed -i 's/background-color:#222/background-color:${BG_COLOR}/g' index.html
-  zip "${game}.zip" index.{html,js}
-  deploy
+	echo "Building the game $game at $FILE_PATH ..."
+	~/apps/pico-8/pico-8/pico8 $FILE_PATH -export index.html
+	sed -i 's/background-color:#222/background-color:${BG_COLOR}/g' index.html
+	zip "${game}.zip" index.{html,js}
+	deploy
 }
 
 function deploy {
-  butler push "${game}.zip" "afk-mario/${game}:html5"
-  clean
+	butler push "${game}.zip" "afk-mario/${game}:html5"
+	clean
 }
 
 function clean {
-  echo "Removing generated files"
-  rm index.{html,js}
-  rm "${game}.zip"
+	echo "Removing generated files"
+	rm index.{html,js}
+	rm "${game}.zip"
 }
 
 function usage {
-  echo "usage: p8bd game | [[-h]]"
+	echo "usage: p8bd game | [[-h]]"
 }
 
 if [ "$1" != "" ]; then
-  FILE_PATH=$1
-  check
+	FILE_PATH=$1
+	check
 else
-  echo "No FILE_PATH specified"
-  usage
+	echo "No FILE_PATH specified"
+	usage
 fi
 
 while [ "$1" != "" ]; do
-  case $1 in
-  -h | --help)
-    usage
-    exit
-    ;;
-  *)
-    exit 1
-    ;;
-  esac
-  shift
+	case $1 in
+	-h | --help)
+		usage
+		exit
+		;;
+	*)
+		exit 1
+		;;
+	esac
+	shift
 done
