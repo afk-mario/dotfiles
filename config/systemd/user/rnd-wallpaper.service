@@ -1,5 +1,6 @@
 [Unit]
 Description=Random wallpaper
+PartOf=graphical-session.target
 
 [Service]
 Type=oneshot
