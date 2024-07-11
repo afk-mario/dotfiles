@@ -1,55 +1,57 @@
 local conform = require('conform')
-local prettier = { "prettierd", "prettier" }
+local prettier = { 'prettierd', 'prettier' }
 
 conform.setup({
-  formatters_by_ft = {
-    javascript = prettier,
-    typescript = prettier,
-    typescriptreact = prettier,
-    javascriptreact = prettier,
-    json = prettier,
-    jsonc = prettier,
-    html = prettier,
-    markdown = prettier,
-    css = prettier,
-    yaml = prettier,
-    sql = { "pg_format" },
-  },
+	formatters_by_ft = {
+		javascript = prettier,
+		typescript = prettier,
+		typescriptreact = prettier,
+		javascriptreact = prettier,
+		json = prettier,
+		jsonc = prettier,
+		html = prettier,
+		markdown = prettier,
+		css = prettier,
+		yaml = prettier,
+		c = { 'clangd-format' },
+		cpp = { 'clangd-format' },
+		sql = { 'pg_format' },
+	},
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    -- Disable with a global or buffer-local variable
-    if vim.g.disable_autoformat or vim.b[args.buf].disable_autoformat then
-      return
-    end
+vim.api.nvim_create_autocmd('BufWritePre', {
+	pattern = '*',
+	callback = function(args)
+		-- Disable with a global or buffer-local variable
+		if vim.g.disable_autoformat or vim.b[args.buf].disable_autoformat then
+			return
+		end
 
-    conform.format({
-      bufnr = args.buf,
-      timeout_ms = 500,
-      lsp_fallback = true,
-    })
-  end,
+		conform.format({
+			bufnr = args.buf,
+			timeout_ms = 1000,
+			lsp_fallback = true,
+		})
+	end,
 })
 
-vim.api.nvim_create_user_command("FormatDisable", function(args)
-  if args.bang then
-    -- FormatDisable! will disable formatting just for this buffer
-    vim.b.disable_autoformat = true
-  else
-    vim.g.disable_autoformat = true
-  end
+vim.api.nvim_create_user_command('FormatDisable', function(args)
+	if args.bang then
+		-- FormatDisable! will disable formatting just for this buffer
+		vim.b.disable_autoformat = true
+	else
+		vim.g.disable_autoformat = true
+	end
 end, {
-  desc = "Disable autoformat-on-save",
-  bang = true,
+	desc = 'Disable autoformat-on-save',
+	bang = true,
 })
 
-vim.api.nvim_create_user_command("FormatEnable", function()
-  vim.b.disable_autoformat = false
-  vim.g.disable_autoformat = false
+vim.api.nvim_create_user_command('FormatEnable', function()
+	vim.b.disable_autoformat = false
+	vim.g.disable_autoformat = false
 end, {
-  desc = "Re-enable autoformat-on-save",
+	desc = 'Re-enable autoformat-on-save',
 })
 
 -- local lsp_zero = require('lsp-zero')
