@@ -142,6 +142,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export PATH="$PATH:$ANDROID_SDK_ROOT/tools"
   export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
   export PATH="$PATH:/usr/local/bin/tidy"
+  export PATH="$PATH:$HOME/Library/Application Support/itch/apps/butler"
   export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
   export PATH="/Applications/Transmission.app/Contents/MacOS/:$PATH"
   export PATH="/Library/TeX/texbin:$PATH"

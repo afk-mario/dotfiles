@@ -52,3 +52,5 @@
   path = ~/.config/git/signkey
 [pull]
 	rebase = true
+[submodule]
+	recurse = true
