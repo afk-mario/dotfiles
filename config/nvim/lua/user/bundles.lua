@@ -20,32 +20,32 @@ local plugins = {
 	'junegunn/fzf.vim',
 	'mbbill/undotree',
 
-	'tpope/vim-eunuch',          -- Unix helpers
-	'tpope/vim-surround',        -- Sorroundings
-	'tpope/vim-repeat',          -- More . command
-	'tpope/vim-abolish',         -- Better replace
-	'tpope/vim-unimpaired',      -- Key mappings for [
-	'tpope/vim-dispatch',        -- Run async commands in GIT
-	'tpope/vim-endwise',         -- Add end after if in lua
-	'tpope/vim-projectionist',   -- granular project configuration
+	'tpope/vim-eunuch',         -- Unix helpers
+	'tpope/vim-surround',       -- Sorroundings
+	'tpope/vim-repeat',         -- More . command
+	'tpope/vim-abolish',        -- Better replace
+	'tpope/vim-unimpaired',     -- Key mappings for [
+	'tpope/vim-dispatch',       -- Run async commands in GIT
+	'tpope/vim-endwise',        -- Add end after if in lua
+	'tpope/vim-projectionist',  -- granular project configuration
 
-	'wellle/targets.vim',        -- Vim plugin that provides additional text objects
+	'wellle/targets.vim',       -- Vim plugin that provides additional text objects
 	'AndrewRadev/splitjoin.vim', -- Split onelinners with gS
 
-	'godlygeek/tabular',         -- Align code
-	'vim-scripts/BufOnly.vim',   -- Close All other buffers
-	'qpkorr/vim-bufkill',        -- Keep the window layout when closing buffers
+	'godlygeek/tabular',        -- Align code
+	'vim-scripts/BufOnly.vim',  -- Close All other buffers
+	'qpkorr/vim-bufkill',       -- Keep the window layout when closing buffers
 	'numToStr/Comment.nvim',
 
 	-- VCS
 	'tpope/vim-fugitive', -- Git wrapper
-	'tpope/vim-rhubarb',  -- Github extension
+	'tpope/vim-rhubarb', -- Github extension
 	'lewis6991/gitsigns.nvim',
 
 	-- Languages
 	{
-		  'nvim-treesitter/nvim-treesitter',
-		                                                                        build = ':TSUpdate'
+		'nvim-treesitter/nvim-treesitter',
+		build = ':TSUpdate'
 	},
 	'jamespeapen/swayconfig.vim',
 	'lifepillar/pgsql.vim',
@@ -58,16 +58,16 @@ local plugins = {
 	'pfeiferj/nvim-hurl',
 
 	-- Vim UI
-	'tpope/vim-flagship',   -- Statusline
+	'tpope/vim-flagship',  -- Statusline
 	'lukas-reineke/indent-blankline.nvim',
-	'gregsexton/MatchTag',  -- Highlite Matching tag
+	'gregsexton/MatchTag', -- Highlite Matching tag
 	'psliwka/vim-smoothie', -- Smooth Scroll
 	-- "ellisonleao/gruvbox.nvim"
-	-- "gruvbox-community/gruvbox",
+	'gruvbox-community/gruvbox',
 	{
-		  'catppuccin/nvim',
-		                                                                        name = 'catppuccin',
-		                                                                                             priority = 1000
+		'catppuccin/nvim',
+		name = 'catppuccin',
+		priority = 1000
 	},
 
 	-- LSP
@@ -97,7 +97,8 @@ local plugins = {
 
 	-- Whitebox
 	{
-		  dir = '~/apps/whitebox/whitebox_v0.122.0/editor_plugins/whitebox-vim'
+		dir =
+		'~/apps/whitebox/whitebox_v0.122.0/editor_plugins/whitebox-vim'
 	},
 }
 

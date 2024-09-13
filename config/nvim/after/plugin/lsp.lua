@@ -9,7 +9,7 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
-		'tsserver',
+		'ts_ls',
 		'lua_ls',
 		'cssls',
 		'eslint',
@@ -28,10 +28,10 @@ require('mason-lspconfig').setup({
 			local lua_opts = lsp_zero.nvim_lua_ls()
 			require('lspconfig').lua_ls.setup(lua_opts)
 		end,
-		tsserver = function()
-			lsp.tsserver.setup({
+		ts_ls = function()
+			lsp.ts_ls.setup({
 				on_init = function(client)
-					-- Disable formatting on tsserver because we use prettier
+					-- Disable formatting on ts_ls because we use prettier
 					client.server_capabilities.documentFormattingProvider = false
 					client.server_capabilities.documentFormattingRangeProvider = false
 				end
