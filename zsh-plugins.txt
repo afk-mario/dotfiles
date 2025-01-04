@@ -9,7 +9,7 @@ rupa/z
 MikeDacre/cdbk
 caarlos0/ports
 
-xvoland/Extract
+# xvoland/Extract
 djui/alias-tips
 
 zsh-users/zsh-history-substring-search

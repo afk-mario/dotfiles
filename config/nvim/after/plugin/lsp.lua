@@ -6,6 +6,10 @@ lsp_zero.on_attach(function(_, bufnr)
 	vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
 end)
 
+
+lsp.gdscript.setup({})
+
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
@@ -26,7 +30,7 @@ require('mason-lspconfig').setup({
 		lua_ls = function()
 			-- IDK
 			local lua_opts = lsp_zero.nvim_lua_ls()
-			require('lspconfig').lua_ls.setup(lua_opts)
+			lsp.lua_ls.setup(lua_opts)
 		end,
 		ts_ls = function()
 			lsp.ts_ls.setup({

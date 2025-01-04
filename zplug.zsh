@@ -40,7 +40,7 @@ zplug "djui/alias-tips", defer:2
 # extract
 # Extracts a wide variety of archive formats.
 # https://github.com/xvoland/Extract
-zplug "xvoland/Extract", use:"*.sh"
+# zplug "xvoland/Extract", use:"*.sh"
 
 # z
 # Navigate your most used directories based on 'frecency'.
