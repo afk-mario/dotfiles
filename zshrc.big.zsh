@@ -160,10 +160,8 @@ fi
 
 # Load fzf if present
 # https://github.com/getantibody/antibody/issues/222
-if test -d /usr/share/fzf; then
-  source /usr/share/fzf/key-bindings.zsh
-elif test -d /usr/local/opt/fzf/shell; then
-  . /usr/local/opt/fzf/shell/key-bindings.zsh
+if command -v fzf >/dev/null 2>&1; then
+  source <(fzf --zsh)
 else
   # historical backward/forward search with linehead string binded to ^P/^N
   autoload history-search-end
