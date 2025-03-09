@@ -13,6 +13,7 @@ conform.setup({
 		markdown = prettier,
 		css = prettier,
 		yaml = prettier,
+		gohtmltmpl = prettier,
 		c = { 'clangd-format' },
 		cpp = { 'clangd-format' },
 		sql = { 'pg_format' },
