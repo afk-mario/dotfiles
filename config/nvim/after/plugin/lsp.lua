@@ -18,7 +18,7 @@ require('mason-lspconfig').setup({
 		'cssls',
 		'eslint',
 		'stylelint_lsp',
-		'ruff_lsp',
+		'ruff',
 		'clangd',
 		'emmet_language_server',
 		'bashls',

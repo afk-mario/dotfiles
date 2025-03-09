@@ -96,10 +96,10 @@ local plugins = {
 	-- { 'rcarriga/nvim-dap-ui' },
 
 	-- Whitebox
-	{
-		dir =
-		'~/apps/whitebox/whitebox_v0.122.0/editor_plugins/whitebox-vim'
-	},
+	-- {
+	-- 	dir =
+	-- 	'~/apps/whitebox/whitebox_v0.122.0/editor_plugins/whitebox-vim'
+	-- },
 }
 
 local opts = {}
