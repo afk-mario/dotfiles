@@ -50,6 +50,7 @@ local plugins = {
 	'jamespeapen/swayconfig.vim',
 	'lifepillar/pgsql.vim',
 	'tweekmonster/django-plus.vim',
+	'fatih/vim-go',
 
 	-- This makes JS/JSX good syntax highlight
 	'yuezk/vim-js',
