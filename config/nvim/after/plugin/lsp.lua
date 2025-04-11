@@ -22,7 +22,7 @@ require('mason-lspconfig').setup({
 		'clangd',
 		'emmet_language_server',
 		'bashls',
-		'yamlls'
+		'yamlls',
 	},
 
 	handlers = {
