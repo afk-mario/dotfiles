@@ -2,10 +2,10 @@
   name = Mario Carballo Zama
   email = afk@ellugar.co
 [gpg]
-  program = gpg
+  format = ssh
 [push]
   default = simple
-	autoSetupRemote = true
+  autoSetupRemote = true
 [merge]
   tool = smerge
 [alias]
@@ -28,10 +28,9 @@
   prompt = false
 [commit]
   verbose = true
-	gpgsign = false
+  gpgsign = true
 [init]
-  templatedir = $XDG_CONFIG_HOME/git/template
-	defaultBranch = main
+  defaultBranch = main
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
@@ -48,9 +47,9 @@
   trustExitCode = true
 [difftool "nvimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[pull]
+  rebase = true
+[submodule]
+  recurse = true
 [include]
   path = ~/.config/git/signkey
-[pull]
-	rebase = true
-[submodule]
-	recurse = true
