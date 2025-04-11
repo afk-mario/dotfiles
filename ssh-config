@@ -45,11 +45,16 @@ Host corredor
   HostName 128.199.5.84
   user deploy
   IdentityFile ~/.ssh/deploy
-  
+ 
 Host corredor
   HostName 128.199.5.84
   user root
   IdentityFile ~/.ssh/deploy
+
+Host tunel
+  HostName 143.198.159.103
+  user root
+  IdentityAgent ~/.1password/agent.sock
 
 Host *
   IdentityAgent ~/.1password/agent.sock
