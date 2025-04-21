@@ -38,8 +38,6 @@
   required = true
 [core]
   excludesfile = $XDG_CONFIG_HOME/git/ignore-global
-[credential]
-  helper = osxkeychain
 [mergetool "fugitive"]
   cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 [mergetool "smerge"]
