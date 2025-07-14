@@ -11,6 +11,7 @@ lsp.gdscript.setup({})
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
+		'html',
 		'ts_ls',
 		'lua_ls',
 		'cssls',
