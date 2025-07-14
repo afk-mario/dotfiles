@@ -24,8 +24,8 @@
     "format": "{shell} {title}",
     "max-length": 50,
     "rewrite": {
-     "xdg_shell (.*)": "$1",
-     "xwayland (.*)": "[𝕏] $1",
+      "xdg_shell (.*)": "$1",
+      "xwayland (.*)": "[𝕏] $1"
     }
   },
   "sway/language": {
@@ -59,16 +59,6 @@
       "deactivated": ""
     }
   },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "headphones": "",
-      "default": ["", ""]
-    },
-    "scroll-step": 1,
-    "on-click": "pavucontrol"
-  },
   "wireplumber": {
     "format": "{icon} {volume}%",
     "format-muted": "",
@@ -77,7 +67,7 @@
       "default": ["", ""]
     },
     "scroll-step": 1,
-    "on-click": "pavucontrol"
+    "on-click": "pwvucontrol"
   },
   "battery": {
     "bat": "BAT0",
@@ -124,12 +114,12 @@
     "on-click-right": "exec swaymsg 'move scratchpad'"
   },
   "custom/wf-recorder": {
-		"format": "{}",
-		"interval": "once",
-		"exec": "echo ''",
-		"tooltip": "stop recording",
-		"exec-if": "pgrep 'wf-recorder'",
-		"on-click": "exec $HOME/bin/wf-record-toggle --notify start area",
-		"signal": 8
-	}
+    "format": "{}",
+    "interval": "once",
+    "exec": "echo ''",
+    "tooltip": "stop recording",
+    "exec-if": "pgrep 'wf-recorder'",
+    "on-click": "exec $HOME/bin/wf-record-toggle --notify start area",
+    "signal": 8
+  }
 }
