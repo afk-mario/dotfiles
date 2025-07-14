@@ -183,4 +183,5 @@ zstyle ':completion:*:*:kill:*:processes' command 'ps xo pid,user:10,cmd | rg -v
 
 # source ~/.dotfiles/zplug.zsh
 source ~/.dotfiles/ssh-auto-load.zsh
-source ~/.dotfiles/antibody.zsh
+# source ~/.dotfiles/antibody.zsh
+source ~/.dotfiles/antidote.zsh
