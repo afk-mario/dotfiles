@@ -1,16 +1,15 @@
 #!/bin/bash
 
-modes=$(makoctl mode 2>/dev/null || echo "")
-dnd="dnd"
+notifications=$(makoctl list)
 
-ON=""
-OFF=""
-TEXT=$OFF
+EMPTY=""
+NOTIFICATIONS=""
+TEXT=$EMPTY
 CLASS="-off"
-TOOLTIP=$modes
+TOOLTIP="Dismiss all notifications"
 
-if [[ "$modes" == *"$dnd"* ]]; then
-  TEXT=$ON
+if [[ -n "$notifications" ]]; then
+  TEXT=$NOTIFICATIONS
   CLASS="-on"
 fi
 

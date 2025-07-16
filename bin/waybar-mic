@@ -1,5 +1,7 @@
 #!/bin/sh
-#
+# NOTE: Currently I need pamixer (pulseaudio tool) to control
+# the mute status, ideally I would use wpctl but it doesn't have support for getting the mute status
+# https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/804
 # https://git.sr.ht/~whynothugo/dotfiles/tree/adf6af99/item/home/.local/lib/waybar-mic
 # Helper for waybar to show current mic status.
 #
@@ -17,31 +19,31 @@
 # TODO: If a non-primary microphone is on, that should somehow be reflected.
 
 show() {
-	IS_MUTED=$(pamixer --default-source --get-mute)
+  IS_MUTED=$(pamixer --default-source --get-mute)
 
-	if $IS_MUTED; then
-		CLASS="muted"
-		TEXT=""
-	else
-		CLASS="not-muted"
-		TEXT=""
-	fi
+  if $IS_MUTED; then
+    CLASS="muted"
+    TEXT=""
+  else
+    CLASS="not-muted"
+    TEXT=""
+  fi
 
-	jq --compact-output \
-		--null-input \
-		--arg text "$TEXT" \
-		--arg class "$CLASS" \
-		'{"text": $text, "class": $class}'
+  jq --compact-output \
+    --null-input \
+    --arg text "$TEXT" \
+    --arg class "$CLASS" \
+    '{"text": $text, "class": $class}'
 }
 
 monitor() {
-	# Monitors for changes in microphone state.
+  # Monitors for changes in microphone state.
 
-	pactl subscribe | /usr/bin/grep --line-buffered "'change' on source" |
-		while read -r _; do
-			show
-		done
-	exit
+  pactl subscribe | /usr/bin/grep --line-buffered "'change' on source" |
+    while read -r _; do
+      show
+    done
+  exit
 }
 
 show    # Print once, so that the right state is shown at startup.
