@@ -1,5 +1,6 @@
 {
   "layer": "top",
+  "reload_style_on_change": true,
   "modules-left": [
     "custom/arch",
     "sway/workspaces",
@@ -8,13 +9,13 @@
   ],
   "modules-center": ["custom/scratchpad-indicator", "tray"],
   "modules-right": [
-    "wireplumber",
+    "clock",
     "network",
+    "wireplumber",
     "sway/language",
     "battery",
-    "clock",
-    "custom/dnd",
     "idle_inhibitor",
+    "custom/dnd",
     "custom/mic",
     "custom/wf-recorder",
     "custom/dismiss-notifications"
@@ -35,7 +36,18 @@
     "tooltip": false
   },
   "clock": {
-    "format-alt": "{:%a, %d. %b  %H:%M}"
+    "format-alt": "{:%a, %d. %b  %H:%M}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span><b>{}</b></span>",
+        "days": "<span>{}</span>",
+        "weekdays": "<span color='#fabd2f'>{}</span>",
+        "today": "<span color='#fb4934'><b>{}</b></span>"
+      }
+    }
   },
   "tray": {
     "icon-size": 15,
@@ -46,11 +58,16 @@
     "format-wifi": " {essid}",
     "format-ethernet": " {ifname} ",
     "format-disconnected": "",
-    "tooltip-format": "{ifname}",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "eth {ifname}",
+    "tooltip-format": "{ifname} {bandwidthDownBytes}|{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
+  },
+  "systemd-failed-units": {
+    "hide-on-ok": false, // Do not hide if there is zero failed units.
+    "format": "✗ {nr_failed}",
+    "format-ok": "✓",
+    "system": true, // Monitor failed systemwide units.
+    "user": true // Ignore failed user units.
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -91,18 +108,19 @@
   },
   "custom/dismiss-notifications": {
     "exec-if": "command -v makoctl",
-    "exec": "( makoctl list | jq -e '.data[] | length > 0' > /dev/null && echo '\nDismiss all notifications\n' ) || echo '' ",
+    "exec": "notifications-check",
+    "return-type": "json",
     "format": "{}",
     "on-click": "makoctl dismiss -a",
     "interval": 3
   },
   "custom/dnd": {
-    "exec-if": "sleep 0.5",
-    "exec-on-event": true,
+    "exec-if": "command -v makoctl",
     "exec": "dnd-check",
+    "exec-on-event": true,
     "return-type": "json",
     "format": "{}",
-    "on-click": "dnd-toggle > /dev/null",
+    "on-click": "makoctl mode -t dnd > /dev/null",
     "interval": 3
   },
   "custom/scratchpad-indicator": {

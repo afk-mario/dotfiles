@@ -46,6 +46,33 @@ window#waybar {
   color: #fbf1c7;
 }
 
+tooltip {
+  font-family: "SF Mono", "Material Icons", monospace;
+  background: #1d2021;
+  color: #fbf1c7;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 4px;
+  margin-top: 20px;
+}
+
+tooltip label {
+  font-family: "SF Mono", "Material Icons", monospace;
+  color: #fbf1c7;
+}
+
+tooltip small {
+  font-family: "SF Mono", "Material Icons", monospace;
+  color: #fbf1c7;
+  font-size: 12px;
+}
+
+tooltip span {
+  font-family: "SF Mono", "Material Icons", monospace;
+  color: #fbf1c7;
+  font-size: 12px;
+}
+
 #workspaces button {
   padding: 0 4px;
   background: transparent;
@@ -88,12 +115,8 @@ window#waybar {
   border-left: 2px solid #b16286;
 }
 
-#clock {
-  background-color: #282828;
-}
-
 #network {
-  border-bottom: 2px solid #b16286;
+  border-bottom: 2px solid #458588;
 }
 
 #pulseaudio,
@@ -102,48 +125,42 @@ window#waybar {
 }
 
 #idle_inhibitor {
-  border-bottom: 2px solid #cc241d;
+  border-bottom: 2px solid #b16286;
 }
 
 #idle_inhibitor.activated {
-  background-color: #fb4934;
-  color: white;
+  color: #32302f;
+  background-color: #d3869b;
 }
 
 #language {
   border-bottom: 2px solid #8ec07c;
 }
 
-#custom-disturb-on,
-#custom-disturb-off,
 #custom-arch {
-  color: white;
+  color: #fbf1c7;
   background: #e91e63;
 }
 
 #custom-mic {
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid #d65d0e;
 }
 
 #custom-mic.not-muted {
-  color: #b8bb26;
-  border-bottom-color: #b8bb26;
+  border-bottom: 2px solid #d65d0e;
 }
 
 #custom-mic.muted {
-  /* color: #fb4934; */
-  border-bottom-color: #fb4934;
-  color: #fbf1c7;
-  background-color: #fb4934;
+  color: #32302f;
+  background-color: #f38019;
 }
 
 #custom-dnd {
   border-bottom: 2px solid #d79921;
-  color: #fadb2f;
 }
 
 #custom-dnd.-on {
-  color: #282828;
+  color: #32302f;
   background-color: #fabd2f;
 }
 
