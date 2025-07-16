@@ -60,11 +60,12 @@ exec swayidle -w \
 exec dropbox
 exec mako
 exec udiskie --tray
-# TODO: when it's updated maybe re-install
-# exec polkit-dumb-agent
+exec syncthingtray-qt6 --wait
 exec lxqt-policykit-agent
 exec blueman-applet
-exec easyeffects --gapplication-service
+# TODO: when it's updated maybe re-install
+# exec polkit-dumb-agent
+# exec easyeffects --gapplication-service
 
 exec wpaperd
 exec_always nwg-drawer -r
