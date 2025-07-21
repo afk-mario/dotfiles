@@ -119,6 +119,12 @@ tooltip span {
   border-bottom: 2px solid #458588;
 }
 
+#network.disconnected {
+  color: #32302f;
+  background-color: #fb4934;
+  border-bottom: 2px solid #cc241d;
+}
+
 #pulseaudio,
 #wireplumber {
   border-bottom: 2px solid #83a598;

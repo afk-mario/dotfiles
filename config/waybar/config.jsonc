@@ -57,7 +57,7 @@
     "format": "{ifname}",
     "format-wifi": " {essid}",
     "format-ethernet": " {ifname} ",
-    "format-disconnected": "",
+    "format-disconnected": "",
     "tooltip-format": "{ifname} {bandwidthDownBytes}|{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50

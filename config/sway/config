@@ -63,6 +63,7 @@ exec udiskie --tray
 exec syncthingtray-qt6 --wait
 exec lxqt-policykit-agent
 exec blueman-applet
+exec nm-applet
 # TODO: when it's updated maybe re-install
 # exec polkit-dumb-agent
 # exec easyeffects --gapplication-service
