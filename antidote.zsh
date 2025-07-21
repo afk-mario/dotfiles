@@ -1,4 +1,8 @@
-source /usr/share/zsh-antidote/antidote.zsh
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  source /usr/share/zsh-antidote/antidote.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
+  source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+fi
 
 
 # Set the root name of the plugins files (.txt and .zsh) antidote will use.
