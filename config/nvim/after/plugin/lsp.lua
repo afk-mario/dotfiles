@@ -22,6 +22,7 @@ require('mason-lspconfig').setup({
 		'emmet_language_server',
 		'bashls',
 		'yamlls',
+		'nil_ls',
 	},
 
 	handlers = {
@@ -45,6 +46,13 @@ require('mason-lspconfig').setup({
 			lsp.stylelint_lsp.setup({
 				filetypes = { 'css', 'less', 'scss', 'sugarss', 'vue', 'wxss' },
 				settings = { stylelintplus = { cssInJs = false } }
+			})
+		end,
+		nil_ls = function()
+			lsp.nil_ls.setup({
+				formatting = {
+					command = { 'nixfmt' },
+				},
 			})
 		end,
 	}
