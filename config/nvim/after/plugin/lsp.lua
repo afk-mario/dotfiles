@@ -27,11 +27,6 @@ require('mason-lspconfig').setup({
 
 	handlers = {
 		lsp_zero.default_setup,
-		lua_ls = function()
-			-- IDK
-			local lua_opts = lsp_zero.nvim_lua_ls()
-			lsp.lua_ls.setup(lua_opts)
-		end,
 		ts_ls = function()
 			lsp.ts_ls.setup({
 				on_init = function(client)
