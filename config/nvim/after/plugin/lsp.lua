@@ -1,13 +1,3 @@
-local lsp = require('lspconfig')
-local lsp_zero = require('lsp-zero')
-lsp_zero.on_attach(function(_, bufnr)
-	lsp_zero.default_keymaps({ buffer = bufnr })
-end)
-
-
-lsp.gdscript.setup({})
-
-
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
@@ -24,35 +14,35 @@ require('mason-lspconfig').setup({
 		'yamlls',
 		'nil_ls',
 	},
+})
 
-	handlers = {
-		lsp_zero.default_setup,
-		ts_ls = function()
-			lsp.ts_ls.setup({
-				on_init = function(client)
-					-- Disable formatting on ts_ls because we use prettier
-					client.server_capabilities.documentFormattingProvider = false
-					client.server_capabilities.documentFormattingRangeProvider = false
-				end
-			})
-		end,
-		-- Disable stylelint on js
-		stylelint_lsp = function()
-			lsp.stylelint_lsp.setup({
-				filetypes = { 'css', 'less', 'scss', 'sugarss', 'vue', 'wxss' },
-				settings = { stylelintplus = { cssInJs = false } }
-			})
-		end,
-		nil_ls = function()
-			lsp.nil_ls.setup({
-				formatting = {
-					command = { 'nixfmt' },
-				},
-			})
-		end,
+-- Add the same capabilities to ALL server configurations.
+-- Refer to :h vim.lsp.config() for more information.
+vim.lsp.config('*', {
+	capabilities = vim.lsp.protocol.make_client_capabilities()
+})
+
+-- Disable stylelint on js
+vim.lsp.config('stylelint_lsp', {
+	settings = {
+		stylelintplus = {
+			stylelintplus = { cssInJs = false }
+		}
 	}
 })
 
+vim.lsp.config('nil_ls', {
+	formatting = {
+		command = { 'nixfmt' },
+	},
+	settings = {
+		nix = {
+			flake = {
+				autoEvalInputs = false,
+			},
+		},
+	}
+})
 
 vim.diagnostic.config({
 	virtual_text = false,

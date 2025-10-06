@@ -14,8 +14,6 @@ conform.setup({
 		css = prettier,
 		yaml = prettier,
 		gohtmltmpl = prettier,
-		c = { 'clangd-format' },
-		cpp = { 'clangd-format' },
 		sql = { 'pg_format' },
 	},
 })
@@ -54,18 +52,3 @@ vim.api.nvim_create_user_command('FormatEnable', function()
 end, {
 	desc = 'Re-enable autoformat-on-save',
 })
-
--- local lsp_zero = require('lsp-zero')
--- lsp_zero.format_on_save({
---   format_opts = {
---     async = false,
---     timeout_ms = 10000,
---   },
---   servers = {
---     ['lua_ls'] = { 'lua' },
---     ['clangd'] = { 'c', 'cpp' },
---     ['ruff_lsp'] = { 'python' },
---     ['bashls'] = { 'sh' },
---   }
--- })
---

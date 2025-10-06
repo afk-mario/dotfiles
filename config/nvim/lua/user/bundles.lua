@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
 	vim.fn.system({
 		'git',
 		'clone',
@@ -74,7 +74,6 @@ local plugins = {
 	-- LSP
 	{ 'williamboman/mason.nvim' },
 	{ 'williamboman/mason-lspconfig.nvim' },
-	{ 'VonHeikemen/lsp-zero.nvim' },
 	{ 'neovim/nvim-lspconfig' },
 
 	-- Autocompletion
