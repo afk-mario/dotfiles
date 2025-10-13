@@ -13,20 +13,20 @@ cmp.setup({
 		-- scroll up and down the documentation window
 		['<C-u>'] = cmp.mapping.scroll_docs(-4),
 		['<C-d>'] = cmp.mapping.scroll_docs(4),
-		['<C-j>'] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
+		['<C-k>'] = cmp.mapping(function(fallback)
+			if luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
+			elseif cmp.visible() then
+				cmp.select_next_item()
 			else
 				fallback()
 			end
 		end, { 'i', 's' }),
-		['<C-k>'] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
+		['<C-j>'] = cmp.mapping(function(fallback)
+			if luasnip.jumpable(-1) then
 				luasnip.jump(-1)
+			elseif cmp.visible() then
+				cmp.select_prev_item()
 			else
 				fallback()
 			end
