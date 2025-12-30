@@ -56,5 +56,10 @@ Host tunel
   user root
   IdentityAgent ~/.1password/agent.sock
 
+Host medio
+  HostName medio
+  user afk
+  IdentityAgent ~/.1password/agent.sock
+
 Host *
   IdentityAgent ~/.1password/agent.sock
