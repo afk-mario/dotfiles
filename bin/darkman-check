@@ -1,0 +1,19 @@
+#!/bin/bash
+
+MODE=$(darkman get)
+
+case "$MODE" in
+dark)
+  ICON=""
+  ;;
+light)
+  ICON=""
+  ;;
+esac
+
+jq --compact-output \
+  --null-input \
+  --arg text "$ICON" \
+  --arg tooltip "$MODE" \
+  --arg class "$MODE" \
+  '{"text": $text, "tooltip": $tooltip, "class": $class}'

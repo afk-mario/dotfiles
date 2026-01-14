@@ -105,6 +105,7 @@ tooltip span {
 #custom-mic,
 #custom-dismiss-notifications,
 #custom-dnd,
+#custom-darkman,
 #custom-wf-recorder,
 #mpd {
   padding: 0 8px;
@@ -168,6 +169,10 @@ tooltip span {
 #custom-dnd.-on {
   color: #32302f;
   background-color: #fabd2f;
+}
+
+#custom-darkman {
+  border-bottom: 2px solid #a89984;
 }
 
 @keyframes blink {

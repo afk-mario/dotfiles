@@ -7,6 +7,7 @@ default-timeout=10000
 ignore-timeout=1
 
 font=SF Mono
+icon-path=/usr/share/icons/Dracula
 
 border-size=2
 border-color=#83a598

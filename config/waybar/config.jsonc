@@ -15,6 +15,7 @@
     "sway/language",
     "battery",
     "idle_inhibitor",
+    "custom/darkman",
     "custom/dnd",
     "custom/mic",
     "custom/wf-recorder",
@@ -106,12 +107,13 @@
     "return-type": "json",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
   },
-  "custom/dismiss-notifications": {
-    "exec-if": "command -v makoctl",
-    "exec": "notifications-check",
+  "custom/darkman": {
+    "exec-if": "command -v darkman",
+    "exec": "darkman-check",
+    "exec-on-event": true,
     "return-type": "json",
     "format": "{}",
-    "on-click": "makoctl dismiss -a",
+    "on-click": "darkman toggle",
     "interval": 3
   },
   "custom/dnd": {
@@ -139,5 +141,13 @@
     "exec-if": "pgrep 'wf-recorder'",
     "on-click": "exec $HOME/bin/wf-record-toggle --notify start area",
     "signal": 8
+  },
+  "custom/dismiss-notifications": {
+    "exec-if": "command -v makoctl",
+    "exec": "notifications-check",
+    "return-type": "json",
+    "format": "{}",
+    "on-click": "makoctl dismiss -a",
+    "interval": 3
   }
 }
