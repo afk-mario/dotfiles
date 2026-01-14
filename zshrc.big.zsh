@@ -136,6 +136,12 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
   alias aseprite="/mnt/2TB/SteamLibrary/steamapps/common/Aseprite/aseprite"
   source ~/.dotfiles/foot.zsh
+
+  # Emscriptem
+  export PATH="$PATH:$HOME/github/emsdk"
+  export PATH="$PATH:$HOME/github/emsdk/upstream/emscripten"
+  export EMSDK="$HOME/github/emsdk"
+  export EMSDK_NODE="$HOME/github/emsdk/node/22.16.0_64bit/bin/node"
 elif [[ "$OSTYPE" == "darwin"* ]]; then # macOS
   export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
   export LIBRARY_PATH="/usr/local/lib"
