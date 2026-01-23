@@ -14,17 +14,17 @@
 ## See `man 1 wfrecord` or `wfrecord usage` for further details.
 
 getTargetDirectory() {
-	test -f ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs &&
-		. ${XDG_CONFIG_HOME:-~/.config}/user-dirs.dirs
+  test -f "${XDG_CONFIG_HOME:-~/.config}"/user-dirs.dirs &&
+    . "${XDG_CONFIG_HOME:-~/.config}"/user-dirs.dirs
 
-	echo ${XDG_SCREENRECORDS_DIR:-${XDG_VIDEOS_DIR:-$HOME}}
+  echo "${XDG_SCREENRECORDS_DIR:-${XDG_VIDEOS_DIR:-$HOME}}"
 }
 
 if [ "$1" = "--notify" ]; then
-	NOTIFY=yes
-	shift 1
+  NOTIFY=yes
+  shift 1
 else
-	NOTIFY=no
+  NOTIFY=no
 fi
 
 ACTION=${1:-usage}
@@ -32,119 +32,123 @@ SUBJECT=${2:-screen}
 FILE=${3:-$(getTargetDirectory)/$(date -Ins).mp4}
 
 if [ "$ACTION" != "start" ] && [ "$ACTION" != "check" ]; then
-	echo "Usage:"
-	echo "  wfrecord [--notify] [active|screen|output|area|window] [FILE]"
-	echo "  wfrecord check"
-	echo "  wfrecord usage"
-	echo "  wfrecord start"
-	echo ""
-	echo "Commands:"
-	echo "  check: Verify if required tools are installed and exit."
-	echo "  usage: Show this message and exit."
-	echo ""
-	echo "Targets:"
-	echo "  active: Currently active window."
-	echo "  screen: All visible outputs."
-	echo "  output: Currently active output."
-	echo "  area: Manually select a region."
-	echo "  window: Manually select a window."
-	exit
+  echo "Usage:"
+  echo "  wfrecord [--notify] [active|screen|output|area|window] [FILE]"
+  echo "  wfrecord check"
+  echo "  wfrecord usage"
+  echo "  wfrecord start"
+  echo ""
+  echo "Commands:"
+  echo "  check: Verify if required tools are installed and exit."
+  echo "  usage: Show this message and exit."
+  echo ""
+  echo "Targets:"
+  echo "  active: Currently active window."
+  echo "  screen: All visible outputs."
+  echo "  output: Currently active output."
+  echo "  area: Manually select a region."
+  echo "  window: Manually select a window."
+  exit
 fi
 
 notify() {
-	notify-send -t 3000 -a wfrecord "$@"
+  notify-send \
+    -t 5000 \
+    -a wfrecord \
+    -A open-folder="Open folder" \
+    "$@" &&
+    {
+      # If action was clicked, notify-send exits 0
+      # Open the directory containing the recording
+      xdg-open "$(dirname "$FILE")" >/dev/null 2>&1 &
+    }
 }
-notifyOk() {
-	[ "$NOTIFY" = "no" ] && return
 
-	TITLE=${2:-"Recording"}
-	MESSAGE=${1:-"OK"}
-	notify "$TITLE" "$MESSAGE"
+notifyOk() {
+  [ "$NOTIFY" = "no" ] && return
+
+  TITLE=${2:-"Recording"}
+  MESSAGE=${1:-"OK"}
+  notify "$TITLE" "$MESSAGE"
 }
 notifyError() {
-	if [ $NOTIFY = "yes" ]; then
-		TITLE=${2:-"Recording"}
-		MESSAGE=${1:-"Error taking recording with wf-recorder"}
-		notify -u critical "$TITLE" "$MESSAGE"
-	else
-		echo $1
-	fi
+  if [ $NOTIFY = "yes" ]; then
+    TITLE=${2:-"Recording"}
+    MESSAGE=${1:-"Error taking recording with wf-recorder"}
+    notify -u critical "$TITLE" "$MESSAGE"
+  else
+    echo "$1"
+  fi
 }
 
 die() {
-	MSG=${1:-Bye}
-	notifyError "Error: $MSG"
-	exit 2
+  MSG=${1:-Bye}
+  notifyError "Error: $MSG"
+  exit 2
 }
 
 check() {
-	COMMAND=$1
-	if command -v "$COMMAND" >/dev/null 2>&1; then
-		RESULT="OK"
-	else
-		RESULT="NOT FOUND"
-	fi
-	echo "   $COMMAND: $RESULT"
+  COMMAND=$1
+  if command -v "$COMMAND" >/dev/null 2>&1; then
+    RESULT="OK"
+  else
+    RESULT="NOT FOUND"
+  fi
+  echo "   $COMMAND: $RESULT"
 }
 
 startRecording() {
-	FILE=$1
-	GEOM=$2
-	OUTPUT=$3
-	if [ ! -z "$OUTPUT" ]; then
-		wf-recorder -o "$OUTPUT" --file="$FILE" || die "Unable to invoke wf-recorder"
-	elif [ -z "$GEOM" ]; then
-		wf-recorder --file="$FILE" || die "Unable to invoke wf-recorder"
-	else
-		wf-recorder -g "$GEOM" --file="$FILE" || die "Unable to invoke wf-recorder"
-	fi
+  FILE=$1
+  GEOM=$2
+  OUTPUT=$3
+  if [ ! -z "$OUTPUT" ]; then
+    wf-recorder -o "$OUTPUT" --file="$FILE" || die "Unable to invoke wf-recorder"
+  elif [ -z "$GEOM" ]; then
+    wf-recorder --file="$FILE" || die "Unable to invoke wf-recorder"
+  else
+    wf-recorder -g "$GEOM" --file="$FILE" || die "Unable to invoke wf-recorder"
+  fi
 }
 
 if [ "$ACTION" = "check" ]; then
-	echo "Checking if required tools are installed. If something is missing, install it to your system and make it available in PATH..."
-	check wf-recorder
-	check slurp
-	check swaymsg
-	check jq
-	check notify-send
-	exit
+  echo "Checking if required tools are installed. If something is missing, install it to your system and make it available in PATH..."
+  check wf-recorder
+  check slurp
+  check swaymsg
+  check jq
+  check notify-send
+  exit
 elif [ "$ACTION" = "start" ]; then
-	if [ "$SUBJECT" = "area" ]; then
-		GEOM=$(slurp -d)
-		# Check if user exited slurp without selecting the area
-		if [ -z "$GEOM" ]; then
-			exit
-		fi
-		WHAT="Area"
-	elif [ "$SUBJECT" = "active" ]; then
-		FOCUSED=$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)')
-		GEOM=$(echo "$FOCUSED" | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')
-		APP_ID=$(echo "$FOCUSED" | jq -r '.app_id')
-		WHAT="$APP_ID window"
-	elif [ "$SUBJECT" = "screen" ]; then
-		GEOM=""
-		WHAT="Screen"
-	elif [ "$SUBJECT" = "output" ]; then
-		GEOM=""
-		OUTPUT=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused)' | jq -r '.name')
-		WHAT="$OUTPUT"
-	elif [ "$SUBJECT" = "window" ]; then
-		GEOM=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)
-		# Check if user exited slurp without selecting the area
-		if [ -z "$GEOM" ]; then
-			exit
-		fi
-		WHAT="Window"
-	else
-		die "Unknown subject to start a recording from" "$SUBJECT"
-	fi
+  if [ "$SUBJECT" = "area" ]; then
+    GEOM=$(slurp -d)
+    # Check if user exited slurp without selecting the area
+    if [ -z "$GEOM" ]; then
+      exit
+    fi
+  elif [ "$SUBJECT" = "active" ]; then
+    FOCUSED=$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]?, .floating_nodes[]?) | select(.focused)')
+    GEOM=$(echo "$FOCUSED" | jq -r '.rect | "\(.x),\(.y) \(.width)x\(.height)"')
+  elif [ "$SUBJECT" = "screen" ]; then
+    GEOM=""
+  elif [ "$SUBJECT" = "output" ]; then
+    GEOM=""
+    OUTPUT=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused)' | jq -r '.name')
+  elif [ "$SUBJECT" = "window" ]; then
+    GEOM=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)
+    # Check if user exited slurp without selecting the area
+    if [ -z "$GEOM" ]; then
+      exit
+    fi
+  else
+    die "Unknown subject to start a recording from" "$SUBJECT"
+  fi
 
-	if startRecording "$FILE" "$GEOM" "$OUTPUT"; then
-		TITLE="Recording $SUBJECT"
-		MESSAGE=$(basename "$FILE")
-		notifyOk "$MESSAGE" "$TITLE"
-		echo $FILE
-	else
-		notifyError "Error recording with wf-recorder"
-	fi
+  if startRecording "$FILE" "$GEOM" "$OUTPUT"; then
+    TITLE="Recording $SUBJECT"
+    MESSAGE=$(basename "$FILE")
+    notifyOk "$MESSAGE" "$TITLE"
+    echo "$FILE"
+  else
+    notifyError "Error recording with wf-recorder"
+  fi
 fi

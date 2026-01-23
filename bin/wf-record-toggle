@@ -1,12 +1,8 @@
 #!/bin/sh
 
-if [ -z $(pgrep wf-recorder) ]; then
-  wf-record "$@" >/dev/null 2>&1 &
-  sleep 2
-  while [ -n "$(pgrep -x slurp)" ]; do wait; done
+if pgrep -x wf-recorder >/dev/null; then
+  pkill -SIGINT wf-recorder
   pkill -RTMIN+8 waybar
 else
-  killall -s SIGINT wf-recorder
-  while [ -n "$(pgrep -x wf-recorder)" ]; do wait; done
-  pkill -RTMIN+8 waybar
+  swaymsg mode "screenrecord"
 fi

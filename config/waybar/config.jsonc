@@ -138,8 +138,9 @@
     "interval": "once",
     "exec": "echo ''",
     "tooltip": "stop recording",
-    "exec-if": "pgrep 'wf-recorder'",
-    "on-click": "exec $HOME/bin/wf-record-toggle --notify start area",
+    "exec-if": "pgrep -x 'wf-recorder'",
+    "on-click": "pkill -SIGINT wf-recorder",
+    "interval": 3,
     "signal": 8
   },
   "custom/dismiss-notifications": {
