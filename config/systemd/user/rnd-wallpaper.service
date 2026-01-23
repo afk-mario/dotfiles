@@ -1,10 +1,11 @@
 [Unit]
 Description=Random wallpaper
 PartOf=graphical-session.target
+After=graphical-session.target
 
 [Service]
 Type=oneshot
 ExecStart=/bin/bash -c '${HOME}/bin/rnd-wallpaper'
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=graphical-session.target

@@ -4,9 +4,9 @@ RefuseManualStart=no
 RefuseManualStop=no
 
 [Timer]
-Persistent=false
-OnCalendar=*:0/59
-Unit=service
+Persistent=true
+OnCalendar=hourly
+Unit=rnd-wallpaper.service
 
 [Install]
 WantedBy=default.target
