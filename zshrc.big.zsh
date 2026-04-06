@@ -117,6 +117,7 @@ fpath+=~/.zfunc
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # PLAYDATE
+  unset DEBUGINFOD_URLS
   export PATH="$PLAYDATE_SDK_PATH/bin:$PATH"
   export P3D_INCLUDE_PATH=/usr/include/panda3d/
   export P3D_LIB_PATH=/usr/lib/panda3d/
