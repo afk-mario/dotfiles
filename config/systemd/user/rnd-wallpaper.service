@@ -5,7 +5,10 @@ After=graphical-session.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '${HOME}/bin/rnd-wallpaper'
+StandardOutput=journal
+StandardError=journal
+KillMode=none
+ExecStart=/bin/bash -c "${HOME}/bin/rnd-wallpaper"
 
 [Install]
 WantedBy=graphical-session.target
