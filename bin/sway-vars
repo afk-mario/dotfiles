@@ -2,7 +2,7 @@
 
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_DBUS_REMOTE=1
-export QT_QPA_PLATFORM=wayland-egl
+export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # export SDL_VIDEODRIVER=wayland
@@ -10,5 +10,10 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # https://github.com/swaywm/sway/issues/2424
 export QT_WAYLAND_FORCE_DPI=96
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+# https://github.com/swaywm/sway/issues/8977
+# https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/41557
+# https://gitlab.freedesktop.org/mesa/mesa/-/work_items/5882
+# export WLR_RENDERER=vulkan
 
 exec systemd-cat -t sway sway
