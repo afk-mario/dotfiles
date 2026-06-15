@@ -34,7 +34,7 @@ local plugins = {
 	gh('godlygeek/tabular'),        -- Align code
 	gh('vim-scripts/BufOnly.vim'),  -- Close All other buffers
 	gh('qpkorr/vim-bufkill'),       -- Keep the window layout when closing buffers
-	gh('numToStr/Comment.nvim'),
+	-- gh('numToStr/Comment.nvim'),
 
 	-- VCS
 	gh('tpope/vim-fugitive'), -- Git wrapper
