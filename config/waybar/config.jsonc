@@ -94,6 +94,7 @@
     "format": " {volume}%",
     "format-muted": "",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-click": "pwvucontrol",
     "scroll-step": 5
   },
   "wireplumber": {
@@ -103,8 +104,8 @@
       "headphones": "",
       "default": ["", ""]
     },
-    "scroll-step": 1,
-    "on-click": "pwvucontrol"
+    "on-click": "pwvucontrol",
+    "scroll-step": 1
   },
   "custom/mic": {
     "exec": "$HOME/bin/waybar-mic",
