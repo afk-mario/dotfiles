@@ -11,13 +11,14 @@
   "modules-right": [
     "clock",
     "network",
-    "wireplumber",
+    "wireplumber#sink",
+    "wireplumber#source",
     "sway/language",
     "battery",
     "idle_inhibitor",
     "custom/darkman",
     "custom/dnd",
-    "custom/mic",
+    // "custom/mic",
     "custom/wf-recorder",
     "custom/dismiss-notifications"
   ],
@@ -77,6 +78,24 @@
       "deactivated": ""
     }
   },
+  "wireplumber#sink": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "default": ["", ""]
+    },
+    "on-click": "pwvucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "scroll-step": 1
+  },
+  "wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": " {volume}%",
+    "format-muted": "",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "scroll-step": 5
+  },
   "wireplumber": {
     "format": "{icon} {volume}%",
     "format-muted": "",
@@ -86,6 +105,11 @@
     },
     "scroll-step": 1,
     "on-click": "pwvucontrol"
+  },
+  "custom/mic": {
+    "exec": "$HOME/bin/waybar-mic",
+    "return-type": "json",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
   },
   "battery": {
     "bat": "BAT0",
@@ -101,11 +125,6 @@
   },
   "custom/arch": {
     "format": ""
-  },
-  "custom/mic": {
-    "exec": "$HOME/bin/waybar-mic",
-    "return-type": "json",
-    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
   },
   "custom/darkman": {
     "exec-if": "command -v darkman",
