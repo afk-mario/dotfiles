@@ -1,0 +1,204 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage: ttrpgpdf input.md [output] [--color|--bw] [--border]
+
+Convert markdown to a TTRPG-styled PDF via pandoc.
+
+  input.md   Source markdown file
+  output     Optional destination:
+               (empty)                 ./<input-basename>.pdf
+               ~/Downloads             ~/Downloads/<input-basename>.pdf
+               ~/Downloads/handout.pdf ~/Downloads/handout.pdf
+  --color    Themed background/foreground (default)
+  --bw       Print-friendly B&W (text + thresholded images/frame)
+  --border   Overlay pandoc/borders/frame.png on each page
+EOF
+}
+
+if [[ $# -lt 1 ]]; then
+  usage >&2
+  exit 1
+fi
+
+if ! command -v pandoc >/dev/null 2>&1; then
+  echo "ttrpgpdf: pandoc not found" >&2
+  exit 1
+fi
+
+DOTFILES="${DOTFILES:-$HOME/dotfiles}"
+# Resolve pandoc assets relative to this script (works via ~/bin symlink too).
+SCRIPT_PATH="${BASH_SOURCE[0]}"
+if command -v readlink >/dev/null 2>&1; then
+  SCRIPT_PATH="$(readlink -f "$SCRIPT_PATH" 2>/dev/null || readlink "$SCRIPT_PATH" 2>/dev/null || echo "$SCRIPT_PATH")"
+fi
+SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+if [[ -d "$SCRIPT_DIR/../pandoc" ]]; then
+  PANDOC_DIR="$(cd "$SCRIPT_DIR/../pandoc" && pwd)"
+else
+  PANDOC_DIR="$DOTFILES/pandoc"
+fi
+BORDER_IMG="$PANDOC_DIR/borders/frame.png"
+DEFAULTS="$PANDOC_DIR/ttrpg.yaml"
+
+input=""
+output=""
+theme="color"
+border=0
+
+args=("$@")
+i=0
+while [[ $i -lt ${#args[@]} ]]; do
+  arg="${args[$i]}"
+  case "$arg" in
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    --color)
+      theme="color"
+      ;;
+    --bw)
+      theme="bw"
+      ;;
+    --border)
+      border=1
+      ;;
+    -*)
+      echo "ttrpgpdf: unknown option: $arg" >&2
+      usage >&2
+      exit 1
+      ;;
+    *)
+      if [[ -z "$input" ]]; then
+        input="$arg"
+      elif [[ -z "$output" ]]; then
+        output="$arg"
+      else
+        echo "ttrpgpdf: unexpected argument: $arg" >&2
+        usage >&2
+        exit 1
+      fi
+      ;;
+  esac
+  i=$((i + 1))
+done
+
+if [[ -z "$input" ]]; then
+  usage >&2
+  exit 1
+fi
+
+if [[ ! -f "$input" ]]; then
+  echo "ttrpgpdf: input not found: $input" >&2
+  exit 1
+fi
+
+input="$(cd "$(dirname "$input")" && pwd)/$(basename "$input")"
+notedirectory="$(dirname "$input")"
+default_name="$(basename "$input")"
+default_name="${default_name%.*}.pdf"
+
+# Resolve single optional output: empty | directory | file.pdf
+if [[ -z "$output" ]]; then
+  outfile="$(pwd)/$default_name"
+elif [[ -d "$output" || "$output" == */ ]]; then
+  mkdir -p "$output"
+  outfile="$(cd "$output" && pwd)/$default_name"
+elif [[ "$output" == *.pdf || "$output" == *.PDF ]]; then
+  outdir="$(dirname "$output")"
+  mkdir -p "$outdir"
+  outdir="$(cd "$outdir" && pwd)"
+  outfile="$outdir/$(basename "$output")"
+else
+  # No .pdf suffix: treat as a directory
+  mkdir -p "$output"
+  outfile="$(cd "$output" && pwd)/$default_name"
+fi
+
+tmpdir="$(mktemp -d "${TMPDIR:-/tmp}/ttrpgpdf.XXXXXX")"
+cleanup() { rm -rf "$tmpdir"; }
+trap cleanup EXIT
+
+# Detect Obsidian vault (optional)
+vault=""
+dir="$notedirectory"
+while [[ "$dir" != "/" ]]; do
+  if [[ -d "$dir/.obsidian" ]]; then
+    vault="$dir"
+    break
+  fi
+  dir="$(dirname "$dir")"
+done
+
+if [[ -n "$vault" ]]; then
+  export TTRPG_VAULT_ROOT="$vault"
+  resource_path="$vault:$notedirectory"
+else
+  unset TTRPG_VAULT_ROOT || true
+  resource_path="$notedirectory"
+fi
+
+if [[ "$theme" == "bw" ]]; then
+  if ! command -v magick >/dev/null 2>&1; then
+    echo "ttrpgpdf: ImageMagick (magick) required for --bw image conversion" >&2
+    exit 1
+  fi
+  export TTRPG_BW=1
+  export TTRPG_BW_DIR="$tmpdir/bw-images"
+  mkdir -p "$TTRPG_BW_DIR"
+else
+  unset TTRPG_BW || true
+  unset TTRPG_BW_DIR || true
+fi
+
+pandoc_args=(
+  "$input"
+  -o "$outfile"
+  -d "$DEFAULTS"
+  --resource-path="$resource_path:$tmpdir:$PANDOC_DIR"
+)
+
+if [[ "$theme" == "bw" ]]; then
+  pandoc_args+=(-H "$PANDOC_DIR/ttrpg-bw.tex")
+fi
+
+if [[ "$border" -eq 1 ]]; then
+  if [[ ! -f "$BORDER_IMG" ]]; then
+    echo "ttrpgpdf: border image missing: $BORDER_IMG" >&2
+    echo "ttrpgpdf: add a Letter 8.5x11 PNG (2550x3300 @ 300 DPI) and retry" >&2
+    exit 1
+  fi
+  border_src="$BORDER_IMG"
+  if [[ "$theme" == "bw" ]]; then
+    border_src="$tmpdir/frame-bw.png"
+    magick "$BORDER_IMG" \
+      \( +clone -alpha extract \) \
+      \( -clone 0 -alpha off -colorspace Gray -threshold 50% \) \
+      -delete 0 +swap -compose CopyOpacity -composite \
+      "$border_src"
+  fi
+  cat >"$tmpdir/border.tex" <<EOF
+\\usepackage{graphicx}
+\\AddToHook{shipout/background}{%
+  \\put(0,-\\paperheight){%
+    \\includegraphics[width=\\paperwidth,height=\\paperheight]{$border_src}%
+  }%
+}
+EOF
+  pandoc_args+=(-H "$tmpdir/border.tex")
+fi
+
+pandoc "${pandoc_args[@]}"
+
+# Re-render with page numbers when the PDF has more than one page.
+if command -v pdfinfo >/dev/null 2>&1; then
+  pages="$(pdfinfo "$outfile" 2>/dev/null | awk '/^Pages:/{print $2}')"
+  if [[ -n "${pages:-}" && "$pages" -gt 1 ]]; then
+    pandoc "${pandoc_args[@]}" -H "$PANDOC_DIR/ttrpg-multipage.tex"
+  fi
+fi
+
+echo "Wrote $outfile"

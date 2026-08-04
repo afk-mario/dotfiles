@@ -1,0 +1,38 @@
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+\subsectionfont{\sffamily\fontsize{18}{22}\selectfont}
+\usepackage{multicol}
+\raggedcolumns
+\setlength{\columnsep}{20pt}
+\newcommand{\ttrpgdocname}{}
+\newfontfamily\fellfont{IM FELL DW Pica}[
+  AutoFakeBold=2.0,
+  BoldItalicFont={IM FELL DW Pica Italic},
+  BoldItalicFeatures={FakeBold=2.0},
+]
+\renewenvironment{quote}
+  {\list{}{\leftmargin=10pt\rightmargin=10pt}\item\relax\fellfont}
+  {\endlist}
+
+% Images: natural width, or column width if narrower — never upscale.
+\usepackage{graphicx}
+\makeatletter
+\def\ttrpg@maxwidth{%
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\setkeys{Gin}{width=\ttrpg@maxwidth,keepaspectratio}
+\makeatother
+
+% Color theme (default / --color)
+\definecolor{ttrpgbg}{HTML}{d8d8d8}
+\definecolor{ttrpgfg}{HTML}{241e1a}
+\newcommand{\ttrpgpagecolor}{\pagecolor{ttrpgbg}}
+\newcommand{\ttrpgtextcolor}{\color{ttrpgfg}}
+\AtBeginDocument{\ttrpgpagecolor\ttrpgtextcolor}
+
+% No page numbers by default; ttrpgpdf re-enables them for multi-page PDFs.
+\pagestyle{empty}

@@ -22,6 +22,7 @@
     - ~/media/pictures/screenshots
     - ~/media/videos/screen-recordings
     - ~/.zfunc
+    - ~/.local/share/pandoc/defaults
 
 - link:
     ~/bin: bin/
@@ -34,6 +35,10 @@
     ~/.xscreensaver: .xscreensaver
     ~/.config/godot/editor_settings-3.tres: godot/editor_settings-3.tres
     ~/.config/godot/editor_settings-4.tres: godot/editor_settings-4.tres
+    ~/.local/share/pandoc/defaults/:
+      glob: true
+      path: pandoc/*
+      relink: true
     ~/.vim/:
       glob: true
       path: vim/*

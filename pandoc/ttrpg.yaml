@@ -1,0 +1,19 @@
+pdf-engine: tectonic
+# Avoid floating figures — they break multicol; we center via Lua instead.
+from: markdown-implicit_figures
+filters:
+  - ${.}/ttrpg-obsidian-images.lua
+  - ${.}/ttrpg-filename.lua
+variables:
+  mainfont: "IM FELL DW Pica"
+  mainfontoptions:
+    - AutoFakeBold=2.0
+    - BoldItalicFont={IM FELL DW Pica Italic}
+    - BoldItalicFeatures={FakeBold=2.0}
+  sansfont: "Basteleur"
+  sansfontoptions:
+    - UprightFont={Basteleur Bold}
+    - BoldFont={Basteleur Bold}
+  geometry: margin=0.5in
+  papersize: letter
+include-in-header: ${.}/ttrpg-header.tex

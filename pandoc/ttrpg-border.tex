@@ -1,0 +1,8 @@
+% Full-page border art (--border). Expects Letter 8.5x11 art at borders/frame.png
+% (ttrpgpdf injects the resolved path at runtime.)
+\usepackage{graphicx}
+\AddToHook{shipout/background}{%
+  \put(0,-\paperheight){%
+    \includegraphics[width=\paperwidth,height=\paperheight]{borders/frame.png}%
+  }%
+}
