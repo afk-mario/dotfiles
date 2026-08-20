@@ -1,2 +1,3 @@
 set selection-clipboard clipboard
 map D exec "zathura '$FILE'"
+set guioptions "hvs"
