@@ -33,10 +33,9 @@ FILE=${3:-$(getTargetDirectory)/$(date -Ins).mp4}
 
 if [ "$ACTION" != "start" ] && [ "$ACTION" != "check" ]; then
   echo "Usage:"
-  echo "  wfrecord [--notify] [active|screen|output|area|window] [FILE]"
+  echo "  wfrecord [--notify] start [active|screen|output|area|window|anything] [FILE]"
   echo "  wfrecord check"
   echo "  wfrecord usage"
-  echo "  wfrecord start"
   echo ""
   echo "Commands:"
   echo "  check: Verify if required tools are installed and exit."
@@ -48,6 +47,7 @@ if [ "$ACTION" != "start" ] && [ "$ACTION" != "check" ]; then
   echo "  output: Currently active output."
   echo "  area: Manually select a region."
   echo "  window: Manually select a window."
+  echo "  anything: Manually select an area, window, or output."
   exit
 fi
 
@@ -136,6 +136,11 @@ elif [ "$ACTION" = "start" ]; then
   elif [ "$SUBJECT" = "window" ]; then
     GEOM=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)
     # Check if user exited slurp without selecting the area
+    if [ -z "$GEOM" ]; then
+      exit
+    fi
+  elif [ "$SUBJECT" = "anything" ]; then
+    GEOM=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp -o)
     if [ -z "$GEOM" ]; then
       exit
     fi

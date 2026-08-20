@@ -4,5 +4,7 @@ if pgrep -x wf-recorder >/dev/null; then
   pkill -SIGINT wf-recorder
   pkill -RTMIN+8 waybar
 else
-  swaymsg mode "screenrecord"
+  # Quotes must be part of the IPC command; otherwise sway parses
+  # "(a:anything" as a separate command.
+  swaymsg 'mode "screenrecord (a:anything s:screen)"'
 fi
