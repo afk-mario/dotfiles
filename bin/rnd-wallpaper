@@ -1,18 +1,31 @@
 #!/bin/bash
-# set -x
-
-OLD_PID="$(pidof swaybg)"
+# Set one random wallpaper on all outputs via sway (swaybg).
+# Using `output * bg` stores the image on the output config, so DPMS
+# respawns swaybg with the same file instead of a black screen.
 WALL_PATH="$(find "/mnt/2TB/Dropbox/Media/Wallpapers/4k/" \
   -type f \( -name '*.jpg' -o -name '*.png' -o -name '*.webp' \) | shuf -n 1)"
 
 echo "path: $WALL_PATH"
 
-swaybg -m fill -i "$WALL_PATH" &
+if [[ -z $WALL_PATH ]]; then
+  echo "no wallpaper found" >&2
+  exit 1
+fi
 
-if [[ -n $OLD_PID ]]; then
-  echo pid "old: $OLD_PID"
-  sleep 1
-  for pid in $OLD_PID; do
-    kill "$pid"
-  done
+# Prefer the seat/tty Sway, not a nested compositor that last imported
+# SWAYSOCK into the systemd user manager.
+uid="$(id -u)"
+while read -r pid tty; do
+  [[ $tty == tty* ]] || continue
+  sock="/run/user/${uid}/sway-ipc.${uid}.${pid}.sock"
+  if [[ -S $sock ]]; then
+    export SWAYSOCK="$sock"
+    break
+  fi
+done < <(ps -C sway -o pid=,tty=)
+
+if [[ -S ${SWAYSOCK-} ]] && command -v swaymsg >/dev/null; then
+  swaymsg -q output '*' bg "$WALL_PATH" fill
+else
+  swaybg -m fill -i "$WALL_PATH" &
 fi

@@ -1,14 +1,8 @@
 [Unit]
 Description=Random wallpaper
-PartOf=graphical-session.target
 After=graphical-session.target
+ConditionEnvironment=SWAYSOCK
 
 [Service]
 Type=oneshot
-StandardOutput=journal
-StandardError=journal
-KillMode=none
-ExecStart=/bin/bash -c "${HOME}/bin/rnd-wallpaper"
-
-[Install]
-WantedBy=graphical-session.target
+ExecStart=%h/bin/rnd-wallpaper

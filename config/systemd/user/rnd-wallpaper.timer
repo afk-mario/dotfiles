@@ -1,12 +1,9 @@
 [Unit]
-Description=Random wallpaper with timer
-RefuseManualStart=no
-RefuseManualStop=no
+Description=Random wallpaper hourly
 
 [Timer]
-Persistent=true
-OnBootSec=1min
 OnCalendar=hourly
+Persistent=true
 Unit=rnd-wallpaper.service
 
 [Install]
