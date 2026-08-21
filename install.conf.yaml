@@ -23,6 +23,7 @@
     - ~/media/videos/screen-recordings
     - ~/.zfunc
     - ~/.local/share/pandoc/defaults
+    - ~/.local/share/darkman
 
 - link:
     ~/bin: bin/
@@ -38,6 +39,10 @@
     ~/.local/share/pandoc/defaults/:
       glob: true
       path: pandoc/*
+      relink: true
+    ~/.local/share/darkman/:
+      glob: true
+      path: darkman/*
       relink: true
     ~/.vim/:
       glob: true
