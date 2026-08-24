@@ -25,22 +25,50 @@ require('catppuccin').setup({
 	highlight_overrides = {
 		all = function(colors)
 			return {
-				['@text.todo'] = { fg = colors.yellow, bg = colors.none },
-				['@text.todo.checked'] = { fg = colors.green },
-				['@text.todo.unchecked'] = { fg = colors.overlay1 },
-				['@text.note'] = { fg = colors.blue, bg = colors.none },
-				['@text.warning'] = {
+				Todo = { fg = colors.mauve, bg = colors.none },
+				['@comment.todo'] = { fg = colors.mauve, bg = colors.none },
+				['@comment.note'] = { fg = colors.blue, bg = colors.none },
+				['@comment.warning'] = {
 					fg = colors.yellow,
 					bg = colors.none,
 					style = { 'bold' }
 				},
-				['@text.danger'] = {
+				['@comment.error'] = {
 					fg = colors.red,
 					bg = colors.none,
 					style = { 'bold' }
 				},
+				['@markup.list.checked'] = { fg = colors.green },
+				['@markup.list.unchecked'] = { fg = colors.overlay1 },
 			}
 		end
 	}
 })
 vim.cmd.colorscheme 'catppuccin'
+
+-- Treesitter comment injections lose to @comment / LSP tokens, and Vim
+-- syntax only keywords TODO. Match these above both so NOTE/BUG/etc show.
+local comment_keywords = {
+	{ '@comment.todo', [[\C\<\(TODO\|WIP\):]] },
+	{ '@comment.note', [[\C\<\(NOTE\|INFO\|XXX\|DOCS\|PERF\|TEST\):]] },
+	{ '@comment.warning', [[\C\<\(HACK\|WARNING\|WARN\):]] },
+	{ '@comment.error', [[\C\<\(FIXME\|BUG\|ERROR\):]] },
+}
+
+local function add_comment_keyword_matches(win)
+	if vim.w[win].user_comment_keywords then
+		return
+	end
+	local priority = vim.hl.priorities.user
+	for _, item in ipairs(comment_keywords) do
+		vim.fn.matchadd(item[1], item[2], priority, -1, { window = win })
+	end
+	vim.w[win].user_comment_keywords = true
+end
+
+vim.api.nvim_create_autocmd({ 'VimEnter', 'WinEnter' }, {
+	callback = function()
+		add_comment_keyword_matches(vim.api.nvim_get_current_win())
+	end,
+})
+add_comment_keyword_matches(vim.api.nvim_get_current_win())
