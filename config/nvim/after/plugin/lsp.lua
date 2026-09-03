@@ -16,10 +16,31 @@ require('mason-lspconfig').setup({
 	},
 })
 
+
 -- Add the same capabilities to ALL server configurations.
 -- Refer to :h vim.lsp.config() for more information.
 vim.lsp.config('*', {
 	capabilities = vim.lsp.protocol.make_client_capabilities()
+})
+
+vim.lsp.config('emmet_language_server', {
+	filetypes = {
+		'css',
+		'eruby',
+		'html',
+		'javascript',
+		'javascriptreact',
+		'less',
+		'sass',
+		'scss',
+		'pug',
+		'typescriptreact',
+	},
+	-- Automatically expands `className="..."` instead of `class="..."` in JSX/TSX
+	init_options = {
+		showExpandedAbbreviation = 'always',
+		showAbbreviationSuggestions = true,
+	},
 })
 
 -- Disable stylelint on js
