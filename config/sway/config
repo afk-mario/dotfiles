@@ -60,7 +60,7 @@ exec swayidle -w \
 exec dropbox
 exec mako
 exec udiskie --tray
-exec syncthingtray-qt6 --wait
+exec syncthingtray --wait
 exec lxqt-policykit-agent
 exec blueman-applet
 exec nm-applet
